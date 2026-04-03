@@ -6,7 +6,7 @@
 SECTION "ROM Bank $000", ROM0[$0]
 
 RST_00::
-    jp   Jump_000_0150                            ; $0000: $C3 $50 $01
+    jp   Init                                     ; $0000: $C3 $50 $01
 
 
 Jump_000_0003::
@@ -25,7 +25,7 @@ Call_000_0007::
     nop                                           ; $0007: $00
 
 RST_08::
-    jp   Jump_000_0150                            ; $0008: $C3 $50 $01
+    jp   Init                                     ; $0008: $C3 $50 $01
 
 
     rst  $38                                      ; $000B: $FF
@@ -346,7 +346,7 @@ Boot::
     nop                                           ; $0100: $00
 
 Jump_000_0101::
-    jp   Jump_000_0150                            ; $0101: $C3 $50 $01
+    jp   Init                                     ; $0101: $C3 $50 $01
 
 
 HeaderLogo::
@@ -387,7 +387,7 @@ HeaderComplementCheck::
 HeaderGlobalChecksum::
     DB   $FB, $77
 
-Jump_000_0150::
+Init::
     di                                            ; $0150: $F3
     xor  a                                        ; $0151: $AF
     ld   hl, $CF00                                ; $0152: $21 $00 $CF

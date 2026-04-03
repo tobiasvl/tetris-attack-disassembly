@@ -79,7 +79,7 @@ SECTION "ROM Bank $00c", ROMX[$4000], BANK[$c]
     ld   b, h                                     ; $4052: $44
     ld   [hl], l                                  ; $4053: $75
 
-jr_00C_4054:
+jr_00C_4054::
     ld   b, h                                     ; $4054: $44
     ld   [hl], l                                  ; $4055: $75
     ld   b, h                                     ; $4056: $44
@@ -161,7 +161,7 @@ jr_00C_4054:
     ret                                           ; $40D8: $C9
 
 
-jr_00C_40D9:
+jr_00C_40D9::
     call Call_00C_4743                            ; $40D9: $CD $43 $47
     call Call_000_23FA                            ; $40DC: $CD $FA $23
     call Call_000_240E                            ; $40DF: $CD $0E $24
@@ -169,7 +169,7 @@ jr_00C_40D9:
     ret                                           ; $40E5: $C9
 
 
-jr_00C_40E6:
+jr_00C_40E6::
     ld   a, $3D                                   ; $40E6: $3E $3D
     ld   [$D360], a                               ; $40E8: $EA $60 $D3
     ld   de, $98B1                                ; $40EB: $11 $B1 $98
@@ -207,7 +207,7 @@ jr_00C_40E6:
     ret                                           ; $4132: $C9
 
 
-jr_00C_4133:
+jr_00C_4133::
     call Call_00C_46AA                            ; $4133: $CD $AA $46
     ld   a, $04                                   ; $4136: $3E $04
     ld   [$CFD1], a                               ; $4138: $EA $D1 $CF
@@ -266,7 +266,7 @@ jr_00C_4133:
     ret                                           ; $41A3: $C9
 
 
-jr_00C_41A4:
+jr_00C_41A4::
     call Call_00C_4762                            ; $41A4: $CD $62 $47
     call Call_000_23FA                            ; $41A7: $CD $FA $23
     call Call_000_240E                            ; $41AA: $CD $0E $24
@@ -274,7 +274,7 @@ jr_00C_41A4:
     ret                                           ; $41B0: $C9
 
 
-jr_00C_41B1:
+jr_00C_41B1::
     ld   a, $3D                                   ; $41B1: $3E $3D
     ld   [$D360], a                               ; $41B3: $EA $60 $D3
     ld   de, $9971                                ; $41B6: $11 $71 $99
@@ -312,7 +312,7 @@ jr_00C_41B1:
     ret                                           ; $41FD: $C9
 
 
-jr_00C_41FE:
+jr_00C_41FE::
     call Call_00C_46AA                            ; $41FE: $CD $AA $46
     ld   a, $04                                   ; $4201: $3E $04
     ld   [$CFD1], a                               ; $4203: $EA $D1 $CF
@@ -368,7 +368,7 @@ jr_00C_41FE:
     ret                                           ; $426D: $C9
 
 
-jr_00C_426E:
+jr_00C_426E::
     call Call_00C_4743                            ; $426E: $CD $43 $47
     call Call_000_23FA                            ; $4271: $CD $FA $23
     call Call_000_240E                            ; $4274: $CD $0E $24
@@ -376,7 +376,7 @@ jr_00C_426E:
     ret                                           ; $427A: $C9
 
 
-jr_00C_427B:
+jr_00C_427B::
     ld   a, $3D                                   ; $427B: $3E $3D
     ld   [$D360], a                               ; $427D: $EA $60 $D3
     ld   de, $98B1                                ; $4280: $11 $B1 $98
@@ -414,7 +414,7 @@ jr_00C_427B:
     ret                                           ; $42C7: $C9
 
 
-jr_00C_42C8:
+jr_00C_42C8::
     call Call_00C_46AA                            ; $42C8: $CD $AA $46
     ld   a, $04                                   ; $42CB: $3E $04
     ld   [$CFD1], a                               ; $42CD: $EA $D1 $CF
@@ -474,7 +474,7 @@ jr_00C_42C8:
     ret                                           ; $4343: $C9
 
 
-jr_00C_4344:
+jr_00C_4344::
     call Call_00C_4743                            ; $4344: $CD $43 $47
     call Call_000_23FA                            ; $4347: $CD $FA $23
     call Call_000_240E                            ; $434A: $CD $0E $24
@@ -482,7 +482,7 @@ jr_00C_4344:
     ret                                           ; $4350: $C9
 
 
-jr_00C_4351:
+jr_00C_4351::
     ld   a, $3D                                   ; $4351: $3E $3D
     ld   [$D360], a                               ; $4353: $EA $60 $D3
     ld   de, $98B1                                ; $4356: $11 $B1 $98
@@ -520,7 +520,7 @@ jr_00C_4351:
     ret                                           ; $439D: $C9
 
 
-jr_00C_439E:
+jr_00C_439E::
     call Call_00C_46AA                            ; $439E: $CD $AA $46
     ld   a, $04                                   ; $43A1: $3E $04
     ld   [$CFD1], a                               ; $43A3: $EA $D1 $CF
@@ -537,7 +537,7 @@ jr_00C_439E:
     call Call_00C_4819                            ; $43BA: $CD $19 $48
     ld   a, $0B                                   ; $43BD: $3E $0B
     ld   [$D532], a                               ; $43BF: $EA $32 $D5
-    ld   hl, $5031                                ; $43C2: $21 $31 $50
+    ld   hl, jr_00C_5031                          ; $43C2: $21 $31 $50
     ld   bc, $8000                                ; $43C5: $01 $00 $80
     ld   de, $9800                                ; $43C8: $11 $00 $98
     call Call_00C_46CC                            ; $43CB: $CD $CC $46
@@ -573,7 +573,7 @@ jr_00C_439E:
     ret                                           ; $440C: $C9
 
 
-jr_00C_440D:
+jr_00C_440D::
     call Call_00C_4781                            ; $440D: $CD $81 $47
     call Call_000_23FA                            ; $4410: $CD $FA $23
     call Call_000_240E                            ; $4413: $CD $0E $24
@@ -581,7 +581,7 @@ jr_00C_440D:
     ret                                           ; $4419: $C9
 
 
-jr_00C_441A:
+jr_00C_441A::
     ld   a, $3D                                   ; $441A: $3E $3D
     ld   [$D360], a                               ; $441C: $EA $60 $D3
     ld   de, $9891                                ; $441F: $11 $91 $98
@@ -619,7 +619,7 @@ jr_00C_441A:
     ret                                           ; $4466: $C9
 
 
-jr_00C_4467:
+jr_00C_4467::
     call Call_00C_46AA                            ; $4467: $CD $AA $46
     ld   a, $04                                   ; $446A: $3E $04
     ld   [$CFD1], a                               ; $446C: $EA $D1 $CF
@@ -677,7 +677,7 @@ jr_00C_4467:
     ret                                           ; $44DC: $C9
 
 
-jr_00C_44DD:
+jr_00C_44DD::
     call Call_00C_4743                            ; $44DD: $CD $43 $47
     call Call_000_23FA                            ; $44E0: $CD $FA $23
     call Call_000_240E                            ; $44E3: $CD $0E $24
@@ -685,7 +685,7 @@ jr_00C_44DD:
     ret                                           ; $44E9: $C9
 
 
-jr_00C_44EA:
+jr_00C_44EA::
     ld   a, $3D                                   ; $44EA: $3E $3D
     ld   [$D360], a                               ; $44EC: $EA $60 $D3
     ld   de, $98B1                                ; $44EF: $11 $B1 $98
@@ -723,7 +723,7 @@ jr_00C_44EA:
     ret                                           ; $4536: $C9
 
 
-jr_00C_4537:
+jr_00C_4537::
     call Call_00C_46AA                            ; $4537: $CD $AA $46
     ld   a, $04                                   ; $453A: $3E $04
     ld   [$CFD1], a                               ; $453C: $EA $D1 $CF
@@ -771,17 +771,17 @@ jr_00C_4537:
     ret                                           ; $45A3: $C9
 
 
-jr_00C_45A4:
+jr_00C_45A4::
     ldh  a, [rLY]                                 ; $45A4: $F0 $44
     cp   $50                                      ; $45A6: $FE $50
     jr   nc, jr_00C_45A4                          ; $45A8: $30 $FA
 
-jr_00C_45AA:
+jr_00C_45AA::
     ldh  a, [rLY]                                 ; $45AA: $F0 $44
     cp   $2E                                      ; $45AC: $FE $2E
     jr   c, jr_00C_45AA                           ; $45AE: $38 $FA
 
-    call Call_00C_4680                            ; $45B0: $CD $80 $46
+    call jr_00C_4680                              ; $45B0: $CD $80 $46
     ld   a, $83                                   ; $45B3: $3E $83
     ldh  [rLCDC], a                               ; $45B5: $E0 $40
     ldh  a, [$FF81]                               ; $45B7: $F0 $81
@@ -799,14 +799,14 @@ jr_00C_45AA:
     ret                                           ; $45CE: $C9
 
 
-jr_00C_45CF:
+jr_00C_45CF::
     call Call_00C_4743                            ; $45CF: $CD $43 $47
     call Call_000_23FA                            ; $45D2: $CD $FA $23
     call Call_000_240E                            ; $45D5: $CD $0E $24
     call Call_000_04D0                            ; $45D8: $CD $D0 $04
     jr   jr_00C_4609                              ; $45DB: $18 $2C
 
-jr_00C_45DD:
+jr_00C_45DD::
     ld   a, $3D                                   ; $45DD: $3E $3D
     ld   [$D360], a                               ; $45DF: $EA $60 $D3
     ld   de, $98B1                                ; $45E2: $11 $B1 $98
@@ -824,7 +824,7 @@ jr_00C_45DD:
     call Call_000_240E                            ; $4603: $CD $0E $24
     call Call_000_04D0                            ; $4606: $CD $D0 $04
 
-jr_00C_4609:
+jr_00C_4609::
     ldh  a, [rLY]                                 ; $4609: $F0 $44
     cp   $80                                      ; $460B: $FE $80
     jr   c, jr_00C_4609                           ; $460D: $38 $FA
@@ -834,17 +834,17 @@ jr_00C_4609:
     ret                                           ; $4613: $C9
 
 
-jr_00C_4614:
+jr_00C_4614::
     ldh  a, [rLY]                                 ; $4614: $F0 $44
     cp   $50                                      ; $4616: $FE $50
     jr   nc, jr_00C_4614                          ; $4618: $30 $FA
 
-jr_00C_461A:
+jr_00C_461A::
     ldh  a, [rLY]                                 ; $461A: $F0 $44
     cp   $2E                                      ; $461C: $FE $2E
     jr   c, jr_00C_461A                           ; $461E: $38 $FA
 
-    call Call_00C_4680                            ; $4620: $CD $80 $46
+    call jr_00C_4680                              ; $4620: $CD $80 $46
     ld   a, $83                                   ; $4623: $3E $83
     ldh  [rLCDC], a                               ; $4625: $E0 $40
     call Call_00C_4701                            ; $4627: $CD $01 $47
@@ -852,7 +852,7 @@ jr_00C_461A:
     call Call_000_240E                            ; $462D: $CD $0E $24
     call Call_000_04D0                            ; $4630: $CD $D0 $04
 
-jr_00C_4633:
+jr_00C_4633::
     ldh  a, [rLY]                                 ; $4633: $F0 $44
     cp   $80                                      ; $4635: $FE $80
     jr   c, jr_00C_4633                           ; $4637: $38 $FA
@@ -862,7 +862,7 @@ jr_00C_4633:
     ret                                           ; $463D: $C9
 
 
-jr_00C_463E:
+jr_00C_463E::
     ldh  a, [rLY]                                 ; $463E: $F0 $44
     cp   $50                                      ; $4640: $FE $50
     jr   nc, jr_00C_463E                          ; $4642: $30 $FA
@@ -871,19 +871,19 @@ jr_00C_463E:
     bit  0, a                                     ; $4646: $CB $47
     jr   nz, jr_00C_466B                          ; $4648: $20 $21
 
-jr_00C_464A:
+jr_00C_464A::
     ldh  a, [rLY]                                 ; $464A: $F0 $44
     cp   $2E                                      ; $464C: $FE $2E
     jr   c, jr_00C_464A                           ; $464E: $38 $FA
 
-    call Call_00C_4680                            ; $4650: $CD $80 $46
+    call jr_00C_4680                              ; $4650: $CD $80 $46
     ld   a, $83                                   ; $4653: $3E $83
     ldh  [rLCDC], a                               ; $4655: $E0 $40
     call Call_000_23FA                            ; $4657: $CD $FA $23
     call Call_000_240E                            ; $465A: $CD $0E $24
     call Call_000_04D0                            ; $465D: $CD $D0 $04
 
-jr_00C_4660:
+jr_00C_4660::
     ldh  a, [rLY]                                 ; $4660: $F0 $44
     cp   $80                                      ; $4662: $FE $80
     jr   c, jr_00C_4660                           ; $4664: $38 $FA
@@ -893,7 +893,7 @@ jr_00C_4660:
     ret                                           ; $466A: $C9
 
 
-jr_00C_466B:
+jr_00C_466B::
     call Call_00C_46AA                            ; $466B: $CD $AA $46
     ld   a, $34                                   ; $466E: $3E $34
     ld   [$D70B], a                               ; $4670: $EA $0B $D7
@@ -910,20 +910,19 @@ jr_00C_466B:
     ret                                           ; $467F: $C9
 
 
-Call_00C_4680:
-jr_00C_4680:
+jr_00C_4680::
     ldh  a, [rSTAT]                               ; $4680: $F0 $41
     and  $03                                      ; $4682: $E6 $03
     and  a                                        ; $4684: $A7
     jr   nz, jr_00C_4680                          ; $4685: $20 $F9
 
-jr_00C_4687:
+jr_00C_4687::
     ldh  a, [rSTAT]                               ; $4687: $F0 $41
     and  $03                                      ; $4689: $E6 $03
     and  a                                        ; $468B: $A7
     jr   z, jr_00C_4687                           ; $468C: $28 $F9
 
-jr_00C_468E:
+jr_00C_468E::
     ldh  a, [rSTAT]                               ; $468E: $F0 $41
     and  $03                                      ; $4690: $E6 $03
     and  a                                        ; $4692: $A7
@@ -932,7 +931,7 @@ jr_00C_468E:
     ret                                           ; $4695: $C9
 
 
-Call_00C_4696:
+Call_00C_4696::
     ld   a, [$D540]                               ; $4696: $FA $40 $D5
     ld   hl, $D541                                ; $4699: $21 $41 $D5
     ld   d, $00                                   ; $469C: $16 $00
@@ -942,14 +941,14 @@ Call_00C_4696:
     ret                                           ; $46A1: $C9
 
 
-Call_00C_46A2:
+Call_00C_46A2::
     ld   a, [$D540]                               ; $46A2: $FA $40 $D5
     inc  a                                        ; $46A5: $3C
     ld   [$D540], a                               ; $46A6: $EA $40 $D5
     ret                                           ; $46A9: $C9
 
 
-Call_00C_46AA:
+Call_00C_46AA::
     xor  a                                        ; $46AA: $AF
     ld   [$D662], a                               ; $46AB: $EA $62 $D6
     ld   [$D664], a                               ; $46AE: $EA $64 $D6
@@ -958,7 +957,7 @@ Call_00C_46AA:
     ret                                           ; $46B7: $C9
 
 
-Call_00C_46B8:
+Call_00C_46B8::
     ld   a, h                                     ; $46B8: $7C
     ld   [$D52E], a                               ; $46B9: $EA $2E $D5
     ld   a, l                                     ; $46BC: $7D
@@ -971,7 +970,7 @@ Call_00C_46B8:
     ret                                           ; $46CB: $C9
 
 
-Call_00C_46CC:
+Call_00C_46CC::
     ld   a, h                                     ; $46CC: $7C
     ld   [$D52E], a                               ; $46CD: $EA $2E $D5
     ld   a, l                                     ; $46D0: $7D
@@ -984,7 +983,7 @@ Call_00C_46CC:
     ret                                           ; $46DF: $C9
 
 
-Call_00C_46E0:
+Call_00C_46E0::
     xor  a                                        ; $46E0: $AF
     ld   [$D775], a                               ; $46E1: $EA $75 $D7
     ld   a, h                                     ; $46E4: $7C
@@ -1003,7 +1002,7 @@ Call_00C_46E0:
     ret                                           ; $4700: $C9
 
 
-Call_00C_4701:
+Call_00C_4701::
     ldh  a, [$FF81]                               ; $4701: $F0 $81
     bit  3, a                                     ; $4703: $CB $5F
     jr   z, jr_00C_4722                           ; $4705: $28 $1B
@@ -1021,7 +1020,7 @@ Call_00C_4701:
     ret                                           ; $4721: $C9
 
 
-jr_00C_4722:
+jr_00C_4722::
     ld   a, [$D776]                               ; $4722: $FA $76 $D7
     and  a                                        ; $4725: $A7
     jr   z, jr_00C_4738                           ; $4726: $28 $10
@@ -1037,7 +1036,7 @@ jr_00C_4722:
     ret                                           ; $4737: $C9
 
 
-jr_00C_4738:
+jr_00C_4738::
     ldh  a, [$FF81]                               ; $4738: $F0 $81
     bit  0, a                                     ; $473A: $CB $47
     ret  z                                        ; $473C: $C8
@@ -1047,7 +1046,7 @@ jr_00C_4738:
     ret                                           ; $4742: $C9
 
 
-Call_00C_4743:
+Call_00C_4743::
     ld   a, [$D70A]                               ; $4743: $FA $0A $D7
     and  $0F                                      ; $4746: $E6 $0F
     ret  nz                                       ; $4748: $C0
@@ -1062,14 +1061,14 @@ Call_00C_4743:
     ret                                           ; $4758: $C9
 
 
-jr_00C_4759:
+jr_00C_4759::
     ld   de, $98B1                                ; $4759: $11 $B1 $98
     ld   a, $A1                                   ; $475C: $3E $A1
     call Call_00C_47DA                            ; $475E: $CD $DA $47
     ret                                           ; $4761: $C9
 
 
-Call_00C_4762:
+Call_00C_4762::
     ld   a, [$D70A]                               ; $4762: $FA $0A $D7
     and  $0F                                      ; $4765: $E6 $0F
     ret  nz                                       ; $4767: $C0
@@ -1084,14 +1083,14 @@ Call_00C_4762:
     ret                                           ; $4777: $C9
 
 
-jr_00C_4778:
+jr_00C_4778::
     ld   de, $9971                                ; $4778: $11 $71 $99
     ld   a, $A1                                   ; $477B: $3E $A1
     call Call_00C_47DA                            ; $477D: $CD $DA $47
     ret                                           ; $4780: $C9
 
 
-Call_00C_4781:
+Call_00C_4781::
     ld   a, [$D70A]                               ; $4781: $FA $0A $D7
     and  $0F                                      ; $4784: $E6 $0F
     ret  nz                                       ; $4786: $C0
@@ -1106,7 +1105,7 @@ Call_00C_4781:
     ret                                           ; $4796: $C9
 
 
-jr_00C_4797:
+jr_00C_4797::
     ld   de, $9891                                ; $4797: $11 $91 $98
     ld   a, $A1                                   ; $479A: $3E $A1
     call Call_00C_47DA                            ; $479C: $CD $DA $47
@@ -1120,7 +1119,7 @@ jr_00C_4797:
     ret                                           ; $47A7: $C9
 
 
-jr_00C_47A8:
+jr_00C_47A8::
     ld   b, a                                     ; $47A8: $47
     add  a                                        ; $47A9: $87
     add  b                                        ; $47AA: $80
@@ -1129,7 +1128,7 @@ jr_00C_47A8:
     ld   hl, $D6A0                                ; $47AE: $21 $A0 $D6
     add  hl, bc                                   ; $47B1: $09
 
-jr_00C_47B2:
+jr_00C_47B2::
     ld   a, [de]                                  ; $47B2: $1A
     ld   [hl+], a                                 ; $47B3: $22
     inc  de                                       ; $47B4: $13
@@ -1147,14 +1146,14 @@ jr_00C_47B2:
 
     jr   jr_00C_47CF                              ; $47C6: $18 $07
 
-jr_00C_47C8:
+jr_00C_47C8::
     ld   a, [de]                                  ; $47C8: $1A
     cp   $FF                                      ; $47C9: $FE $FF
     jr   z, jr_00C_47CF                           ; $47CB: $28 $02
 
     jr   jr_00C_47B2                              ; $47CD: $18 $E3
 
-jr_00C_47CF:
+jr_00C_47CF::
     ld   [hl], $FF                                ; $47CF: $36 $FF
     ld   b, $09                                   ; $47D1: $06 $09
     call Call_00C_4696                            ; $47D3: $CD $96 $46
@@ -1162,7 +1161,7 @@ jr_00C_47CF:
     ret                                           ; $47D9: $C9
 
 
-Call_00C_47DA:
+Call_00C_47DA::
     ld   [$D69C], a                               ; $47DA: $EA $9C $D6
     ld   a, [$D69F]                               ; $47DD: $FA $9F $D6
     cp   $0F                                      ; $47E0: $FE $0F
@@ -1171,7 +1170,7 @@ Call_00C_47DA:
     ret                                           ; $47E4: $C9
 
 
-jr_00C_47E5:
+jr_00C_47E5::
     ld   c, a                                     ; $47E5: $4F
     add  a                                        ; $47E6: $87
     add  c                                        ; $47E7: $81
@@ -1195,7 +1194,7 @@ jr_00C_47E5:
     ret                                           ; $4808: $C9
 
 
-Call_00C_4809:
+Call_00C_4809::
     ld   hl, $D690                                ; $4809: $21 $90 $D6
     ld   a, d                                     ; $480C: $7A
     ld   [hl+], a                                 ; $480D: $22
@@ -1207,7 +1206,7 @@ Call_00C_4809:
     ret                                           ; $4818: $C9
 
 
-Call_00C_4819:
+Call_00C_4819::
     ld   a, $E4                                   ; $4819: $3E $E4
     ldh  [rBGP], a                                ; $481B: $E0 $47
     ld   a, $E4                                   ; $481D: $3E $E4
@@ -1309,7 +1308,7 @@ Call_00C_4819:
     ld   c, d                                     ; $4891: $4A
     ld   a, [$D555]                               ; $4892: $FA $55 $D5
 
-jr_00C_4895:
+jr_00C_4895::
     rst  $28                                      ; $4895: $EF
     ld   b, a                                     ; $4896: $47
     ld   c, d                                     ; $4897: $4A
@@ -1430,7 +1429,7 @@ jr_00C_4895:
     ret                                           ; $4935: $C9
 
 
-jr_00C_4936:
+jr_00C_4936::
     ld   [$D55D], a                               ; $4936: $EA $5D $D5
     ret                                           ; $4939: $C9
 
@@ -1444,7 +1443,7 @@ jr_00C_4936:
     ret                                           ; $4945: $C9
 
 
-jr_00C_4946:
+jr_00C_4946::
     cp   $0E                                      ; $4946: $FE $0E
     jr   nc, jr_00C_4950                          ; $4948: $30 $06
 
@@ -1453,18 +1452,18 @@ jr_00C_4946:
     ret                                           ; $494F: $C9
 
 
-jr_00C_4950:
+jr_00C_4950::
     cp   $12                                      ; $4950: $FE $12
     jr   nc, jr_00C_4959                          ; $4952: $30 $05
 
     xor  a                                        ; $4954: $AF
 
-jr_00C_4955:
+jr_00C_4955::
     ld   [$D558], a                               ; $4955: $EA $58 $D5
     ret                                           ; $4958: $C9
 
 
-jr_00C_4959:
+jr_00C_4959::
     call Call_00C_4E02                            ; $4959: $CD $02 $4E
     call Call_00C_4E13                            ; $495C: $CD $13 $4E
     ldh  a, [rDIV]                                ; $495F: $F0 $04
@@ -1489,7 +1488,7 @@ jr_00C_4959:
     ret                                           ; $497E: $C9
 
 
-jr_00C_497F:
+jr_00C_497F::
     ld   [$D55D], a                               ; $497F: $EA $5D $D5
     ret                                           ; $4982: $C9
 
@@ -1503,7 +1502,7 @@ jr_00C_497F:
     ret                                           ; $498E: $C9
 
 
-jr_00C_498F:
+jr_00C_498F::
     cp   $0E                                      ; $498F: $FE $0E
     jr   nc, jr_00C_4999                          ; $4991: $30 $06
 
@@ -1512,7 +1511,7 @@ jr_00C_498F:
     ret                                           ; $4998: $C9
 
 
-jr_00C_4999:
+jr_00C_4999::
     cp   $12                                      ; $4999: $FE $12
     jr   nc, jr_00C_49A2                          ; $499B: $30 $05
 
@@ -1521,7 +1520,7 @@ jr_00C_4999:
     ret                                           ; $49A1: $C9
 
 
-jr_00C_49A2:
+jr_00C_49A2::
     call Call_00C_4E02                            ; $49A2: $CD $02 $4E
     call Call_00C_4E13                            ; $49A5: $CD $13 $4E
     ldh  a, [rDIV]                                ; $49A8: $F0 $04
@@ -1562,7 +1561,7 @@ jr_00C_49A2:
     ret                                           ; $49D9: $C9
 
 
-jr_00C_49DA:
+jr_00C_49DA::
     cp   $24                                      ; $49DA: $FE $24
     jr   nc, jr_00C_49E4                          ; $49DC: $30 $06
 
@@ -1571,7 +1570,7 @@ jr_00C_49DA:
     ret                                           ; $49E3: $C9
 
 
-jr_00C_49E4:
+jr_00C_49E4::
     cp   $46                                      ; $49E4: $FE $46
     jr   nc, jr_00C_49EE                          ; $49E6: $30 $06
 
@@ -1580,7 +1579,7 @@ jr_00C_49E4:
     ret                                           ; $49ED: $C9
 
 
-jr_00C_49EE:
+jr_00C_49EE::
     cp   $4E                                      ; $49EE: $FE $4E
     jr   nc, jr_00C_49F8                          ; $49F0: $30 $06
 
@@ -1589,7 +1588,7 @@ jr_00C_49EE:
     ret                                           ; $49F7: $C9
 
 
-jr_00C_49F8:
+jr_00C_49F8::
     xor  a                                        ; $49F8: $AF
     ld   [$D559], a                               ; $49F9: $EA $59 $D5
     ret                                           ; $49FC: $C9
@@ -1615,7 +1614,7 @@ jr_00C_49F8:
     ret                                           ; $4A17: $C9
 
 
-jr_00C_4A18:
+jr_00C_4A18::
     ld   [$D55D], a                               ; $4A18: $EA $5D $D5
     ret                                           ; $4A1B: $C9
 
@@ -1629,7 +1628,7 @@ jr_00C_4A18:
     ret                                           ; $4A27: $C9
 
 
-jr_00C_4A28:
+jr_00C_4A28::
     cp   $0E                                      ; $4A28: $FE $0E
     jr   nc, jr_00C_4A32                          ; $4A2A: $30 $06
 
@@ -1638,7 +1637,7 @@ jr_00C_4A28:
     ret                                           ; $4A31: $C9
 
 
-jr_00C_4A32:
+jr_00C_4A32::
     cp   $12                                      ; $4A32: $FE $12
     jr   nc, jr_00C_4A3B                          ; $4A34: $30 $05
 
@@ -1647,7 +1646,7 @@ jr_00C_4A32:
     ret                                           ; $4A3A: $C9
 
 
-jr_00C_4A3B:
+jr_00C_4A3B::
     call Call_00C_4E02                            ; $4A3B: $CD $02 $4E
     call Call_00C_4E13                            ; $4A3E: $CD $13 $4E
     ldh  a, [rDIV]                                ; $4A41: $F0 $04
@@ -1672,7 +1671,7 @@ jr_00C_4A3B:
     ret                                           ; $4A60: $C9
 
 
-jr_00C_4A61:
+jr_00C_4A61::
     ld   [$D55D], a                               ; $4A61: $EA $5D $D5
     ret                                           ; $4A64: $C9
 
@@ -1686,7 +1685,7 @@ jr_00C_4A61:
     ret                                           ; $4A71: $C9
 
 
-jr_00C_4A72:
+jr_00C_4A72::
     cp   $09                                      ; $4A72: $FE $09
     jr   nc, jr_00C_4A7C                          ; $4A74: $30 $06
 
@@ -1695,7 +1694,7 @@ jr_00C_4A72:
     ret                                           ; $4A7B: $C9
 
 
-jr_00C_4A7C:
+jr_00C_4A7C::
     cp   $0F                                      ; $4A7C: $FE $0F
     jr   nc, jr_00C_4A86                          ; $4A7E: $30 $06
 
@@ -1704,7 +1703,7 @@ jr_00C_4A7C:
     ret                                           ; $4A85: $C9
 
 
-jr_00C_4A86:
+jr_00C_4A86::
     cp   $12                                      ; $4A86: $FE $12
     jr   nc, jr_00C_4A90                          ; $4A88: $30 $06
 
@@ -1713,7 +1712,7 @@ jr_00C_4A86:
     ret                                           ; $4A8F: $C9
 
 
-jr_00C_4A90:
+jr_00C_4A90::
     xor  a                                        ; $4A90: $AF
     ld   [$D559], a                               ; $4A91: $EA $59 $D5
     ldh  a, [rDIV]                                ; $4A94: $F0 $04
@@ -1739,7 +1738,7 @@ jr_00C_4A90:
     ret                                           ; $4AB6: $C9
 
 
-jr_00C_4AB7:
+jr_00C_4AB7::
     ld   [$D55D], a                               ; $4AB7: $EA $5D $D5
     ret                                           ; $4ABA: $C9
 
@@ -1753,7 +1752,7 @@ jr_00C_4AB7:
     ret                                           ; $4AC6: $C9
 
 
-jr_00C_4AC7:
+jr_00C_4AC7::
     cp   $0E                                      ; $4AC7: $FE $0E
     jr   nc, jr_00C_4AD1                          ; $4AC9: $30 $06
 
@@ -1762,7 +1761,7 @@ jr_00C_4AC7:
     ret                                           ; $4AD0: $C9
 
 
-jr_00C_4AD1:
+jr_00C_4AD1::
     cp   $12                                      ; $4AD1: $FE $12
     jr   nc, jr_00C_4ADA                          ; $4AD3: $30 $05
 
@@ -1771,7 +1770,7 @@ jr_00C_4AD1:
     ret                                           ; $4AD9: $C9
 
 
-jr_00C_4ADA:
+jr_00C_4ADA::
     call Call_00C_4E02                            ; $4ADA: $CD $02 $4E
     call Call_00C_4E13                            ; $4ADD: $CD $13 $4E
     ldh  a, [rDIV]                                ; $4AE0: $F0 $04
@@ -1790,7 +1789,7 @@ jr_00C_4ADA:
     ret                                           ; $4AF8: $C9
 
 
-jr_00C_4AF9:
+jr_00C_4AF9::
     cp   $36                                      ; $4AF9: $FE $36
     jr   nc, jr_00C_4B03                          ; $4AFB: $30 $06
 
@@ -1799,7 +1798,7 @@ jr_00C_4AF9:
     ret                                           ; $4B02: $C9
 
 
-jr_00C_4B03:
+jr_00C_4B03::
     xor  a                                        ; $4B03: $AF
     ld   [$D559], a                               ; $4B04: $EA $59 $D5
     ret                                           ; $4B07: $C9
@@ -1819,7 +1818,7 @@ jr_00C_4B03:
     ret                                           ; $4B1B: $C9
 
 
-jr_00C_4B1C:
+jr_00C_4B1C::
     cp   $30                                      ; $4B1C: $FE $30
     jr   nc, jr_00C_4B26                          ; $4B1E: $30 $06
 
@@ -1828,7 +1827,7 @@ jr_00C_4B1C:
     ret                                           ; $4B25: $C9
 
 
-jr_00C_4B26:
+jr_00C_4B26::
     cp   $48                                      ; $4B26: $FE $48
     jr   nc, jr_00C_4B30                          ; $4B28: $30 $06
 
@@ -1837,7 +1836,7 @@ jr_00C_4B26:
     ret                                           ; $4B2F: $C9
 
 
-jr_00C_4B30:
+jr_00C_4B30::
     xor  a                                        ; $4B30: $AF
     ld   [$D559], a                               ; $4B31: $EA $59 $D5
     ret                                           ; $4B34: $C9
@@ -1857,7 +1856,7 @@ jr_00C_4B30:
     ret                                           ; $4B48: $C9
 
 
-jr_00C_4B49:
+jr_00C_4B49::
     cp   $3A                                      ; $4B49: $FE $3A
     jr   nc, jr_00C_4B53                          ; $4B4B: $30 $06
 
@@ -1866,7 +1865,7 @@ jr_00C_4B49:
     ret                                           ; $4B52: $C9
 
 
-jr_00C_4B53:
+jr_00C_4B53::
     xor  a                                        ; $4B53: $AF
     ld   [$D559], a                               ; $4B54: $EA $59 $D5
     ret                                           ; $4B57: $C9
@@ -1892,7 +1891,7 @@ jr_00C_4B53:
     ret                                           ; $4B72: $C9
 
 
-jr_00C_4B73:
+jr_00C_4B73::
     ld   [$D55D], a                               ; $4B73: $EA $5D $D5
     ret                                           ; $4B76: $C9
 
@@ -1906,7 +1905,7 @@ jr_00C_4B73:
     ret                                           ; $4B83: $C9
 
 
-jr_00C_4B84:
+jr_00C_4B84::
     cp   $09                                      ; $4B84: $FE $09
     jr   nc, jr_00C_4B8E                          ; $4B86: $30 $06
 
@@ -1915,7 +1914,7 @@ jr_00C_4B84:
     ret                                           ; $4B8D: $C9
 
 
-jr_00C_4B8E:
+jr_00C_4B8E::
     cp   $0F                                      ; $4B8E: $FE $0F
     jr   nc, jr_00C_4B98                          ; $4B90: $30 $06
 
@@ -1924,7 +1923,7 @@ jr_00C_4B8E:
     ret                                           ; $4B97: $C9
 
 
-jr_00C_4B98:
+jr_00C_4B98::
     cp   $12                                      ; $4B98: $FE $12
     jr   nc, jr_00C_4BA2                          ; $4B9A: $30 $06
 
@@ -1933,7 +1932,7 @@ jr_00C_4B98:
     ret                                           ; $4BA1: $C9
 
 
-jr_00C_4BA2:
+jr_00C_4BA2::
     xor  a                                        ; $4BA2: $AF
     ld   [$D559], a                               ; $4BA3: $EA $59 $D5
     ld   [$D558], a                               ; $4BA6: $EA $58 $D5
@@ -1960,11 +1959,11 @@ jr_00C_4BA2:
     ld   [$D55D], a                               ; $4BC8: $EA $5D $D5
     jr   jr_00C_4BD1                              ; $4BCB: $18 $04
 
-jr_00C_4BCD:
+jr_00C_4BCD::
     xor  a                                        ; $4BCD: $AF
     ld   [$D55D], a                               ; $4BCE: $EA $5D $D5
 
-jr_00C_4BD1:
+jr_00C_4BD1::
     ld   hl, $4BF5                                ; $4BD1: $21 $F5 $4B
     ld   b, $00                                   ; $4BD4: $06 $00
     ld   c, a                                     ; $4BD6: $4F
@@ -1975,7 +1974,7 @@ jr_00C_4BD1:
     add  b                                        ; $4BDD: $80
     ld   [$D553], a                               ; $4BDE: $EA $53 $D5
 
-jr_00C_4BE1:
+jr_00C_4BE1::
     ld   a, [$D559]                               ; $4BE1: $FA $59 $D5
     cp   $10                                      ; $4BE4: $FE $10
     ret  nz                                       ; $4BE6: $C0
@@ -1993,7 +1992,7 @@ jr_00C_4BE1:
 
     ld   [bc], a                                  ; $4BF5: $02
     ld   [bc], a                                  ; $4BF6: $02
-    ld   bc, $0101                                ; $4BF7: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4BF7: $01 $01 $01
     nop                                           ; $4BFA: $00
     nop                                           ; $4BFB: $00
     nop                                           ; $4BFC: $00
@@ -2010,7 +2009,7 @@ jr_00C_4BE1:
     nop                                           ; $4C09: $00
     nop                                           ; $4C0A: $00
     nop                                           ; $4C0B: $00
-    ld   bc, $0101                                ; $4C0C: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4C0C: $01 $01 $01
     ld   [bc], a                                  ; $4C0F: $02
     ld   [bc], a                                  ; $4C10: $02
     call Call_00C_4E0B                            ; $4C11: $CD $0B $4E
@@ -2031,7 +2030,7 @@ jr_00C_4BE1:
     ret                                           ; $4C29: $C9
 
 
-jr_00C_4C2A:
+jr_00C_4C2A::
     xor  a                                        ; $4C2A: $AF
     ld   [$D558], a                               ; $4C2B: $EA $58 $D5
     ret                                           ; $4C2E: $C9
@@ -2058,7 +2057,7 @@ jr_00C_4C2A:
     ret                                           ; $4C4C: $C9
 
 
-jr_00C_4C4D:
+jr_00C_4C4D::
     ld   [$D55D], a                               ; $4C4D: $EA $5D $D5
     ret                                           ; $4C50: $C9
 
@@ -2073,7 +2072,7 @@ jr_00C_4C4D:
     ret                                           ; $4C60: $C9
 
 
-jr_00C_4C61:
+jr_00C_4C61::
     cp   $0E                                      ; $4C61: $FE $0E
     jr   nc, jr_00C_4C6B                          ; $4C63: $30 $06
 
@@ -2082,7 +2081,7 @@ jr_00C_4C61:
     ret                                           ; $4C6A: $C9
 
 
-jr_00C_4C6B:
+jr_00C_4C6B::
     cp   $12                                      ; $4C6B: $FE $12
     jr   nc, jr_00C_4C75                          ; $4C6D: $30 $06
 
@@ -2091,7 +2090,7 @@ jr_00C_4C6B:
     ret                                           ; $4C74: $C9
 
 
-jr_00C_4C75:
+jr_00C_4C75::
     cp   $1C                                      ; $4C75: $FE $1C
     jr   nc, jr_00C_4C7F                          ; $4C77: $30 $06
 
@@ -2100,7 +2099,7 @@ jr_00C_4C75:
     ret                                           ; $4C7E: $C9
 
 
-jr_00C_4C7F:
+jr_00C_4C7F::
     cp   $20                                      ; $4C7F: $FE $20
     jr   nc, jr_00C_4C89                          ; $4C81: $30 $06
 
@@ -2109,7 +2108,7 @@ jr_00C_4C7F:
     ret                                           ; $4C88: $C9
 
 
-jr_00C_4C89:
+jr_00C_4C89::
     xor  a                                        ; $4C89: $AF
     ld   [$D559], a                               ; $4C8A: $EA $59 $D5
     ld   [$D558], a                               ; $4C8D: $EA $58 $D5
@@ -2119,7 +2118,7 @@ jr_00C_4C89:
     ret                                           ; $4C98: $C9
 
 
-Call_00C_4C99:
+Call_00C_4C99::
     ld   a, [$D55C]                               ; $4C99: $FA $5C $D5
     and  $03                                      ; $4C9C: $E6 $03
     ret  nz                                       ; $4C9E: $C0
@@ -2132,11 +2131,11 @@ Call_00C_4C99:
     ld   [$D55B], a                               ; $4CA7: $EA $5B $D5
     jr   jr_00C_4CB0                              ; $4CAA: $18 $04
 
-jr_00C_4CAC:
+jr_00C_4CAC::
     xor  a                                        ; $4CAC: $AF
     ld   [$D55B], a                               ; $4CAD: $EA $5B $D5
 
-jr_00C_4CB0:
+jr_00C_4CB0::
     ld   hl, $4BF5                                ; $4CB0: $21 $F5 $4B
     ld   b, $00                                   ; $4CB3: $06 $00
     ld   c, a                                     ; $4CB5: $4F
@@ -2166,7 +2165,7 @@ jr_00C_4CB0:
     ret                                           ; $4CDA: $C9
 
 
-jr_00C_4CDB:
+jr_00C_4CDB::
     ld   [$D55D], a                               ; $4CDB: $EA $5D $D5
     ret                                           ; $4CDE: $C9
 
@@ -2180,7 +2179,7 @@ jr_00C_4CDB:
     ret                                           ; $4CEA: $C9
 
 
-jr_00C_4CEB:
+jr_00C_4CEB::
     cp   $0E                                      ; $4CEB: $FE $0E
     jr   nc, jr_00C_4CF5                          ; $4CED: $30 $06
 
@@ -2189,7 +2188,7 @@ jr_00C_4CEB:
     ret                                           ; $4CF4: $C9
 
 
-jr_00C_4CF5:
+jr_00C_4CF5::
     cp   $12                                      ; $4CF5: $FE $12
     jr   nc, jr_00C_4CFE                          ; $4CF7: $30 $05
 
@@ -2198,7 +2197,7 @@ jr_00C_4CF5:
     ret                                           ; $4CFD: $C9
 
 
-jr_00C_4CFE:
+jr_00C_4CFE::
     call Call_00C_4E02                            ; $4CFE: $CD $02 $4E
     call Call_00C_4E13                            ; $4D01: $CD $13 $4E
     ldh  a, [rDIV]                                ; $4D04: $F0 $04
@@ -2223,7 +2222,7 @@ jr_00C_4CFE:
     ret                                           ; $4D23: $C9
 
 
-jr_00C_4D24:
+jr_00C_4D24::
     ld   [$D55D], a                               ; $4D24: $EA $5D $D5
     ret                                           ; $4D27: $C9
 
@@ -2237,7 +2236,7 @@ jr_00C_4D24:
     ret                                           ; $4D33: $C9
 
 
-jr_00C_4D34:
+jr_00C_4D34::
     cp   $0C                                      ; $4D34: $FE $0C
     jr   nc, jr_00C_4D3E                          ; $4D36: $30 $06
 
@@ -2246,7 +2245,7 @@ jr_00C_4D34:
     ret                                           ; $4D3D: $C9
 
 
-jr_00C_4D3E:
+jr_00C_4D3E::
     cp   $10                                      ; $4D3E: $FE $10
     jr   nc, jr_00C_4D47                          ; $4D40: $30 $05
 
@@ -2255,7 +2254,7 @@ jr_00C_4D3E:
     ret                                           ; $4D46: $C9
 
 
-jr_00C_4D47:
+jr_00C_4D47::
     call Call_00C_4E02                            ; $4D47: $CD $02 $4E
     call Call_00C_4E13                            ; $4D4A: $CD $13 $4E
     ldh  a, [rDIV]                                ; $4D4D: $F0 $04
@@ -2272,7 +2271,7 @@ jr_00C_4D47:
     ld   a, $C0                                   ; $4D5F: $3E $C0
     ld   [$D553], a                               ; $4D61: $EA $53 $D5
 
-jr_00C_4D64:
+jr_00C_4D64::
     call Call_00C_4E0B                            ; $4D64: $CD $0B $4E
     call Call_00C_4DF9                            ; $4D67: $CD $F9 $4D
     ret                                           ; $4D6A: $C9
@@ -2287,7 +2286,7 @@ jr_00C_4D64:
     ret                                           ; $4D75: $C9
 
 
-jr_00C_4D76:
+jr_00C_4D76::
     ld   a, $A0                                   ; $4D76: $3E $A0
     ld   [$D553], a                               ; $4D78: $EA $53 $D5
     ldh  a, [rDIV]                                ; $4D7B: $F0 $04
@@ -2300,7 +2299,7 @@ jr_00C_4D76:
     ret                                           ; $4D87: $C9
 
 
-jr_00C_4D88:
+jr_00C_4D88::
     cp   $01                                      ; $4D88: $FE $01
     jr   nz, jr_00C_4D92                          ; $4D8A: $20 $06
 
@@ -2309,7 +2308,7 @@ jr_00C_4D88:
     ret                                           ; $4D91: $C9
 
 
-jr_00C_4D92:
+jr_00C_4D92::
     cp   $02                                      ; $4D92: $FE $02
     jr   nz, jr_00C_4D9C                          ; $4D94: $20 $06
 
@@ -2318,7 +2317,7 @@ jr_00C_4D92:
     ret                                           ; $4D9B: $C9
 
 
-jr_00C_4D9C:
+jr_00C_4D9C::
     ld   a, $88                                   ; $4D9C: $3E $88
     ld   [$D552], a                               ; $4D9E: $EA $52 $D5
     ret                                           ; $4DA1: $C9
@@ -2336,7 +2335,7 @@ jr_00C_4D9C:
     ld   a, $D0                                   ; $4DAF: $3E $D0
     ld   [$D553], a                               ; $4DB1: $EA $53 $D5
 
-jr_00C_4DB4:
+jr_00C_4DB4::
     call Call_00C_4E0B                            ; $4DB4: $CD $0B $4E
     call Call_00C_4DF9                            ; $4DB7: $CD $F9 $4D
     ret                                           ; $4DBA: $C9
@@ -2355,7 +2354,7 @@ jr_00C_4DB4:
     ret                                           ; $4DCB: $C9
 
 
-jr_00C_4DCC:
+jr_00C_4DCC::
     ld   a, $A0                                   ; $4DCC: $3E $A0
     ld   [$D553], a                               ; $4DCE: $EA $53 $D5
     ldh  a, [rDIV]                                ; $4DD1: $F0 $04
@@ -2368,7 +2367,7 @@ jr_00C_4DCC:
     ret                                           ; $4DDD: $C9
 
 
-jr_00C_4DDE:
+jr_00C_4DDE::
     cp   $01                                      ; $4DDE: $FE $01
     jr   nz, jr_00C_4DE8                          ; $4DE0: $20 $06
 
@@ -2377,7 +2376,7 @@ jr_00C_4DDE:
     ret                                           ; $4DE7: $C9
 
 
-jr_00C_4DE8:
+jr_00C_4DE8::
     cp   $02                                      ; $4DE8: $FE $02
     jr   nz, jr_00C_4DF2                          ; $4DEA: $20 $06
 
@@ -2386,7 +2385,7 @@ jr_00C_4DE8:
     ret                                           ; $4DF1: $C9
 
 
-jr_00C_4DF2:
+jr_00C_4DF2::
     ld   a, $80                                   ; $4DF2: $3E $80
     ld   [$D552], a                               ; $4DF4: $EA $52 $D5
     ret                                           ; $4DF7: $C9
@@ -2395,28 +2394,28 @@ jr_00C_4DF2:
     ret                                           ; $4DF8: $C9
 
 
-Call_00C_4DF9:
+Call_00C_4DF9::
     ld   a, [$D550]                               ; $4DF9: $FA $50 $D5
     or   $80                                      ; $4DFC: $F6 $80
     ld   [$D550], a                               ; $4DFE: $EA $50 $D5
     ret                                           ; $4E01: $C9
 
 
-Call_00C_4E02:
+Call_00C_4E02::
     ld   a, [$D550]                               ; $4E02: $FA $50 $D5
     and  $7F                                      ; $4E05: $E6 $7F
     ld   [$D550], a                               ; $4E07: $EA $50 $D5
     ret                                           ; $4E0A: $C9
 
 
-Call_00C_4E0B:
+Call_00C_4E0B::
     ld   a, [$D555]                               ; $4E0B: $FA $55 $D5
     inc  a                                        ; $4E0E: $3C
     ld   [$D555], a                               ; $4E0F: $EA $55 $D5
     ret                                           ; $4E12: $C9
 
 
-Call_00C_4E13:
+Call_00C_4E13::
     ld   a, [$D555]                               ; $4E13: $FA $55 $D5
     dec  a                                        ; $4E16: $3D
     ld   [$D555], a                               ; $4E17: $EA $55 $D5
@@ -2473,7 +2472,7 @@ Call_00C_4E13:
     ld   [hl+], a                                 ; $4E83: $22
     ld   [hl], a                                  ; $4E84: $77
 
-jr_00C_4E85:
+jr_00C_4E85::
     xor  a                                        ; $4E85: $AF
     ld   [$D510], a                               ; $4E86: $EA $10 $D5
     ld   [$D511], a                               ; $4E89: $EA $11 $D5
@@ -2536,49 +2535,49 @@ jr_00C_4E85:
     ret                                           ; $4F05: $C9
 
 
-jr_00C_4F06:
+jr_00C_4F06::
     ld   a, $03                                   ; $4F06: $3E $03
     ld   [$D767], a                               ; $4F08: $EA $67 $D7
     ret                                           ; $4F0B: $C9
 
 
-jr_00C_4F0C:
+jr_00C_4F0C::
     ld   a, $13                                   ; $4F0C: $3E $13
     ld   [$D767], a                               ; $4F0E: $EA $67 $D7
     ret                                           ; $4F11: $C9
 
 
-jr_00C_4F12:
+jr_00C_4F12::
     ld   a, $23                                   ; $4F12: $3E $23
     ld   [$D767], a                               ; $4F14: $EA $67 $D7
     ret                                           ; $4F17: $C9
 
 
-jr_00C_4F18:
+jr_00C_4F18::
     ld   a, $33                                   ; $4F18: $3E $33
     ld   [$D767], a                               ; $4F1A: $EA $67 $D7
     ret                                           ; $4F1D: $C9
 
 
-jr_00C_4F1E:
+jr_00C_4F1E::
     ld   a, $43                                   ; $4F1E: $3E $43
     ld   [$D767], a                               ; $4F20: $EA $67 $D7
     ret                                           ; $4F23: $C9
 
 
-jr_00C_4F24:
+jr_00C_4F24::
     ld   a, $53                                   ; $4F24: $3E $53
     ld   [$D767], a                               ; $4F26: $EA $67 $D7
     ret                                           ; $4F29: $C9
 
 
-jr_00C_4F2A:
+jr_00C_4F2A::
     ld   a, $63                                   ; $4F2A: $3E $63
     ld   [$D767], a                               ; $4F2C: $EA $67 $D7
     ret                                           ; $4F2F: $C9
 
 
-jr_00C_4F30:
+jr_00C_4F30::
     ld   a, [$CFD3]                               ; $4F30: $FA $D3 $CF
     and  a                                        ; $4F33: $A7
     jr   z, jr_00C_4F39                           ; $4F34: $28 $03
@@ -2586,13 +2585,13 @@ jr_00C_4F30:
     inc  a                                        ; $4F36: $3C
     jr   jr_00C_4F3C                              ; $4F37: $18 $03
 
-jr_00C_4F39:
+jr_00C_4F39::
     ld   a, [$CF51]                               ; $4F39: $FA $51 $CF
 
-jr_00C_4F3C:
+jr_00C_4F3C::
     add  a                                        ; $4F3C: $87
 
-jr_00C_4F3D:
+jr_00C_4F3D::
     add  a                                        ; $4F3D: $87
     add  a                                        ; $4F3E: $87
     add  a                                        ; $4F3F: $87
@@ -2603,736 +2602,736 @@ jr_00C_4F3D:
     nop                                           ; $4F48: $00
     jr   nz, jr_00C_4F4B                          ; $4F49: $20 $00
 
-jr_00C_4F4B:
+jr_00C_4F4B::
     jr   nz, jr_00C_4F4D                          ; $4F4B: $20 $00
 
-jr_00C_4F4D:
+jr_00C_4F4D::
     jr   nz, jr_00C_4F4F                          ; $4F4D: $20 $00
 
-jr_00C_4F4F:
+jr_00C_4F4F::
     jr   nz, jr_00C_4F51                          ; $4F4F: $20 $00
 
-jr_00C_4F51:
+jr_00C_4F51::
     jr   nz, jr_00C_4F53                          ; $4F51: $20 $00
 
-jr_00C_4F53:
+jr_00C_4F53::
     jr   nz, jr_00C_4F55                          ; $4F53: $20 $00
 
-jr_00C_4F55:
+jr_00C_4F55::
     jr   nz, jr_00C_4F57                          ; $4F55: $20 $00
 
-jr_00C_4F57:
+jr_00C_4F57::
     jr   nz, jr_00C_4F59                          ; $4F57: $20 $00
 
-jr_00C_4F59:
+jr_00C_4F59::
     jr   nz, jr_00C_4F5B                          ; $4F59: $20 $00
 
-jr_00C_4F5B:
+jr_00C_4F5B::
     jr   nz, jr_00C_4F5D                          ; $4F5B: $20 $00
 
-jr_00C_4F5D:
+jr_00C_4F5D::
     jr   nz, jr_00C_4F5F                          ; $4F5D: $20 $00
 
-jr_00C_4F5F:
+jr_00C_4F5F::
     jr   nz, jr_00C_4F61                          ; $4F5F: $20 $00
 
-jr_00C_4F61:
+jr_00C_4F61::
     jr   nz, jr_00C_4F63                          ; $4F61: $20 $00
 
-jr_00C_4F63:
+jr_00C_4F63::
     jr   nz, jr_00C_4F65                          ; $4F63: $20 $00
 
-jr_00C_4F65:
+jr_00C_4F65::
     jr   nz, jr_00C_4FE3                          ; $4F65: $20 $7C
 
     ld   d, c                                     ; $4F67: $51
     nop                                           ; $4F68: $00
     jr   nz, jr_00C_4F6B                          ; $4F69: $20 $00
 
-jr_00C_4F6B:
+jr_00C_4F6B::
     jr   nz, jr_00C_4F6D                          ; $4F6B: $20 $00
 
-jr_00C_4F6D:
+jr_00C_4F6D::
     jr   nz, jr_00C_4F6F                          ; $4F6D: $20 $00
 
-jr_00C_4F6F:
+jr_00C_4F6F::
     jr   nz, jr_00C_4F71                          ; $4F6F: $20 $00
 
-jr_00C_4F71:
+jr_00C_4F71::
     jr   nz, jr_00C_4F73                          ; $4F71: $20 $00
 
-jr_00C_4F73:
+jr_00C_4F73::
     jr   nz, jr_00C_4F75                          ; $4F73: $20 $00
 
-jr_00C_4F75:
+jr_00C_4F75::
     jr   nz, jr_00C_4F77                          ; $4F75: $20 $00
 
-jr_00C_4F77:
+jr_00C_4F77::
     jr   nz, jr_00C_4F79                          ; $4F77: $20 $00
 
-jr_00C_4F79:
+jr_00C_4F79::
     jr   nz, jr_00C_4F7B                          ; $4F79: $20 $00
 
-jr_00C_4F7B:
+jr_00C_4F7B::
     jr   nz, jr_00C_4F7D                          ; $4F7B: $20 $00
 
-jr_00C_4F7D:
+jr_00C_4F7D::
     jr   nz, jr_00C_4F7F                          ; $4F7D: $20 $00
 
-jr_00C_4F7F:
+jr_00C_4F7F::
     jr   nz, jr_00C_4F81                          ; $4F7F: $20 $00
 
-jr_00C_4F81:
+jr_00C_4F81::
     jr   nz, jr_00C_4F83                          ; $4F81: $20 $00
 
-jr_00C_4F83:
+jr_00C_4F83::
     jr   nz, jr_00C_4F85                          ; $4F83: $20 $00
 
-jr_00C_4F85:
+jr_00C_4F85::
     jr   nz, @-$75                                ; $4F85: $20 $89
 
     ld   d, c                                     ; $4F87: $51
     nop                                           ; $4F88: $00
     jr   nz, jr_00C_4F8B                          ; $4F89: $20 $00
 
-jr_00C_4F8B:
+jr_00C_4F8B::
     jr   nz, jr_00C_4F8D                          ; $4F8B: $20 $00
 
-jr_00C_4F8D:
+jr_00C_4F8D::
     jr   nz, jr_00C_4F8F                          ; $4F8D: $20 $00
 
-jr_00C_4F8F:
+jr_00C_4F8F::
     jr   nz, jr_00C_4F91                          ; $4F8F: $20 $00
 
-jr_00C_4F91:
+jr_00C_4F91::
     jr   nz, jr_00C_4F93                          ; $4F91: $20 $00
 
-jr_00C_4F93:
+jr_00C_4F93::
     jr   nz, jr_00C_4F95                          ; $4F93: $20 $00
 
-jr_00C_4F95:
+jr_00C_4F95::
     jr   nz, jr_00C_4F97                          ; $4F95: $20 $00
 
-jr_00C_4F97:
+jr_00C_4F97::
     jr   nz, jr_00C_4F99                          ; $4F97: $20 $00
 
-jr_00C_4F99:
+jr_00C_4F99::
     jr   nz, jr_00C_4F9B                          ; $4F99: $20 $00
 
-jr_00C_4F9B:
+jr_00C_4F9B::
     jr   nz, jr_00C_4F9D                          ; $4F9B: $20 $00
 
-jr_00C_4F9D:
+jr_00C_4F9D::
     jr   nz, jr_00C_4F9F                          ; $4F9D: $20 $00
 
-jr_00C_4F9F:
+jr_00C_4F9F::
     jr   nz, jr_00C_4FA1                          ; $4F9F: $20 $00
 
-jr_00C_4FA1:
+jr_00C_4FA1::
     jr   nz, jr_00C_4FA3                          ; $4FA1: $20 $00
 
-jr_00C_4FA3:
+jr_00C_4FA3::
     jr   nz, jr_00C_4FA5                          ; $4FA3: $20 $00
 
-jr_00C_4FA5:
+jr_00C_4FA5::
     jr   nz, jr_00C_4F3D                          ; $4FA5: $20 $96
 
     ld   d, c                                     ; $4FA7: $51
     nop                                           ; $4FA8: $00
     jr   nz, jr_00C_4FAB                          ; $4FA9: $20 $00
 
-jr_00C_4FAB:
+jr_00C_4FAB::
     jr   nz, jr_00C_4FAD                          ; $4FAB: $20 $00
 
-jr_00C_4FAD:
+jr_00C_4FAD::
     jr   nz, jr_00C_4FAF                          ; $4FAD: $20 $00
 
-jr_00C_4FAF:
+jr_00C_4FAF::
     jr   nz, jr_00C_4FB1                          ; $4FAF: $20 $00
 
-jr_00C_4FB1:
+jr_00C_4FB1::
     jr   nz, jr_00C_4FB3                          ; $4FB1: $20 $00
 
-jr_00C_4FB3:
+jr_00C_4FB3::
     jr   nz, jr_00C_4FB5                          ; $4FB3: $20 $00
 
-jr_00C_4FB5:
+jr_00C_4FB5::
     jr   nz, jr_00C_4FB7                          ; $4FB5: $20 $00
 
-jr_00C_4FB7:
+jr_00C_4FB7::
     jr   nz, jr_00C_4FB9                          ; $4FB7: $20 $00
 
-jr_00C_4FB9:
+jr_00C_4FB9::
     jr   nz, jr_00C_4FBB                          ; $4FB9: $20 $00
 
-jr_00C_4FBB:
+jr_00C_4FBB::
     jr   nz, jr_00C_4FBD                          ; $4FBB: $20 $00
 
-jr_00C_4FBD:
+jr_00C_4FBD::
     jr   nz, jr_00C_4FBF                          ; $4FBD: $20 $00
 
-jr_00C_4FBF:
+jr_00C_4FBF::
     jr   nz, jr_00C_4FC1                          ; $4FBF: $20 $00
 
-jr_00C_4FC1:
+jr_00C_4FC1::
     jr   nz, jr_00C_4FC3                          ; $4FC1: $20 $00
 
-jr_00C_4FC3:
+jr_00C_4FC3::
     jr   nz, jr_00C_4FC5                          ; $4FC3: $20 $00
 
-jr_00C_4FC5:
+jr_00C_4FC5::
     jr   nz, @-$5B                                ; $4FC5: $20 $A3
 
     ld   d, c                                     ; $4FC7: $51
     nop                                           ; $4FC8: $00
     jr   nz, jr_00C_4FCB                          ; $4FC9: $20 $00
 
-jr_00C_4FCB:
+jr_00C_4FCB::
     jr   nz, jr_00C_4FCD                          ; $4FCB: $20 $00
 
-jr_00C_4FCD:
+jr_00C_4FCD::
     jr   nz, jr_00C_4FCF                          ; $4FCD: $20 $00
 
-jr_00C_4FCF:
+jr_00C_4FCF::
     jr   nz, jr_00C_4FD1                          ; $4FCF: $20 $00
 
-jr_00C_4FD1:
+jr_00C_4FD1::
     jr   nz, jr_00C_4FD3                          ; $4FD1: $20 $00
 
-jr_00C_4FD3:
+jr_00C_4FD3::
     jr   nz, jr_00C_4FD5                          ; $4FD3: $20 $00
 
-jr_00C_4FD5:
+jr_00C_4FD5::
     jr   nz, jr_00C_4FD7                          ; $4FD5: $20 $00
 
-jr_00C_4FD7:
+jr_00C_4FD7::
     jr   nz, jr_00C_4FD9                          ; $4FD7: $20 $00
 
-jr_00C_4FD9:
+jr_00C_4FD9::
     jr   nz, jr_00C_4FDB                          ; $4FD9: $20 $00
 
-jr_00C_4FDB:
+jr_00C_4FDB::
     jr   nz, jr_00C_4FDD                          ; $4FDB: $20 $00
 
-jr_00C_4FDD:
+jr_00C_4FDD::
     jr   nz, jr_00C_4FDF                          ; $4FDD: $20 $00
 
-jr_00C_4FDF:
+jr_00C_4FDF::
     jr   nz, jr_00C_4FE1                          ; $4FDF: $20 $00
 
-jr_00C_4FE1:
+jr_00C_4FE1::
     jr   nz, jr_00C_4FE3                          ; $4FE1: $20 $00
 
-jr_00C_4FE3:
+jr_00C_4FE3::
     jr   nz, jr_00C_4FE5                          ; $4FE3: $20 $00
 
-jr_00C_4FE5:
+jr_00C_4FE5::
     jr   nz, jr_00C_4F97                          ; $4FE5: $20 $B0
 
     ld   d, c                                     ; $4FE7: $51
     nop                                           ; $4FE8: $00
     jr   nz, jr_00C_4FEB                          ; $4FE9: $20 $00
 
-jr_00C_4FEB:
+jr_00C_4FEB::
     jr   nz, jr_00C_4FED                          ; $4FEB: $20 $00
 
-jr_00C_4FED:
+jr_00C_4FED::
     jr   nz, jr_00C_4FEF                          ; $4FED: $20 $00
 
-jr_00C_4FEF:
+jr_00C_4FEF::
     jr   nz, jr_00C_4FF1                          ; $4FEF: $20 $00
 
-jr_00C_4FF1:
+jr_00C_4FF1::
     jr   nz, jr_00C_4FF3                          ; $4FF1: $20 $00
 
-jr_00C_4FF3:
+jr_00C_4FF3::
     jr   nz, jr_00C_4FF5                          ; $4FF3: $20 $00
 
-jr_00C_4FF5:
+jr_00C_4FF5::
     jr   nz, jr_00C_4FF7                          ; $4FF5: $20 $00
 
-jr_00C_4FF7:
+jr_00C_4FF7::
     jr   nz, jr_00C_4FF9                          ; $4FF7: $20 $00
 
-jr_00C_4FF9:
+jr_00C_4FF9::
     jr   nz, jr_00C_4FFB                          ; $4FF9: $20 $00
 
-jr_00C_4FFB:
+jr_00C_4FFB::
     jr   nz, jr_00C_4FFD                          ; $4FFB: $20 $00
 
-jr_00C_4FFD:
+jr_00C_4FFD::
     jr   nz, jr_00C_4FFF                          ; $4FFD: $20 $00
 
-jr_00C_4FFF:
+jr_00C_4FFF::
     jr   nz, jr_00C_5001                          ; $4FFF: $20 $00
 
-jr_00C_5001:
+jr_00C_5001::
     jr   nz, jr_00C_5003                          ; $5001: $20 $00
 
-jr_00C_5003:
+jr_00C_5003::
     jr   nz, jr_00C_5005                          ; $5003: $20 $00
 
-jr_00C_5005:
+jr_00C_5005::
     jr   nz, @-$41                                ; $5005: $20 $BD
 
     ld   d, c                                     ; $5007: $51
     nop                                           ; $5008: $00
     jr   nz, jr_00C_500B                          ; $5009: $20 $00
 
-jr_00C_500B:
+jr_00C_500B::
     jr   nz, jr_00C_500D                          ; $500B: $20 $00
 
-jr_00C_500D:
+jr_00C_500D::
     jr   nz, jr_00C_500F                          ; $500D: $20 $00
 
-jr_00C_500F:
+jr_00C_500F::
     jr   nz, jr_00C_5011                          ; $500F: $20 $00
 
-jr_00C_5011:
+jr_00C_5011::
     jr   nz, jr_00C_5013                          ; $5011: $20 $00
 
-jr_00C_5013:
+jr_00C_5013::
     jr   nz, jr_00C_5015                          ; $5013: $20 $00
 
-jr_00C_5015:
+jr_00C_5015::
     jr   nz, jr_00C_5017                          ; $5015: $20 $00
 
-jr_00C_5017:
+jr_00C_5017::
     jr   nz, jr_00C_5019                          ; $5017: $20 $00
 
-jr_00C_5019:
+jr_00C_5019::
     jr   nz, jr_00C_501B                          ; $5019: $20 $00
 
-jr_00C_501B:
+jr_00C_501B::
     jr   nz, jr_00C_501D                          ; $501B: $20 $00
 
-jr_00C_501D:
+jr_00C_501D::
     jr   nz, jr_00C_501F                          ; $501D: $20 $00
 
-jr_00C_501F:
+jr_00C_501F::
     jr   nz, jr_00C_5021                          ; $501F: $20 $00
 
-jr_00C_5021:
+jr_00C_5021::
     jr   nz, jr_00C_5023                          ; $5021: $20 $00
 
-jr_00C_5023:
+jr_00C_5023::
     jr   nz, jr_00C_5025                          ; $5023: $20 $00
 
-jr_00C_5025:
+jr_00C_5025::
     jr   nz, @-$37                                ; $5025: $20 $C7
 
     ld   d, c                                     ; $5027: $51
     nop                                           ; $5028: $00
     jr   nz, jr_00C_502B                          ; $5029: $20 $00
 
-jr_00C_502B:
+jr_00C_502B::
     jr   nz, jr_00C_502D                          ; $502B: $20 $00
 
-jr_00C_502D:
+jr_00C_502D::
     jr   nz, jr_00C_502F                          ; $502D: $20 $00
 
-jr_00C_502F:
+jr_00C_502F::
     jr   nz, jr_00C_5031                          ; $502F: $20 $00
 
-jr_00C_5031:
+jr_00C_5031::
     jr   nz, jr_00C_5033                          ; $5031: $20 $00
 
-jr_00C_5033:
+jr_00C_5033::
     jr   nz, jr_00C_5035                          ; $5033: $20 $00
 
-jr_00C_5035:
+jr_00C_5035::
     jr   nz, jr_00C_5037                          ; $5035: $20 $00
 
-jr_00C_5037:
+jr_00C_5037::
     jr   nz, jr_00C_5039                          ; $5037: $20 $00
 
-jr_00C_5039:
+jr_00C_5039::
     jr   nz, jr_00C_503B                          ; $5039: $20 $00
 
-jr_00C_503B:
+jr_00C_503B::
     jr   nz, jr_00C_503D                          ; $503B: $20 $00
 
-jr_00C_503D:
+jr_00C_503D::
     jr   nz, jr_00C_503F                          ; $503D: $20 $00
 
-jr_00C_503F:
+jr_00C_503F::
     jr   nz, jr_00C_5041                          ; $503F: $20 $00
 
-jr_00C_5041:
+jr_00C_5041::
     jr   nz, jr_00C_5043                          ; $5041: $20 $00
 
-jr_00C_5043:
+jr_00C_5043::
     jr   nz, jr_00C_5045                          ; $5043: $20 $00
 
-jr_00C_5045:
+jr_00C_5045::
     jr   nz, @-$2D                                ; $5045: $20 $D1
 
     ld   d, c                                     ; $5047: $51
     nop                                           ; $5048: $00
     jr   nz, jr_00C_504B                          ; $5049: $20 $00
 
-jr_00C_504B:
+jr_00C_504B::
     jr   nz, jr_00C_504D                          ; $504B: $20 $00
 
-jr_00C_504D:
+jr_00C_504D::
     jr   nz, jr_00C_504F                          ; $504D: $20 $00
 
-jr_00C_504F:
+jr_00C_504F::
     jr   nz, jr_00C_5051                          ; $504F: $20 $00
 
-jr_00C_5051:
+jr_00C_5051::
     jr   nz, jr_00C_5053                          ; $5051: $20 $00
 
-jr_00C_5053:
+jr_00C_5053::
     jr   nz, jr_00C_5055                          ; $5053: $20 $00
 
-jr_00C_5055:
+jr_00C_5055::
     jr   nz, jr_00C_5057                          ; $5055: $20 $00
 
-jr_00C_5057:
+jr_00C_5057::
     jr   nz, jr_00C_5059                          ; $5057: $20 $00
 
-jr_00C_5059:
+jr_00C_5059::
     jr   nz, jr_00C_505B                          ; $5059: $20 $00
 
-jr_00C_505B:
+jr_00C_505B::
     jr   nz, jr_00C_505D                          ; $505B: $20 $00
 
-jr_00C_505D:
+jr_00C_505D::
     jr   nz, jr_00C_505F                          ; $505D: $20 $00
 
-jr_00C_505F:
+jr_00C_505F::
     jr   nz, jr_00C_5061                          ; $505F: $20 $00
 
-jr_00C_5061:
+jr_00C_5061::
     jr   nz, jr_00C_5063                          ; $5061: $20 $00
 
-jr_00C_5063:
+jr_00C_5063::
     jr   nz, jr_00C_5065                          ; $5063: $20 $00
 
-jr_00C_5065:
+jr_00C_5065::
     jr   nz, @+$0D                                ; $5065: $20 $0B
 
     ld   d, d                                     ; $5067: $52
     nop                                           ; $5068: $00
     jr   nz, jr_00C_506B                          ; $5069: $20 $00
 
-jr_00C_506B:
+jr_00C_506B::
     jr   nz, jr_00C_506D                          ; $506B: $20 $00
 
-jr_00C_506D:
+jr_00C_506D::
     jr   nz, jr_00C_506F                          ; $506D: $20 $00
 
-jr_00C_506F:
+jr_00C_506F::
     jr   nz, jr_00C_5071                          ; $506F: $20 $00
 
-jr_00C_5071:
+jr_00C_5071::
     jr   nz, jr_00C_5073                          ; $5071: $20 $00
 
-jr_00C_5073:
+jr_00C_5073::
     jr   nz, jr_00C_5075                          ; $5073: $20 $00
 
-jr_00C_5075:
+jr_00C_5075::
     jr   nz, jr_00C_5077                          ; $5075: $20 $00
 
-jr_00C_5077:
+jr_00C_5077::
     jr   nz, jr_00C_5079                          ; $5077: $20 $00
 
-jr_00C_5079:
+jr_00C_5079::
     jr   nz, jr_00C_507B                          ; $5079: $20 $00
 
-jr_00C_507B:
+jr_00C_507B::
     jr   nz, jr_00C_507D                          ; $507B: $20 $00
 
-jr_00C_507D:
+jr_00C_507D::
     jr   nz, jr_00C_507F                          ; $507D: $20 $00
 
-jr_00C_507F:
+jr_00C_507F::
     jr   nz, jr_00C_5081                          ; $507F: $20 $00
 
-jr_00C_5081:
+jr_00C_5081::
     jr   nz, jr_00C_5083                          ; $5081: $20 $00
 
-jr_00C_5083:
+jr_00C_5083::
     jr   nz, jr_00C_5085                          ; $5083: $20 $00
 
-jr_00C_5085:
+jr_00C_5085::
     jr   nz, @+$47                                ; $5085: $20 $45
 
     ld   d, d                                     ; $5087: $52
     nop                                           ; $5088: $00
     jr   nz, jr_00C_508B                          ; $5089: $20 $00
 
-jr_00C_508B:
+jr_00C_508B::
     jr   nz, jr_00C_508D                          ; $508B: $20 $00
 
-jr_00C_508D:
+jr_00C_508D::
     jr   nz, jr_00C_508F                          ; $508D: $20 $00
 
-jr_00C_508F:
+jr_00C_508F::
     jr   nz, jr_00C_5091                          ; $508F: $20 $00
 
-jr_00C_5091:
+jr_00C_5091::
     jr   nz, jr_00C_5093                          ; $5091: $20 $00
 
-jr_00C_5093:
+jr_00C_5093::
     jr   nz, jr_00C_5095                          ; $5093: $20 $00
 
-jr_00C_5095:
+jr_00C_5095::
     jr   nz, jr_00C_5097                          ; $5095: $20 $00
 
-jr_00C_5097:
+jr_00C_5097::
     jr   nz, jr_00C_5099                          ; $5097: $20 $00
 
-jr_00C_5099:
+jr_00C_5099::
     jr   nz, jr_00C_509B                          ; $5099: $20 $00
 
-jr_00C_509B:
+jr_00C_509B::
     jr   nz, jr_00C_509D                          ; $509B: $20 $00
 
-jr_00C_509D:
+jr_00C_509D::
     jr   nz, jr_00C_509F                          ; $509D: $20 $00
 
-jr_00C_509F:
+jr_00C_509F::
     jr   nz, jr_00C_50A1                          ; $509F: $20 $00
 
-jr_00C_50A1:
+jr_00C_50A1::
     jr   nz, jr_00C_50A3                          ; $50A1: $20 $00
 
-jr_00C_50A3:
+jr_00C_50A3::
     jr   nz, jr_00C_50A5                          ; $50A3: $20 $00
 
-jr_00C_50A5:
+jr_00C_50A5::
     jr   nz, @+$81                                ; $50A5: $20 $7F
 
     ld   d, d                                     ; $50A7: $52
     nop                                           ; $50A8: $00
     jr   nz, jr_00C_50AB                          ; $50A9: $20 $00
 
-jr_00C_50AB:
+jr_00C_50AB::
     jr   nz, jr_00C_50AD                          ; $50AB: $20 $00
 
-jr_00C_50AD:
+jr_00C_50AD::
     jr   nz, jr_00C_50AF                          ; $50AD: $20 $00
 
-jr_00C_50AF:
+jr_00C_50AF::
     jr   nz, jr_00C_50B1                          ; $50AF: $20 $00
 
-jr_00C_50B1:
+jr_00C_50B1::
     jr   nz, jr_00C_50B3                          ; $50B1: $20 $00
 
-jr_00C_50B3:
+jr_00C_50B3::
     jr   nz, jr_00C_50B5                          ; $50B3: $20 $00
 
-jr_00C_50B5:
+jr_00C_50B5::
     jr   nz, jr_00C_50B7                          ; $50B5: $20 $00
 
-jr_00C_50B7:
+jr_00C_50B7::
     jr   nz, jr_00C_50B9                          ; $50B7: $20 $00
 
-jr_00C_50B9:
+jr_00C_50B9::
     jr   nz, jr_00C_50BB                          ; $50B9: $20 $00
 
-jr_00C_50BB:
+jr_00C_50BB::
     jr   nz, jr_00C_50BD                          ; $50BB: $20 $00
 
-jr_00C_50BD:
+jr_00C_50BD::
     jr   nz, jr_00C_50BF                          ; $50BD: $20 $00
 
-jr_00C_50BF:
+jr_00C_50BF::
     jr   nz, jr_00C_50C1                          ; $50BF: $20 $00
 
-jr_00C_50C1:
+jr_00C_50C1::
     jr   nz, jr_00C_50C3                          ; $50C1: $20 $00
 
-jr_00C_50C3:
+jr_00C_50C3::
     jr   nz, jr_00C_50C5                          ; $50C3: $20 $00
 
-jr_00C_50C5:
+jr_00C_50C5::
     jr   nz, jr_00C_5061                          ; $50C5: $20 $9A
 
     ld   d, d                                     ; $50C7: $52
     nop                                           ; $50C8: $00
     jr   nz, jr_00C_50CB                          ; $50C9: $20 $00
 
-jr_00C_50CB:
+jr_00C_50CB::
     jr   nz, jr_00C_50CD                          ; $50CB: $20 $00
 
-jr_00C_50CD:
+jr_00C_50CD::
     jr   nz, jr_00C_50CF                          ; $50CD: $20 $00
 
-jr_00C_50CF:
+jr_00C_50CF::
     jr   nz, jr_00C_50D1                          ; $50CF: $20 $00
 
-jr_00C_50D1:
+jr_00C_50D1::
     jr   nz, jr_00C_50D3                          ; $50D1: $20 $00
 
-jr_00C_50D3:
+jr_00C_50D3::
     jr   nz, jr_00C_50D5                          ; $50D3: $20 $00
 
-jr_00C_50D5:
+jr_00C_50D5::
     jr   nz, jr_00C_50D7                          ; $50D5: $20 $00
 
-jr_00C_50D7:
+jr_00C_50D7::
     jr   nz, jr_00C_50D9                          ; $50D7: $20 $00
 
-jr_00C_50D9:
+jr_00C_50D9::
     jr   nz, jr_00C_50DB                          ; $50D9: $20 $00
 
-jr_00C_50DB:
+jr_00C_50DB::
     jr   nz, jr_00C_50DD                          ; $50DB: $20 $00
 
-jr_00C_50DD:
+jr_00C_50DD::
     jr   nz, jr_00C_50DF                          ; $50DD: $20 $00
 
-jr_00C_50DF:
+jr_00C_50DF::
     jr   nz, jr_00C_50E1                          ; $50DF: $20 $00
 
-jr_00C_50E1:
+jr_00C_50E1::
     jr   nz, jr_00C_50E3                          ; $50E1: $20 $00
 
-jr_00C_50E3:
+jr_00C_50E3::
     jr   nz, jr_00C_50E5                          ; $50E3: $20 $00
 
-jr_00C_50E5:
+jr_00C_50E5::
     jr   nz, jr_00C_5081                          ; $50E5: $20 $9A
 
     ld   d, d                                     ; $50E7: $52
     nop                                           ; $50E8: $00
     jr   nz, jr_00C_50EB                          ; $50E9: $20 $00
 
-jr_00C_50EB:
+jr_00C_50EB::
     jr   nz, jr_00C_50ED                          ; $50EB: $20 $00
 
-jr_00C_50ED:
+jr_00C_50ED::
     jr   nz, jr_00C_50EF                          ; $50ED: $20 $00
 
-jr_00C_50EF:
+jr_00C_50EF::
     jr   nz, jr_00C_50F1                          ; $50EF: $20 $00
 
-jr_00C_50F1:
+jr_00C_50F1::
     jr   nz, jr_00C_50F3                          ; $50F1: $20 $00
 
-jr_00C_50F3:
+jr_00C_50F3::
     jr   nz, jr_00C_50F5                          ; $50F3: $20 $00
 
-jr_00C_50F5:
+jr_00C_50F5::
     jr   nz, jr_00C_50F7                          ; $50F5: $20 $00
 
-jr_00C_50F7:
+jr_00C_50F7::
     jr   nz, jr_00C_50F9                          ; $50F7: $20 $00
 
-jr_00C_50F9:
+jr_00C_50F9::
     jr   nz, jr_00C_50FB                          ; $50F9: $20 $00
 
-jr_00C_50FB:
+jr_00C_50FB::
     jr   nz, jr_00C_50FD                          ; $50FB: $20 $00
 
-jr_00C_50FD:
+jr_00C_50FD::
     jr   nz, jr_00C_50FF                          ; $50FD: $20 $00
 
-jr_00C_50FF:
+jr_00C_50FF::
     jr   nz, jr_00C_5101                          ; $50FF: $20 $00
 
-jr_00C_5101:
+jr_00C_5101::
     jr   nz, jr_00C_5103                          ; $5101: $20 $00
 
-jr_00C_5103:
+jr_00C_5103::
     jr   nz, jr_00C_5105                          ; $5103: $20 $00
 
-jr_00C_5105:
+jr_00C_5105::
     jr   nz, jr_00C_50A1                          ; $5105: $20 $9A
 
     ld   d, d                                     ; $5107: $52
     nop                                           ; $5108: $00
     jr   nz, jr_00C_510B                          ; $5109: $20 $00
 
-jr_00C_510B:
+jr_00C_510B::
     jr   nz, jr_00C_510D                          ; $510B: $20 $00
 
-jr_00C_510D:
+jr_00C_510D::
     jr   nz, jr_00C_510F                          ; $510D: $20 $00
 
-jr_00C_510F:
+jr_00C_510F::
     jr   nz, jr_00C_5111                          ; $510F: $20 $00
 
-jr_00C_5111:
+jr_00C_5111::
     jr   nz, jr_00C_5113                          ; $5111: $20 $00
 
-jr_00C_5113:
+jr_00C_5113::
     jr   nz, jr_00C_5115                          ; $5113: $20 $00
 
-jr_00C_5115:
+jr_00C_5115::
     jr   nz, jr_00C_5117                          ; $5115: $20 $00
 
-jr_00C_5117:
+jr_00C_5117::
     jr   nz, jr_00C_5119                          ; $5117: $20 $00
 
-jr_00C_5119:
+jr_00C_5119::
     jr   nz, jr_00C_511B                          ; $5119: $20 $00
 
-jr_00C_511B:
+jr_00C_511B::
     jr   nz, jr_00C_511D                          ; $511B: $20 $00
 
-jr_00C_511D:
+jr_00C_511D::
     jr   nz, jr_00C_511F                          ; $511D: $20 $00
 
-jr_00C_511F:
+jr_00C_511F::
     jr   nz, jr_00C_5121                          ; $511F: $20 $00
 
-jr_00C_5121:
+jr_00C_5121::
     jr   nz, jr_00C_5123                          ; $5121: $20 $00
 
-jr_00C_5123:
+jr_00C_5123::
     jr   nz, jr_00C_5125                          ; $5123: $20 $00
 
-jr_00C_5125:
+jr_00C_5125::
     jr   nz, jr_00C_50C1                          ; $5125: $20 $9A
 
     ld   d, d                                     ; $5127: $52
     nop                                           ; $5128: $00
     jr   nz, jr_00C_512B                          ; $5129: $20 $00
 
-jr_00C_512B:
+jr_00C_512B::
     jr   nz, jr_00C_512D                          ; $512B: $20 $00
 
-jr_00C_512D:
+jr_00C_512D::
     jr   nz, jr_00C_512F                          ; $512D: $20 $00
 
-jr_00C_512F:
+jr_00C_512F::
     jr   nz, jr_00C_5131                          ; $512F: $20 $00
 
-jr_00C_5131:
+jr_00C_5131::
     jr   nz, jr_00C_5133                          ; $5131: $20 $00
 
-jr_00C_5133:
+jr_00C_5133::
     jr   nz, jr_00C_5135                          ; $5133: $20 $00
 
-jr_00C_5135:
+jr_00C_5135::
     jr   nz, jr_00C_5137                          ; $5135: $20 $00
 
-jr_00C_5137:
+jr_00C_5137::
     jr   nz, jr_00C_5139                          ; $5137: $20 $00
 
-jr_00C_5139:
+jr_00C_5139::
     jr   nz, jr_00C_513B                          ; $5139: $20 $00
 
-jr_00C_513B:
+jr_00C_513B::
     jr   nz, jr_00C_513D                          ; $513B: $20 $00
 
-jr_00C_513D:
+jr_00C_513D::
     jr   nz, jr_00C_513F                          ; $513D: $20 $00
 
-jr_00C_513F:
+jr_00C_513F::
     jr   nz, jr_00C_5141                          ; $513F: $20 $00
 
-jr_00C_5141:
+jr_00C_5141::
     jr   nz, jr_00C_5143                          ; $5141: $20 $00
 
-jr_00C_5143:
+jr_00C_5143::
     jr   nz, jr_00C_5145                          ; $5143: $20 $00
 
-jr_00C_5145:
+jr_00C_5145::
     jr   nz, @-$4F                                ; $5145: $20 $AF
 
     ld   [$C0A5], a                               ; $5147: $EA $A5 $C0
@@ -3344,7 +3343,7 @@ jr_00C_5145:
     ret                                           ; $5157: $C9
 
 
-Call_00C_5158:
+Call_00C_5158::
     ld   [$9C42], a                               ; $5158: $EA $42 $9C
     inc  a                                        ; $515B: $3C
     ld   [$9C43], a                               ; $515C: $EA $43 $9C
@@ -3528,7 +3527,7 @@ Call_00C_5158:
     ret                                           ; $52A6: $C9
 
 
-jr_00C_52A7:
+jr_00C_52A7::
     ld   a, [$CFD3]                               ; $52A7: $FA $D3 $CF
     and  a                                        ; $52AA: $A7
     jr   nz, jr_00C_5301                          ; $52AB: $20 $54
@@ -3565,12 +3564,12 @@ jr_00C_52A7:
     ret                                           ; $52E5: $C9
 
 
-jr_00C_52E6:
+jr_00C_52E6::
     ld   a, $02                                   ; $52E6: $3E $02
     ld   [$D79C], a                               ; $52E8: $EA $9C $D7
     jr   jr_00C_5301                              ; $52EB: $18 $14
 
-jr_00C_52ED:
+jr_00C_52ED::
     ld   a, $05                                   ; $52ED: $3E $05
     ld   [$D780], a                               ; $52EF: $EA $80 $D7
     ld   a, $08                                   ; $52F2: $3E $08
@@ -3582,14 +3581,14 @@ jr_00C_52ED:
     ret                                           ; $5300: $C9
 
 
-jr_00C_5301:
+jr_00C_5301::
     ld   a, [$D70E]                               ; $5301: $FA $0E $D7
     inc  a                                        ; $5304: $3C
     ld   [$D70E], a                               ; $5305: $EA $0E $D7
     ld   a, [$D767]                               ; $5308: $FA $67 $D7
     call Call_000_2309                            ; $530B: $CD $09 $23
 
-jr_00C_530E:
+jr_00C_530E::
     ld   c, $55                                   ; $530E: $0E $55
     add  hl, hl                                   ; $5310: $29
     ld   d, l                                     ; $5311: $55
@@ -3608,22 +3607,22 @@ jr_00C_530E:
     nop                                           ; $5320: $00
     jr   nz, jr_00C_5323                          ; $5321: $20 $00
 
-jr_00C_5323:
+jr_00C_5323::
     jr   nz, jr_00C_5325                          ; $5323: $20 $00
 
-jr_00C_5325:
+jr_00C_5325::
     jr   nz, jr_00C_5327                          ; $5325: $20 $00
 
-jr_00C_5327:
+jr_00C_5327::
     jr   nz, jr_00C_5329                          ; $5327: $20 $00
 
-jr_00C_5329:
+jr_00C_5329::
     jr   nz, jr_00C_532B                          ; $5329: $20 $00
 
-jr_00C_532B:
+jr_00C_532B::
     jr   nz, jr_00C_532D                          ; $532B: $20 $00
 
-jr_00C_532D:
+jr_00C_532D::
     jr   nz, jr_00C_530E                          ; $532D: $20 $DF
 
     ld   d, l                                     ; $532F: $55
@@ -3645,22 +3644,22 @@ jr_00C_532D:
     nop                                           ; $5340: $00
     jr   nz, jr_00C_5343                          ; $5341: $20 $00
 
-jr_00C_5343:
+jr_00C_5343::
     jr   nz, jr_00C_5345                          ; $5343: $20 $00
 
-jr_00C_5345:
+jr_00C_5345::
     jr   nz, jr_00C_5347                          ; $5345: $20 $00
 
-jr_00C_5347:
+jr_00C_5347::
     jr   nz, jr_00C_5349                          ; $5347: $20 $00
 
-jr_00C_5349:
+jr_00C_5349::
     jr   nz, jr_00C_534B                          ; $5349: $20 $00
 
-jr_00C_534B:
+jr_00C_534B::
     jr   nz, jr_00C_534D                          ; $534B: $20 $00
 
-jr_00C_534D:
+jr_00C_534D::
     jr   nz, @-$5A                                ; $534D: $20 $A4
 
     ld   d, [hl]                                  ; $534F: $56
@@ -3683,22 +3682,22 @@ jr_00C_534D:
     nop                                           ; $5360: $00
     jr   nz, jr_00C_5363                          ; $5361: $20 $00
 
-jr_00C_5363:
+jr_00C_5363::
     jr   nz, jr_00C_5365                          ; $5363: $20 $00
 
-jr_00C_5365:
+jr_00C_5365::
     jr   nz, jr_00C_5367                          ; $5365: $20 $00
 
-jr_00C_5367:
+jr_00C_5367::
     jr   nz, jr_00C_5369                          ; $5367: $20 $00
 
-jr_00C_5369:
+jr_00C_5369::
     jr   nz, jr_00C_536B                          ; $5369: $20 $00
 
-jr_00C_536B:
+jr_00C_536B::
     jr   nz, jr_00C_536D                          ; $536B: $20 $00
 
-jr_00C_536D:
+jr_00C_536D::
     jr   nz, jr_00C_53D8                          ; $536D: $20 $69
 
     ld   d, a                                     ; $536F: $57
@@ -3721,22 +3720,22 @@ jr_00C_536D:
     nop                                           ; $5380: $00
     jr   nz, jr_00C_5383                          ; $5381: $20 $00
 
-jr_00C_5383:
+jr_00C_5383::
     jr   nz, jr_00C_5385                          ; $5383: $20 $00
 
-jr_00C_5385:
+jr_00C_5385::
     jr   nz, jr_00C_5387                          ; $5385: $20 $00
 
-jr_00C_5387:
+jr_00C_5387::
     jr   nz, jr_00C_5389                          ; $5387: $20 $00
 
-jr_00C_5389:
+jr_00C_5389::
     jr   nz, jr_00C_538B                          ; $5389: $20 $00
 
-jr_00C_538B:
+jr_00C_538B::
     jr   nz, jr_00C_538D                          ; $538B: $20 $00
 
-jr_00C_538D:
+jr_00C_538D::
     jr   nz, jr_00C_53BD                          ; $538D: $20 $2E
 
     ld   e, b                                     ; $538F: $58
@@ -3758,22 +3757,22 @@ jr_00C_538D:
     nop                                           ; $53A0: $00
     jr   nz, jr_00C_53A3                          ; $53A1: $20 $00
 
-jr_00C_53A3:
+jr_00C_53A3::
     jr   nz, jr_00C_53A5                          ; $53A3: $20 $00
 
-jr_00C_53A5:
+jr_00C_53A5::
     jr   nz, jr_00C_53A7                          ; $53A5: $20 $00
 
-jr_00C_53A7:
+jr_00C_53A7::
     jr   nz, jr_00C_53A9                          ; $53A7: $20 $00
 
-jr_00C_53A9:
+jr_00C_53A9::
     jr   nz, jr_00C_53AB                          ; $53A9: $20 $00
 
-jr_00C_53AB:
+jr_00C_53AB::
     jr   nz, jr_00C_53AD                          ; $53AB: $20 $00
 
-jr_00C_53AD:
+jr_00C_53AD::
     jr   nz, @-$0B                                ; $53AD: $20 $F3
 
     ld   e, b                                     ; $53AF: $58
@@ -3790,29 +3789,29 @@ jr_00C_53AD:
     ld   e, c                                     ; $53BB: $59
     or   [hl]                                     ; $53BC: $B6
 
-jr_00C_53BD:
+jr_00C_53BD::
     ld   e, c                                     ; $53BD: $59
     or   a                                        ; $53BE: $B7
     ld   e, c                                     ; $53BF: $59
     nop                                           ; $53C0: $00
     jr   nz, jr_00C_53C3                          ; $53C1: $20 $00
 
-jr_00C_53C3:
+jr_00C_53C3::
     jr   nz, jr_00C_53C5                          ; $53C3: $20 $00
 
-jr_00C_53C5:
+jr_00C_53C5::
     jr   nz, jr_00C_53C7                          ; $53C5: $20 $00
 
-jr_00C_53C7:
+jr_00C_53C7::
     jr   nz, jr_00C_53C9                          ; $53C7: $20 $00
 
-jr_00C_53C9:
+jr_00C_53C9::
     jr   nz, jr_00C_53CB                          ; $53C9: $20 $00
 
-jr_00C_53CB:
+jr_00C_53CB::
     jr   nz, jr_00C_53CD                          ; $53CB: $20 $00
 
-jr_00C_53CD:
+jr_00C_53CD::
     jr   nz, jr_00C_5387                          ; $53CD: $20 $B8
 
     ld   e, c                                     ; $53CF: $59
@@ -3823,7 +3822,7 @@ jr_00C_53CD:
     ld   e, d                                     ; $53D5: $5A
     ld   e, $5A                                   ; $53D6: $1E $5A
 
-jr_00C_53D8:
+jr_00C_53D8::
     ld   l, [hl]                                  ; $53D8: $6E
     ld   e, d                                     ; $53D9: $5A
     ld   [hl], d                                  ; $53DA: $72
@@ -3835,22 +3834,22 @@ jr_00C_53D8:
     nop                                           ; $53E0: $00
     jr   nz, jr_00C_53E3                          ; $53E1: $20 $00
 
-jr_00C_53E3:
+jr_00C_53E3::
     jr   nz, jr_00C_53E5                          ; $53E3: $20 $00
 
-jr_00C_53E5:
+jr_00C_53E5::
     jr   nz, jr_00C_53E7                          ; $53E5: $20 $00
 
-jr_00C_53E7:
+jr_00C_53E7::
     jr   nz, jr_00C_53E9                          ; $53E7: $20 $00
 
-jr_00C_53E9:
+jr_00C_53E9::
     jr   nz, jr_00C_53EB                          ; $53E9: $20 $00
 
-jr_00C_53EB:
+jr_00C_53EB::
     jr   nz, jr_00C_53ED                          ; $53EB: $20 $00
 
-jr_00C_53ED:
+jr_00C_53ED::
     jr   nz, @+$7F                                ; $53ED: $20 $7D
 
     ld   e, d                                     ; $53EF: $5A
@@ -3899,22 +3898,22 @@ jr_00C_53ED:
     nop                                           ; $5420: $00
     jr   nz, jr_00C_5423                          ; $5421: $20 $00
 
-jr_00C_5423:
+jr_00C_5423::
     jr   nz, jr_00C_5425                          ; $5423: $20 $00
 
-jr_00C_5425:
+jr_00C_5425::
     jr   nz, jr_00C_5427                          ; $5425: $20 $00
 
-jr_00C_5427:
+jr_00C_5427::
     jr   nz, jr_00C_5429                          ; $5427: $20 $00
 
-jr_00C_5429:
+jr_00C_5429::
     jr   nz, jr_00C_542B                          ; $5429: $20 $00
 
-jr_00C_542B:
+jr_00C_542B::
     jr   nz, jr_00C_542D                          ; $542B: $20 $00
 
-jr_00C_542D:
+jr_00C_542D::
     jr   nz, @+$01                                ; $542D: $20 $FF
 
     ld   e, e                                     ; $542F: $5B
@@ -3937,22 +3936,22 @@ jr_00C_542D:
     nop                                           ; $5440: $00
     jr   nz, jr_00C_5443                          ; $5441: $20 $00
 
-jr_00C_5443:
+jr_00C_5443::
     jr   nz, jr_00C_5445                          ; $5443: $20 $00
 
-jr_00C_5445:
+jr_00C_5445::
     jr   nz, jr_00C_5447                          ; $5445: $20 $00
 
-jr_00C_5447:
+jr_00C_5447::
     jr   nz, jr_00C_5449                          ; $5447: $20 $00
 
-jr_00C_5449:
+jr_00C_5449::
     jr   nz, jr_00C_544B                          ; $5449: $20 $00
 
-jr_00C_544B:
+jr_00C_544B::
     jr   nz, jr_00C_544D                          ; $544B: $20 $00
 
-jr_00C_544D:
+jr_00C_544D::
     jr   nz, jr_00C_54A1                          ; $544D: $20 $52
 
     ld   e, h                                     ; $544F: $5C
@@ -3964,7 +3963,7 @@ jr_00C_544D:
     ld   e, h                                     ; $5455: $5C
     sbc  e                                        ; $5456: $9B
 
-jr_00C_5457:
+jr_00C_5457::
     ld   e, h                                     ; $5457: $5C
     sbc  a                                        ; $5458: $9F
     ld   e, h                                     ; $5459: $5C
@@ -3977,22 +3976,22 @@ jr_00C_5457:
     nop                                           ; $5460: $00
     jr   nz, jr_00C_5463                          ; $5461: $20 $00
 
-jr_00C_5463:
+jr_00C_5463::
     jr   nz, jr_00C_5465                          ; $5463: $20 $00
 
-jr_00C_5465:
+jr_00C_5465::
     jr   nz, jr_00C_5467                          ; $5465: $20 $00
 
-jr_00C_5467:
+jr_00C_5467::
     jr   nz, jr_00C_5469                          ; $5467: $20 $00
 
-jr_00C_5469:
+jr_00C_5469::
     jr   nz, jr_00C_546B                          ; $5469: $20 $00
 
-jr_00C_546B:
+jr_00C_546B::
     jr   nz, jr_00C_546D                          ; $546B: $20 $00
 
-jr_00C_546D:
+jr_00C_546D::
     jr   nz, @-$52                                ; $546D: $20 $AC
 
     ld   e, h                                     ; $546F: $5C
@@ -4027,7 +4026,7 @@ jr_00C_546D:
     call nc, $F95D                                ; $548C: $D4 $5D $F9
     ld   e, l                                     ; $548F: $5D
 
-jr_00C_5490:
+jr_00C_5490::
     DB   $FD                                      ; $5490: $FD
     ld   e, l                                     ; $5491: $5D
     ld   [hl+], a                                 ; $5492: $22
@@ -4045,7 +4044,7 @@ jr_00C_5490:
     ld   e, [hl]                                  ; $549F: $5E
     sub  d                                        ; $54A0: $92
 
-jr_00C_54A1:
+jr_00C_54A1::
     ld   e, [hl]                                  ; $54A1: $5E
     sub  [hl]                                     ; $54A2: $96
     ld   e, [hl]                                  ; $54A3: $5E
@@ -4107,7 +4106,7 @@ jr_00C_54A1:
     ld   h, b                                     ; $54DD: $60
     DB   $F4                                      ; $54DE: $F4
     ld   h, b                                     ; $54DF: $60
-    ld   de, $1561                                ; $54E0: $11 $61 $15
+    ld   de, jr_000_1561                          ; $54E0: $11 $61 $15
     ld   h, c                                     ; $54E3: $61
     dec  l                                        ; $54E4: $2D
     ld   h, c                                     ; $54E5: $61
@@ -4150,14 +4149,14 @@ jr_00C_54A1:
     ld   a, [$D70E]                               ; $550E: $FA $0E $D7
     cp   $3F                                      ; $5511: $FE $3F
 
-jr_00C_5513:
+jr_00C_5513::
     jr   z, jr_00C_551A                           ; $5513: $28 $05
 
     ldh  a, [$FF81]                               ; $5515: $F0 $81
     bit  0, a                                     ; $5517: $CB $47
     ret  z                                        ; $5519: $C8
 
-jr_00C_551A:
+jr_00C_551A::
     ld   hl, $4FA6                                ; $551A: $21 $A6 $4F
     ld   de, $9500                                ; $551D: $11 $00 $95
     ld   b, $05                                   ; $5520: $06 $05
@@ -4168,7 +4167,7 @@ jr_00C_551A:
 
     call Call_00C_64BD                            ; $5529: $CD $BD $64
 
-jr_00C_552C:
+jr_00C_552C::
     ret                                           ; $552C: $C9
 
 
@@ -4186,7 +4185,7 @@ jr_00C_552C:
     ret                                           ; $5540: $C9
 
 
-jr_00C_5541:
+jr_00C_5541::
     cp   $50                                      ; $5541: $FE $50
     jr   nz, jr_00C_5549                          ; $5543: $20 $04
 
@@ -4194,7 +4193,7 @@ jr_00C_5541:
     ret                                           ; $5548: $C9
 
 
-jr_00C_5549:
+jr_00C_5549::
     cp   $60                                      ; $5549: $FE $60
     jr   nz, jr_00C_5551                          ; $554B: $20 $04
 
@@ -4202,7 +4201,7 @@ jr_00C_5549:
     ret                                           ; $5550: $C9
 
 
-jr_00C_5551:
+jr_00C_5551::
     cp   $70                                      ; $5551: $FE $70
     ret  nz                                       ; $5553: $C0
 
@@ -4210,7 +4209,7 @@ jr_00C_5551:
     ret                                           ; $5557: $C9
 
 
-jr_00C_5558:
+jr_00C_5558::
     call Call_00C_64B5                            ; $5558: $CD $B5 $64
     xor  a                                        ; $555B: $AF
     ld   [$D70E], a                               ; $555C: $EA $0E $D7
@@ -4251,7 +4250,7 @@ jr_00C_5558:
     ret                                           ; $5597: $C9
 
 
-jr_00C_5598:
+jr_00C_5598::
     cp   $70                                      ; $5598: $FE $70
     jr   nz, jr_00C_55A0                          ; $559A: $20 $04
 
@@ -4259,7 +4258,7 @@ jr_00C_5598:
     ret                                           ; $559F: $C9
 
 
-jr_00C_55A0:
+jr_00C_55A0::
     cp   $60                                      ; $55A0: $FE $60
     jr   nz, jr_00C_55A8                          ; $55A2: $20 $04
 
@@ -4267,7 +4266,7 @@ jr_00C_55A0:
     ret                                           ; $55A7: $C9
 
 
-jr_00C_55A8:
+jr_00C_55A8::
     cp   $50                                      ; $55A8: $FE $50
     jr   nz, jr_00C_55B0                          ; $55AA: $20 $04
 
@@ -4275,7 +4274,7 @@ jr_00C_55A8:
     ret                                           ; $55AF: $C9
 
 
-jr_00C_55B0:
+jr_00C_55B0::
     cp   $40                                      ; $55B0: $FE $40
     ret  nz                                       ; $55B2: $C0
 
@@ -4284,7 +4283,7 @@ jr_00C_55B0:
     ret                                           ; $55B9: $C9
 
 
-jr_00C_55BA:
+jr_00C_55BA::
     call Call_00C_64B5                            ; $55BA: $CD $B5 $64
     xor  a                                        ; $55BD: $AF
     ld   [$D510], a                               ; $55BE: $EA $10 $D5
@@ -4338,7 +4337,7 @@ jr_00C_55BA:
     ret                                           ; $5605: $C9
 
 
-jr_00C_5606:
+jr_00C_5606::
     cp   $50                                      ; $5606: $FE $50
     jr   nz, jr_00C_560E                          ; $5608: $20 $04
 
@@ -4346,7 +4345,7 @@ jr_00C_5606:
     ret                                           ; $560D: $C9
 
 
-jr_00C_560E:
+jr_00C_560E::
     cp   $60                                      ; $560E: $FE $60
     jr   nz, jr_00C_5616                          ; $5610: $20 $04
 
@@ -4354,7 +4353,7 @@ jr_00C_560E:
     ret                                           ; $5615: $C9
 
 
-jr_00C_5616:
+jr_00C_5616::
     cp   $70                                      ; $5616: $FE $70
     ret  nz                                       ; $5618: $C0
 
@@ -4362,7 +4361,7 @@ jr_00C_5616:
     ret                                           ; $561C: $C9
 
 
-jr_00C_561D:
+jr_00C_561D::
     call Call_00C_64B5                            ; $561D: $CD $B5 $64
     xor  a                                        ; $5620: $AF
     ld   [$D70E], a                               ; $5621: $EA $0E $D7
@@ -4403,7 +4402,7 @@ jr_00C_561D:
     ret                                           ; $565C: $C9
 
 
-jr_00C_565D:
+jr_00C_565D::
     cp   $70                                      ; $565D: $FE $70
     jr   nz, jr_00C_5665                          ; $565F: $20 $04
 
@@ -4411,7 +4410,7 @@ jr_00C_565D:
     ret                                           ; $5664: $C9
 
 
-jr_00C_5665:
+jr_00C_5665::
     cp   $60                                      ; $5665: $FE $60
     jr   nz, jr_00C_566D                          ; $5667: $20 $04
 
@@ -4419,7 +4418,7 @@ jr_00C_5665:
     ret                                           ; $566C: $C9
 
 
-jr_00C_566D:
+jr_00C_566D::
     cp   $50                                      ; $566D: $FE $50
     jr   nz, jr_00C_5675                          ; $566F: $20 $04
 
@@ -4427,16 +4426,16 @@ jr_00C_566D:
     ret                                           ; $5674: $C9
 
 
-jr_00C_5675:
+jr_00C_5675::
     cp   $40                                      ; $5675: $FE $40
     ret  nz                                       ; $5677: $C0
 
-    ld   de, $5798                                ; $5678: $11 $98 $57
+    ld   de, jr_00C_5798                          ; $5678: $11 $98 $57
     call Call_00C_4809                            ; $567B: $CD $09 $48
     ret                                           ; $567E: $C9
 
 
-jr_00C_567F:
+jr_00C_567F::
     call Call_00C_64B5                            ; $567F: $CD $B5 $64
     xor  a                                        ; $5682: $AF
     ld   [$D510], a                               ; $5683: $EA $10 $D5
@@ -4490,7 +4489,7 @@ jr_00C_567F:
     ret                                           ; $56CA: $C9
 
 
-jr_00C_56CB:
+jr_00C_56CB::
     cp   $50                                      ; $56CB: $FE $50
     jr   nz, jr_00C_56D3                          ; $56CD: $20 $04
 
@@ -4498,7 +4497,7 @@ jr_00C_56CB:
     ret                                           ; $56D2: $C9
 
 
-jr_00C_56D3:
+jr_00C_56D3::
     cp   $60                                      ; $56D3: $FE $60
     jr   nz, jr_00C_56DB                          ; $56D5: $20 $04
 
@@ -4506,7 +4505,7 @@ jr_00C_56D3:
     ret                                           ; $56DA: $C9
 
 
-jr_00C_56DB:
+jr_00C_56DB::
     cp   $70                                      ; $56DB: $FE $70
     ret  nz                                       ; $56DD: $C0
 
@@ -4514,7 +4513,7 @@ jr_00C_56DB:
     ret                                           ; $56E1: $C9
 
 
-jr_00C_56E2:
+jr_00C_56E2::
     call Call_00C_64B5                            ; $56E2: $CD $B5 $64
     xor  a                                        ; $56E5: $AF
     ld   [$D70E], a                               ; $56E6: $EA $0E $D7
@@ -4555,7 +4554,7 @@ jr_00C_56E2:
     ret                                           ; $5721: $C9
 
 
-jr_00C_5722:
+jr_00C_5722::
     cp   $70                                      ; $5722: $FE $70
     jr   nz, jr_00C_572A                          ; $5724: $20 $04
 
@@ -4563,7 +4562,7 @@ jr_00C_5722:
     ret                                           ; $5729: $C9
 
 
-jr_00C_572A:
+jr_00C_572A::
     cp   $60                                      ; $572A: $FE $60
     jr   nz, jr_00C_5732                          ; $572C: $20 $04
 
@@ -4571,7 +4570,7 @@ jr_00C_572A:
     ret                                           ; $5731: $C9
 
 
-jr_00C_5732:
+jr_00C_5732::
     cp   $50                                      ; $5732: $FE $50
     jr   nz, jr_00C_573A                          ; $5734: $20 $04
 
@@ -4579,7 +4578,7 @@ jr_00C_5732:
     ret                                           ; $5739: $C9
 
 
-jr_00C_573A:
+jr_00C_573A::
     cp   $40                                      ; $573A: $FE $40
     ret  nz                                       ; $573C: $C0
 
@@ -4588,7 +4587,7 @@ jr_00C_573A:
     ret                                           ; $5743: $C9
 
 
-jr_00C_5744:
+jr_00C_5744::
     call Call_00C_64B5                            ; $5744: $CD $B5 $64
     xor  a                                        ; $5747: $AF
     ld   [$D510], a                               ; $5748: $EA $10 $D5
@@ -4642,7 +4641,7 @@ jr_00C_5744:
     ret                                           ; $578F: $C9
 
 
-jr_00C_5790:
+jr_00C_5790::
     cp   $50                                      ; $5790: $FE $50
     jr   nz, jr_00C_5798                          ; $5792: $20 $04
 
@@ -4650,7 +4649,7 @@ jr_00C_5790:
     ret                                           ; $5797: $C9
 
 
-jr_00C_5798:
+jr_00C_5798::
     cp   $60                                      ; $5798: $FE $60
     jr   nz, jr_00C_57A0                          ; $579A: $20 $04
 
@@ -4658,7 +4657,7 @@ jr_00C_5798:
     ret                                           ; $579F: $C9
 
 
-jr_00C_57A0:
+jr_00C_57A0::
     cp   $70                                      ; $57A0: $FE $70
     ret  nz                                       ; $57A2: $C0
 
@@ -4666,7 +4665,7 @@ jr_00C_57A0:
     ret                                           ; $57A6: $C9
 
 
-jr_00C_57A7:
+jr_00C_57A7::
     call Call_00C_64B5                            ; $57A7: $CD $B5 $64
     xor  a                                        ; $57AA: $AF
     ld   [$D70E], a                               ; $57AB: $EA $0E $D7
@@ -4707,7 +4706,7 @@ jr_00C_57A7:
     ret                                           ; $57E6: $C9
 
 
-jr_00C_57E7:
+jr_00C_57E7::
     cp   $70                                      ; $57E7: $FE $70
     jr   nz, jr_00C_57EF                          ; $57E9: $20 $04
 
@@ -4715,7 +4714,7 @@ jr_00C_57E7:
     ret                                           ; $57EE: $C9
 
 
-jr_00C_57EF:
+jr_00C_57EF::
     cp   $60                                      ; $57EF: $FE $60
     jr   nz, jr_00C_57F7                          ; $57F1: $20 $04
 
@@ -4723,7 +4722,7 @@ jr_00C_57EF:
     ret                                           ; $57F6: $C9
 
 
-jr_00C_57F7:
+jr_00C_57F7::
     cp   $50                                      ; $57F7: $FE $50
     jr   nz, jr_00C_57FF                          ; $57F9: $20 $04
 
@@ -4731,7 +4730,7 @@ jr_00C_57F7:
     ret                                           ; $57FE: $C9
 
 
-jr_00C_57FF:
+jr_00C_57FF::
     cp   $40                                      ; $57FF: $FE $40
     ret  nz                                       ; $5801: $C0
 
@@ -4740,7 +4739,7 @@ jr_00C_57FF:
     ret                                           ; $5808: $C9
 
 
-jr_00C_5809:
+jr_00C_5809::
     call Call_00C_64B5                            ; $5809: $CD $B5 $64
     xor  a                                        ; $580C: $AF
     ld   [$D510], a                               ; $580D: $EA $10 $D5
@@ -4794,7 +4793,7 @@ jr_00C_5809:
     ret                                           ; $5854: $C9
 
 
-jr_00C_5855:
+jr_00C_5855::
     cp   $50                                      ; $5855: $FE $50
     jr   nz, jr_00C_585D                          ; $5857: $20 $04
 
@@ -4802,7 +4801,7 @@ jr_00C_5855:
     ret                                           ; $585C: $C9
 
 
-jr_00C_585D:
+jr_00C_585D::
     cp   $60                                      ; $585D: $FE $60
     jr   nz, jr_00C_5865                          ; $585F: $20 $04
 
@@ -4810,7 +4809,7 @@ jr_00C_585D:
     ret                                           ; $5864: $C9
 
 
-jr_00C_5865:
+jr_00C_5865::
     cp   $70                                      ; $5865: $FE $70
     ret  nz                                       ; $5867: $C0
 
@@ -4818,7 +4817,7 @@ jr_00C_5865:
     ret                                           ; $586B: $C9
 
 
-jr_00C_586C:
+jr_00C_586C::
     call Call_00C_64B5                            ; $586C: $CD $B5 $64
     xor  a                                        ; $586F: $AF
     ld   [$D70E], a                               ; $5870: $EA $0E $D7
@@ -4859,7 +4858,7 @@ jr_00C_586C:
     ret                                           ; $58AB: $C9
 
 
-jr_00C_58AC:
+jr_00C_58AC::
     cp   $70                                      ; $58AC: $FE $70
     jr   nz, jr_00C_58B4                          ; $58AE: $20 $04
 
@@ -4867,7 +4866,7 @@ jr_00C_58AC:
     ret                                           ; $58B3: $C9
 
 
-jr_00C_58B4:
+jr_00C_58B4::
     cp   $60                                      ; $58B4: $FE $60
     jr   nz, jr_00C_58BC                          ; $58B6: $20 $04
 
@@ -4875,7 +4874,7 @@ jr_00C_58B4:
     ret                                           ; $58BB: $C9
 
 
-jr_00C_58BC:
+jr_00C_58BC::
     cp   $50                                      ; $58BC: $FE $50
     jr   nz, jr_00C_58C4                          ; $58BE: $20 $04
 
@@ -4883,7 +4882,7 @@ jr_00C_58BC:
     ret                                           ; $58C3: $C9
 
 
-jr_00C_58C4:
+jr_00C_58C4::
     cp   $40                                      ; $58C4: $FE $40
     ret  nz                                       ; $58C6: $C0
 
@@ -4892,7 +4891,7 @@ jr_00C_58C4:
     ret                                           ; $58CD: $C9
 
 
-jr_00C_58CE:
+jr_00C_58CE::
     call Call_00C_64B5                            ; $58CE: $CD $B5 $64
     xor  a                                        ; $58D1: $AF
     ld   [$D510], a                               ; $58D2: $EA $10 $D5
@@ -4946,7 +4945,7 @@ jr_00C_58CE:
     ret                                           ; $5919: $C9
 
 
-jr_00C_591A:
+jr_00C_591A::
     cp   $50                                      ; $591A: $FE $50
     jr   nz, jr_00C_5922                          ; $591C: $20 $04
 
@@ -4954,7 +4953,7 @@ jr_00C_591A:
     ret                                           ; $5921: $C9
 
 
-jr_00C_5922:
+jr_00C_5922::
     cp   $60                                      ; $5922: $FE $60
     jr   nz, jr_00C_592A                          ; $5924: $20 $04
 
@@ -4962,7 +4961,7 @@ jr_00C_5922:
     ret                                           ; $5929: $C9
 
 
-jr_00C_592A:
+jr_00C_592A::
     cp   $70                                      ; $592A: $FE $70
     ret  nz                                       ; $592C: $C0
 
@@ -4970,7 +4969,7 @@ jr_00C_592A:
     ret                                           ; $5930: $C9
 
 
-jr_00C_5931:
+jr_00C_5931::
     call Call_00C_64B5                            ; $5931: $CD $B5 $64
     xor  a                                        ; $5934: $AF
     ld   [$D70E], a                               ; $5935: $EA $0E $D7
@@ -5011,7 +5010,7 @@ jr_00C_5931:
     ret                                           ; $5970: $C9
 
 
-jr_00C_5971:
+jr_00C_5971::
     cp   $70                                      ; $5971: $FE $70
     jr   nz, jr_00C_5979                          ; $5973: $20 $04
 
@@ -5019,7 +5018,7 @@ jr_00C_5971:
     ret                                           ; $5978: $C9
 
 
-jr_00C_5979:
+jr_00C_5979::
     cp   $60                                      ; $5979: $FE $60
     jr   nz, jr_00C_5981                          ; $597B: $20 $04
 
@@ -5027,7 +5026,7 @@ jr_00C_5979:
     ret                                           ; $5980: $C9
 
 
-jr_00C_5981:
+jr_00C_5981::
     cp   $50                                      ; $5981: $FE $50
     jr   nz, jr_00C_5989                          ; $5983: $20 $04
 
@@ -5035,7 +5034,7 @@ jr_00C_5981:
     ret                                           ; $5988: $C9
 
 
-jr_00C_5989:
+jr_00C_5989::
     cp   $40                                      ; $5989: $FE $40
     ret  nz                                       ; $598B: $C0
 
@@ -5044,7 +5043,7 @@ jr_00C_5989:
     ret                                           ; $5992: $C9
 
 
-jr_00C_5993:
+jr_00C_5993::
     call Call_00C_64B5                            ; $5993: $CD $B5 $64
     xor  a                                        ; $5996: $AF
     ld   [$D510], a                               ; $5997: $EA $10 $D5
@@ -5098,7 +5097,7 @@ jr_00C_5993:
     ret                                           ; $59DE: $C9
 
 
-jr_00C_59DF:
+jr_00C_59DF::
     cp   $50                                      ; $59DF: $FE $50
     jr   nz, jr_00C_59E7                          ; $59E1: $20 $04
 
@@ -5106,7 +5105,7 @@ jr_00C_59DF:
     ret                                           ; $59E6: $C9
 
 
-jr_00C_59E7:
+jr_00C_59E7::
     cp   $60                                      ; $59E7: $FE $60
     jr   nz, jr_00C_59EF                          ; $59E9: $20 $04
 
@@ -5114,7 +5113,7 @@ jr_00C_59E7:
     ret                                           ; $59EE: $C9
 
 
-jr_00C_59EF:
+jr_00C_59EF::
     cp   $70                                      ; $59EF: $FE $70
     ret  nz                                       ; $59F1: $C0
 
@@ -5122,7 +5121,7 @@ jr_00C_59EF:
     ret                                           ; $59F5: $C9
 
 
-jr_00C_59F6:
+jr_00C_59F6::
     call Call_00C_64B5                            ; $59F6: $CD $B5 $64
     xor  a                                        ; $59F9: $AF
     ld   [$D70E], a                               ; $59FA: $EA $0E $D7
@@ -5163,7 +5162,7 @@ jr_00C_59F6:
     ret                                           ; $5A35: $C9
 
 
-jr_00C_5A36:
+jr_00C_5A36::
     cp   $70                                      ; $5A36: $FE $70
     jr   nz, jr_00C_5A3E                          ; $5A38: $20 $04
 
@@ -5171,7 +5170,7 @@ jr_00C_5A36:
     ret                                           ; $5A3D: $C9
 
 
-jr_00C_5A3E:
+jr_00C_5A3E::
     cp   $60                                      ; $5A3E: $FE $60
     jr   nz, jr_00C_5A46                          ; $5A40: $20 $04
 
@@ -5179,7 +5178,7 @@ jr_00C_5A3E:
     ret                                           ; $5A45: $C9
 
 
-jr_00C_5A46:
+jr_00C_5A46::
     cp   $50                                      ; $5A46: $FE $50
     jr   nz, jr_00C_5A4E                          ; $5A48: $20 $04
 
@@ -5187,7 +5186,7 @@ jr_00C_5A46:
     ret                                           ; $5A4D: $C9
 
 
-jr_00C_5A4E:
+jr_00C_5A4E::
     cp   $40                                      ; $5A4E: $FE $40
     ret  nz                                       ; $5A50: $C0
 
@@ -5196,12 +5195,12 @@ jr_00C_5A4E:
     ret                                           ; $5A57: $C9
 
 
-jr_00C_5A58:
+jr_00C_5A58::
     call Call_00C_64B5                            ; $5A58: $CD $B5 $64
     xor  a                                        ; $5A5B: $AF
     ld   [$D510], a                               ; $5A5C: $EA $10 $D5
     ld   [$D76C], a                               ; $5A5F: $EA $6C $D7
-    ld   hl, $5EA6                                ; $5A62: $21 $A6 $5E
+    ld   hl, jr_00C_5EA6                          ; $5A62: $21 $A6 $5E
     ld   de, $9500                                ; $5A65: $11 $00 $95
     ld   b, $05                                   ; $5A68: $06 $05
     call Call_00C_46E0                            ; $5A6A: $CD $E0 $46
@@ -5250,7 +5249,7 @@ jr_00C_5A58:
     ret                                           ; $5AA3: $C9
 
 
-jr_00C_5AA4:
+jr_00C_5AA4::
     cp   $50                                      ; $5AA4: $FE $50
     jr   nz, jr_00C_5AAC                          ; $5AA6: $20 $04
 
@@ -5258,7 +5257,7 @@ jr_00C_5AA4:
     ret                                           ; $5AAB: $C9
 
 
-jr_00C_5AAC:
+jr_00C_5AAC::
     cp   $60                                      ; $5AAC: $FE $60
     jr   nz, jr_00C_5AB4                          ; $5AAE: $20 $04
 
@@ -5266,7 +5265,7 @@ jr_00C_5AAC:
     ret                                           ; $5AB3: $C9
 
 
-jr_00C_5AB4:
+jr_00C_5AB4::
     cp   $70                                      ; $5AB4: $FE $70
     ret  nz                                       ; $5AB6: $C0
 
@@ -5274,7 +5273,7 @@ jr_00C_5AB4:
     ret                                           ; $5ABA: $C9
 
 
-jr_00C_5ABB:
+jr_00C_5ABB::
     call Call_00C_64B5                            ; $5ABB: $CD $B5 $64
     xor  a                                        ; $5ABE: $AF
     ld   [$D70E], a                               ; $5ABF: $EA $0E $D7
@@ -5293,7 +5292,7 @@ jr_00C_5ABB:
     bit  0, a                                     ; $5AD7: $CB $47
     ret  z                                        ; $5AD9: $C8
 
-jr_00C_5ADA:
+jr_00C_5ADA::
     ld   hl, $9CA2                                ; $5ADA: $21 $A2 $9C
     call Call_00C_6AD3                            ; $5ADD: $CD $D3 $6A
     call Call_00C_64B5                            ; $5AE0: $CD $B5 $64
@@ -5314,7 +5313,7 @@ jr_00C_5ADA:
     ret                                           ; $5AF6: $C9
 
 
-jr_00C_5AF7:
+jr_00C_5AF7::
     cp   $70                                      ; $5AF7: $FE $70
     jr   nz, jr_00C_5AFF                          ; $5AF9: $20 $04
 
@@ -5322,7 +5321,7 @@ jr_00C_5AF7:
     ret                                           ; $5AFE: $C9
 
 
-jr_00C_5AFF:
+jr_00C_5AFF::
     cp   $60                                      ; $5AFF: $FE $60
     jr   nz, jr_00C_5B07                          ; $5B01: $20 $04
 
@@ -5330,7 +5329,7 @@ jr_00C_5AFF:
     ret                                           ; $5B06: $C9
 
 
-jr_00C_5B07:
+jr_00C_5B07::
     cp   $50                                      ; $5B07: $FE $50
     jr   nz, jr_00C_5B0F                          ; $5B09: $20 $04
 
@@ -5338,7 +5337,7 @@ jr_00C_5B07:
     ret                                           ; $5B0E: $C9
 
 
-jr_00C_5B0F:
+jr_00C_5B0F::
     cp   $40                                      ; $5B0F: $FE $40
     ret  nz                                       ; $5B11: $C0
 
@@ -5347,7 +5346,7 @@ jr_00C_5B0F:
     ret                                           ; $5B18: $C9
 
 
-jr_00C_5B19:
+jr_00C_5B19::
     call Call_00C_64B5                            ; $5B19: $CD $B5 $64
     xor  a                                        ; $5B1C: $AF
     ld   [$D510], a                               ; $5B1D: $EA $10 $D5
@@ -5390,7 +5389,7 @@ jr_00C_5B19:
     ret                                           ; $5B5A: $C9
 
 
-Call_00C_5B5B:
+Call_00C_5B5B::
     ld   a, [$D510]                               ; $5B5B: $FA $10 $D5
     cp   $A0                                      ; $5B5E: $FE $A0
     jr   z, jr_00C_5B8E                           ; $5B60: $28 $2C
@@ -5405,7 +5404,7 @@ Call_00C_5B5B:
     ret                                           ; $5B6E: $C9
 
 
-jr_00C_5B6F:
+jr_00C_5B6F::
     cp   $40                                      ; $5B6F: $FE $40
     jr   nz, jr_00C_5B77                          ; $5B71: $20 $04
 
@@ -5413,7 +5412,7 @@ jr_00C_5B6F:
     ret                                           ; $5B76: $C9
 
 
-jr_00C_5B77:
+jr_00C_5B77::
     cp   $50                                      ; $5B77: $FE $50
     jr   nz, jr_00C_5B7F                          ; $5B79: $20 $04
 
@@ -5421,7 +5420,7 @@ jr_00C_5B77:
     ret                                           ; $5B7E: $C9
 
 
-jr_00C_5B7F:
+jr_00C_5B7F::
     cp   $60                                      ; $5B7F: $FE $60
     jr   nz, jr_00C_5B87                          ; $5B81: $20 $04
 
@@ -5429,7 +5428,7 @@ jr_00C_5B7F:
     ret                                           ; $5B86: $C9
 
 
-jr_00C_5B87:
+jr_00C_5B87::
     cp   $70                                      ; $5B87: $FE $70
     ret  nz                                       ; $5B89: $C0
 
@@ -5437,7 +5436,7 @@ jr_00C_5B87:
     ret                                           ; $5B8D: $C9
 
 
-jr_00C_5B8E:
+jr_00C_5B8E::
     call Call_00C_64B5                            ; $5B8E: $CD $B5 $64
     xor  a                                        ; $5B91: $AF
     ld   [$D70E], a                               ; $5B92: $EA $0E $D7
@@ -5476,7 +5475,7 @@ jr_00C_5B8E:
     ret                                           ; $5BC4: $C9
 
 
-    ld   de, $5744                                ; $5BC5: $11 $44 $57
+    ld   de, jr_00C_5744                          ; $5BC5: $11 $44 $57
     call Call_00C_4809                            ; $5BC8: $CD $09 $48
     ld   a, $01                                   ; $5BCB: $3E $01
     ld   [$D2B4], a                               ; $5BCD: $EA $B4 $D2
@@ -5531,7 +5530,7 @@ jr_00C_5B8E:
     ret                                           ; $5C17: $C9
 
 
-    ld   de, $5744                                ; $5C18: $11 $44 $57
+    ld   de, jr_00C_5744                          ; $5C18: $11 $44 $57
     call Call_00C_4809                            ; $5C1B: $CD $09 $48
     ld   a, $01                                   ; $5C1E: $3E $01
     ld   [$D2B4], a                               ; $5C20: $EA $B4 $D2
@@ -5545,7 +5544,7 @@ jr_00C_5B8E:
 
     ld   de, $5878                                ; $5C2C: $11 $78 $58
     call Call_00C_4809                            ; $5C2F: $CD $09 $48
-    ld   hl, $69C6                                ; $5C32: $21 $C6 $69
+    ld   hl, Call_00C_69C6                        ; $5C32: $21 $C6 $69
     ld   de, $9500                                ; $5C35: $11 $00 $95
     ld   b, $05                                   ; $5C38: $06 $05
     call Call_00C_46E0                            ; $5C3A: $CD $E0 $46
@@ -5586,7 +5585,7 @@ jr_00C_5B8E:
     ret                                           ; $5C6A: $C9
 
 
-    ld   de, $5744                                ; $5C6B: $11 $44 $57
+    ld   de, jr_00C_5744                          ; $5C6B: $11 $44 $57
     call Call_00C_4809                            ; $5C6E: $CD $09 $48
     ld   a, $01                                   ; $5C71: $3E $01
     ld   [$D2B4], a                               ; $5C73: $EA $B4 $D2
@@ -5600,7 +5599,7 @@ jr_00C_5B8E:
 
     ld   de, $5894                                ; $5C7F: $11 $94 $58
     call Call_00C_4809                            ; $5C82: $CD $09 $48
-    ld   hl, $6C86                                ; $5C85: $21 $86 $6C
+    ld   hl, Call_00C_6C86                        ; $5C85: $21 $86 $6C
     ld   de, $9500                                ; $5C88: $11 $00 $95
     ld   b, $05                                   ; $5C8B: $06 $05
     call Call_00C_46E0                            ; $5C8D: $CD $E0 $46
@@ -5656,13 +5655,13 @@ jr_00C_5B8E:
     call Call_00C_46E0                            ; $5CD8: $CD $E0 $46
     jr   jr_00C_5CE8                              ; $5CDB: $18 $0B
 
-jr_00C_5CDD:
+jr_00C_5CDD::
     ld   hl, $711E                                ; $5CDD: $21 $1E $71
     ld   de, $9500                                ; $5CE0: $11 $00 $95
     ld   b, $05                                   ; $5CE3: $06 $05
     call Call_00C_46E0                            ; $5CE5: $CD $E0 $46
 
-jr_00C_5CE8:
+jr_00C_5CE8::
     call Call_00C_64B5                            ; $5CE8: $CD $B5 $64
     ret                                           ; $5CEB: $C9
 
@@ -5671,7 +5670,7 @@ jr_00C_5CE8:
     ret                                           ; $5CEF: $C9
 
 
-    ld   de, $5744                                ; $5CF0: $11 $44 $57
+    ld   de, jr_00C_5744                          ; $5CF0: $11 $44 $57
     call Call_00C_4809                            ; $5CF3: $CD $09 $48
     ld   a, $01                                   ; $5CF6: $3E $01
     ld   [$D2B4], a                               ; $5CF8: $EA $B4 $D2
@@ -5694,7 +5693,7 @@ jr_00C_5CE8:
     ret                                           ; $5D12: $C9
 
 
-jr_00C_5D13:
+jr_00C_5D13::
     ld   de, $5760                                ; $5D13: $11 $60 $57
     call Call_00C_4809                            ; $5D16: $CD $09 $48
     ld   hl, $76BE                                ; $5D19: $21 $BE $76
@@ -5722,7 +5721,7 @@ jr_00C_5D13:
     ret                                           ; $5D3F: $C9
 
 
-jr_00C_5D40:
+jr_00C_5D40::
     ld   de, $577C                                ; $5D40: $11 $7C $57
     call Call_00C_4809                            ; $5D43: $CD $09 $48
     ld   hl, $779E                                ; $5D46: $21 $9E $77
@@ -5748,8 +5747,8 @@ jr_00C_5D40:
     ret                                           ; $5D68: $C9
 
 
-jr_00C_5D69:
-    ld   de, $5798                                ; $5D69: $11 $98 $57
+jr_00C_5D69::
+    ld   de, jr_00C_5798                          ; $5D69: $11 $98 $57
     call Call_00C_4809                            ; $5D6C: $CD $09 $48
     ld   hl, $7916                                ; $5D6F: $21 $16 $79
     ld   de, $9500                                ; $5D72: $11 $00 $95
@@ -5774,7 +5773,7 @@ jr_00C_5D69:
     ret                                           ; $5D91: $C9
 
 
-jr_00C_5D92:
+jr_00C_5D92::
     ld   de, $57B4                                ; $5D92: $11 $B4 $57
     call Call_00C_4809                            ; $5D95: $CD $09 $48
     ld   hl, $5BB7                                ; $5D98: $21 $B7 $5B
@@ -5800,7 +5799,7 @@ jr_00C_5D92:
     ret                                           ; $5DBA: $C9
 
 
-jr_00C_5DBB:
+jr_00C_5DBB::
     ld   de, $57D0                                ; $5DBB: $11 $D0 $57
     call Call_00C_4809                            ; $5DBE: $CD $09 $48
     ld   hl, $5D8F                                ; $5DC1: $21 $8F $5D
@@ -5826,7 +5825,7 @@ jr_00C_5DBB:
     ret                                           ; $5DE3: $C9
 
 
-jr_00C_5DE4:
+jr_00C_5DE4::
     ld   de, $57EC                                ; $5DE4: $11 $EC $57
     call Call_00C_4809                            ; $5DE7: $CD $09 $48
     ld   hl, $5E47                                ; $5DEA: $21 $47 $5E
@@ -5852,7 +5851,7 @@ jr_00C_5DE4:
     ret                                           ; $5E0C: $C9
 
 
-jr_00C_5E0D:
+jr_00C_5E0D::
     ld   de, $5808                                ; $5E0D: $11 $08 $58
     call Call_00C_4809                            ; $5E10: $CD $09 $48
     ld   hl, $5F27                                ; $5E13: $21 $27 $5F
@@ -5878,7 +5877,7 @@ jr_00C_5E0D:
     ret                                           ; $5E35: $C9
 
 
-jr_00C_5E36:
+jr_00C_5E36::
     ld   de, $5824                                ; $5E36: $11 $24 $58
     call Call_00C_4809                            ; $5E39: $CD $09 $48
     ld   hl, $60BF                                ; $5E3C: $21 $BF $60
@@ -5945,7 +5944,7 @@ jr_00C_5E36:
     ret                                           ; $5EA5: $C9
 
 
-jr_00C_5EA6:
+jr_00C_5EA6::
     ld   de, $577C                                ; $5EA6: $11 $7C $57
     call Call_00C_4809                            ; $5EA9: $CD $09 $48
     call Call_00C_6D8C                            ; $5EAC: $CD $8C $6D
@@ -5981,7 +5980,7 @@ jr_00C_5EA6:
     ld   de, $5760                                ; $5EE3: $11 $60 $57
     call Call_00C_4809                            ; $5EE6: $CD $09 $48
     call Call_00C_6D8C                            ; $5EE9: $CD $8C $6D
-    ld   hl, $63FF                                ; $5EEC: $21 $FF $63
+    ld   hl, jr_00C_63FF                          ; $5EEC: $21 $FF $63
     ld   de, $9500                                ; $5EEF: $11 $00 $95
     ld   b, $09                                   ; $5EF2: $06 $09
     call Call_00C_46E0                            ; $5EF4: $CD $E0 $46
@@ -6021,8 +6020,8 @@ jr_00C_5EA6:
     ret                                           ; $5F2F: $C9
 
 
-jr_00C_5F30:
-    ld   de, $5798                                ; $5F30: $11 $98 $57
+jr_00C_5F30::
+    ld   de, jr_00C_5798                          ; $5F30: $11 $98 $57
     call Call_00C_4809                            ; $5F33: $CD $09 $48
     call Call_00C_6D8C                            ; $5F36: $CD $8C $6D
     ld   hl, $667F                                ; $5F39: $21 $7F $66
@@ -6048,7 +6047,7 @@ jr_00C_5F30:
     ret                                           ; $5F5B: $C9
 
 
-jr_00C_5F5C:
+jr_00C_5F5C::
     ld   de, $57B4                                ; $5F5C: $11 $B4 $57
     call Call_00C_4809                            ; $5F5F: $CD $09 $48
     call Call_00C_6D8C                            ; $5F62: $CD $8C $6D
@@ -6075,7 +6074,7 @@ jr_00C_5F5C:
     ret                                           ; $5F87: $C9
 
 
-jr_00C_5F88:
+jr_00C_5F88::
     ld   de, $57D0                                ; $5F88: $11 $D0 $57
     call Call_00C_4809                            ; $5F8B: $CD $09 $48
     call Call_00C_6D8C                            ; $5F8E: $CD $8C $6D
@@ -6117,7 +6116,7 @@ jr_00C_5F88:
     ret                                           ; $5FCF: $C9
 
 
-jr_00C_5FD0:
+jr_00C_5FD0::
     ld   de, $57EC                                ; $5FD0: $11 $EC $57
     call Call_00C_4809                            ; $5FD3: $CD $09 $48
     call Call_00C_6D8C                            ; $5FD6: $CD $8C $6D
@@ -6144,7 +6143,7 @@ jr_00C_5FD0:
     ret                                           ; $5FFB: $C9
 
 
-jr_00C_5FFC:
+jr_00C_5FFC::
     ld   de, $5808                                ; $5FFC: $11 $08 $58
     call Call_00C_4809                            ; $5FFF: $CD $09 $48
     call Call_00C_6D8C                            ; $6002: $CD $8C $6D
@@ -6171,7 +6170,7 @@ jr_00C_5FFC:
     ret                                           ; $6027: $C9
 
 
-jr_00C_6028:
+jr_00C_6028::
     ld   de, $5824                                ; $6028: $11 $24 $58
     call Call_00C_4809                            ; $602B: $CD $09 $48
     call Call_00C_6D8C                            ; $602E: $CD $8C $6D
@@ -6224,7 +6223,7 @@ jr_00C_6028:
     ret                                           ; $608C: $C9
 
 
-jr_00C_608D:
+jr_00C_608D::
     ld   hl, $4DA6                                ; $608D: $21 $A6 $4D
     ld   de, $9500                                ; $6090: $11 $00 $95
     ld   b, $0E                                   ; $6093: $06 $0E
@@ -6234,7 +6233,7 @@ jr_00C_608D:
     ret                                           ; $609D: $C9
 
 
-jr_00C_609E:
+jr_00C_609E::
     ld   a, [$CF59]                               ; $609E: $FA $59 $CF
     bit  7, a                                     ; $60A1: $CB $7F
     jr   nz, jr_00C_60B6                          ; $60A3: $20 $11
@@ -6248,7 +6247,7 @@ jr_00C_609E:
     ret                                           ; $60B5: $C9
 
 
-jr_00C_60B6:
+jr_00C_60B6::
     ld   hl, $6EB7                                ; $60B6: $21 $B7 $6E
     ld   de, $9500                                ; $60B9: $11 $00 $95
     ld   b, $09                                   ; $60BC: $06 $09
@@ -6266,7 +6265,7 @@ jr_00C_60B6:
     ld   de, $58B0                                ; $60CE: $11 $B0 $58
     call Call_00C_4809                            ; $60D1: $CD $09 $48
     call Call_00C_6D8C                            ; $60D4: $CD $8C $6D
-    ld   hl, $41FE                                ; $60D7: $21 $FE $41
+    ld   hl, jr_00C_41FE                          ; $60D7: $21 $FE $41
     ld   de, $9500                                ; $60DA: $11 $00 $95
     ld   b, $0E                                   ; $60DD: $06 $0E
     call Call_00C_46E0                            ; $60DF: $CD $E0 $46
@@ -6443,7 +6442,7 @@ jr_00C_60B6:
     ret                                           ; $6201: $C9
 
 
-Call_00C_6202:
+Call_00C_6202::
     ld   a, [$D795]                               ; $6202: $FA $95 $D7
     and  a                                        ; $6205: $A7
     jr   z, jr_00C_6211                           ; $6206: $28 $09
@@ -6456,7 +6455,7 @@ Call_00C_6202:
     ret                                           ; $6210: $C9
 
 
-jr_00C_6211:
+jr_00C_6211::
     ld   a, [$D79C]                               ; $6211: $FA $9C $D7
     cp   $02                                      ; $6214: $FE $02
     jp   z, Jump_00C_62D0                         ; $6216: $CA $D0 $62
@@ -6475,7 +6474,7 @@ jr_00C_6211:
     ret                                           ; $622C: $C9
 
 
-jr_00C_622D:
+jr_00C_622D::
     xor  a                                        ; $622D: $AF
     ld   [$D795], a                               ; $622E: $EA $95 $D7
     ld   [$D79C], a                               ; $6231: $EA $9C $D7
@@ -6485,7 +6484,7 @@ jr_00C_622D:
     ret                                           ; $623C: $C9
 
 
-jr_00C_623D:
+jr_00C_623D::
     ldh  a, [$FF81]                               ; $623D: $F0 $81
     and  a                                        ; $623F: $A7
     jr   nz, jr_00C_6246                          ; $6240: $20 $04
@@ -6494,7 +6493,7 @@ jr_00C_623D:
     ret                                           ; $6245: $C9
 
 
-jr_00C_6246:
+jr_00C_6246::
     bit  0, a                                     ; $6246: $CB $47
     jp   z, Jump_00C_6253                         ; $6248: $CA $53 $62
 
@@ -6503,7 +6502,7 @@ jr_00C_6246:
     jp   Jump_00C_62D0                            ; $6250: $C3 $D0 $62
 
 
-Jump_00C_6253:
+Jump_00C_6253::
     bit  2, a                                     ; $6253: $CB $57
     jp   z, Jump_00C_626F                         ; $6255: $CA $6F $62
 
@@ -6514,15 +6513,15 @@ Jump_00C_6253:
 
     inc  a                                        ; $6262: $3C
     ld   [$D793], a                               ; $6263: $EA $93 $D7
-    jp   Jump_00C_62D4                            ; $6266: $C3 $D4 $62
+    jp   jr_00C_62D4                              ; $6266: $C3 $D4 $62
 
 
-jr_00C_6269:
+jr_00C_6269::
     xor  a                                        ; $6269: $AF
     ld   [$D793], a                               ; $626A: $EA $93 $D7
     jr   jr_00C_62D4                              ; $626D: $18 $65
 
-Jump_00C_626F:
+Jump_00C_626F::
     bit  4, a                                     ; $626F: $CB $67
     jp   z, Jump_00C_6289                         ; $6271: $CA $89 $62
 
@@ -6539,7 +6538,7 @@ Jump_00C_626F:
     ld   [$D793], a                               ; $6284: $EA $93 $D7
     jr   jr_00C_62D4                              ; $6287: $18 $4B
 
-Jump_00C_6289:
+Jump_00C_6289::
     bit  5, a                                     ; $6289: $CB $6F
     jp   z, Jump_00C_62A2                         ; $628B: $CA $A2 $62
 
@@ -6556,7 +6555,7 @@ Jump_00C_6289:
     ld   [$D793], a                               ; $629D: $EA $93 $D7
     jr   jr_00C_62D4                              ; $62A0: $18 $32
 
-Jump_00C_62A2:
+Jump_00C_62A2::
     bit  6, a                                     ; $62A2: $CB $77
     jp   z, Jump_00C_62BA                         ; $62A4: $CA $BA $62
 
@@ -6570,7 +6569,7 @@ Jump_00C_62A2:
     ld   [$D793], a                               ; $62B5: $EA $93 $D7
     jr   jr_00C_62D4                              ; $62B8: $18 $1A
 
-Jump_00C_62BA:
+Jump_00C_62BA::
     bit  7, a                                     ; $62BA: $CB $7F
     ret  z                                        ; $62BC: $C8
 
@@ -6584,20 +6583,19 @@ Jump_00C_62BA:
     ld   [$D793], a                               ; $62CB: $EA $93 $D7
     jr   jr_00C_62D4                              ; $62CE: $18 $04
 
-Jump_00C_62D0:
+Jump_00C_62D0::
     call Call_00C_636D                            ; $62D0: $CD $6D $63
     ret                                           ; $62D3: $C9
 
 
-Jump_00C_62D4:
-jr_00C_62D4:
+jr_00C_62D4::
     ld   a, $39                                   ; $62D4: $3E $39
     ld   [$D360], a                               ; $62D6: $EA $60 $D3
     ld   a, [$D793]                               ; $62D9: $FA $93 $D7
     and  a                                        ; $62DC: $A7
     jr   nz, jr_00C_62ED                          ; $62DD: $20 $0E
 
-    call Call_00C_4680                            ; $62DF: $CD $80 $46
+    call jr_00C_4680                              ; $62DF: $CD $80 $46
     ld   hl, $9C16                                ; $62E2: $21 $16 $9C
     ld   a, $06                                   ; $62E5: $3E $06
     ld   [hl+], a                                 ; $62E7: $22
@@ -6608,11 +6606,11 @@ jr_00C_62D4:
     ret                                           ; $62EC: $C9
 
 
-jr_00C_62ED:
+jr_00C_62ED::
     cp   $01                                      ; $62ED: $FE $01
     jr   nz, jr_00C_62FF                          ; $62EF: $20 $0E
 
-    call Call_00C_4680                            ; $62F1: $CD $80 $46
+    call jr_00C_4680                              ; $62F1: $CD $80 $46
     ld   hl, $9C1A                                ; $62F4: $21 $1A $9C
     ld   a, $06                                   ; $62F7: $3E $06
     ld   [hl+], a                                 ; $62F9: $22
@@ -6623,11 +6621,11 @@ jr_00C_62ED:
     ret                                           ; $62FE: $C9
 
 
-jr_00C_62FF:
+jr_00C_62FF::
     cp   $02                                      ; $62FF: $FE $02
     jr   nz, jr_00C_6314                          ; $6301: $20 $11
 
-    call Call_00C_4680                            ; $6303: $CD $80 $46
+    call jr_00C_4680                              ; $6303: $CD $80 $46
     ld   hl, $9C1E                                ; $6306: $21 $1E $9C
     ld   a, $06                                   ; $6309: $3E $06
     ld   [hl+], a                                 ; $630B: $22
@@ -6639,11 +6637,11 @@ jr_00C_62FF:
     ret                                           ; $6313: $C9
 
 
-jr_00C_6314:
+jr_00C_6314::
     cp   $03                                      ; $6314: $FE $03
     jr   nz, jr_00C_6326                          ; $6316: $20 $0E
 
-    call Call_00C_4680                            ; $6318: $CD $80 $46
+    call jr_00C_4680                              ; $6318: $CD $80 $46
     ld   hl, $9C02                                ; $631B: $21 $02 $9C
     ld   a, $06                                   ; $631E: $3E $06
     ld   [hl+], a                                 ; $6320: $22
@@ -6654,11 +6652,11 @@ jr_00C_6314:
     ret                                           ; $6325: $C9
 
 
-jr_00C_6326:
+jr_00C_6326::
     cp   $04                                      ; $6326: $FE $04
     jr   nz, jr_00C_6338                          ; $6328: $20 $0E
 
-    call Call_00C_4680                            ; $632A: $CD $80 $46
+    call jr_00C_4680                              ; $632A: $CD $80 $46
     ld   hl, $9C77                                ; $632D: $21 $77 $9C
     ld   a, $06                                   ; $6330: $3E $06
     ld   [hl+], a                                 ; $6332: $22
@@ -6669,11 +6667,11 @@ jr_00C_6326:
     ret                                           ; $6337: $C9
 
 
-jr_00C_6338:
+jr_00C_6338::
     cp   $05                                      ; $6338: $FE $05
     jr   nz, jr_00C_634A                          ; $633A: $20 $0E
 
-    call Call_00C_4680                            ; $633C: $CD $80 $46
+    call jr_00C_4680                              ; $633C: $CD $80 $46
     ld   hl, $9C7B                                ; $633F: $21 $7B $9C
     ld   a, $06                                   ; $6342: $3E $06
     ld   [hl+], a                                 ; $6344: $22
@@ -6684,11 +6682,11 @@ jr_00C_6338:
     ret                                           ; $6349: $C9
 
 
-jr_00C_634A:
+jr_00C_634A::
     cp   $06                                      ; $634A: $FE $06
     jr   nz, jr_00C_635F                          ; $634C: $20 $11
 
-    call Call_00C_4680                            ; $634E: $CD $80 $46
+    call jr_00C_4680                              ; $634E: $CD $80 $46
     ld   hl, $9C7F                                ; $6351: $21 $7F $9C
     ld   a, $06                                   ; $6354: $3E $06
     ld   [hl], a                                  ; $6356: $77
@@ -6700,8 +6698,8 @@ jr_00C_634A:
     ret                                           ; $635E: $C9
 
 
-jr_00C_635F:
-    call Call_00C_4680                            ; $635F: $CD $80 $46
+jr_00C_635F::
+    call jr_00C_4680                              ; $635F: $CD $80 $46
     ld   hl, $9C63                                ; $6362: $21 $63 $9C
     ld   a, $06                                   ; $6365: $3E $06
     ld   [hl+], a                                 ; $6367: $22
@@ -6712,7 +6710,7 @@ jr_00C_635F:
     ret                                           ; $636C: $C9
 
 
-Call_00C_636D:
+Call_00C_636D::
     ld   a, [$CF59]                               ; $636D: $FA $59 $CF
     ld   b, a                                     ; $6370: $47
     ld   a, [$D793]                               ; $6371: $FA $93 $D7
@@ -6723,7 +6721,7 @@ Call_00C_636D:
     ld   a, $2D                                   ; $6378: $3E $2D
     jr   jr_00C_63D7                              ; $637A: $18 $5B
 
-jr_00C_637C:
+jr_00C_637C::
     cp   $01                                      ; $637C: $FE $01
     jr   nz, jr_00C_6388                          ; $637E: $20 $08
 
@@ -6733,7 +6731,7 @@ jr_00C_637C:
     ld   a, $2E                                   ; $6384: $3E $2E
     jr   jr_00C_63D7                              ; $6386: $18 $4F
 
-jr_00C_6388:
+jr_00C_6388::
     cp   $02                                      ; $6388: $FE $02
     jr   nz, jr_00C_6394                          ; $638A: $20 $08
 
@@ -6743,7 +6741,7 @@ jr_00C_6388:
     ld   a, $2F                                   ; $6390: $3E $2F
     jr   jr_00C_63D7                              ; $6392: $18 $43
 
-jr_00C_6394:
+jr_00C_6394::
     cp   $03                                      ; $6394: $FE $03
     jr   nz, jr_00C_63A0                          ; $6396: $20 $08
 
@@ -6753,7 +6751,7 @@ jr_00C_6394:
     ld   a, $30                                   ; $639C: $3E $30
     jr   jr_00C_63D7                              ; $639E: $18 $37
 
-jr_00C_63A0:
+jr_00C_63A0::
     cp   $04                                      ; $63A0: $FE $04
     jr   nz, jr_00C_63AC                          ; $63A2: $20 $08
 
@@ -6763,7 +6761,7 @@ jr_00C_63A0:
     ld   a, $31                                   ; $63A8: $3E $31
     jr   jr_00C_63D7                              ; $63AA: $18 $2B
 
-jr_00C_63AC:
+jr_00C_63AC::
     cp   $05                                      ; $63AC: $FE $05
     jr   nz, jr_00C_63B8                          ; $63AE: $20 $08
 
@@ -6773,7 +6771,7 @@ jr_00C_63AC:
     ld   a, $32                                   ; $63B4: $3E $32
     jr   jr_00C_63D7                              ; $63B6: $18 $1F
 
-jr_00C_63B8:
+jr_00C_63B8::
     cp   $06                                      ; $63B8: $FE $06
     jr   nz, jr_00C_63C4                          ; $63BA: $20 $08
 
@@ -6783,14 +6781,14 @@ jr_00C_63B8:
     ld   a, $33                                   ; $63C0: $3E $33
     jr   jr_00C_63D7                              ; $63C2: $18 $13
 
-jr_00C_63C4:
+jr_00C_63C4::
     bit  6, b                                     ; $63C4: $CB $70
     jr   z, jr_00C_63CC                           ; $63C6: $28 $04
 
     ld   a, $34                                   ; $63C8: $3E $34
     jr   jr_00C_63D7                              ; $63CA: $18 $0B
 
-jr_00C_63CC:
+jr_00C_63CC::
     ld   a, $45                                   ; $63CC: $3E $45
     ld   [$D360], a                               ; $63CE: $EA $60 $D3
     ld   a, $01                                   ; $63D1: $3E $01
@@ -6798,7 +6796,7 @@ jr_00C_63CC:
     ret                                           ; $63D6: $C9
 
 
-jr_00C_63D7:
+jr_00C_63D7::
     ld   [$D360], a                               ; $63D7: $EA $60 $D3
     ld   a, c                                     ; $63DA: $79
     ld   [$C0A5], a                               ; $63DB: $EA $A5 $C0
@@ -6817,7 +6815,7 @@ jr_00C_63D7:
     ld   a, $2D                                   ; $63EF: $3E $2D
     jr   jr_00C_6449                              ; $63F1: $18 $56
 
-jr_00C_63F3:
+jr_00C_63F3::
     cp   $01                                      ; $63F3: $FE $01
     jr   nz, jr_00C_63FF                          ; $63F5: $20 $08
 
@@ -6827,7 +6825,7 @@ jr_00C_63F3:
     ld   a, $2E                                   ; $63FB: $3E $2E
     jr   jr_00C_6449                              ; $63FD: $18 $4A
 
-jr_00C_63FF:
+jr_00C_63FF::
     cp   $02                                      ; $63FF: $FE $02
     jr   nz, jr_00C_640B                          ; $6401: $20 $08
 
@@ -6837,7 +6835,7 @@ jr_00C_63FF:
     ld   a, $2F                                   ; $6407: $3E $2F
     jr   jr_00C_6449                              ; $6409: $18 $3E
 
-jr_00C_640B:
+jr_00C_640B::
     cp   $03                                      ; $640B: $FE $03
     jr   nz, jr_00C_6417                          ; $640D: $20 $08
 
@@ -6847,7 +6845,7 @@ jr_00C_640B:
     ld   a, $30                                   ; $6413: $3E $30
     jr   jr_00C_6449                              ; $6415: $18 $32
 
-jr_00C_6417:
+jr_00C_6417::
     cp   $04                                      ; $6417: $FE $04
     jr   nz, jr_00C_6423                          ; $6419: $20 $08
 
@@ -6857,7 +6855,7 @@ jr_00C_6417:
     ld   a, $31                                   ; $641F: $3E $31
     jr   jr_00C_6449                              ; $6421: $18 $26
 
-jr_00C_6423:
+jr_00C_6423::
     cp   $05                                      ; $6423: $FE $05
     jr   nz, jr_00C_642F                          ; $6425: $20 $08
 
@@ -6867,7 +6865,7 @@ jr_00C_6423:
     ld   a, $32                                   ; $642B: $3E $32
     jr   jr_00C_6449                              ; $642D: $18 $1A
 
-jr_00C_642F:
+jr_00C_642F::
     cp   $06                                      ; $642F: $FE $06
     jr   nz, jr_00C_643B                          ; $6431: $20 $08
 
@@ -6877,20 +6875,20 @@ jr_00C_642F:
     ld   a, $33                                   ; $6437: $3E $33
     jr   jr_00C_6449                              ; $6439: $18 $0E
 
-jr_00C_643B:
+jr_00C_643B::
     bit  6, b                                     ; $643B: $CB $70
     jr   z, jr_00C_6443                           ; $643D: $28 $04
 
     ld   a, $34                                   ; $643F: $3E $34
     jr   jr_00C_6449                              ; $6441: $18 $06
 
-jr_00C_6443:
+jr_00C_6443::
     ld   a, $45                                   ; $6443: $3E $45
     ld   [$D360], a                               ; $6445: $EA $60 $D3
     ret                                           ; $6448: $C9
 
 
-jr_00C_6449:
+jr_00C_6449::
     ld   [$D360], a                               ; $6449: $EA $60 $D3
     ld   a, c                                     ; $644C: $79
     ld   [$C0A5], a                               ; $644D: $EA $A5 $C0
@@ -6899,7 +6897,7 @@ jr_00C_6449:
 
     ld   a, $01                                   ; $6451: $3E $01
 
-jr_00C_6453:
+jr_00C_6453::
     dec  a                                        ; $6453: $3D
     jr   nz, jr_00C_6453                          ; $6454: $20 $FD
 
@@ -6939,7 +6937,7 @@ jr_00C_6453:
     ret                                           ; $6498: $C9
 
 
-Call_00C_6499:
+Call_00C_6499::
     ld   a, h                                     ; $6499: $7C
     ld   [$D52E], a                               ; $649A: $EA $2E $D5
     ld   a, l                                     ; $649D: $7D
@@ -6956,14 +6954,14 @@ Call_00C_6499:
     ret                                           ; $64B4: $C9
 
 
-Call_00C_64B5:
+Call_00C_64B5::
     ld   a, [$D767]                               ; $64B5: $FA $67 $D7
     inc  a                                        ; $64B8: $3C
     ld   [$D767], a                               ; $64B9: $EA $67 $D7
     ret                                           ; $64BC: $C9
 
 
-Call_00C_64BD:
+Call_00C_64BD::
     ld   a, [$D76D]                               ; $64BD: $FA $6D $D7
     and  a                                        ; $64C0: $A7
     jr   z, jr_00C_64D3                           ; $64C1: $28 $10
@@ -6979,7 +6977,7 @@ Call_00C_64BD:
     ret                                           ; $64D2: $C9
 
 
-jr_00C_64D3:
+jr_00C_64D3::
     ld   a, [$D776]                               ; $64D3: $FA $76 $D7
     and  a                                        ; $64D6: $A7
     jr   z, jr_00C_64E9                           ; $64D7: $28 $10
@@ -6995,7 +6993,7 @@ jr_00C_64D3:
     ret                                           ; $64E8: $C9
 
 
-jr_00C_64E9:
+jr_00C_64E9::
     ldh  a, [$FF81]                               ; $64E9: $F0 $81
     bit  0, a                                     ; $64EB: $CB $47
     ret  z                                        ; $64ED: $C8
@@ -7005,7 +7003,7 @@ jr_00C_64E9:
     ret                                           ; $64F3: $C9
 
 
-    call Call_00C_4680                            ; $64F4: $CD $80 $46
+    call jr_00C_4680                              ; $64F4: $CD $80 $46
     ld   hl, $9C00                                ; $64F7: $21 $00 $9C
     ld   a, $0C                                   ; $64FA: $3E $0C
     ld   [hl+], a                                 ; $64FC: $22
@@ -7015,7 +7013,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $6503: $22
     ld   a, $09                                   ; $6504: $3E $09
     ld   [hl], a                                  ; $6506: $77
-    call Call_00C_4680                            ; $6507: $CD $80 $46
+    call jr_00C_4680                              ; $6507: $CD $80 $46
     ld   hl, $9C40                                ; $650A: $21 $40 $9C
     ld   a, $A5                                   ; $650D: $3E $A5
     ld   [hl+], a                                 ; $650F: $22
@@ -7025,7 +7023,7 @@ jr_00C_64E9:
     ld   a, $0A                                   ; $6516: $3E $0A
     ld   [hl+], a                                 ; $6518: $22
     ld   [hl], a                                  ; $6519: $77
-    call Call_00C_4680                            ; $651A: $CD $80 $46
+    call jr_00C_4680                              ; $651A: $CD $80 $46
     ld   hl, $9C80                                ; $651D: $21 $80 $9C
     ld   a, $E1                                   ; $6520: $3E $E1
     ld   [hl+], a                                 ; $6522: $22
@@ -7036,7 +7034,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $652B: $22
     ld   a, $E5                                   ; $652C: $3E $E5
     ld   [hl], a                                  ; $652E: $77
-    call Call_00C_4680                            ; $652F: $CD $80 $46
+    call jr_00C_4680                              ; $652F: $CD $80 $46
     ld   hl, $9CC0                                ; $6532: $21 $C0 $9C
     ld   a, $0B                                   ; $6535: $3E $0B
     ld   [hl+], a                                 ; $6537: $22
@@ -7049,7 +7047,7 @@ jr_00C_64E9:
     ret                                           ; $6542: $C9
 
 
-    call Call_00C_4680                            ; $6543: $CD $80 $46
+    call jr_00C_4680                              ; $6543: $CD $80 $46
     ld   hl, $9C02                                ; $6546: $21 $02 $9C
     ld   a, $0C                                   ; $6549: $3E $0C
     ld   [hl+], a                                 ; $654B: $22
@@ -7059,7 +7057,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $6552: $22
     ld   a, $B4                                   ; $6553: $3E $B4
     ld   [hl], a                                  ; $6555: $77
-    call Call_00C_4680                            ; $6556: $CD $80 $46
+    call jr_00C_4680                              ; $6556: $CD $80 $46
     ld   hl, $9C42                                ; $6559: $21 $42 $9C
     ld   a, $B6                                   ; $655C: $3E $B6
     ld   [hl+], a                                 ; $655E: $22
@@ -7069,7 +7067,7 @@ jr_00C_64E9:
     ld   a, $0A                                   ; $6565: $3E $0A
     ld   [hl+], a                                 ; $6567: $22
     ld   [hl], a                                  ; $6568: $77
-    call Call_00C_4680                            ; $6569: $CD $80 $46
+    call jr_00C_4680                              ; $6569: $CD $80 $46
     ld   hl, $9C82                                ; $656C: $21 $82 $9C
     ld   a, $09                                   ; $656F: $3E $09
     ld   [hl+], a                                 ; $6571: $22
@@ -7080,7 +7078,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $657A: $22
     ld   a, $F3                                   ; $657B: $3E $F3
     ld   [hl], a                                  ; $657D: $77
-    call Call_00C_4680                            ; $657E: $CD $80 $46
+    call jr_00C_4680                              ; $657E: $CD $80 $46
     ld   hl, $9CC2                                ; $6581: $21 $C2 $9C
     ld   a, $0B                                   ; $6584: $3E $0B
     ld   [hl+], a                                 ; $6586: $22
@@ -7093,7 +7091,7 @@ jr_00C_64E9:
     ret                                           ; $6591: $C9
 
 
-    call Call_00C_4680                            ; $6592: $CD $80 $46
+    call jr_00C_4680                              ; $6592: $CD $80 $46
     ld   hl, $9C04                                ; $6595: $21 $04 $9C
     ld   a, $0C                                   ; $6598: $3E $0C
     ld   [hl+], a                                 ; $659A: $22
@@ -7103,7 +7101,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $65A1: $22
     ld   a, $09                                   ; $65A2: $3E $09
     ld   [hl], a                                  ; $65A4: $77
-    call Call_00C_4680                            ; $65A5: $CD $80 $46
+    call jr_00C_4680                              ; $65A5: $CD $80 $46
     ld   hl, $9C44                                ; $65A8: $21 $44 $9C
     ld   a, $B8                                   ; $65AB: $3E $B8
     ld   [hl+], a                                 ; $65AD: $22
@@ -7113,7 +7111,7 @@ jr_00C_64E9:
     ld   a, $0A                                   ; $65B4: $3E $0A
     ld   [hl+], a                                 ; $65B6: $22
     ld   [hl], a                                  ; $65B7: $77
-    call Call_00C_4680                            ; $65B8: $CD $80 $46
+    call jr_00C_4680                              ; $65B8: $CD $80 $46
     ld   hl, $9C84                                ; $65BB: $21 $84 $9C
     ld   a, $F1                                   ; $65BE: $3E $F1
     ld   [hl+], a                                 ; $65C0: $22
@@ -7124,7 +7122,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $65C9: $22
     ld   a, $F5                                   ; $65CA: $3E $F5
     ld   [hl], a                                  ; $65CC: $77
-    call Call_00C_4680                            ; $65CD: $CD $80 $46
+    call jr_00C_4680                              ; $65CD: $CD $80 $46
     ld   hl, $9CC4                                ; $65D0: $21 $C4 $9C
     ld   a, $0B                                   ; $65D3: $3E $0B
     ld   [hl+], a                                 ; $65D5: $22
@@ -7137,7 +7135,7 @@ jr_00C_64E9:
     ret                                           ; $65E0: $C9
 
 
-    call Call_00C_4680                            ; $65E1: $CD $80 $46
+    call jr_00C_4680                              ; $65E1: $CD $80 $46
     ld   hl, $9C06                                ; $65E4: $21 $06 $9C
     ld   a, $0C                                   ; $65E7: $3E $0C
     ld   [hl+], a                                 ; $65E9: $22
@@ -7148,7 +7146,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $65F2: $22
     ld   a, $09                                   ; $65F3: $3E $09
     ld   [hl], a                                  ; $65F5: $77
-    call Call_00C_4680                            ; $65F6: $CD $80 $46
+    call jr_00C_4680                              ; $65F6: $CD $80 $46
     ld   hl, $9C46                                ; $65F9: $21 $46 $9C
     ld   a, $7F                                   ; $65FC: $3E $7F
     ld   [hl+], a                                 ; $65FE: $22
@@ -7159,7 +7157,7 @@ jr_00C_64E9:
     ld   [hl+], a                                 ; $6607: $22
     ld   a, $09                                   ; $6608: $3E $09
     ld   [hl], a                                  ; $660A: $77
-    call Call_00C_4680                            ; $660B: $CD $80 $46
+    call jr_00C_4680                              ; $660B: $CD $80 $46
     ld   hl, $9C86                                ; $660E: $21 $86 $9C
     ld   a, $09                                   ; $6611: $3E $09
     ld   [hl+], a                                 ; $6613: $22
@@ -7168,7 +7166,7 @@ jr_00C_64E9:
     ld   a, $09                                   ; $6618: $3E $09
     ld   [hl+], a                                 ; $661A: $22
     ld   [hl], a                                  ; $661B: $77
-    call Call_00C_4680                            ; $661C: $CD $80 $46
+    call jr_00C_4680                              ; $661C: $CD $80 $46
     ld   hl, $9CC6                                ; $661F: $21 $C6 $9C
     ld   a, $0B                                   ; $6622: $3E $0B
     ld   [hl+], a                                 ; $6624: $22
@@ -7182,7 +7180,7 @@ jr_00C_64E9:
     ret                                           ; $6631: $C9
 
 
-Call_00C_6632:
+Call_00C_6632::
     ld   a, $7F                                   ; $6632: $3E $7F
     ld   hl, $9C3A                                ; $6634: $21 $3A $9C
     ld   [hl+], a                                 ; $6637: $22
@@ -7193,7 +7191,7 @@ Call_00C_6632:
     ld   [hl+], a                                 ; $663E: $22
     ld   [hl], a                                  ; $663F: $77
 
-Call_00C_6640:
+Call_00C_6640::
     ld   a, $7F                                   ; $6640: $3E $7F
     ld   hl, $9C3E                                ; $6642: $21 $3E $9C
     ld   [hl+], a                                 ; $6645: $22
@@ -7202,7 +7200,7 @@ Call_00C_6640:
     ld   [hl+], a                                 ; $664A: $22
     ld   [hl], a                                  ; $664B: $77
 
-Call_00C_664C:
+Call_00C_664C::
     ld   a, $7F                                   ; $664C: $3E $7F
     ld   hl, $9C97                                ; $664E: $21 $97 $9C
     ld   [hl+], a                                 ; $6651: $22
@@ -7213,7 +7211,7 @@ Call_00C_664C:
     ld   [hl+], a                                 ; $6658: $22
     ld   [hl], a                                  ; $6659: $77
 
-Call_00C_665A:
+Call_00C_665A::
     ld   a, $7F                                   ; $665A: $3E $7F
     ld   hl, $9C9B                                ; $665C: $21 $9B $9C
     ld   [hl+], a                                 ; $665F: $22
@@ -7224,7 +7222,7 @@ Call_00C_665A:
     ld   [hl+], a                                 ; $6666: $22
     ld   [hl], a                                  ; $6667: $77
 
-Call_00C_6668:
+Call_00C_6668::
     ld   a, $7F                                   ; $6668: $3E $7F
     ld   hl, $9C9F                                ; $666A: $21 $9F $9C
     ld   [hl], a                                  ; $666D: $77
@@ -7233,8 +7231,8 @@ Call_00C_6668:
     ret                                           ; $6672: $C9
 
 
-Call_00C_6673:
-    call Call_00C_4680                            ; $6673: $CD $80 $46
+Call_00C_6673::
+    call jr_00C_4680                              ; $6673: $CD $80 $46
     ld   hl, $9C00                                ; $6676: $21 $00 $9C
     ld   a, $0C                                   ; $6679: $3E $0C
     ld   [hl+], a                                 ; $667B: $22
@@ -7244,7 +7242,7 @@ Call_00C_6673:
     ld   [hl+], a                                 ; $6682: $22
     ld   a, $09                                   ; $6683: $3E $09
     ld   [hl], a                                  ; $6685: $77
-    call Call_00C_4680                            ; $6686: $CD $80 $46
+    call jr_00C_4680                              ; $6686: $CD $80 $46
     ld   hl, $9C40                                ; $6689: $21 $40 $9C
     ld   a, $7F                                   ; $668C: $3E $7F
     ld   [hl+], a                                 ; $668E: $22
@@ -7254,7 +7252,7 @@ Call_00C_6673:
     ld   a, $0A                                   ; $6695: $3E $0A
     ld   [hl+], a                                 ; $6697: $22
     ld   [hl], a                                  ; $6698: $77
-    call Call_00C_4680                            ; $6699: $CD $80 $46
+    call jr_00C_4680                              ; $6699: $CD $80 $46
     ld   hl, $9C80                                ; $669C: $21 $80 $9C
     ld   a, $7F                                   ; $669F: $3E $7F
     ld   [hl+], a                                 ; $66A1: $22
@@ -7263,7 +7261,7 @@ Call_00C_6673:
     ld   a, $7F                                   ; $66A6: $3E $7F
     ld   [hl+], a                                 ; $66A8: $22
     ld   [hl], a                                  ; $66A9: $77
-    call Call_00C_4680                            ; $66AA: $CD $80 $46
+    call jr_00C_4680                              ; $66AA: $CD $80 $46
     ld   hl, $9CC0                                ; $66AD: $21 $C0 $9C
     ld   a, $0B                                   ; $66B0: $3E $0B
     ld   [hl+], a                                 ; $66B2: $22
@@ -7276,8 +7274,8 @@ Call_00C_6673:
     ret                                           ; $66BD: $C9
 
 
-Call_00C_66BE:
-    call Call_00C_4680                            ; $66BE: $CD $80 $46
+Call_00C_66BE::
+    call jr_00C_4680                              ; $66BE: $CD $80 $46
     ld   hl, $9C02                                ; $66C1: $21 $02 $9C
     ld   a, $0C                                   ; $66C4: $3E $0C
     ld   [hl+], a                                 ; $66C6: $22
@@ -7286,7 +7284,7 @@ Call_00C_66BE:
     ld   a, $7F                                   ; $66CB: $3E $7F
     ld   [hl+], a                                 ; $66CD: $22
     ld   [hl], a                                  ; $66CE: $77
-    call Call_00C_4680                            ; $66CF: $CD $80 $46
+    call jr_00C_4680                              ; $66CF: $CD $80 $46
     ld   hl, $9C42                                ; $66D2: $21 $42 $9C
     ld   a, $7F                                   ; $66D5: $3E $7F
     ld   [hl+], a                                 ; $66D7: $22
@@ -7295,7 +7293,7 @@ Call_00C_66BE:
     ld   a, $0A                                   ; $66DC: $3E $0A
     ld   [hl+], a                                 ; $66DE: $22
     ld   [hl], a                                  ; $66DF: $77
-    call Call_00C_4680                            ; $66E0: $CD $80 $46
+    call jr_00C_4680                              ; $66E0: $CD $80 $46
     ld   hl, $9C82                                ; $66E3: $21 $82 $9C
     ld   a, $09                                   ; $66E6: $3E $09
     ld   [hl+], a                                 ; $66E8: $22
@@ -7306,7 +7304,7 @@ Call_00C_66BE:
     ld   [hl+], a                                 ; $66F1: $22
     ld   a, $7F                                   ; $66F2: $3E $7F
     ld   [hl], a                                  ; $66F4: $77
-    call Call_00C_4680                            ; $66F5: $CD $80 $46
+    call jr_00C_4680                              ; $66F5: $CD $80 $46
     ld   hl, $9CC2                                ; $66F8: $21 $C2 $9C
     ld   a, $0B                                   ; $66FB: $3E $0B
     ld   [hl+], a                                 ; $66FD: $22
@@ -7319,8 +7317,8 @@ Call_00C_66BE:
     ret                                           ; $6708: $C9
 
 
-Call_00C_6709:
-    call Call_00C_4680                            ; $6709: $CD $80 $46
+Call_00C_6709::
+    call jr_00C_4680                              ; $6709: $CD $80 $46
     ld   hl, $9C04                                ; $670C: $21 $04 $9C
     ld   a, $0C                                   ; $670F: $3E $0C
     ld   [hl+], a                                 ; $6711: $22
@@ -7330,7 +7328,7 @@ Call_00C_6709:
     ld   [hl+], a                                 ; $6718: $22
     ld   a, $09                                   ; $6719: $3E $09
     ld   [hl], a                                  ; $671B: $77
-    call Call_00C_4680                            ; $671C: $CD $80 $46
+    call jr_00C_4680                              ; $671C: $CD $80 $46
     ld   hl, $9C44                                ; $671F: $21 $44 $9C
     ld   a, $7F                                   ; $6722: $3E $7F
     ld   [hl+], a                                 ; $6724: $22
@@ -7340,7 +7338,7 @@ Call_00C_6709:
     ld   a, $0A                                   ; $672B: $3E $0A
     ld   [hl+], a                                 ; $672D: $22
     ld   [hl], a                                  ; $672E: $77
-    call Call_00C_4680                            ; $672F: $CD $80 $46
+    call jr_00C_4680                              ; $672F: $CD $80 $46
     ld   hl, $9C84                                ; $6732: $21 $84 $9C
     ld   a, $7F                                   ; $6735: $3E $7F
     ld   [hl+], a                                 ; $6737: $22
@@ -7349,7 +7347,7 @@ Call_00C_6709:
     ld   a, $7F                                   ; $673C: $3E $7F
     ld   [hl+], a                                 ; $673E: $22
     ld   [hl], a                                  ; $673F: $77
-    call Call_00C_4680                            ; $6740: $CD $80 $46
+    call jr_00C_4680                              ; $6740: $CD $80 $46
     ld   hl, $9CC4                                ; $6743: $21 $C4 $9C
     ld   a, $0B                                   ; $6746: $3E $0B
     ld   [hl+], a                                 ; $6748: $22
@@ -7362,8 +7360,8 @@ Call_00C_6709:
     ret                                           ; $6753: $C9
 
 
-Call_00C_6754:
-    call Call_00C_4680                            ; $6754: $CD $80 $46
+Call_00C_6754::
+    call jr_00C_4680                              ; $6754: $CD $80 $46
     ld   hl, $9C06                                ; $6757: $21 $06 $9C
     ld   a, $0C                                   ; $675A: $3E $0C
     ld   [hl+], a                                 ; $675C: $22
@@ -7374,7 +7372,7 @@ Call_00C_6754:
     ld   [hl+], a                                 ; $6765: $22
     ld   a, $09                                   ; $6766: $3E $09
     ld   [hl], a                                  ; $6768: $77
-    call Call_00C_4680                            ; $6769: $CD $80 $46
+    call jr_00C_4680                              ; $6769: $CD $80 $46
     ld   hl, $9C46                                ; $676C: $21 $46 $9C
     ld   a, $7F                                   ; $676F: $3E $7F
     ld   [hl+], a                                 ; $6771: $22
@@ -7385,7 +7383,7 @@ Call_00C_6754:
     ld   [hl+], a                                 ; $677A: $22
     ld   a, $09                                   ; $677B: $3E $09
     ld   [hl], a                                  ; $677D: $77
-    call Call_00C_4680                            ; $677E: $CD $80 $46
+    call jr_00C_4680                              ; $677E: $CD $80 $46
     ld   hl, $9C86                                ; $6781: $21 $86 $9C
     ld   a, $09                                   ; $6784: $3E $09
     ld   [hl+], a                                 ; $6786: $22
@@ -7394,7 +7392,7 @@ Call_00C_6754:
     ld   a, $09                                   ; $678B: $3E $09
     ld   [hl+], a                                 ; $678D: $22
     ld   [hl], a                                  ; $678E: $77
-    call Call_00C_4680                            ; $678F: $CD $80 $46
+    call jr_00C_4680                              ; $678F: $CD $80 $46
     ld   hl, $9CC6                                ; $6792: $21 $C6 $9C
     ld   a, $0B                                   ; $6795: $3E $0B
     ld   [hl+], a                                 ; $6797: $22
@@ -7408,8 +7406,8 @@ Call_00C_6754:
     ret                                           ; $67A4: $C9
 
 
-Call_00C_67A5:
-    call Call_00C_4680                            ; $67A5: $CD $80 $46
+Call_00C_67A5::
+    call jr_00C_4680                              ; $67A5: $CD $80 $46
     ld   hl, $9C00                                ; $67A8: $21 $00 $9C
     ld   a, $0C                                   ; $67AB: $3E $0C
     ld   [hl+], a                                 ; $67AD: $22
@@ -7419,7 +7417,7 @@ Call_00C_67A5:
     ld   [hl+], a                                 ; $67B4: $22
     ld   a, $09                                   ; $67B5: $3E $09
     ld   [hl], a                                  ; $67B7: $77
-    call Call_00C_4680                            ; $67B8: $CD $80 $46
+    call jr_00C_4680                              ; $67B8: $CD $80 $46
     ld   hl, $9C40                                ; $67BB: $21 $40 $9C
     ld   a, $A5                                   ; $67BE: $3E $A5
     ld   [hl+], a                                 ; $67C0: $22
@@ -7429,7 +7427,7 @@ Call_00C_67A5:
     ld   a, $0A                                   ; $67C7: $3E $0A
     ld   [hl+], a                                 ; $67C9: $22
     ld   [hl], a                                  ; $67CA: $77
-    call Call_00C_4680                            ; $67CB: $CD $80 $46
+    call jr_00C_4680                              ; $67CB: $CD $80 $46
     ld   hl, $9C80                                ; $67CE: $21 $80 $9C
     ld   a, $7F                                   ; $67D1: $3E $7F
     ld   [hl+], a                                 ; $67D3: $22
@@ -7438,7 +7436,7 @@ Call_00C_67A5:
     ld   a, $7F                                   ; $67D8: $3E $7F
     ld   [hl+], a                                 ; $67DA: $22
     ld   [hl], a                                  ; $67DB: $77
-    call Call_00C_4680                            ; $67DC: $CD $80 $46
+    call jr_00C_4680                              ; $67DC: $CD $80 $46
     ld   hl, $9CC0                                ; $67DF: $21 $C0 $9C
     ld   a, $0B                                   ; $67E2: $3E $0B
     ld   [hl+], a                                 ; $67E4: $22
@@ -7451,8 +7449,8 @@ Call_00C_67A5:
     ret                                           ; $67EF: $C9
 
 
-Call_00C_67F0:
-    call Call_00C_4680                            ; $67F0: $CD $80 $46
+Call_00C_67F0::
+    call jr_00C_4680                              ; $67F0: $CD $80 $46
     ld   hl, $9C02                                ; $67F3: $21 $02 $9C
     ld   a, $0C                                   ; $67F6: $3E $0C
     ld   [hl+], a                                 ; $67F8: $22
@@ -7462,7 +7460,7 @@ Call_00C_67F0:
     ld   [hl+], a                                 ; $67FF: $22
     ld   a, $B4                                   ; $6800: $3E $B4
     ld   [hl], a                                  ; $6802: $77
-    call Call_00C_4680                            ; $6803: $CD $80 $46
+    call jr_00C_4680                              ; $6803: $CD $80 $46
     ld   hl, $9C42                                ; $6806: $21 $42 $9C
     ld   a, $B6                                   ; $6809: $3E $B6
     ld   [hl+], a                                 ; $680B: $22
@@ -7472,7 +7470,7 @@ Call_00C_67F0:
     ld   a, $0A                                   ; $6812: $3E $0A
     ld   [hl+], a                                 ; $6814: $22
     ld   [hl], a                                  ; $6815: $77
-    call Call_00C_4680                            ; $6816: $CD $80 $46
+    call jr_00C_4680                              ; $6816: $CD $80 $46
     ld   hl, $9C82                                ; $6819: $21 $82 $9C
     ld   a, $09                                   ; $681C: $3E $09
     ld   [hl+], a                                 ; $681E: $22
@@ -7483,7 +7481,7 @@ Call_00C_67F0:
     ld   [hl+], a                                 ; $6827: $22
     ld   a, $7F                                   ; $6828: $3E $7F
     ld   [hl], a                                  ; $682A: $77
-    call Call_00C_4680                            ; $682B: $CD $80 $46
+    call jr_00C_4680                              ; $682B: $CD $80 $46
     ld   hl, $9CC2                                ; $682E: $21 $C2 $9C
     ld   a, $0B                                   ; $6831: $3E $0B
     ld   [hl+], a                                 ; $6833: $22
@@ -7496,8 +7494,8 @@ Call_00C_67F0:
     ret                                           ; $683E: $C9
 
 
-Call_00C_683F:
-    call Call_00C_4680                            ; $683F: $CD $80 $46
+Call_00C_683F::
+    call jr_00C_4680                              ; $683F: $CD $80 $46
     ld   hl, $9C04                                ; $6842: $21 $04 $9C
     ld   a, $0C                                   ; $6845: $3E $0C
     ld   [hl+], a                                 ; $6847: $22
@@ -7507,7 +7505,7 @@ Call_00C_683F:
     ld   [hl+], a                                 ; $684E: $22
     ld   a, $09                                   ; $684F: $3E $09
     ld   [hl], a                                  ; $6851: $77
-    call Call_00C_4680                            ; $6852: $CD $80 $46
+    call jr_00C_4680                              ; $6852: $CD $80 $46
     ld   hl, $9C44                                ; $6855: $21 $44 $9C
     ld   a, $B8                                   ; $6858: $3E $B8
     ld   [hl+], a                                 ; $685A: $22
@@ -7517,7 +7515,7 @@ Call_00C_683F:
     ld   a, $0A                                   ; $6861: $3E $0A
     ld   [hl+], a                                 ; $6863: $22
     ld   [hl], a                                  ; $6864: $77
-    call Call_00C_4680                            ; $6865: $CD $80 $46
+    call jr_00C_4680                              ; $6865: $CD $80 $46
     ld   hl, $9C84                                ; $6868: $21 $84 $9C
     ld   a, $7F                                   ; $686B: $3E $7F
     ld   [hl+], a                                 ; $686D: $22
@@ -7526,7 +7524,7 @@ Call_00C_683F:
     ld   a, $7F                                   ; $6872: $3E $7F
     ld   [hl+], a                                 ; $6874: $22
     ld   [hl], a                                  ; $6875: $77
-    call Call_00C_4680                            ; $6876: $CD $80 $46
+    call jr_00C_4680                              ; $6876: $CD $80 $46
     ld   hl, $9CC4                                ; $6879: $21 $C4 $9C
     ld   a, $0B                                   ; $687C: $3E $0B
     ld   [hl+], a                                 ; $687E: $22
@@ -7539,8 +7537,8 @@ Call_00C_683F:
     ret                                           ; $6889: $C9
 
 
-Call_00C_688A:
-    call Call_00C_4680                            ; $688A: $CD $80 $46
+Call_00C_688A::
+    call jr_00C_4680                              ; $688A: $CD $80 $46
     ld   hl, $9C00                                ; $688D: $21 $00 $9C
     ld   a, $0C                                   ; $6890: $3E $0C
     ld   [hl+], a                                 ; $6892: $22
@@ -7550,7 +7548,7 @@ Call_00C_688A:
     ld   [hl+], a                                 ; $6899: $22
     ld   a, $09                                   ; $689A: $3E $09
     ld   [hl], a                                  ; $689C: $77
-    call Call_00C_4680                            ; $689D: $CD $80 $46
+    call jr_00C_4680                              ; $689D: $CD $80 $46
     ld   hl, $9C40                                ; $68A0: $21 $40 $9C
     ld   a, $A5                                   ; $68A3: $3E $A5
     ld   [hl+], a                                 ; $68A5: $22
@@ -7560,7 +7558,7 @@ Call_00C_688A:
     ld   a, $0A                                   ; $68AC: $3E $0A
     ld   [hl+], a                                 ; $68AE: $22
     ld   [hl], a                                  ; $68AF: $77
-    call Call_00C_4680                            ; $68B0: $CD $80 $46
+    call jr_00C_4680                              ; $68B0: $CD $80 $46
     ld   hl, $9C80                                ; $68B3: $21 $80 $9C
     ld   a, $E1                                   ; $68B6: $3E $E1
     ld   [hl+], a                                 ; $68B8: $22
@@ -7571,7 +7569,7 @@ Call_00C_688A:
     ld   [hl+], a                                 ; $68C1: $22
     ld   a, $E5                                   ; $68C2: $3E $E5
     ld   [hl], a                                  ; $68C4: $77
-    call Call_00C_4680                            ; $68C5: $CD $80 $46
+    call jr_00C_4680                              ; $68C5: $CD $80 $46
     ld   hl, $9CC0                                ; $68C8: $21 $C0 $9C
     ld   a, $0B                                   ; $68CB: $3E $0B
     ld   [hl+], a                                 ; $68CD: $22
@@ -7584,8 +7582,8 @@ Call_00C_688A:
     ret                                           ; $68D8: $C9
 
 
-Call_00C_68D9:
-    call Call_00C_4680                            ; $68D9: $CD $80 $46
+Call_00C_68D9::
+    call jr_00C_4680                              ; $68D9: $CD $80 $46
     ld   hl, $9C02                                ; $68DC: $21 $02 $9C
     ld   a, $0C                                   ; $68DF: $3E $0C
     ld   [hl+], a                                 ; $68E1: $22
@@ -7595,7 +7593,7 @@ Call_00C_68D9:
     ld   [hl+], a                                 ; $68E8: $22
     ld   a, $B4                                   ; $68E9: $3E $B4
     ld   [hl], a                                  ; $68EB: $77
-    call Call_00C_4680                            ; $68EC: $CD $80 $46
+    call jr_00C_4680                              ; $68EC: $CD $80 $46
     ld   hl, $9C42                                ; $68EF: $21 $42 $9C
     ld   a, $B6                                   ; $68F2: $3E $B6
     ld   [hl+], a                                 ; $68F4: $22
@@ -7605,7 +7603,7 @@ Call_00C_68D9:
     ld   a, $0A                                   ; $68FB: $3E $0A
     ld   [hl+], a                                 ; $68FD: $22
     ld   [hl], a                                  ; $68FE: $77
-    call Call_00C_4680                            ; $68FF: $CD $80 $46
+    call jr_00C_4680                              ; $68FF: $CD $80 $46
     ld   hl, $9C82                                ; $6902: $21 $82 $9C
     ld   a, $09                                   ; $6905: $3E $09
     ld   [hl+], a                                 ; $6907: $22
@@ -7616,7 +7614,7 @@ Call_00C_68D9:
     ld   [hl+], a                                 ; $6910: $22
     ld   a, $F3                                   ; $6911: $3E $F3
     ld   [hl], a                                  ; $6913: $77
-    call Call_00C_4680                            ; $6914: $CD $80 $46
+    call jr_00C_4680                              ; $6914: $CD $80 $46
     ld   hl, $9CC2                                ; $6917: $21 $C2 $9C
     ld   a, $0B                                   ; $691A: $3E $0B
     ld   [hl+], a                                 ; $691C: $22
@@ -7629,8 +7627,8 @@ Call_00C_68D9:
     ret                                           ; $6927: $C9
 
 
-Call_00C_6928:
-    call Call_00C_4680                            ; $6928: $CD $80 $46
+Call_00C_6928::
+    call jr_00C_4680                              ; $6928: $CD $80 $46
     ld   hl, $9C04                                ; $692B: $21 $04 $9C
     ld   a, $0C                                   ; $692E: $3E $0C
     ld   [hl+], a                                 ; $6930: $22
@@ -7640,7 +7638,7 @@ Call_00C_6928:
     ld   [hl+], a                                 ; $6937: $22
     ld   a, $09                                   ; $6938: $3E $09
     ld   [hl], a                                  ; $693A: $77
-    call Call_00C_4680                            ; $693B: $CD $80 $46
+    call jr_00C_4680                              ; $693B: $CD $80 $46
     ld   hl, $9C44                                ; $693E: $21 $44 $9C
     ld   a, $B8                                   ; $6941: $3E $B8
     ld   [hl+], a                                 ; $6943: $22
@@ -7650,7 +7648,7 @@ Call_00C_6928:
     ld   a, $0A                                   ; $694A: $3E $0A
     ld   [hl+], a                                 ; $694C: $22
     ld   [hl], a                                  ; $694D: $77
-    call Call_00C_4680                            ; $694E: $CD $80 $46
+    call jr_00C_4680                              ; $694E: $CD $80 $46
     ld   hl, $9C84                                ; $6951: $21 $84 $9C
     ld   a, $F1                                   ; $6954: $3E $F1
     ld   [hl+], a                                 ; $6956: $22
@@ -7661,7 +7659,7 @@ Call_00C_6928:
     ld   [hl+], a                                 ; $695F: $22
     ld   a, $F5                                   ; $6960: $3E $F5
     ld   [hl], a                                  ; $6962: $77
-    call Call_00C_4680                            ; $6963: $CD $80 $46
+    call jr_00C_4680                              ; $6963: $CD $80 $46
     ld   hl, $9CC4                                ; $6966: $21 $C4 $9C
     ld   a, $0B                                   ; $6969: $3E $0B
     ld   [hl+], a                                 ; $696B: $22
@@ -7674,8 +7672,8 @@ Call_00C_6928:
     ret                                           ; $6976: $C9
 
 
-Call_00C_6977:
-    call Call_00C_4680                            ; $6977: $CD $80 $46
+Call_00C_6977::
+    call jr_00C_4680                              ; $6977: $CD $80 $46
     ld   hl, $9C00                                ; $697A: $21 $00 $9C
     ld   a, $0C                                   ; $697D: $3E $0C
     ld   [hl+], a                                 ; $697F: $22
@@ -7685,7 +7683,7 @@ Call_00C_6977:
     ld   [hl+], a                                 ; $6986: $22
     ld   a, $09                                   ; $6987: $3E $09
     ld   [hl], a                                  ; $6989: $77
-    call Call_00C_4680                            ; $698A: $CD $80 $46
+    call jr_00C_4680                              ; $698A: $CD $80 $46
     ld   hl, $9C40                                ; $698D: $21 $40 $9C
     ld   a, $7F                                   ; $6990: $3E $7F
     ld   [hl+], a                                 ; $6992: $22
@@ -7695,7 +7693,7 @@ Call_00C_6977:
     ld   a, $0A                                   ; $6999: $3E $0A
     ld   [hl+], a                                 ; $699B: $22
     ld   [hl], a                                  ; $699C: $77
-    call Call_00C_4680                            ; $699D: $CD $80 $46
+    call jr_00C_4680                              ; $699D: $CD $80 $46
     ld   hl, $9C80                                ; $69A0: $21 $80 $9C
     ld   a, $E1                                   ; $69A3: $3E $E1
     ld   [hl+], a                                 ; $69A5: $22
@@ -7706,7 +7704,7 @@ Call_00C_6977:
     ld   [hl+], a                                 ; $69AE: $22
     ld   a, $E5                                   ; $69AF: $3E $E5
     ld   [hl], a                                  ; $69B1: $77
-    call Call_00C_4680                            ; $69B2: $CD $80 $46
+    call jr_00C_4680                              ; $69B2: $CD $80 $46
     ld   hl, $9CC0                                ; $69B5: $21 $C0 $9C
     ld   a, $0B                                   ; $69B8: $3E $0B
     ld   [hl+], a                                 ; $69BA: $22
@@ -7719,8 +7717,8 @@ Call_00C_6977:
     ret                                           ; $69C5: $C9
 
 
-Call_00C_69C6:
-    call Call_00C_4680                            ; $69C6: $CD $80 $46
+Call_00C_69C6::
+    call jr_00C_4680                              ; $69C6: $CD $80 $46
     ld   hl, $9C02                                ; $69C9: $21 $02 $9C
     ld   a, $0C                                   ; $69CC: $3E $0C
     ld   [hl+], a                                 ; $69CE: $22
@@ -7729,7 +7727,7 @@ Call_00C_69C6:
     ld   a, $7F                                   ; $69D3: $3E $7F
     ld   [hl+], a                                 ; $69D5: $22
     ld   [hl], a                                  ; $69D6: $77
-    call Call_00C_4680                            ; $69D7: $CD $80 $46
+    call jr_00C_4680                              ; $69D7: $CD $80 $46
     ld   hl, $9C42                                ; $69DA: $21 $42 $9C
     ld   a, $7F                                   ; $69DD: $3E $7F
     ld   [hl+], a                                 ; $69DF: $22
@@ -7738,7 +7736,7 @@ Call_00C_69C6:
     ld   a, $0A                                   ; $69E4: $3E $0A
     ld   [hl+], a                                 ; $69E6: $22
     ld   [hl], a                                  ; $69E7: $77
-    call Call_00C_4680                            ; $69E8: $CD $80 $46
+    call jr_00C_4680                              ; $69E8: $CD $80 $46
     ld   hl, $9C82                                ; $69EB: $21 $82 $9C
     ld   a, $09                                   ; $69EE: $3E $09
     ld   [hl+], a                                 ; $69F0: $22
@@ -7749,7 +7747,7 @@ Call_00C_69C6:
     ld   [hl+], a                                 ; $69F9: $22
     ld   a, $F3                                   ; $69FA: $3E $F3
     ld   [hl], a                                  ; $69FC: $77
-    call Call_00C_4680                            ; $69FD: $CD $80 $46
+    call jr_00C_4680                              ; $69FD: $CD $80 $46
     ld   hl, $9CC2                                ; $6A00: $21 $C2 $9C
     ld   a, $0B                                   ; $6A03: $3E $0B
     ld   [hl+], a                                 ; $6A05: $22
@@ -7762,8 +7760,8 @@ Call_00C_69C6:
     ret                                           ; $6A10: $C9
 
 
-Call_00C_6A11:
-    call Call_00C_4680                            ; $6A11: $CD $80 $46
+Call_00C_6A11::
+    call jr_00C_4680                              ; $6A11: $CD $80 $46
     ld   hl, $9C04                                ; $6A14: $21 $04 $9C
     ld   a, $0C                                   ; $6A17: $3E $0C
     ld   [hl+], a                                 ; $6A19: $22
@@ -7773,7 +7771,7 @@ Call_00C_6A11:
     ld   [hl+], a                                 ; $6A20: $22
     ld   a, $09                                   ; $6A21: $3E $09
     ld   [hl], a                                  ; $6A23: $77
-    call Call_00C_4680                            ; $6A24: $CD $80 $46
+    call jr_00C_4680                              ; $6A24: $CD $80 $46
     ld   hl, $9C44                                ; $6A27: $21 $44 $9C
     ld   a, $7F                                   ; $6A2A: $3E $7F
     ld   [hl+], a                                 ; $6A2C: $22
@@ -7783,7 +7781,7 @@ Call_00C_6A11:
     ld   a, $0A                                   ; $6A33: $3E $0A
     ld   [hl+], a                                 ; $6A35: $22
     ld   [hl], a                                  ; $6A36: $77
-    call Call_00C_4680                            ; $6A37: $CD $80 $46
+    call jr_00C_4680                              ; $6A37: $CD $80 $46
     ld   hl, $9C84                                ; $6A3A: $21 $84 $9C
     ld   a, $F1                                   ; $6A3D: $3E $F1
     ld   [hl+], a                                 ; $6A3F: $22
@@ -7794,7 +7792,7 @@ Call_00C_6A11:
     ld   [hl+], a                                 ; $6A48: $22
     ld   a, $F5                                   ; $6A49: $3E $F5
     ld   [hl], a                                  ; $6A4B: $77
-    call Call_00C_4680                            ; $6A4C: $CD $80 $46
+    call jr_00C_4680                              ; $6A4C: $CD $80 $46
     ld   hl, $9CC4                                ; $6A4F: $21 $C4 $9C
     ld   a, $0B                                   ; $6A52: $3E $0B
     ld   [hl+], a                                 ; $6A54: $22
@@ -7807,13 +7805,13 @@ Call_00C_6A11:
     ret                                           ; $6A5F: $C9
 
 
-Call_00C_6A60:
-    call Call_00C_4680                            ; $6A60: $CD $80 $46
+Call_00C_6A60::
+    call jr_00C_4680                              ; $6A60: $CD $80 $46
     ld   a, $04                                   ; $6A63: $3E $04
     ld   [hl], a                                  ; $6A65: $77
     ld   de, $0020                                ; $6A66: $11 $20 $00
     add  hl, de                                   ; $6A69: $19
-    call Call_00C_4680                            ; $6A6A: $CD $80 $46
+    call jr_00C_4680                              ; $6A6A: $CD $80 $46
     xor  a                                        ; $6A6D: $AF
     ld   [hl+], a                                 ; $6A6E: $22
     inc  a                                        ; $6A6F: $3C
@@ -7825,13 +7823,13 @@ Call_00C_6A60:
     ret                                           ; $6A75: $C9
 
 
-Call_00C_6A76:
-    call Call_00C_4680                            ; $6A76: $CD $80 $46
+Call_00C_6A76::
+    call jr_00C_4680                              ; $6A76: $CD $80 $46
     ld   a, $04                                   ; $6A79: $3E $04
     ld   [hl], a                                  ; $6A7B: $77
     ld   de, $0020                                ; $6A7C: $11 $20 $00
     add  hl, de                                   ; $6A7F: $19
-    call Call_00C_4680                            ; $6A80: $CD $80 $46
+    call jr_00C_4680                              ; $6A80: $CD $80 $46
     xor  a                                        ; $6A83: $AF
     ld   [hl+], a                                 ; $6A84: $22
     inc  a                                        ; $6A85: $3C
@@ -7844,13 +7842,13 @@ Call_00C_6A76:
     ret                                           ; $6A8E: $C9
 
 
-Call_00C_6A8F:
-    call Call_00C_4680                            ; $6A8F: $CD $80 $46
+Call_00C_6A8F::
+    call jr_00C_4680                              ; $6A8F: $CD $80 $46
     ld   a, $04                                   ; $6A92: $3E $04
     ld   [hl], a                                  ; $6A94: $77
     ld   de, $0020                                ; $6A95: $11 $20 $00
     add  hl, de                                   ; $6A98: $19
-    call Call_00C_4680                            ; $6A99: $CD $80 $46
+    call jr_00C_4680                              ; $6A99: $CD $80 $46
     xor  a                                        ; $6A9C: $AF
     ld   [hl+], a                                 ; $6A9D: $22
     inc  a                                        ; $6A9E: $3C
@@ -7863,13 +7861,13 @@ Call_00C_6A8F:
     ret                                           ; $6AA7: $C9
 
 
-Call_00C_6AA8:
-    call Call_00C_4680                            ; $6AA8: $CD $80 $46
+Call_00C_6AA8::
+    call jr_00C_4680                              ; $6AA8: $CD $80 $46
     ld   a, $09                                   ; $6AAB: $3E $09
     ld   [hl], a                                  ; $6AAD: $77
     ld   de, $0020                                ; $6AAE: $11 $20 $00
     add  hl, de                                   ; $6AB1: $19
-    call Call_00C_4680                            ; $6AB2: $CD $80 $46
+    call jr_00C_4680                              ; $6AB2: $CD $80 $46
     ld   a, $0A                                   ; $6AB5: $3E $0A
     ld   [hl+], a                                 ; $6AB7: $22
     ld   [hl+], a                                 ; $6AB8: $22
@@ -7878,13 +7876,13 @@ Call_00C_6AA8:
     ret                                           ; $6ABB: $C9
 
 
-Call_00C_6ABC:
-    call Call_00C_4680                            ; $6ABC: $CD $80 $46
+Call_00C_6ABC::
+    call jr_00C_4680                              ; $6ABC: $CD $80 $46
     ld   a, $09                                   ; $6ABF: $3E $09
     ld   [hl], a                                  ; $6AC1: $77
     ld   de, $0020                                ; $6AC2: $11 $20 $00
     add  hl, de                                   ; $6AC5: $19
-    call Call_00C_4680                            ; $6AC6: $CD $80 $46
+    call jr_00C_4680                              ; $6AC6: $CD $80 $46
     ld   a, $0A                                   ; $6AC9: $3E $0A
     ld   [hl+], a                                 ; $6ACB: $22
     ld   [hl+], a                                 ; $6ACC: $22
@@ -7894,13 +7892,13 @@ Call_00C_6ABC:
     ret                                           ; $6AD2: $C9
 
 
-Call_00C_6AD3:
-    call Call_00C_4680                            ; $6AD3: $CD $80 $46
+Call_00C_6AD3::
+    call jr_00C_4680                              ; $6AD3: $CD $80 $46
     ld   a, $09                                   ; $6AD6: $3E $09
     ld   [hl], a                                  ; $6AD8: $77
     ld   de, $0020                                ; $6AD9: $11 $20 $00
     add  hl, de                                   ; $6ADC: $19
-    call Call_00C_4680                            ; $6ADD: $CD $80 $46
+    call jr_00C_4680                              ; $6ADD: $CD $80 $46
     ld   a, $0B                                   ; $6AE0: $3E $0B
     ld   [hl+], a                                 ; $6AE2: $22
     ld   [hl+], a                                 ; $6AE3: $22
@@ -7909,13 +7907,13 @@ Call_00C_6AD3:
     ret                                           ; $6AE6: $C9
 
 
-Call_00C_6AE7:
-    call Call_00C_4680                            ; $6AE7: $CD $80 $46
+Call_00C_6AE7::
+    call jr_00C_4680                              ; $6AE7: $CD $80 $46
     ld   a, $09                                   ; $6AEA: $3E $09
     ld   [hl], a                                  ; $6AEC: $77
     ld   de, $0020                                ; $6AED: $11 $20 $00
     add  hl, de                                   ; $6AF0: $19
-    call Call_00C_4680                            ; $6AF1: $CD $80 $46
+    call jr_00C_4680                              ; $6AF1: $CD $80 $46
     ld   a, $0B                                   ; $6AF4: $3E $0B
     ld   [hl+], a                                 ; $6AF6: $22
     ld   [hl+], a                                 ; $6AF7: $22
@@ -7925,8 +7923,8 @@ Call_00C_6AE7:
     ret                                           ; $6AFD: $C9
 
 
-Call_00C_6AFE:
-    call Call_00C_4680                            ; $6AFE: $CD $80 $46
+Call_00C_6AFE::
+    call jr_00C_4680                              ; $6AFE: $CD $80 $46
     ld   hl, $9C06                                ; $6B01: $21 $06 $9C
     ld   a, $77                                   ; $6B04: $3E $77
     ld   [hl+], a                                 ; $6B06: $22
@@ -7936,7 +7934,7 @@ Call_00C_6AFE:
     ld   [hl+], a                                 ; $6B0D: $22
     ld   a, $51                                   ; $6B0E: $3E $51
     ld   [hl], a                                  ; $6B10: $77
-    call Call_00C_4680                            ; $6B11: $CD $80 $46
+    call jr_00C_4680                              ; $6B11: $CD $80 $46
     ld   hl, $9C46                                ; $6B14: $21 $46 $9C
     ld   a, $7F                                   ; $6B17: $3E $7F
     ld   [hl+], a                                 ; $6B19: $22
@@ -7946,7 +7944,7 @@ Call_00C_6AFE:
     ld   [hl+], a                                 ; $6B20: $22
     ld   a, $5B                                   ; $6B21: $3E $5B
     ld   [hl], a                                  ; $6B23: $77
-    call Call_00C_4680                            ; $6B24: $CD $80 $46
+    call jr_00C_4680                              ; $6B24: $CD $80 $46
     ld   hl, $9C86                                ; $6B27: $21 $86 $9C
     ld   a, $7F                                   ; $6B2A: $3E $7F
     ld   [hl+], a                                 ; $6B2C: $22
@@ -7956,7 +7954,7 @@ Call_00C_6AFE:
     ld   [hl+], a                                 ; $6B33: $22
     ld   a, $65                                   ; $6B34: $3E $65
     ld   [hl], a                                  ; $6B36: $77
-    call Call_00C_4680                            ; $6B37: $CD $80 $46
+    call jr_00C_4680                              ; $6B37: $CD $80 $46
     ld   hl, $9CC6                                ; $6B3A: $21 $C6 $9C
     ld   a, $79                                   ; $6B3D: $3E $79
     ld   [hl+], a                                 ; $6B3F: $22
@@ -7968,8 +7966,8 @@ Call_00C_6AFE:
     ret                                           ; $6B48: $C9
 
 
-Call_00C_6B49:
-    call Call_00C_4680                            ; $6B49: $CD $80 $46
+Call_00C_6B49::
+    call jr_00C_4680                              ; $6B49: $CD $80 $46
     ld   hl, $9C04                                ; $6B4C: $21 $04 $9C
     ld   a, $77                                   ; $6B4F: $3E $77
     ld   [hl+], a                                 ; $6B51: $22
@@ -7979,7 +7977,7 @@ Call_00C_6B49:
     ld   [hl+], a                                 ; $6B58: $22
     ld   a, $7F                                   ; $6B59: $3E $7F
     ld   [hl], a                                  ; $6B5B: $77
-    call Call_00C_4680                            ; $6B5C: $CD $80 $46
+    call jr_00C_4680                              ; $6B5C: $CD $80 $46
     ld   hl, $9C44                                ; $6B5F: $21 $44 $9C
     ld   a, $7F                                   ; $6B62: $3E $7F
     ld   [hl+], a                                 ; $6B64: $22
@@ -7990,7 +7988,7 @@ Call_00C_6B49:
     ld   [hl+], a                                 ; $6B6D: $22
     ld   a, $FC                                   ; $6B6E: $3E $FC
     ld   [hl], a                                  ; $6B70: $77
-    call Call_00C_4680                            ; $6B71: $CD $80 $46
+    call jr_00C_4680                              ; $6B71: $CD $80 $46
     ld   hl, $9C84                                ; $6B74: $21 $84 $9C
     ld   a, $7F                                   ; $6B77: $3E $7F
     ld   [hl+], a                                 ; $6B79: $22
@@ -8001,7 +7999,7 @@ Call_00C_6B49:
     ld   [hl+], a                                 ; $6B82: $22
     ld   a, $7F                                   ; $6B83: $3E $7F
     ld   [hl], a                                  ; $6B85: $77
-    call Call_00C_4680                            ; $6B86: $CD $80 $46
+    call jr_00C_4680                              ; $6B86: $CD $80 $46
     ld   hl, $9CC4                                ; $6B89: $21 $C4 $9C
     ld   a, $79                                   ; $6B8C: $3E $79
     ld   [hl+], a                                 ; $6B8E: $22
@@ -8013,8 +8011,8 @@ Call_00C_6B49:
     ret                                           ; $6B97: $C9
 
 
-Call_00C_6B98:
-    call Call_00C_4680                            ; $6B98: $CD $80 $46
+Call_00C_6B98::
+    call jr_00C_4680                              ; $6B98: $CD $80 $46
     ld   hl, $9C02                                ; $6B9B: $21 $02 $9C
     ld   a, $77                                   ; $6B9E: $3E $77
     ld   [hl+], a                                 ; $6BA0: $22
@@ -8023,7 +8021,7 @@ Call_00C_6B98:
     ld   a, $FF                                   ; $6BA5: $3E $FF
     ld   [hl+], a                                 ; $6BA7: $22
     ld   [hl], a                                  ; $6BA8: $77
-    call Call_00C_4680                            ; $6BA9: $CD $80 $46
+    call jr_00C_4680                              ; $6BA9: $CD $80 $46
     ld   hl, $9C42                                ; $6BAC: $21 $42 $9C
     ld   a, $7F                                   ; $6BAF: $3E $7F
     ld   [hl+], a                                 ; $6BB1: $22
@@ -8032,7 +8030,7 @@ Call_00C_6B98:
     ld   a, $7F                                   ; $6BB6: $3E $7F
     ld   [hl+], a                                 ; $6BB8: $22
     ld   [hl], a                                  ; $6BB9: $77
-    call Call_00C_4680                            ; $6BBA: $CD $80 $46
+    call jr_00C_4680                              ; $6BBA: $CD $80 $46
     ld   hl, $9C82                                ; $6BBD: $21 $82 $9C
     ld   a, $7F                                   ; $6BC0: $3E $7F
     ld   [hl+], a                                 ; $6BC2: $22
@@ -8041,7 +8039,7 @@ Call_00C_6B98:
     ld   a, $FD                                   ; $6BC7: $3E $FD
     ld   [hl+], a                                 ; $6BC9: $22
     ld   [hl], a                                  ; $6BCA: $77
-    call Call_00C_4680                            ; $6BCB: $CD $80 $46
+    call jr_00C_4680                              ; $6BCB: $CD $80 $46
     ld   hl, $9CC2                                ; $6BCE: $21 $C2 $9C
     ld   a, $79                                   ; $6BD1: $3E $79
     ld   [hl+], a                                 ; $6BD3: $22
@@ -8053,8 +8051,8 @@ Call_00C_6B98:
     ret                                           ; $6BDC: $C9
 
 
-Call_00C_6BDD:
-    call Call_00C_4680                            ; $6BDD: $CD $80 $46
+Call_00C_6BDD::
+    call jr_00C_4680                              ; $6BDD: $CD $80 $46
     ld   hl, $9C00                                ; $6BE0: $21 $00 $9C
     ld   a, $7B                                   ; $6BE3: $3E $7B
     ld   [hl+], a                                 ; $6BE5: $22
@@ -8065,7 +8063,7 @@ Call_00C_6BDD:
     ld   [hl+], a                                 ; $6BEE: $22
     ld   a, $7F                                   ; $6BEF: $3E $7F
     ld   [hl], a                                  ; $6BF1: $77
-    call Call_00C_4680                            ; $6BF2: $CD $80 $46
+    call jr_00C_4680                              ; $6BF2: $CD $80 $46
     ld   hl, $9C40                                ; $6BF5: $21 $40 $9C
     ld   a, $78                                   ; $6BF8: $3E $78
     ld   [hl+], a                                 ; $6BFA: $22
@@ -8076,7 +8074,7 @@ Call_00C_6BDD:
     ld   [hl+], a                                 ; $6C03: $22
     ld   a, $FE                                   ; $6C04: $3E $FE
     ld   [hl], a                                  ; $6C06: $77
-    call Call_00C_4680                            ; $6C07: $CD $80 $46
+    call jr_00C_4680                              ; $6C07: $CD $80 $46
     ld   hl, $9C80                                ; $6C0A: $21 $80 $9C
     ld   a, $78                                   ; $6C0D: $3E $78
     ld   [hl+], a                                 ; $6C0F: $22
@@ -8087,7 +8085,7 @@ Call_00C_6BDD:
     ld   [hl+], a                                 ; $6C18: $22
     ld   a, $7F                                   ; $6C19: $3E $7F
     ld   [hl], a                                  ; $6C1B: $77
-    call Call_00C_4680                            ; $6C1C: $CD $80 $46
+    call jr_00C_4680                              ; $6C1C: $CD $80 $46
     ld   hl, $9CC0                                ; $6C1F: $21 $C0 $9C
     ld   a, $7C                                   ; $6C22: $3E $7C
     ld   [hl+], a                                 ; $6C24: $22
@@ -8100,7 +8098,7 @@ Call_00C_6BDD:
     ret                                           ; $6C2F: $C9
 
 
-Call_00C_6C30:
+Call_00C_6C30::
     ld   a, [$D793]                               ; $6C30: $FA $93 $D7
     and  a                                        ; $6C33: $A7
     jr   nz, jr_00C_6C3D                          ; $6C34: $20 $07
@@ -8110,7 +8108,7 @@ Call_00C_6C30:
     ret                                           ; $6C3C: $C9
 
 
-jr_00C_6C3D:
+jr_00C_6C3D::
     cp   $01                                      ; $6C3D: $FE $01
     jr   nz, jr_00C_6C48                          ; $6C3F: $20 $07
 
@@ -8119,7 +8117,7 @@ jr_00C_6C3D:
     ret                                           ; $6C47: $C9
 
 
-jr_00C_6C48:
+jr_00C_6C48::
     cp   $02                                      ; $6C48: $FE $02
     jr   nz, jr_00C_6C53                          ; $6C4A: $20 $07
 
@@ -8128,7 +8126,7 @@ jr_00C_6C48:
     ret                                           ; $6C52: $C9
 
 
-jr_00C_6C53:
+jr_00C_6C53::
     cp   $03                                      ; $6C53: $FE $03
     jr   nz, jr_00C_6C5E                          ; $6C55: $20 $07
 
@@ -8137,7 +8135,7 @@ jr_00C_6C53:
     ret                                           ; $6C5D: $C9
 
 
-jr_00C_6C5E:
+jr_00C_6C5E::
     cp   $04                                      ; $6C5E: $FE $04
     jr   nz, jr_00C_6C69                          ; $6C60: $20 $07
 
@@ -8146,7 +8144,7 @@ jr_00C_6C5E:
     ret                                           ; $6C68: $C9
 
 
-jr_00C_6C69:
+jr_00C_6C69::
     cp   $05                                      ; $6C69: $FE $05
     jr   nz, jr_00C_6C74                          ; $6C6B: $20 $07
 
@@ -8155,7 +8153,7 @@ jr_00C_6C69:
     ret                                           ; $6C73: $C9
 
 
-jr_00C_6C74:
+jr_00C_6C74::
     cp   $06                                      ; $6C74: $FE $06
     jr   nz, jr_00C_6C7F                          ; $6C76: $20 $07
 
@@ -8164,14 +8162,14 @@ jr_00C_6C74:
     ret                                           ; $6C7E: $C9
 
 
-jr_00C_6C7F:
+jr_00C_6C7F::
     ld   hl, $9C63                                ; $6C7F: $21 $63 $9C
     call Call_00C_6C9B                            ; $6C82: $CD $9B $6C
     ret                                           ; $6C85: $C9
 
 
-Call_00C_6C86:
-    call Call_00C_4680                            ; $6C86: $CD $80 $46
+Call_00C_6C86::
+    call jr_00C_4680                              ; $6C86: $CD $80 $46
     ld   a, $0C                                   ; $6C89: $3E $0C
     ld   [hl+], a                                 ; $6C8B: $22
     ld   [hl+], a                                 ; $6C8C: $22
@@ -8179,8 +8177,8 @@ Call_00C_6C86:
     ret                                           ; $6C8E: $C9
 
 
-Call_00C_6C8F:
-    call Call_00C_4680                            ; $6C8F: $CD $80 $46
+Call_00C_6C8F::
+    call jr_00C_4680                              ; $6C8F: $CD $80 $46
     ld   a, $0C                                   ; $6C92: $3E $0C
     ld   [hl+], a                                 ; $6C94: $22
     ld   [hl+], a                                 ; $6C95: $22
@@ -8189,8 +8187,8 @@ Call_00C_6C8F:
     ret                                           ; $6C9A: $C9
 
 
-Call_00C_6C9B:
-    call Call_00C_4680                            ; $6C9B: $CD $80 $46
+Call_00C_6C9B::
+    call jr_00C_4680                              ; $6C9B: $CD $80 $46
     ld   a, $0A                                   ; $6C9E: $3E $0A
     ld   [hl+], a                                 ; $6CA0: $22
     ld   [hl+], a                                 ; $6CA1: $22
@@ -8198,8 +8196,8 @@ Call_00C_6C9B:
     ret                                           ; $6CA3: $C9
 
 
-Call_00C_6CA4:
-    call Call_00C_4680                            ; $6CA4: $CD $80 $46
+Call_00C_6CA4::
+    call jr_00C_4680                              ; $6CA4: $CD $80 $46
     ld   a, $0A                                   ; $6CA7: $3E $0A
     ld   [hl+], a                                 ; $6CA9: $22
     ld   hl, $9C60                                ; $6CAA: $21 $60 $9C
@@ -8208,15 +8206,15 @@ Call_00C_6CA4:
     ret                                           ; $6CAF: $C9
 
 
-Call_00C_6CB0:
+Call_00C_6CB0::
     ld   a, [$CF59]                               ; $6CB0: $FA $59 $CF
     bit  0, a                                     ; $6CB3: $CB $47
     jr   z, jr_00C_6CB9                           ; $6CB5: $28 $02
 
     jr   jr_00C_6CCA                              ; $6CB7: $18 $11
 
-jr_00C_6CB9:
-    call Call_00C_4680                            ; $6CB9: $CD $80 $46
+jr_00C_6CB9::
+    call jr_00C_4680                              ; $6CB9: $CD $80 $46
     ld   a, $7F                                   ; $6CBC: $3E $7F
     ld   hl, $9C3A                                ; $6CBE: $21 $3A $9C
     ld   [hl+], a                                 ; $6CC1: $22
@@ -8227,15 +8225,15 @@ jr_00C_6CB9:
     ld   [hl+], a                                 ; $6CC8: $22
     ld   [hl], a                                  ; $6CC9: $77
 
-jr_00C_6CCA:
+jr_00C_6CCA::
     ld   a, [$CF59]                               ; $6CCA: $FA $59 $CF
     bit  1, a                                     ; $6CCD: $CB $4F
     jr   z, jr_00C_6CD3                           ; $6CCF: $28 $02
 
     jr   jr_00C_6CE2                              ; $6CD1: $18 $0F
 
-jr_00C_6CD3:
-    call Call_00C_4680                            ; $6CD3: $CD $80 $46
+jr_00C_6CD3::
+    call jr_00C_4680                              ; $6CD3: $CD $80 $46
     ld   a, $7F                                   ; $6CD6: $3E $7F
     ld   hl, $9C3E                                ; $6CD8: $21 $3E $9C
     ld   [hl+], a                                 ; $6CDB: $22
@@ -8244,15 +8242,15 @@ jr_00C_6CD3:
     ld   [hl+], a                                 ; $6CE0: $22
     ld   [hl], a                                  ; $6CE1: $77
 
-jr_00C_6CE2:
+jr_00C_6CE2::
     ld   a, [$CF59]                               ; $6CE2: $FA $59 $CF
     bit  3, a                                     ; $6CE5: $CB $5F
     jr   z, jr_00C_6CEB                           ; $6CE7: $28 $02
 
     jr   jr_00C_6CFC                              ; $6CE9: $18 $11
 
-jr_00C_6CEB:
-    call Call_00C_4680                            ; $6CEB: $CD $80 $46
+jr_00C_6CEB::
+    call jr_00C_4680                              ; $6CEB: $CD $80 $46
     ld   a, $7F                                   ; $6CEE: $3E $7F
     ld   hl, $9C97                                ; $6CF0: $21 $97 $9C
     ld   [hl+], a                                 ; $6CF3: $22
@@ -8263,15 +8261,15 @@ jr_00C_6CEB:
     ld   [hl+], a                                 ; $6CFA: $22
     ld   [hl], a                                  ; $6CFB: $77
 
-jr_00C_6CFC:
+jr_00C_6CFC::
     ld   a, [$CF59]                               ; $6CFC: $FA $59 $CF
     bit  4, a                                     ; $6CFF: $CB $67
     jr   z, jr_00C_6D05                           ; $6D01: $28 $02
 
     jr   jr_00C_6D16                              ; $6D03: $18 $11
 
-jr_00C_6D05:
-    call Call_00C_4680                            ; $6D05: $CD $80 $46
+jr_00C_6D05::
+    call jr_00C_4680                              ; $6D05: $CD $80 $46
     ld   a, $7F                                   ; $6D08: $3E $7F
     ld   hl, $9C9B                                ; $6D0A: $21 $9B $9C
     ld   [hl+], a                                 ; $6D0D: $22
@@ -8282,7 +8280,7 @@ jr_00C_6D05:
     ld   [hl+], a                                 ; $6D14: $22
     ld   [hl], a                                  ; $6D15: $77
 
-jr_00C_6D16:
+jr_00C_6D16::
     ld   a, [$CF59]                               ; $6D16: $FA $59 $CF
     bit  5, a                                     ; $6D19: $CB $6F
     jr   z, jr_00C_6D1E                           ; $6D1B: $28 $01
@@ -8290,8 +8288,8 @@ jr_00C_6D16:
     ret                                           ; $6D1D: $C9
 
 
-jr_00C_6D1E:
-    call Call_00C_4680                            ; $6D1E: $CD $80 $46
+jr_00C_6D1E::
+    call jr_00C_4680                              ; $6D1E: $CD $80 $46
     ld   a, $7F                                   ; $6D21: $3E $7F
     ld   hl, $9C9F                                ; $6D23: $21 $9F $9C
     ld   [hl], a                                  ; $6D26: $77
@@ -8300,7 +8298,7 @@ jr_00C_6D1E:
     ret                                           ; $6D2B: $C9
 
 
-Call_00C_6D2C:
+Call_00C_6D2C::
     ld   a, [$CF59]                               ; $6D2C: $FA $59 $CF
     and  $22                                      ; $6D2F: $E6 $22
     and  a                                        ; $6D31: $A7
@@ -8310,7 +8308,7 @@ Call_00C_6D2C:
     ret                                           ; $6D37: $C9
 
 
-jr_00C_6D38:
+jr_00C_6D38::
     cp   $02                                      ; $6D38: $FE $02
     jr   nz, jr_00C_6D40                          ; $6D3A: $20 $04
 
@@ -8318,7 +8316,7 @@ jr_00C_6D38:
     ret                                           ; $6D3F: $C9
 
 
-jr_00C_6D40:
+jr_00C_6D40::
     cp   $20                                      ; $6D40: $FE $20
     jr   nz, jr_00C_6D48                          ; $6D42: $20 $04
 
@@ -8326,12 +8324,12 @@ jr_00C_6D40:
     ret                                           ; $6D47: $C9
 
 
-jr_00C_6D48:
+jr_00C_6D48::
     call Call_00C_688A                            ; $6D48: $CD $8A $68
     ret                                           ; $6D4B: $C9
 
 
-Call_00C_6D4C:
+Call_00C_6D4C::
     ld   a, [$CF59]                               ; $6D4C: $FA $59 $CF
     and  $44                                      ; $6D4F: $E6 $44
     and  a                                        ; $6D51: $A7
@@ -8341,7 +8339,7 @@ Call_00C_6D4C:
     ret                                           ; $6D57: $C9
 
 
-jr_00C_6D58:
+jr_00C_6D58::
     cp   $04                                      ; $6D58: $FE $04
     jr   nz, jr_00C_6D60                          ; $6D5A: $20 $04
 
@@ -8349,7 +8347,7 @@ jr_00C_6D58:
     ret                                           ; $6D5F: $C9
 
 
-jr_00C_6D60:
+jr_00C_6D60::
     cp   $40                                      ; $6D60: $FE $40
     jr   nz, jr_00C_6D68                          ; $6D62: $20 $04
 
@@ -8357,12 +8355,12 @@ jr_00C_6D60:
     ret                                           ; $6D67: $C9
 
 
-jr_00C_6D68:
+jr_00C_6D68::
     call Call_00C_68D9                            ; $6D68: $CD $D9 $68
     ret                                           ; $6D6B: $C9
 
 
-Call_00C_6D6C:
+Call_00C_6D6C::
     ld   a, [$CF59]                               ; $6D6C: $FA $59 $CF
     and  $44                                      ; $6D6F: $E6 $44
     and  a                                        ; $6D71: $A7
@@ -8372,7 +8370,7 @@ Call_00C_6D6C:
     ret                                           ; $6D77: $C9
 
 
-jr_00C_6D78:
+jr_00C_6D78::
     cp   $04                                      ; $6D78: $FE $04
     jr   nz, jr_00C_6D80                          ; $6D7A: $20 $04
 
@@ -8380,7 +8378,7 @@ jr_00C_6D78:
     ret                                           ; $6D7F: $C9
 
 
-jr_00C_6D80:
+jr_00C_6D80::
     cp   $40                                      ; $6D80: $FE $40
     jr   nz, jr_00C_6D88                          ; $6D82: $20 $04
 
@@ -8388,18 +8386,18 @@ jr_00C_6D80:
     ret                                           ; $6D87: $C9
 
 
-jr_00C_6D88:
+jr_00C_6D88::
     call Call_00C_6928                            ; $6D88: $CD $28 $69
     ret                                           ; $6D8B: $C9
 
 
-Call_00C_6D8C:
+Call_00C_6D8C::
     xor  a                                        ; $6D8C: $AF
     ld   [$D76C], a                               ; $6D8D: $EA $6C $D7
     ret                                           ; $6D90: $C9
 
 
-Call_00C_6D91:
+Call_00C_6D91::
     ld   a, [$D70E]                               ; $6D91: $FA $0E $D7
     and  $0F                                      ; $6D94: $E6 $0F
     ret  nz                                       ; $6D96: $C0
@@ -8412,7 +8410,7 @@ Call_00C_6D91:
     and  a                                        ; $6DA2: $A7
     jr   nz, jr_00C_6DB3                          ; $6DA3: $20 $0E
 
-    call Call_00C_4680                            ; $6DA5: $CD $80 $46
+    call jr_00C_4680                              ; $6DA5: $CD $80 $46
     ld   hl, $9C16                                ; $6DA8: $21 $16 $9C
     ld   a, $06                                   ; $6DAB: $3E $06
     ld   [hl+], a                                 ; $6DAD: $22
@@ -8423,11 +8421,11 @@ Call_00C_6D91:
     ret                                           ; $6DB2: $C9
 
 
-jr_00C_6DB3:
+jr_00C_6DB3::
     cp   $01                                      ; $6DB3: $FE $01
     jr   nz, jr_00C_6DC5                          ; $6DB5: $20 $0E
 
-    call Call_00C_4680                            ; $6DB7: $CD $80 $46
+    call jr_00C_4680                              ; $6DB7: $CD $80 $46
     ld   hl, $9C1A                                ; $6DBA: $21 $1A $9C
     ld   a, $06                                   ; $6DBD: $3E $06
     ld   [hl+], a                                 ; $6DBF: $22
@@ -8438,11 +8436,11 @@ jr_00C_6DB3:
     ret                                           ; $6DC4: $C9
 
 
-jr_00C_6DC5:
+jr_00C_6DC5::
     cp   $02                                      ; $6DC5: $FE $02
     jr   nz, jr_00C_6DDA                          ; $6DC7: $20 $11
 
-    call Call_00C_4680                            ; $6DC9: $CD $80 $46
+    call jr_00C_4680                              ; $6DC9: $CD $80 $46
     ld   hl, $9C1E                                ; $6DCC: $21 $1E $9C
     ld   a, $06                                   ; $6DCF: $3E $06
     ld   [hl+], a                                 ; $6DD1: $22
@@ -8454,11 +8452,11 @@ jr_00C_6DC5:
     ret                                           ; $6DD9: $C9
 
 
-jr_00C_6DDA:
+jr_00C_6DDA::
     cp   $03                                      ; $6DDA: $FE $03
     jr   nz, jr_00C_6DEC                          ; $6DDC: $20 $0E
 
-    call Call_00C_4680                            ; $6DDE: $CD $80 $46
+    call jr_00C_4680                              ; $6DDE: $CD $80 $46
     ld   hl, $9C02                                ; $6DE1: $21 $02 $9C
     ld   a, $06                                   ; $6DE4: $3E $06
     ld   [hl+], a                                 ; $6DE6: $22
@@ -8469,11 +8467,11 @@ jr_00C_6DDA:
     ret                                           ; $6DEB: $C9
 
 
-jr_00C_6DEC:
+jr_00C_6DEC::
     cp   $04                                      ; $6DEC: $FE $04
     jr   nz, jr_00C_6DFE                          ; $6DEE: $20 $0E
 
-    call Call_00C_4680                            ; $6DF0: $CD $80 $46
+    call jr_00C_4680                              ; $6DF0: $CD $80 $46
     ld   hl, $9C77                                ; $6DF3: $21 $77 $9C
     ld   a, $06                                   ; $6DF6: $3E $06
     ld   [hl+], a                                 ; $6DF8: $22
@@ -8484,11 +8482,11 @@ jr_00C_6DEC:
     ret                                           ; $6DFD: $C9
 
 
-jr_00C_6DFE:
+jr_00C_6DFE::
     cp   $05                                      ; $6DFE: $FE $05
     jr   nz, jr_00C_6E10                          ; $6E00: $20 $0E
 
-    call Call_00C_4680                            ; $6E02: $CD $80 $46
+    call jr_00C_4680                              ; $6E02: $CD $80 $46
     ld   hl, $9C7B                                ; $6E05: $21 $7B $9C
     ld   a, $06                                   ; $6E08: $3E $06
     ld   [hl+], a                                 ; $6E0A: $22
@@ -8499,11 +8497,11 @@ jr_00C_6DFE:
     ret                                           ; $6E0F: $C9
 
 
-jr_00C_6E10:
+jr_00C_6E10::
     cp   $06                                      ; $6E10: $FE $06
     jr   nz, jr_00C_6E25                          ; $6E12: $20 $11
 
-    call Call_00C_4680                            ; $6E14: $CD $80 $46
+    call jr_00C_4680                              ; $6E14: $CD $80 $46
     ld   hl, $9C7F                                ; $6E17: $21 $7F $9C
     ld   a, $06                                   ; $6E1A: $3E $06
     ld   [hl], a                                  ; $6E1C: $77
@@ -8515,8 +8513,8 @@ jr_00C_6E10:
     ret                                           ; $6E24: $C9
 
 
-jr_00C_6E25:
-    call Call_00C_4680                            ; $6E25: $CD $80 $46
+jr_00C_6E25::
+    call jr_00C_4680                              ; $6E25: $CD $80 $46
     ld   hl, $9C63                                ; $6E28: $21 $63 $9C
     ld   a, $06                                   ; $6E2B: $3E $06
     ld   [hl+], a                                 ; $6E2D: $22
@@ -8527,7 +8525,7 @@ jr_00C_6E25:
     ret                                           ; $6E32: $C9
 
 
-Jump_00C_6E33:
+Jump_00C_6E33::
     ld   a, [$D793]                               ; $6E33: $FA $93 $D7
     and  a                                        ; $6E36: $A7
     jr   nz, jr_00C_6E40                          ; $6E37: $20 $07
@@ -8537,7 +8535,7 @@ Jump_00C_6E33:
     ret                                           ; $6E3F: $C9
 
 
-jr_00C_6E40:
+jr_00C_6E40::
     cp   $01                                      ; $6E40: $FE $01
     jr   nz, jr_00C_6E4B                          ; $6E42: $20 $07
 
@@ -8546,7 +8544,7 @@ jr_00C_6E40:
     ret                                           ; $6E4A: $C9
 
 
-jr_00C_6E4B:
+jr_00C_6E4B::
     cp   $02                                      ; $6E4B: $FE $02
     jr   nz, jr_00C_6E56                          ; $6E4D: $20 $07
 
@@ -8555,7 +8553,7 @@ jr_00C_6E4B:
     ret                                           ; $6E55: $C9
 
 
-jr_00C_6E56:
+jr_00C_6E56::
     cp   $03                                      ; $6E56: $FE $03
     jr   nz, jr_00C_6E61                          ; $6E58: $20 $07
 
@@ -8564,7 +8562,7 @@ jr_00C_6E56:
     ret                                           ; $6E60: $C9
 
 
-jr_00C_6E61:
+jr_00C_6E61::
     cp   $04                                      ; $6E61: $FE $04
     jr   nz, jr_00C_6E6C                          ; $6E63: $20 $07
 
@@ -8573,7 +8571,7 @@ jr_00C_6E61:
     ret                                           ; $6E6B: $C9
 
 
-jr_00C_6E6C:
+jr_00C_6E6C::
     cp   $05                                      ; $6E6C: $FE $05
     jr   nz, jr_00C_6E77                          ; $6E6E: $20 $07
 
@@ -8582,7 +8580,7 @@ jr_00C_6E6C:
     ret                                           ; $6E76: $C9
 
 
-jr_00C_6E77:
+jr_00C_6E77::
     cp   $06                                      ; $6E77: $FE $06
     jr   nz, jr_00C_6E82                          ; $6E79: $20 $07
 
@@ -8591,13 +8589,13 @@ jr_00C_6E77:
     ret                                           ; $6E81: $C9
 
 
-jr_00C_6E82:
+jr_00C_6E82::
     ld   hl, $9C63                                ; $6E82: $21 $63 $9C
     call Call_00C_6C9B                            ; $6E85: $CD $9B $6C
     ret                                           ; $6E88: $C9
 
 
-Call_00C_6E89:
+Call_00C_6E89::
     ld   hl, $9C00                                ; $6E89: $21 $00 $9C
     ld   a, $0C                                   ; $6E8C: $3E $0C
     ld   [hl+], a                                 ; $6E8E: $22
@@ -8720,7 +8718,7 @@ Call_00C_6E89:
 
     jr   jr_00C_6F41                              ; $6F31: $18 $0E
 
-jr_00C_6F33:
+jr_00C_6F33::
     ld   a, $7F                                   ; $6F33: $3E $7F
     ld   hl, $9C3A                                ; $6F35: $21 $3A $9C
     ld   [hl+], a                                 ; $6F38: $22
@@ -8731,14 +8729,14 @@ jr_00C_6F33:
     ld   [hl+], a                                 ; $6F3F: $22
     ld   [hl], a                                  ; $6F40: $77
 
-jr_00C_6F41:
+jr_00C_6F41::
     ld   a, [$CF59]                               ; $6F41: $FA $59 $CF
     bit  1, a                                     ; $6F44: $CB $4F
     jr   z, jr_00C_6F4A                           ; $6F46: $28 $02
 
     jr   jr_00C_6F5E                              ; $6F48: $18 $14
 
-jr_00C_6F4A:
+jr_00C_6F4A::
     ld   a, $7F                                   ; $6F4A: $3E $7F
     ld   hl, $9C3E                                ; $6F4C: $21 $3E $9C
     ld   [hl+], a                                 ; $6F4F: $22
@@ -8751,14 +8749,14 @@ jr_00C_6F4A:
     ld   hl, $9C40                                ; $6F5A: $21 $40 $9C
     ld   [hl], a                                  ; $6F5D: $77
 
-jr_00C_6F5E:
+jr_00C_6F5E::
     ld   a, [$CF59]                               ; $6F5E: $FA $59 $CF
     bit  2, a                                     ; $6F61: $CB $57
     jr   z, jr_00C_6F67                           ; $6F63: $28 $02
 
     jr   jr_00C_6F75                              ; $6F65: $18 $0E
 
-jr_00C_6F67:
+jr_00C_6F67::
     ld   a, $7F                                   ; $6F67: $3E $7F
     ld   hl, $9C22                                ; $6F69: $21 $22 $9C
     ld   [hl+], a                                 ; $6F6C: $22
@@ -8769,14 +8767,14 @@ jr_00C_6F67:
     ld   [hl+], a                                 ; $6F73: $22
     ld   [hl], a                                  ; $6F74: $77
 
-jr_00C_6F75:
+jr_00C_6F75::
     ld   a, [$CF59]                               ; $6F75: $FA $59 $CF
     bit  3, a                                     ; $6F78: $CB $5F
     jr   z, jr_00C_6F7E                           ; $6F7A: $28 $02
 
     jr   jr_00C_6F8C                              ; $6F7C: $18 $0E
 
-jr_00C_6F7E:
+jr_00C_6F7E::
     ld   a, $7F                                   ; $6F7E: $3E $7F
     ld   hl, $9C97                                ; $6F80: $21 $97 $9C
     ld   [hl+], a                                 ; $6F83: $22
@@ -8787,14 +8785,14 @@ jr_00C_6F7E:
     ld   [hl+], a                                 ; $6F8A: $22
     ld   [hl], a                                  ; $6F8B: $77
 
-jr_00C_6F8C:
+jr_00C_6F8C::
     ld   a, [$CF59]                               ; $6F8C: $FA $59 $CF
     bit  4, a                                     ; $6F8F: $CB $67
     jr   z, jr_00C_6F95                           ; $6F91: $28 $02
 
     jr   jr_00C_6FA3                              ; $6F93: $18 $0E
 
-jr_00C_6F95:
+jr_00C_6F95::
     ld   a, $7F                                   ; $6F95: $3E $7F
     ld   hl, $9C9B                                ; $6F97: $21 $9B $9C
     ld   [hl+], a                                 ; $6F9A: $22
@@ -8805,14 +8803,14 @@ jr_00C_6F95:
     ld   [hl+], a                                 ; $6FA1: $22
     ld   [hl], a                                  ; $6FA2: $77
 
-jr_00C_6FA3:
+jr_00C_6FA3::
     ld   a, [$CF59]                               ; $6FA3: $FA $59 $CF
     bit  5, a                                     ; $6FA6: $CB $6F
     jr   z, jr_00C_6FAC                           ; $6FA8: $28 $02
 
     jr   jr_00C_6FC0                              ; $6FAA: $18 $14
 
-jr_00C_6FAC:
+jr_00C_6FAC::
     ld   a, $7F                                   ; $6FAC: $3E $7F
     ld   hl, $9C9F                                ; $6FAE: $21 $9F $9C
     ld   [hl], a                                  ; $6FB1: $77
@@ -8825,7 +8823,7 @@ jr_00C_6FAC:
     ld   [hl+], a                                 ; $6FBE: $22
     ld   [hl], a                                  ; $6FBF: $77
 
-jr_00C_6FC0:
+jr_00C_6FC0::
     ld   a, [$CF59]                               ; $6FC0: $FA $59 $CF
     bit  6, a                                     ; $6FC3: $CB $77
     jr   z, jr_00C_6FC8                           ; $6FC5: $28 $01
@@ -8833,7 +8831,7 @@ jr_00C_6FC0:
     ret                                           ; $6FC7: $C9
 
 
-jr_00C_6FC8:
+jr_00C_6FC8::
     ld   a, $7F                                   ; $6FC8: $3E $7F
     ld   hl, $9C83                                ; $6FCA: $21 $83 $9C
     ld   [hl+], a                                 ; $6FCD: $22

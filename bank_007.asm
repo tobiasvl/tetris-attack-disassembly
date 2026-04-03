@@ -5,8 +5,7 @@
 
 SECTION "ROM Bank $007", ROMX[$4000], BANK[$7]
 
-Call_007_4000:
-Jump_007_4000:
+Jump_007_4000::
     ld   a, $FF                                   ; $4000: $3E $FF
     ldh  [rNR51], a                               ; $4002: $E0 $25
     ld   a, $03                                   ; $4004: $3E $03
@@ -14,7 +13,7 @@ Jump_007_4000:
     xor  a                                        ; $4009: $AF
     ld   [$D369], a                               ; $400A: $EA $69 $D3
 
-Call_007_400D:
+Call_007_400D::
     xor  a                                        ; $400D: $AF
     ld   [$D371], a                               ; $400E: $EA $71 $D3
     ld   [$D379], a                               ; $4011: $EA $79 $D3
@@ -51,7 +50,7 @@ Call_007_400D:
     ret                                           ; $4053: $C9
 
 
-Call_007_4054:
+Call_007_4054::
     xor  a                                        ; $4054: $AF
     ldh  [rNR10], a                               ; $4055: $E0 $10
     ld   a, $08                                   ; $4057: $3E $08
@@ -71,7 +70,7 @@ Call_007_4054:
     ret                                           ; $4072: $C9
 
 
-Call_007_4073:
+Call_007_4073::
     sla  a                                        ; $4073: $CB $27
     ld   d, $00                                   ; $4075: $16 $00
     ld   e, a                                     ; $4077: $5F
@@ -86,8 +85,7 @@ Call_007_4073:
     ret                                           ; $407E: $C9
 
 
-Call_007_407F:
-jr_007_407F:
+jr_007_407F::
     ld   a, [hl+]                                 ; $407F: $2A
     ldh  [c], a                                   ; $4080: $E2
     inc  c                                        ; $4081: $0C
@@ -97,8 +95,7 @@ jr_007_407F:
     ret                                           ; $4085: $C9
 
 
-Call_007_4086:
-jr_007_4086:
+jr_007_4086::
     ld   [hl+], a                                 ; $4086: $22
     dec  b                                        ; $4087: $05
     jr   nz, jr_007_4086                          ; $4088: $20 $FC
@@ -106,7 +103,7 @@ jr_007_4086:
     ret                                           ; $408A: $C9
 
 
-Call_007_408B:
+Call_007_408B::
     ld   a, h                                     ; $408B: $7C
     ld   [$D3B9], a                               ; $408C: $EA $B9 $D3
     ld   a, l                                     ; $408F: $7D
@@ -114,7 +111,7 @@ Call_007_408B:
     ret                                           ; $4093: $C9
 
 
-Call_007_4094:
+Call_007_4094::
     ld   a, b                                     ; $4094: $78
     ld   [$D3BB], a                               ; $4095: $EA $BB $D3
     ld   a, c                                     ; $4098: $79
@@ -122,7 +119,7 @@ Call_007_4094:
     ret                                           ; $409C: $C9
 
 
-Call_007_409D:
+Call_007_409D::
     ld   a, d                                     ; $409D: $7A
     ld   [$D3BF], a                               ; $409E: $EA $BF $D3
     ld   a, e                                     ; $40A1: $7B
@@ -130,7 +127,7 @@ Call_007_409D:
     ret                                           ; $40A5: $C9
 
 
-Call_007_40A6:
+Call_007_40A6::
     ld   a, d                                     ; $40A6: $7A
     ld   [$D3DF], a                               ; $40A7: $EA $DF $D3
     ld   a, e                                     ; $40AA: $7B
@@ -141,7 +138,7 @@ Call_007_40A6:
     ld   c, $30                                   ; $40AF: $0E $30
     ld   hl, $D400                                ; $40B1: $21 $00 $D4
 
-jr_007_40B4:
+jr_007_40B4::
     ld   a, [hl+]                                 ; $40B4: $2A
     ldh  [c], a                                   ; $40B5: $E2
     inc  c                                        ; $40B6: $0C
@@ -152,14 +149,14 @@ jr_007_40B4:
     ret                                           ; $40BC: $C9
 
 
-Call_007_40BD:
+Call_007_40BD::
     ld   a, [$D31F]                               ; $40BD: $FA $1F $D3
     res  7, a                                     ; $40C0: $CB $BF
     ld   [$D31F], a                               ; $40C2: $EA $1F $D3
     ret                                           ; $40C5: $C9
 
 
-Call_007_40C6:
+Call_007_40C6::
     ld   a, [$D31F]                               ; $40C6: $FA $1F $D3
     set  7, a                                     ; $40C9: $CB $FF
     ld   [$D31F], a                               ; $40CB: $EA $1F $D3
@@ -170,14 +167,14 @@ Call_007_40C6:
     ret                                           ; $40D6: $C9
 
 
-Call_007_40D7:
+Call_007_40D7::
     ld   a, [$D32F]                               ; $40D7: $FA $2F $D3
     res  7, a                                     ; $40DA: $CB $BF
     ld   [$D32F], a                               ; $40DC: $EA $2F $D3
     ret                                           ; $40DF: $C9
 
 
-Call_007_40E0:
+Call_007_40E0::
     ld   a, [$D32F]                               ; $40E0: $FA $2F $D3
     set  7, a                                     ; $40E3: $CB $FF
     ld   [$D32F], a                               ; $40E5: $EA $2F $D3
@@ -188,14 +185,14 @@ Call_007_40E0:
     ret                                           ; $40EF: $C9
 
 
-Call_007_40F0:
+Call_007_40F0::
     ld   a, [$D33F]                               ; $40F0: $FA $3F $D3
     res  7, a                                     ; $40F3: $CB $BF
     ld   [$D33F], a                               ; $40F5: $EA $3F $D3
     ret                                           ; $40F8: $C9
 
 
-Call_007_40F9:
+Call_007_40F9::
     ld   a, [$D33F]                               ; $40F9: $FA $3F $D3
     set  7, a                                     ; $40FC: $CB $FF
     ld   [$D33F], a                               ; $40FE: $EA $3F $D3
@@ -205,14 +202,14 @@ Call_007_40F9:
     ret                                           ; $4106: $C9
 
 
-Call_007_4107:
+Call_007_4107::
     ld   a, [$D34F]                               ; $4107: $FA $4F $D3
     res  7, a                                     ; $410A: $CB $BF
     ld   [$D34F], a                               ; $410C: $EA $4F $D3
     ret                                           ; $410F: $C9
 
 
-Call_007_4110:
+Call_007_4110::
     ld   a, [$D34F]                               ; $4110: $FA $4F $D3
     set  7, a                                     ; $4113: $CB $FF
     ld   [$D34F], a                               ; $4115: $EA $4F $D3
@@ -268,10 +265,10 @@ Call_007_4110:
     ld   [bc], a                                  ; $414A: $02
     ld   [bc], a                                  ; $414B: $02
     ld   [bc], a                                  ; $414C: $02
-    ld   bc, $0101                                ; $414D: $01 $01 $01
-    ld   bc, $0101                                ; $4150: $01 $01 $01
-    ld   bc, $0101                                ; $4153: $01 $01 $01
-    ld   bc, $0101                                ; $4156: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $414D: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4150: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4153: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4156: $01 $01 $01
     inc  b                                        ; $4159: $04
     inc  bc                                       ; $415A: $03
     nop                                           ; $415B: $00
@@ -279,7 +276,7 @@ Call_007_4110:
     inc  b                                        ; $415D: $04
     nop                                           ; $415E: $00
     nop                                           ; $415F: $00
-    ld   bc, $0101                                ; $4160: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $4160: $01 $01 $01
     ld   bc, $0002                                ; $4163: $01 $02 $00
     nop                                           ; $4166: $00
     nop                                           ; $4167: $00
@@ -303,7 +300,7 @@ Call_007_4110:
     cp   $00                                      ; $417B: $FE $00
     jr   nz, jr_007_4187                          ; $417D: $20 $08
 
-Jump_007_417F:
+Jump_007_417F::
     ld   a, [$D361]                               ; $417F: $FA $61 $D3
     and  a                                        ; $4182: $A7
     jp   nz, Jump_007_4DEF                        ; $4183: $C2 $EF $4D
@@ -311,7 +308,7 @@ Jump_007_417F:
     ret                                           ; $4186: $C9
 
 
-jr_007_4187:
+jr_007_4187::
     ld   hl, $4120                                ; $4187: $21 $20 $41
     ld   b, $00                                   ; $418A: $06 $00
     ld   c, a                                     ; $418C: $4F
@@ -330,11 +327,11 @@ jr_007_4187:
     ld   a, $01                                   ; $41A1: $3E $01
     ld   b, $04                                   ; $41A3: $06 $04
     ld   hl, $D3A6                                ; $41A5: $21 $A6 $D3
-    call Call_007_4086                            ; $41A8: $CD $86 $40
+    call jr_007_4086                              ; $41A8: $CD $86 $40
     xor  a                                        ; $41AB: $AF
     ld   [$D3FE], a                               ; $41AC: $EA $FE $D3
 
-jr_007_41AF:
+jr_007_41AF::
     pop  af                                       ; $41AF: $F1
     call Call_007_4073                            ; $41B0: $CD $73 $40
     ld   a, [hl]                                  ; $41B3: $7E
@@ -423,7 +420,7 @@ jr_007_41AF:
     or   l                                        ; $4211: $B5
     ld   c, c                                     ; $4212: $49
 
-jr_007_4213:
+jr_007_4213::
     reti                                          ; $4213: $D9
 
 
@@ -1669,7 +1666,7 @@ jr_007_4213:
 
 
     call Call_007_40C6                            ; $4CA6: $CD $C6 $40
-    ld   hl, $63B1                                ; $4CA9: $21 $B1 $63
+    ld   hl, jr_007_63B1                          ; $4CA9: $21 $B1 $63
     call Call_007_408B                            ; $4CAC: $CD $8B $40
     xor  a                                        ; $4CAF: $AF
     ld   [$D3E3], a                               ; $4CB0: $EA $E3 $D3
@@ -1789,14 +1786,14 @@ jr_007_4213:
     ld   a, $04                                   ; $4DA8: $3E $04
     ld   [$D3E3], a                               ; $4DAA: $EA $E3 $D3
 
-Jump_007_4DAD:
+Jump_007_4DAD::
     ld   a, [$D371]                               ; $4DAD: $FA $71 $D3
     and  a                                        ; $4DB0: $A7
     ret  z                                        ; $4DB1: $C8
 
     ld   hl, $D3CD                                ; $4DB2: $21 $CD $D3
     dec  [hl]                                     ; $4DB5: $35
-    jr   nz, jr_007_4DEE                          ; $4DB6: $20 $36
+    jr   nz, Jump_007_4DEE                        ; $4DB6: $20 $36
 
     ld   a, [$D3DF]                               ; $4DB8: $FA $DF $D3
     ld   h, a                                     ; $4DBB: $67
@@ -1806,7 +1803,7 @@ Jump_007_4DAD:
     ldh  [rNR41], a                               ; $4DC1: $E0 $20
     ld   c, $21                                   ; $4DC3: $0E $21
     ld   b, $02                                   ; $4DC5: $06 $02
-    call Call_007_407F                            ; $4DC7: $CD $7F $40
+    call jr_007_407F                              ; $4DC7: $CD $7F $40
     ld   a, $80                                   ; $4DCA: $3E $80
     ldh  [rNR44], a                               ; $4DCC: $E0 $23
     ld   a, [hl]                                  ; $4DCE: $7E
@@ -1820,21 +1817,20 @@ Jump_007_4DAD:
     jp   Jump_007_4DEE                            ; $4DDD: $C3 $EE $4D
 
 
-Jump_007_4DE0:
+Jump_007_4DE0::
     ld   [$D3CD], a                               ; $4DE0: $EA $CD $D3
     inc  hl                                       ; $4DE3: $23
     ld   a, h                                     ; $4DE4: $7C
     ld   [$D3DF], a                               ; $4DE5: $EA $DF $D3
     ld   a, l                                     ; $4DE8: $7D
     ld   [$D3E0], a                               ; $4DE9: $EA $E0 $D3
-    jr   jr_007_4DEE                              ; $4DEC: $18 $00
+    jr   Jump_007_4DEE                            ; $4DEC: $18 $00
 
-Jump_007_4DEE:
-jr_007_4DEE:
+Jump_007_4DEE::
     ret                                           ; $4DEE: $C9
 
 
-Jump_007_4DEF:
+Jump_007_4DEF::
     ld   a, [$D3FE]                               ; $4DEF: $FA $FE $D3
     and  a                                        ; $4DF2: $A7
     jr   z, jr_007_4E17                           ; $4DF3: $28 $22
@@ -1847,25 +1843,25 @@ Jump_007_4DEF:
 
     ld   [$D3A6], a                               ; $4DFF: $EA $A6 $D3
 
-jr_007_4E02:
+jr_007_4E02::
     bit  2, c                                     ; $4E02: $CB $51
     jr   z, jr_007_4E09                           ; $4E04: $28 $03
 
     ld   [$D3A7], a                               ; $4E06: $EA $A7 $D3
 
-jr_007_4E09:
+jr_007_4E09::
     bit  1, c                                     ; $4E09: $CB $49
     jr   z, jr_007_4E10                           ; $4E0B: $28 $03
 
     ld   [$D3A8], a                               ; $4E0D: $EA $A8 $D3
 
-jr_007_4E10:
+jr_007_4E10::
     bit  0, c                                     ; $4E10: $CB $41
     jr   z, jr_007_4E17                           ; $4E12: $28 $03
 
     ld   [$D3A9], a                               ; $4E14: $EA $A9 $D3
 
-jr_007_4E17:
+jr_007_4E17::
     ld   a, [$D3FB]                               ; $4E17: $FA $FB $D3
     ld   hl, $D3FE                                ; $4E1A: $21 $FE $D3
     or   [hl]                                     ; $4E1D: $B6
@@ -1878,14 +1874,14 @@ jr_007_4E17:
     ld   a, $10                                   ; $4E26: $3E $10
     ld   [$D3AE], a                               ; $4E28: $EA $AE $D3
 
-jr_007_4E2B:
+jr_007_4E2B::
     ld   a, [$D3FE]                               ; $4E2B: $FA $FE $D3
     bit  3, a                                     ; $4E2E: $CB $5F
-    jr   z, jr_007_4E87                           ; $4E30: $28 $55
+    jr   z, Jump_007_4E87                         ; $4E30: $28 $55
 
     ld   hl, $D3A6                                ; $4E32: $21 $A6 $D3
     dec  [hl]                                     ; $4E35: $35
-    jr   nz, jr_007_4E87                          ; $4E36: $20 $4F
+    jr   nz, Jump_007_4E87                        ; $4E36: $20 $4F
 
     ld   a, [$D3B9]                               ; $4E38: $FA $B9 $D3
     ld   h, a                                     ; $4E3B: $67
@@ -1897,9 +1893,9 @@ jr_007_4E2B:
 
     ld   c, $10                                   ; $4E47: $0E $10
     ld   b, $05                                   ; $4E49: $06 $05
-    call Call_007_407F                            ; $4E4B: $CD $7F $40
+    call jr_007_407F                              ; $4E4B: $CD $7F $40
 
-jr_007_4E4E:
+jr_007_4E4E::
     ld   a, [hl]                                  ; $4E4E: $7E
     cp   $FF                                      ; $4E4F: $FE $FF
     jp   nz, Jump_007_4E6D                        ; $4E51: $C2 $6D $4E
@@ -1917,32 +1913,31 @@ jr_007_4E4E:
     jp   Jump_007_4E87                            ; $4E6A: $C3 $87 $4E
 
 
-Jump_007_4E6D:
+Jump_007_4E6D::
     ld   [$D3A6], a                               ; $4E6D: $EA $A6 $D3
     inc  hl                                       ; $4E70: $23
     ld   a, h                                     ; $4E71: $7C
     ld   [$D3B9], a                               ; $4E72: $EA $B9 $D3
     ld   a, l                                     ; $4E75: $7D
     ld   [$D3BA], a                               ; $4E76: $EA $BA $D3
-    jr   jr_007_4E87                              ; $4E79: $18 $0C
+    jr   Jump_007_4E87                            ; $4E79: $18 $0C
 
-jr_007_4E7B:
+jr_007_4E7B::
     xor  a                                        ; $4E7B: $AF
     ldh  [rNR10], a                               ; $4E7C: $E0 $10
     ld   c, $11                                   ; $4E7E: $0E $11
     ld   b, $04                                   ; $4E80: $06 $04
-    call Call_007_407F                            ; $4E82: $CD $7F $40
+    call jr_007_407F                              ; $4E82: $CD $7F $40
     jr   jr_007_4E4E                              ; $4E85: $18 $C7
 
-Jump_007_4E87:
-jr_007_4E87:
+Jump_007_4E87::
     ld   a, [$D3FE]                               ; $4E87: $FA $FE $D3
     bit  2, a                                     ; $4E8A: $CB $57
-    jr   z, jr_007_4ECD                           ; $4E8C: $28 $3F
+    jr   z, Jump_007_4ECD                         ; $4E8C: $28 $3F
 
     ld   hl, $D3A7                                ; $4E8E: $21 $A7 $D3
     dec  [hl]                                     ; $4E91: $35
-    jr   nz, jr_007_4ECD                          ; $4E92: $20 $39
+    jr   nz, Jump_007_4ECD                        ; $4E92: $20 $39
 
     ld   a, [$D3BB]                               ; $4E94: $FA $BB $D3
     ld   h, a                                     ; $4E97: $67
@@ -1950,7 +1945,7 @@ jr_007_4E87:
     ld   l, a                                     ; $4E9B: $6F
     ld   c, $16                                   ; $4E9C: $0E $16
     ld   b, $04                                   ; $4E9E: $06 $04
-    call Call_007_407F                            ; $4EA0: $CD $7F $40
+    call jr_007_407F                              ; $4EA0: $CD $7F $40
     ld   a, [hl]                                  ; $4EA3: $7E
     cp   $FF                                      ; $4EA4: $FE $FF
     jp   nz, Jump_007_4EBF                        ; $4EA6: $C2 $BF $4E
@@ -1966,24 +1961,23 @@ jr_007_4E87:
     jp   Jump_007_4ECD                            ; $4EBC: $C3 $CD $4E
 
 
-Jump_007_4EBF:
+Jump_007_4EBF::
     ld   [$D3A7], a                               ; $4EBF: $EA $A7 $D3
     inc  hl                                       ; $4EC2: $23
     ld   a, h                                     ; $4EC3: $7C
     ld   [$D3BB], a                               ; $4EC4: $EA $BB $D3
     ld   a, l                                     ; $4EC7: $7D
     ld   [$D3BC], a                               ; $4EC8: $EA $BC $D3
-    jr   jr_007_4ECD                              ; $4ECB: $18 $00
+    jr   Jump_007_4ECD                            ; $4ECB: $18 $00
 
-Jump_007_4ECD:
-jr_007_4ECD:
+Jump_007_4ECD::
     ld   a, [$D3FE]                               ; $4ECD: $FA $FE $D3
     bit  1, a                                     ; $4ED0: $CB $4F
-    jp   z, Jump_007_4F4E                         ; $4ED2: $CA $4E $4F
+    jp   z, jr_007_4F4E                           ; $4ED2: $CA $4E $4F
 
     ld   hl, $D3A8                                ; $4ED5: $21 $A8 $D3
     dec  [hl]                                     ; $4ED8: $35
-    jp   nz, Jump_007_4F4E                        ; $4ED9: $C2 $4E $4F
+    jp   nz, jr_007_4F4E                          ; $4ED9: $C2 $4E $4F
 
     ld   a, [$D3BD]                               ; $4EDC: $FA $BD $D3
     ld   h, a                                     ; $4EDF: $67
@@ -1994,13 +1988,13 @@ jr_007_4ECD:
     cp   $FF                                      ; $4EE6: $FE $FF
     jr   z, jr_007_4F2E                           ; $4EE8: $28 $44
 
-jr_007_4EEA:
+jr_007_4EEA::
     pop  hl                                       ; $4EEA: $E1
     ld   a, $80                                   ; $4EEB: $3E $80
     ldh  [rNR30], a                               ; $4EED: $E0 $1A
     ld   c, $1B                                   ; $4EEF: $0E $1B
     ld   b, $04                                   ; $4EF1: $06 $04
-    call Call_007_407F                            ; $4EF3: $CD $7F $40
+    call jr_007_407F                              ; $4EF3: $CD $7F $40
     ld   a, [hl]                                  ; $4EF6: $7E
     cp   $FF                                      ; $4EF7: $FE $FF
     jr   nz, jr_007_4F20                          ; $4EF9: $20 $25
@@ -2014,17 +2008,17 @@ jr_007_4EEA:
 
     call Call_007_40F0                            ; $4F0B: $CD $F0 $40
 
-Jump_007_4F0E:
+Jump_007_4F0E::
     ld   a, $00                                   ; $4F0E: $3E $00
     ldh  [rNR30], a                               ; $4F10: $E0 $1A
     ldh  [rNR31], a                               ; $4F12: $E0 $1B
     ld   hl, $D400                                ; $4F14: $21 $00 $D4
     ld   c, $30                                   ; $4F17: $0E $30
     ld   b, $10                                   ; $4F19: $06 $10
-    call Call_007_407F                            ; $4F1B: $CD $7F $40
+    call jr_007_407F                              ; $4F1B: $CD $7F $40
     jr   jr_007_4F4E                              ; $4F1E: $18 $2E
 
-jr_007_4F20:
+jr_007_4F20::
     ld   [$D3A8], a                               ; $4F20: $EA $A8 $D3
     inc  hl                                       ; $4F23: $23
     ld   a, h                                     ; $4F24: $7C
@@ -2033,7 +2027,7 @@ jr_007_4F20:
     ld   [$D3BE], a                               ; $4F29: $EA $BE $D3
     jr   jr_007_4F4E                              ; $4F2C: $18 $20
 
-jr_007_4F2E:
+jr_007_4F2E::
     ld   a, $00                                   ; $4F2E: $3E $00
     ldh  [rNR30], a                               ; $4F30: $E0 $1A
     xor  a                                        ; $4F32: $AF
@@ -2044,22 +2038,21 @@ jr_007_4F2E:
     ld   l, a                                     ; $4F3C: $6F
     ld   c, $30                                   ; $4F3D: $0E $30
     ld   b, $10                                   ; $4F3F: $06 $10
-    call Call_007_407F                            ; $4F41: $CD $7F $40
+    call jr_007_407F                              ; $4F41: $CD $7F $40
     ld   a, h                                     ; $4F44: $7C
     ld   [$D3C1], a                               ; $4F45: $EA $C1 $D3
     ld   a, l                                     ; $4F48: $7D
     ld   [$D3C2], a                               ; $4F49: $EA $C2 $D3
     jr   jr_007_4EEA                              ; $4F4C: $18 $9C
 
-Jump_007_4F4E:
-jr_007_4F4E:
+jr_007_4F4E::
     ld   a, [$D3FE]                               ; $4F4E: $FA $FE $D3
     bit  0, a                                     ; $4F51: $CB $47
-    jr   z, jr_007_4FAB                           ; $4F53: $28 $56
+    jr   z, Jump_007_4FAB                         ; $4F53: $28 $56
 
     ld   hl, $D3A9                                ; $4F55: $21 $A9 $D3
     dec  [hl]                                     ; $4F58: $35
-    jr   nz, jr_007_4FAB                          ; $4F59: $20 $50
+    jr   nz, Jump_007_4FAB                        ; $4F59: $20 $50
 
     ld   a, [$D3BF]                               ; $4F5B: $FA $BF $D3
     ld   h, a                                     ; $4F5E: $67
@@ -2071,9 +2064,9 @@ jr_007_4F4E:
 
     ld   c, $20                                   ; $4F6A: $0E $20
     ld   b, $04                                   ; $4F6C: $06 $04
-    call Call_007_407F                            ; $4F6E: $CD $7F $40
+    call jr_007_407F                              ; $4F6E: $CD $7F $40
 
-jr_007_4F71:
+jr_007_4F71::
     ld   a, [hl]                                  ; $4F71: $7E
     cp   $FF                                      ; $4F72: $FE $FF
     jp   nz, Jump_007_4F8D                        ; $4F74: $C2 $8D $4F
@@ -2089,27 +2082,26 @@ jr_007_4F71:
     jp   Jump_007_4FAB                            ; $4F8A: $C3 $AB $4F
 
 
-Jump_007_4F8D:
+Jump_007_4F8D::
     ld   [$D3A9], a                               ; $4F8D: $EA $A9 $D3
     inc  hl                                       ; $4F90: $23
     ld   a, h                                     ; $4F91: $7C
     ld   [$D3BF], a                               ; $4F92: $EA $BF $D3
     ld   a, l                                     ; $4F95: $7D
     ld   [$D3C0], a                               ; $4F96: $EA $C0 $D3
-    jr   jr_007_4FAB                              ; $4F99: $18 $10
+    jr   Jump_007_4FAB                            ; $4F99: $18 $10
 
-jr_007_4F9B:
+jr_007_4F9B::
     xor  a                                        ; $4F9B: $AF
     ldh  [rNR41], a                               ; $4F9C: $E0 $20
     ld   c, $21                                   ; $4F9E: $0E $21
     ld   b, $02                                   ; $4FA0: $06 $02
-    call Call_007_407F                            ; $4FA2: $CD $7F $40
+    call jr_007_407F                              ; $4FA2: $CD $7F $40
     ld   a, $80                                   ; $4FA5: $3E $80
     ldh  [rNR44], a                               ; $4FA7: $E0 $23
     jr   jr_007_4F71                              ; $4FA9: $18 $C6
 
-Jump_007_4FAB:
-jr_007_4FAB:
+Jump_007_4FAB::
     ld   hl, $D3FE                                ; $4FAB: $21 $FE $D3
     ld   a, [hl]                                  ; $4FAE: $7E
     cp   $00                                      ; $4FAF: $FE $00
@@ -2141,7 +2133,7 @@ jr_007_4FAB:
     add  b                                        ; $4FD1: $80
     push af                                       ; $4FD2: $F5
 
-jr_007_4FD3:
+jr_007_4FD3::
     add  hl, sp                                   ; $4FD3: $39
     add  a                                        ; $4FD4: $87
     inc  h                                        ; $4FD5: $24
@@ -2197,7 +2189,7 @@ jr_007_4FD3:
     nop                                           ; $500B: $00
     nop                                           ; $500C: $00
 
-jr_007_500D:
+jr_007_500D::
     jr   nz, jr_007_4FD3                          ; $500D: $20 $C4
 
     add  [hl]                                     ; $500F: $86
@@ -2272,7 +2264,7 @@ jr_007_500D:
     pop  af                                       ; $5068: $F1
     ld   [hl], d                                  ; $5069: $72
 
-jr_007_506A:
+jr_007_506A::
     add  [hl]                                     ; $506A: $86
     ld   b, $00                                   ; $506B: $06 $00
     nop                                           ; $506D: $00
@@ -2287,7 +2279,7 @@ jr_007_506A:
     nop                                           ; $5079: $00
     pop  af                                       ; $507A: $F1
 
-jr_007_507B:
+jr_007_507B::
     ld   b, $87                                   ; $507B: $06 $87
     ld   b, $00                                   ; $507D: $06 $00
     nop                                           ; $507F: $00
@@ -2302,7 +2294,7 @@ jr_007_507B:
     push af                                       ; $508C: $F5
     add  hl, sp                                   ; $508D: $39
 
-jr_007_508E:
+jr_007_508E::
     add  a                                        ; $508E: $87
     inc  h                                        ; $508F: $24
     nop                                           ; $5090: $00
@@ -2327,7 +2319,7 @@ jr_007_508E:
     ld   b, $00                                   ; $50A7: $06 $00
     nop                                           ; $50A9: $00
 
-jr_007_50AA:
+jr_007_50AA::
     jr   nz, jr_007_50B6                          ; $50AA: $20 $0A
 
     add  [hl]                                     ; $50AC: $86
@@ -2339,7 +2331,7 @@ jr_007_50AA:
     ld   b, $00                                   ; $50B3: $06 $00
     nop                                           ; $50B5: $00
 
-jr_007_50B6:
+jr_007_50B6::
     jr   nz, jr_007_506A                          ; $50B6: $20 $B2
 
     add  [hl]                                     ; $50B8: $86
@@ -2368,7 +2360,7 @@ jr_007_50B6:
     nop                                           ; $50D4: $00
     ld   a, [bc]                                  ; $50D5: $0A
 
-jr_007_50D6:
+jr_007_50D6::
     add  [hl]                                     ; $50D6: $86
     rst  $38                                      ; $50D7: $FF
     nop                                           ; $50D8: $00
@@ -2399,7 +2391,7 @@ jr_007_50D6:
     add  a                                        ; $50FA: $87
     ld   b, $80                                   ; $50FB: $06 $80
 
-jr_007_50FD:
+jr_007_50FD::
     pop  af                                       ; $50FD: $F1
     ld   b, $87                                   ; $50FE: $06 $87
     ld   b, $80                                   ; $5100: $06 $80
@@ -2422,7 +2414,7 @@ jr_007_50FD:
     pop  af                                       ; $5116: $F1
     add  e                                        ; $5117: $83
 
-jr_007_5118:
+jr_007_5118::
     add  a                                        ; $5118: $87
     ld   b, $80                                   ; $5119: $06 $80
     pop  af                                       ; $511B: $F1
@@ -2501,7 +2493,7 @@ jr_007_5118:
     pop  af                                       ; $5177: $F1
     ld   e, c                                     ; $5178: $59
 
-jr_007_5179:
+jr_007_5179::
     add  a                                        ; $5179: $87
     ld   b, $00                                   ; $517A: $06 $00
     nop                                           ; $517C: $00
@@ -2545,7 +2537,7 @@ jr_007_5179:
     ld   b, $00                                   ; $51AA: $06 $00
     nop                                           ; $51AC: $00
 
-jr_007_51AD:
+jr_007_51AD::
     jr   nz, jr_007_51B9                          ; $51AD: $20 $0A
 
     add  [hl]                                     ; $51AF: $86
@@ -2557,7 +2549,7 @@ jr_007_51AD:
     ld   b, $00                                   ; $51B6: $06 $00
     nop                                           ; $51B8: $00
 
-jr_007_51B9:
+jr_007_51B9::
     jr   nz, @-$4C                                ; $51B9: $20 $B2
 
     add  [hl]                                     ; $51BB: $86
@@ -2580,7 +2572,7 @@ jr_007_51B9:
     nop                                           ; $51D0: $00
     jr   nz, @-$4C                                ; $51D1: $20 $B2
 
-jr_007_51D3:
+jr_007_51D3::
     add  [hl]                                     ; $51D3: $86
     ld   b, $00                                   ; $51D4: $06 $00
     nop                                           ; $51D6: $00
@@ -2591,11 +2583,11 @@ jr_007_51D3:
     nop                                           ; $51DC: $00
     jr   nz, @+$3B                                ; $51DD: $20 $39
 
-jr_007_51DF:
+jr_007_51DF::
     add  a                                        ; $51DF: $87
     ld   b, $00                                   ; $51E0: $06 $00
 
-jr_007_51E2:
+jr_007_51E2::
     nop                                           ; $51E2: $00
     jr   nz, jr_007_5206                          ; $51E3: $20 $21
 
@@ -2625,7 +2617,7 @@ jr_007_51E2:
     ld   [$FF00], sp                              ; $5202: $08 $00 $FF
     nop                                           ; $5205: $00
 
-jr_007_5206:
+jr_007_5206::
     ret  nz                                       ; $5206: $C0
 
     and  b                                        ; $5207: $A0
@@ -2643,7 +2635,7 @@ jr_007_5206:
     ld   d, b                                     ; $5219: $50
     or   [hl]                                     ; $521A: $B6
 
-jr_007_521B:
+jr_007_521B::
     add  a                                        ; $521B: $87
     ld   bc, $C000                                ; $521C: $01 $00 $C0
     and  c                                        ; $521F: $A1
@@ -2663,7 +2655,7 @@ jr_007_521B:
     add  a                                        ; $5231: $87
     inc  b                                        ; $5232: $04
 
-jr_007_5233:
+jr_007_5233::
     add  b                                        ; $5233: $80
     ldh  a, [rLY]                                 ; $5234: $F0 $44
     add  a                                        ; $5236: $87
@@ -2683,7 +2675,7 @@ jr_007_5233:
 
     add  a                                        ; $5245: $87
 
-jr_007_5246:
+jr_007_5246::
     inc  b                                        ; $5246: $04
     nop                                           ; $5247: $00
     ld   [$8672], sp                              ; $5248: $08 $72 $86
@@ -2735,7 +2727,7 @@ jr_007_5246:
     inc  b                                        ; $5287: $04
     rla                                           ; $5288: $17
 
-jr_007_5289:
+jr_007_5289::
     add  b                                        ; $5289: $80
     ldh  a, [$FF9D]                               ; $528A: $F0 $9D
     add  a                                        ; $528C: $87
@@ -3745,7 +3737,7 @@ jr_007_5289:
     nop                                           ; $582F: $00
     ld   [$8F00], sp                              ; $5830: $08 $00 $8F
 
-jr_007_5833:
+jr_007_5833::
     inc  bc                                       ; $5833: $03
     nop                                           ; $5834: $00
     add  b                                        ; $5835: $80
@@ -3756,7 +3748,7 @@ jr_007_5833:
     nop                                           ; $583B: $00
     ld   [$8F00], sp                              ; $583C: $08 $00 $8F
 
-jr_007_583F:
+jr_007_583F::
     rst  $38                                      ; $583F: $FF
     nop                                           ; $5840: $00
     ret  nz                                       ; $5841: $C0
@@ -3769,7 +3761,7 @@ jr_007_583F:
     nop                                           ; $5847: $00
     ld   [$8F00], sp                              ; $5848: $08 $00 $8F
 
-jr_007_584B:
+jr_007_584B::
     inc  b                                        ; $584B: $04
     nop                                           ; $584C: $00
     ret  nz                                       ; $584D: $C0
@@ -3820,7 +3812,7 @@ jr_007_584B:
     nop                                           ; $587C: $00
     nop                                           ; $587D: $00
 
-jr_007_587E:
+jr_007_587E::
     jr   nz, jr_007_5896                          ; $587E: $20 $16
 
     add  h                                        ; $5880: $84
@@ -3833,7 +3825,7 @@ jr_007_587E:
     nop                                           ; $5888: $00
     ret  nz                                       ; $5889: $C0
 
-jr_007_588A:
+jr_007_588A::
     and  c                                        ; $588A: $A1
     sub  a                                        ; $588B: $97
     add  a                                        ; $588C: $87
@@ -3845,7 +3837,7 @@ jr_007_588A:
     nop                                           ; $5894: $00
     ret  nz                                       ; $5895: $C0
 
-jr_007_5896:
+jr_007_5896::
     and  c                                        ; $5896: $A1
     sub  a                                        ; $5897: $97
     add  a                                        ; $5898: $87
@@ -3913,7 +3905,7 @@ jr_007_5896:
     inc  b                                        ; $58DB: $04
     nop                                           ; $58DC: $00
 
-jr_007_58DD:
+jr_007_58DD::
     ret  nz                                       ; $58DD: $C0
 
     and  c                                        ; $58DE: $A1
@@ -3926,7 +3918,7 @@ jr_007_58DD:
     inc  b                                        ; $58E7: $04
     nop                                           ; $58E8: $00
 
-jr_007_58E9:
+jr_007_58E9::
     ret  nz                                       ; $58E9: $C0
 
     and  c                                        ; $58EA: $A1
@@ -3939,7 +3931,7 @@ jr_007_58E9:
     rst  $38                                      ; $58F3: $FF
     rst  $38                                      ; $58F4: $FF
 
-jr_007_58F5:
+jr_007_58F5::
     nop                                           ; $58F5: $00
     jr   nz, jr_007_58DD                          ; $58F6: $20 $E5
 
@@ -4029,7 +4021,7 @@ jr_007_58F5:
     nop                                           ; $594F: $00
     nop                                           ; $5950: $00
 
-jr_007_5951:
+jr_007_5951::
     nop                                           ; $5951: $00
     adc  a                                        ; $5952: $8F
     inc  b                                        ; $5953: $04
@@ -4042,7 +4034,7 @@ jr_007_5951:
     xor  $00                                      ; $595A: $EE $00
     nop                                           ; $595C: $00
 
-jr_007_595D:
+jr_007_595D::
     nop                                           ; $595D: $00
     adc  a                                        ; $595E: $8F
     rst  $38                                      ; $595F: $FF
@@ -4074,7 +4066,7 @@ jr_007_595D:
     and  c                                        ; $597A: $A1
     or   c                                        ; $597B: $B1
 
-jr_007_597C:
+jr_007_597C::
     add  a                                        ; $597C: $87
     inc  bc                                       ; $597D: $03
     nop                                           ; $597E: $00
@@ -4085,7 +4077,7 @@ jr_007_597C:
     nop                                           ; $5985: $00
     jr   nz, @+$65                                ; $5986: $20 $63
 
-jr_007_5988:
+jr_007_5988::
     add  l                                        ; $5988: $85
     inc  bc                                       ; $5989: $03
     nop                                           ; $598A: $00
@@ -4098,7 +4090,7 @@ jr_007_5988:
     nop                                           ; $5991: $00
     jr   nz, jr_007_59F7                          ; $5992: $20 $63
 
-jr_007_5994:
+jr_007_5994::
     add  l                                        ; $5994: $85
     inc  bc                                       ; $5995: $03
     nop                                           ; $5996: $00
@@ -4195,7 +4187,7 @@ jr_007_5994:
     inc  bc                                       ; $59F5: $03
     nop                                           ; $59F6: $00
 
-jr_007_59F7:
+jr_007_59F7::
     nop                                           ; $59F7: $00
     ld   [$8F00], sp                              ; $59F8: $08 $00 $8F
     inc  b                                        ; $59FB: $04
@@ -4208,7 +4200,7 @@ jr_007_59F7:
     inc  bc                                       ; $5A01: $03
     nop                                           ; $5A02: $00
 
-jr_007_5A03:
+jr_007_5A03::
     nop                                           ; $5A03: $00
     ld   [$8F00], sp                              ; $5A04: $08 $00 $8F
     inc  b                                        ; $5A07: $04
@@ -4234,7 +4226,7 @@ jr_007_5A03:
     nop                                           ; $5A1B: $00
     nop                                           ; $5A1C: $00
 
-jr_007_5A1D:
+jr_007_5A1D::
     nop                                           ; $5A1D: $00
     adc  a                                        ; $5A1E: $8F
     rst  $38                                      ; $5A1F: $FF
@@ -4248,7 +4240,7 @@ jr_007_5A1D:
     nop                                           ; $5A27: $00
     nop                                           ; $5A28: $00
 
-jr_007_5A29:
+jr_007_5A29::
     nop                                           ; $5A29: $00
     adc  a                                        ; $5A2A: $8F
     inc  b                                        ; $5A2B: $04
@@ -4262,7 +4254,7 @@ jr_007_5A29:
     nop                                           ; $5A33: $00
     nop                                           ; $5A34: $00
 
-jr_007_5A35:
+jr_007_5A35::
     nop                                           ; $5A35: $00
     adc  a                                        ; $5A36: $8F
     inc  b                                        ; $5A37: $04
@@ -4340,7 +4332,7 @@ jr_007_5A35:
     nop                                           ; $5A8C: $00
     nop                                           ; $5A8D: $00
 
-jr_007_5A8E:
+jr_007_5A8E::
     jr   nz, jr_007_5A9A                          ; $5A8E: $20 $0A
 
     add  [hl]                                     ; $5A90: $86
@@ -4354,7 +4346,7 @@ jr_007_5A8E:
     nop                                           ; $5A98: $00
     nop                                           ; $5A99: $00
 
-jr_007_5A9A:
+jr_007_5A9A::
     jr   nz, jr_007_5AA6                          ; $5A9A: $20 $0A
 
     add  [hl]                                     ; $5A9C: $86
@@ -4368,7 +4360,7 @@ jr_007_5A9A:
     nop                                           ; $5AA4: $00
     nop                                           ; $5AA5: $00
 
-jr_007_5AA6:
+jr_007_5AA6::
     jr   nz, jr_007_5AB2                          ; $5AA6: $20 $0A
 
     add  [hl]                                     ; $5AA8: $86
@@ -4381,7 +4373,7 @@ jr_007_5AA6:
     nop                                           ; $5AB0: $00
     ret  nz                                       ; $5AB1: $C0
 
-jr_007_5AB2:
+jr_007_5AB2::
     and  c                                        ; $5AB2: $A1
     res  0, a                                     ; $5AB3: $CB $87
     inc  bc                                       ; $5AB5: $03
@@ -4564,7 +4556,7 @@ jr_007_5AB2:
     nop                                           ; $5B78: $00
     nop                                           ; $5B79: $00
 
-jr_007_5B7A:
+jr_007_5B7A::
     adc  a                                        ; $5B7A: $8F
     inc  b                                        ; $5B7B: $04
     nop                                           ; $5B7C: $00
@@ -4580,7 +4572,7 @@ jr_007_5B7A:
     adc  a                                        ; $5B86: $8F
     inc  b                                        ; $5B87: $04
 
-jr_007_5B88:
+jr_007_5B88::
     nop                                           ; $5B88: $00
     nop                                           ; $5B89: $00
     jr   nz, jr_007_5BFE                          ; $5B8A: $20 $72
@@ -4634,11 +4626,11 @@ jr_007_5B88:
     or   b                                        ; $5BC6: $B0
     ld   d, [hl]                                  ; $5BC7: $56
 
-jr_007_5BC8:
+jr_007_5BC8::
     add  a                                        ; $5BC8: $87
     ld   bc, $0000                                ; $5BC9: $01 $00 $00
 
-jr_007_5BCC:
+jr_007_5BCC::
     and  b                                        ; $5BCC: $A0
     ld   d, e                                     ; $5BCD: $53
     add  a                                        ; $5BCE: $87
@@ -4646,15 +4638,15 @@ jr_007_5BCC:
     sub  b                                        ; $5BD2: $90
     ld   d, b                                     ; $5BD3: $50
 
-jr_007_5BD4:
+jr_007_5BD4::
     add  a                                        ; $5BD4: $87
     ld   bc, $0000                                ; $5BD5: $01 $00 $00
 
-jr_007_5BD8:
+jr_007_5BD8::
     add  b                                        ; $5BD8: $80
     ld   c, l                                     ; $5BD9: $4D
 
-jr_007_5BDA:
+jr_007_5BDA::
     add  a                                        ; $5BDA: $87
     ld   bc, $0000                                ; $5BDB: $01 $00 $00
     ld   [$8F00], sp                              ; $5BDE: $08 $00 $8F
@@ -4662,10 +4654,10 @@ jr_007_5BDA:
     rst  $38                                      ; $5BE2: $FF
     nop                                           ; $5BE3: $00
 
-jr_007_5BE4:
+jr_007_5BE4::
     jr   nz, @+$74                                ; $5BE4: $20 $72
 
-jr_007_5BE6:
+jr_007_5BE6::
     add  [hl]                                     ; $5BE6: $86
     ld   bc, $0000                                ; $5BE7: $01 $00 $00
     jr   nz, jr_007_5C5E                          ; $5BEA: $20 $72
@@ -4674,7 +4666,7 @@ jr_007_5BE6:
     ld   bc, $0000                                ; $5BED: $01 $00 $00
     jr   nz, @+$7C                                ; $5BF0: $20 $7A
 
-jr_007_5BF2:
+jr_007_5BF2::
     add  [hl]                                     ; $5BF2: $86
     ld   bc, $0000                                ; $5BF3: $01 $00 $00
     jr   nz, jr_007_5B7A                          ; $5BF6: $20 $82
@@ -4683,7 +4675,7 @@ jr_007_5BF2:
     ld   bc, $0000                                ; $5BF9: $01 $00 $00
     jr   nz, jr_007_5B88                          ; $5BFC: $20 $8A
 
-jr_007_5BFE:
+jr_007_5BFE::
     add  [hl]                                     ; $5BFE: $86
     ld   bc, $0000                                ; $5BFF: $01 $00 $00
     ld   b, b                                     ; $5C02: $40
@@ -4693,7 +4685,7 @@ jr_007_5BFE:
     ld   h, b                                     ; $5C08: $60
     sbc  d                                        ; $5C09: $9A
 
-jr_007_5C0A:
+jr_007_5C0A::
     add  [hl]                                     ; $5C0A: $86
     ld   bc, $0000                                ; $5C0B: $01 $00 $00
     nop                                           ; $5C0E: $00
@@ -4754,7 +4746,7 @@ jr_007_5C0A:
     nop                                           ; $5C5B: $00
     ldh  a, [rLY]                                 ; $5C5C: $F0 $44
 
-jr_007_5C5E:
+jr_007_5C5E::
     add  a                                        ; $5C5E: $87
     ld   bc, $0000                                ; $5C5F: $01 $00 $00
     ldh  a, [$FF73]                               ; $5C62: $F0 $73
@@ -4781,7 +4773,7 @@ jr_007_5C5E:
     jp   $F704                                    ; $5C88: $C3 $04 $F7
 
 
-jr_007_5C8B:
+jr_007_5C8B::
     add  hl, hl                                   ; $5C8B: $29
     DB   $F4                                      ; $5C8C: $F4
     jp   c, Jump_000_04C3                         ; $5C8D: $DA $C3 $04
@@ -4795,7 +4787,7 @@ jr_007_5C8B:
     add  hl, hl                                   ; $5C97: $29
     DB   $F4                                      ; $5C98: $F4
     ld   c, [hl]                                  ; $5C99: $4E
-    call nz, Call_000_0004                        ; $5C9A: $C4 $04 $00
+    call nz, Jump_000_0004                        ; $5C9A: $C4 $04 $00
     nop                                           ; $5C9D: $00
     ld   [$8F00], sp                              ; $5C9E: $08 $00 $8F
     rst  $38                                      ; $5CA1: $FF
@@ -4803,7 +4795,7 @@ jr_007_5C8B:
     DB   $EC                                      ; $5CA3: $EC
     jr   nz, jr_007_5C8B                          ; $5CA4: $20 $E5
 
-    call nz, Call_000_0004                        ; $5CA6: $C4 $04 $00
+    call nz, Jump_000_0004                        ; $5CA6: $C4 $04 $00
     DB   $EC                                      ; $5CA9: $EC
     jr   nz, jr_007_5CE7                          ; $5CAA: $20 $3B
 
@@ -4855,7 +4847,7 @@ jr_007_5C8B:
     cp   c                                        ; $5CE5: $B9
     rst  $38                                      ; $5CE6: $FF
 
-jr_007_5CE7:
+jr_007_5CE7::
     call nz, Call_000_0286                        ; $5CE7: $C4 $86 $02
     nop                                           ; $5CEA: $00
     cp   c                                        ; $5CEB: $B9
@@ -4887,7 +4879,7 @@ jr_007_5CE7:
     rst  $38                                      ; $5D13: $FF
     ld   a, c                                     ; $5D14: $79
 
-jr_007_5D15:
+jr_007_5D15::
     ld   l, a                                     ; $5D15: $6F
     adc  $85                                      ; $5D16: $CE $85
     ld   bc, $8F79                                ; $5D18: $01 $79 $8F
@@ -4945,7 +4937,7 @@ jr_007_5D15:
     ld   l, e                                     ; $5D63: $6B
     add  a                                        ; $5D64: $87
 
-jr_007_5D65:
+jr_007_5D65::
     ld   bc, $3500                                ; $5D65: $01 $00 $35
     ld   b, b                                     ; $5D68: $40
     ld   [hl], e                                  ; $5D69: $73
@@ -4955,7 +4947,7 @@ jr_007_5D65:
 
     add  a                                        ; $5D70: $87
 
-jr_007_5D71:
+jr_007_5D71::
     ld   bc, $3500                                ; $5D71: $01 $00 $35
     jr   nz, jr_007_5DE9                          ; $5D74: $20 $73
 
@@ -4990,7 +4982,7 @@ jr_007_5D71:
     ld   h, b                                     ; $5D92: $60
     ld   b, h                                     ; $5D93: $44
 
-jr_007_5D94:
+jr_007_5D94::
     add  a                                        ; $5D94: $87
     ld   [bc], a                                  ; $5D95: $02
     nop                                           ; $5D96: $00
@@ -5004,11 +4996,11 @@ jr_007_5D94:
     ld   h, b                                     ; $5D9E: $60
     dec  l                                        ; $5D9F: $2D
 
-jr_007_5DA0:
+jr_007_5DA0::
     add  a                                        ; $5DA0: $87
     ld   bc, $3500                                ; $5DA1: $01 $00 $35
     ld   h, b                                     ; $5DA4: $60
-    ld   hl, $0187                                ; $5DA5: $21 $87 $01
+    ld   hl, Call_000_0187                        ; $5DA5: $21 $87 $01
     nop                                           ; $5DA8: $00
     nop                                           ; $5DA9: $00
     nop                                           ; $5DAA: $00
@@ -5062,18 +5054,18 @@ jr_007_5DA0:
     add  h                                        ; $5DE2: $84
     dec  b                                        ; $5DE3: $05
 
-jr_007_5DE4:
+jr_007_5DE4::
     rst  $38                                      ; $5DE4: $FF
     rst  $30                                      ; $5DE5: $F7
     jr   nz, jr_007_5D94                          ; $5DE6: $20 $AC
 
     add  l                                        ; $5DE8: $85
 
-jr_007_5DE9:
+jr_007_5DE9::
     dec  b                                        ; $5DE9: $05
     rst  $38                                      ; $5DEA: $FF
 
-jr_007_5DEB:
+jr_007_5DEB::
     rst  $30                                      ; $5DEB: $F7
     jr   nz, jr_007_5D71                          ; $5DEC: $20 $83
 
@@ -5144,7 +5136,7 @@ jr_007_5DEB:
     ld   d, l                                     ; $5E37: $55
     ld   [hl+], a                                 ; $5E38: $22
 
-jr_007_5E39:
+jr_007_5E39::
     ld   h, [hl]                                  ; $5E39: $66
     ld   de, $1777                                ; $5E3A: $11 $77 $17
     nop                                           ; $5E3D: $00
@@ -5168,7 +5160,7 @@ jr_007_5E39:
     ld   d, h                                     ; $5E55: $54
     ld   bc, $53D0                                ; $5E56: $01 $D0 $53
 
-jr_007_5E59:
+jr_007_5E59::
     ld   bc, $52F0                                ; $5E59: $01 $F0 $52
     ld   bc, $54B0                                ; $5E5C: $01 $B0 $54
     ld   bc, $5400                                ; $5E5F: $01 $00 $54
@@ -5199,15 +5191,15 @@ jr_007_5E59:
     ld   bc, $0000                                ; $5E8F: $01 $00 $00
     ldh  a, [$FF64]                               ; $5E92: $F0 $64
     add  a                                        ; $5E94: $87
-    ld   bc, $4000                                ; $5E95: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $5E95: $01 $00 $40
     ldh  a, [$FF62]                               ; $5E98: $F0 $62
     add  a                                        ; $5E9A: $87
-    ld   bc, $4000                                ; $5E9B: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $5E9B: $01 $00 $40
     ret  nz                                       ; $5E9E: $C0
 
     ld   e, d                                     ; $5E9F: $5A
     add  a                                        ; $5EA0: $87
-    ld   bc, $4000                                ; $5EA1: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $5EA1: $01 $00 $40
     sub  b                                        ; $5EA4: $90
     ld   d, d                                     ; $5EA5: $52
     add  a                                        ; $5EA6: $87
@@ -5221,7 +5213,7 @@ jr_007_5E59:
     add  a                                        ; $5EB2: $87
     ld   bc, $8000                                ; $5EB3: $01 $00 $80
     DB   $10                                      ; $5EB6: $10
-    ld   hl, $0187                                ; $5EB7: $21 $87 $01
+    ld   hl, Call_000_0187                        ; $5EB7: $21 $87 $01
     nop                                           ; $5EBA: $00
     nop                                           ; $5EBB: $00
     ld   [$8F00], sp                              ; $5EBC: $08 $00 $8F
@@ -5257,7 +5249,7 @@ jr_007_5E59:
     add  l                                        ; $5EE2: $85
     ld   [bc], a                                  ; $5EE3: $02
 
-jr_007_5EE4:
+jr_007_5EE4::
     nop                                           ; $5EE4: $00
     add  b                                        ; $5EE5: $80
     ldh  a, [$FFAC]                               ; $5EE6: $F0 $AC
@@ -5378,7 +5370,7 @@ jr_007_5EE4:
     DB   $DD                                      ; $5F7E: $DD
     add  l                                        ; $5F7F: $85
 
-jr_007_5F80:
+jr_007_5F80::
     ld   bc, $0000                                ; $5F80: $01 $00 $00
     ld   [$FF8F], sp                              ; $5F83: $08 $8F $FF
     nop                                           ; $5F86: $00
@@ -5386,7 +5378,7 @@ jr_007_5F80:
     ld   [$8F00], sp                              ; $5F88: $08 $00 $8F
     inc  b                                        ; $5F8B: $04
 
-jr_007_5F8C:
+jr_007_5F8C::
     nop                                           ; $5F8C: $00
     add  b                                        ; $5F8D: $80
     ld   b, b                                     ; $5F8E: $40
@@ -5623,7 +5615,7 @@ jr_007_5F8C:
     nop                                           ; $60D4: $00
     nop                                           ; $60D5: $00
     ld   h, b                                     ; $60D6: $60
-    ld   hl, $0387                                ; $60D7: $21 $87 $03
+    ld   hl, Call_000_0387                        ; $60D7: $21 $87 $03
     nop                                           ; $60DA: $00
     nop                                           ; $60DB: $00
     ld   h, b                                     ; $60DC: $60
@@ -5652,7 +5644,7 @@ jr_007_5F8C:
     nop                                           ; $60F3: $00
     jr   nz, jr_007_60F6                          ; $60F4: $20 $00
 
-jr_007_60F6:
+jr_007_60F6::
     add  a                                        ; $60F6: $87
     ld   bc, $0000                                ; $60F7: $01 $00 $00
     DB   $10                                      ; $60FA: $10
@@ -5734,7 +5726,7 @@ jr_007_60F6:
     add  l                                        ; $614A: $85
     ld   bc, $0000                                ; $614B: $01 $00 $00
 
-jr_007_614E:
+jr_007_614E::
     ld   h, b                                     ; $614E: $60
     DB   $ED                                      ; $614F: $ED
     add  l                                        ; $6150: $85
@@ -5746,55 +5738,55 @@ jr_007_614E:
     nop                                           ; $6158: $00
     ld   b, b                                     ; $6159: $40
 
-jr_007_615A:
+jr_007_615A::
     jr   nz, jr_007_616C                          ; $615A: $20 $10
 
     add  a                                        ; $615C: $87
 
-jr_007_615D:
-    ld   bc, $4000                                ; $615D: $01 $00 $40
+jr_007_615D::
+    ld   bc, Jump_007_4000                        ; $615D: $01 $00 $40
     ld   b, b                                     ; $6160: $40
     inc  de                                       ; $6161: $13
     add  a                                        ; $6162: $87
-    ld   bc, $4000                                ; $6163: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $6163: $01 $00 $40
     ld   h, b                                     ; $6166: $60
 
-jr_007_6167:
+jr_007_6167::
     dec  d                                        ; $6167: $15
     add  a                                        ; $6168: $87
-    ld   bc, $4000                                ; $6169: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $6169: $01 $00 $40
 
-jr_007_616C:
+jr_007_616C::
     add  b                                        ; $616C: $80
     rla                                           ; $616D: $17
 
-jr_007_616E:
+jr_007_616E::
     add  a                                        ; $616E: $87
-    ld   bc, $4000                                ; $616F: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $616F: $01 $00 $40
     and  b                                        ; $6172: $A0
     add  hl, de                                   ; $6173: $19
     add  a                                        ; $6174: $87
-    ld   bc, $4000                                ; $6175: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $6175: $01 $00 $40
     ret  nz                                       ; $6178: $C0
 
     dec  de                                       ; $6179: $1B
     add  a                                        ; $617A: $87
 
-jr_007_617B:
+jr_007_617B::
     ld   bc, $0000                                ; $617B: $01 $00 $00
 
-jr_007_617E:
+jr_007_617E::
     ld   [$8F00], sp                              ; $617E: $08 $00 $8F
     inc  bc                                       ; $6181: $03
 
-jr_007_6182:
+jr_007_6182::
     nop                                           ; $6182: $00
     ret  nz                                       ; $6183: $C0
 
     ld   h, b                                     ; $6184: $60
     DB   $10                                      ; $6185: $10
 
-jr_007_6186:
+jr_007_6186::
     add  a                                        ; $6186: $87
     ld   b, $00                                   ; $6187: $06 $00
     nop                                           ; $6189: $00
@@ -5922,7 +5914,7 @@ jr_007_6186:
     ld   b, b                                     ; $6232: $40
     ld   h, b                                     ; $6233: $60
 
-jr_007_6234:
+jr_007_6234::
     ld   h, d                                     ; $6234: $62
     add  a                                        ; $6235: $87
     ld   [bc], a                                  ; $6236: $02
@@ -5959,13 +5951,13 @@ jr_007_6234:
     ld   h, b                                     ; $6261: $60
     or   c                                        ; $6262: $B1
     add  a                                        ; $6263: $87
-    ld   bc, $4000                                ; $6264: $01 $00 $40
+    ld   bc, Jump_007_4000                        ; $6264: $01 $00 $40
     push hl                                       ; $6267: $E5
     or   [hl]                                     ; $6268: $B6
     add  a                                        ; $6269: $87
     jr   nz, jr_007_626C                          ; $626A: $20 $00
 
-jr_007_626C:
+jr_007_626C::
     nop                                           ; $626C: $00
     ld   [$8F00], sp                              ; $626D: $08 $00 $8F
     rst  $38                                      ; $6270: $FF
@@ -6210,13 +6202,13 @@ jr_007_626C:
     rlca                                          ; $63A1: $07
     DB   $10                                      ; $63A2: $10
 
-jr_007_63A3:
+jr_007_63A3::
     rla                                           ; $63A3: $17
 
-jr_007_63A4:
+jr_007_63A4::
     rlca                                          ; $63A4: $07
 
-jr_007_63A5:
+jr_007_63A5::
     DB   $10                                      ; $63A5: $10
     dec  d                                        ; $63A6: $15
     rlca                                          ; $63A7: $07
@@ -6228,7 +6220,7 @@ jr_007_63A5:
     rlca                                          ; $63AD: $07
     ld   [$FF25], sp                              ; $63AE: $08 $25 $FF
 
-jr_007_63B1:
+jr_007_63B1::
     rra                                           ; $63B1: $1F
     add  b                                        ; $63B2: $80
     add  hl, hl                                   ; $63B3: $29
@@ -6265,7 +6257,7 @@ jr_007_63B1:
     ld   bc, $8000                                ; $63E0: $01 $00 $80
     ld   [$879D], sp                              ; $63E3: $08 $9D $87
 
-jr_007_63E6:
+jr_007_63E6::
     ld   [bc], a                                  ; $63E6: $02
     rra                                           ; $63E7: $1F
     add  b                                        ; $63E8: $80
@@ -6308,7 +6300,7 @@ jr_007_63E6:
     add  a                                        ; $6421: $87
     ld   bc, $8000                                ; $6422: $01 $00 $80
     and  b                                        ; $6425: $A0
-    ld   hl, $0187                                ; $6426: $21 $87 $01
+    ld   hl, Call_000_0187                        ; $6426: $21 $87 $01
     nop                                           ; $6429: $00
     add  b                                        ; $642A: $80
     and  b                                        ; $642B: $A0
@@ -6914,7 +6906,7 @@ jr_007_63E6:
     rst  $38                                      ; $66DA: $FF
     nop                                           ; $66DB: $00
 
-jr_007_66DC:
+jr_007_66DC::
     ld   [$8F00], sp                              ; $66DC: $08 $00 $8F
     inc  b                                        ; $66DF: $04
     add  b                                        ; $66E0: $80
@@ -7022,7 +7014,7 @@ jr_007_66DC:
     ld   h, a                                     ; $6766: $67
     adc  c                                        ; $6767: $89
     xor  e                                        ; $6768: $AB
-    call Call_000_00EF                            ; $6769: $CD $EF $00
+    call Jump_000_00EF                            ; $6769: $CD $EF $00
     nop                                           ; $676C: $00
     nop                                           ; $676D: $00
     nop                                           ; $676E: $00
@@ -7075,7 +7067,7 @@ jr_007_66DC:
     ret                                           ; $67A8: $C9
 
 
-Call_007_67A9:
+Call_007_67A9::
     ld   a, [$D38D]                               ; $67A9: $FA $8D $D3
     and  a                                        ; $67AC: $A7
     ret  z                                        ; $67AD: $C8
@@ -7086,17 +7078,17 @@ Call_007_67A9:
 
     jr   jr_007_67C2                              ; $67B3: $18 $0D
 
-jr_007_67B5:
+jr_007_67B5::
     xor  a                                        ; $67B5: $AF
     ldh  [rNR30], a                               ; $67B6: $E0 $1A
     ld   hl, $D33F                                ; $67B8: $21 $3F $D3
     set  7, [hl]                                  ; $67BB: $CB $FE
     ld   hl, $D34F                                ; $67BD: $21 $4F $D3
 
-jr_007_67C0:
+jr_007_67C0::
     set  7, [hl]                                  ; $67C0: $CB $FE
 
-jr_007_67C2:
+jr_007_67C2::
     ld   hl, $D38C                                ; $67C2: $21 $8C $D3
     inc  [hl]                                     ; $67C5: $34
     ld   a, [hl]                                  ; $67C6: $7E
@@ -7121,7 +7113,7 @@ jr_007_67C2:
     ret                                           ; $67E5: $C9
 
 
-jr_007_67E6:
+jr_007_67E6::
     ld   [$D369], a                               ; $67E6: $EA $69 $D3
     ld   [$D38D], a                               ; $67E9: $EA $8D $D3
     ld   [$D38C], a                               ; $67EC: $EA $8C $D3
@@ -7219,7 +7211,7 @@ jr_007_67E6:
     ld   c, $20                                   ; $6872: $0E $20
     ld   b, $04                                   ; $6874: $06 $04
 
-jr_007_6876:
+jr_007_6876::
     ld   a, [hl+]                                 ; $6876: $2A
     ldh  [c], a                                   ; $6877: $E2
     inc  c                                        ; $6878: $0C
@@ -7233,7 +7225,7 @@ jr_007_6876:
     inc  e                                        ; $687E: $1C
     ld   [$D351], a                               ; $687F: $EA $51 $D3
 
-Call_007_6882:
+Call_007_6882::
     inc  e                                        ; $6882: $1C
     dec  a                                        ; $6883: $3D
     sla  a                                        ; $6884: $CB $27
@@ -7249,11 +7241,11 @@ Call_007_6882:
     ret                                           ; $6890: $C9
 
 
-Call_007_6891:
+Call_007_6891::
     push bc                                       ; $6891: $C5
     ld   c, $30                                   ; $6892: $0E $30
 
-jr_007_6894:
+jr_007_6894::
     ld   a, [hl+]                                 ; $6894: $2A
     ldh  [c], a                                   ; $6895: $E2
     inc  c                                        ; $6896: $0C
@@ -7265,7 +7257,7 @@ jr_007_6894:
     ld   l, e                                     ; $689F: $6B
     ld   h, d                                     ; $68A0: $62
 
-jr_007_68A1:
+jr_007_68A1::
     ld   a, [hl+]                                 ; $68A1: $2A
     ld   [bc], a                                  ; $68A2: $02
     inc  c                                        ; $68A3: $0C
@@ -7280,7 +7272,7 @@ jr_007_68A1:
     ld   hl, $D310                                ; $68AB: $21 $10 $D3
     ld   de, $D390                                ; $68AE: $11 $90 $D3
 
-jr_007_68B1:
+jr_007_68B1::
     ld   a, [hl+]                                 ; $68B1: $2A
     ld   [de], a                                  ; $68B2: $12
     inc  e                                        ; $68B3: $1C
@@ -7296,7 +7288,7 @@ jr_007_68B1:
     ld   de, $D310                                ; $68BF: $11 $10 $D3
     ld   hl, $D390                                ; $68C2: $21 $90 $D3
 
-jr_007_68C5:
+jr_007_68C5::
     ld   a, [hl+]                                 ; $68C5: $2A
     ld   [de], a                                  ; $68C6: $12
     inc  e                                        ; $68C7: $1C
@@ -7309,7 +7301,7 @@ jr_007_68C5:
     ret                                           ; $68D3: $C9
 
 
-jr_007_68D4:
+jr_007_68D4::
     jp   Jump_007_4000                            ; $68D4: $C3 $00 $40
 
 
@@ -7330,11 +7322,11 @@ jr_007_68D4:
     jp   Jump_007_68F2                            ; $68EF: $C3 $F2 $68
 
 
-Jump_007_68F2:
+Jump_007_68F2::
     ld   a, [$D369]                               ; $68F2: $FA $69 $D3
     ld   hl, $6994                                ; $68F5: $21 $94 $69
 
-jr_007_68F8:
+jr_007_68F8::
     dec  a                                        ; $68F8: $3D
     jr   z, jr_007_6903                           ; $68F9: $28 $08
 
@@ -7346,7 +7338,7 @@ jr_007_68F8:
     inc  hl                                       ; $6900: $23
     jr   jr_007_68F8                              ; $6901: $18 $F5
 
-jr_007_6903:
+jr_007_6903::
     ld   bc, $D355                                ; $6903: $01 $55 $D3
     ld   a, [hl+]                                 ; $6906: $2A
     ld   [bc], a                                  ; $6907: $02
@@ -7375,7 +7367,7 @@ jr_007_6903:
     ret                                           ; $691F: $C9
 
 
-Call_007_6920:
+Call_007_6920::
     ld   a, [hl+]                                 ; $6920: $2A
     ld   c, a                                     ; $6921: $4F
     ld   a, [hl]                                  ; $6922: $7E
@@ -7389,7 +7381,7 @@ Call_007_6920:
     ret                                           ; $692A: $C9
 
 
-Call_007_692B:
+Call_007_692B::
     ld   a, [hl+]                                 ; $692B: $2A
     ld   [de], a                                  ; $692C: $12
     inc  e                                        ; $692D: $1C
@@ -7398,7 +7390,7 @@ Call_007_692B:
     ret                                           ; $6930: $C9
 
 
-Call_007_6931:
+Call_007_6931::
     call Call_007_400D                            ; $6931: $CD $0D $40
     ld   de, $D300                                ; $6934: $11 $00 $D3
     ld   b, $00                                   ; $6937: $06 $00
@@ -7429,7 +7421,7 @@ Call_007_6931:
     ld   bc, $0410                                ; $697B: $01 $10 $04
     ld   hl, $D312                                ; $697E: $21 $12 $D3
 
-jr_007_6981:
+jr_007_6981::
     ld   [hl], $01                                ; $6981: $36 $01
     ld   a, c                                     ; $6983: $79
     add  l                                        ; $6984: $85
@@ -7585,7 +7577,7 @@ jr_007_6981:
     nop                                           ; $6A64: $00
     nop                                           ; $6A65: $00
 
-Call_007_6A66:
+Call_007_6A66::
     ld   hl, $D355                                ; $6A66: $21 $55 $D3
     ld   a, [hl+]                                 ; $6A69: $2A
     cp   $01                                      ; $6A6A: $FE $01
@@ -7618,13 +7610,13 @@ Call_007_6A66:
 
     inc  c                                        ; $6A89: $0C
 
-jr_007_6A8A:
+jr_007_6A8A::
     ld   a, [bc]                                  ; $6A8A: $0A
     ldh  [rNR51], a                               ; $6A8B: $E0 $25
     ret                                           ; $6A8D: $C9
 
 
-jr_007_6A8E:
+jr_007_6A8E::
     push hl                                       ; $6A8E: $E5
     xor  a                                        ; $6A8F: $AF
     ldh  [rNR30], a                               ; $6A90: $E0 $1A
@@ -7634,7 +7626,7 @@ jr_007_6A8E:
     pop  hl                                       ; $6A97: $E1
     jr   jr_007_6ACA                              ; $6A98: $18 $30
 
-Jump_007_6A9A:
+Jump_007_6A9A::
     call Call_007_6AD0                            ; $6A9A: $CD $D0 $6A
     call Call_007_6AE5                            ; $6A9D: $CD $E5 $6A
     ld   e, a                                     ; $6AA0: $5F
@@ -7660,7 +7652,7 @@ Jump_007_6A9A:
     dec  l                                        ; $6ABE: $2D
     dec  l                                        ; $6ABF: $2D
 
-jr_007_6AC0:
+jr_007_6AC0::
     push hl                                       ; $6AC0: $E5
     ld   hl, $D350                                ; $6AC1: $21 $50 $D3
     ld   a, [hl]                                  ; $6AC4: $7E
@@ -7668,12 +7660,12 @@ jr_007_6AC0:
     cp   $03                                      ; $6AC6: $FE $03
     jr   z, jr_007_6A8E                           ; $6AC8: $28 $C4
 
-jr_007_6ACA:
+jr_007_6ACA::
     call Call_007_6AD0                            ; $6ACA: $CD $D0 $6A
-    jp   Jump_007_6BE2                            ; $6ACD: $C3 $E2 $6B
+    jp   jr_007_6BE2                              ; $6ACD: $C3 $E2 $6B
 
 
-Call_007_6AD0:
+Call_007_6AD0::
     push de                                       ; $6AD0: $D5
     ld   a, [hl+]                                 ; $6AD1: $2A
     ld   e, a                                     ; $6AD2: $5F
@@ -7681,7 +7673,7 @@ Call_007_6AD0:
     ld   d, a                                     ; $6AD4: $57
     inc  de                                       ; $6AD5: $13
 
-jr_007_6AD6:
+jr_007_6AD6::
     ld   a, e                                     ; $6AD6: $7B
     ld   [hl+], a                                 ; $6AD7: $22
     ld   a, d                                     ; $6AD8: $7A
@@ -7690,7 +7682,7 @@ jr_007_6AD6:
     ret                                           ; $6ADB: $C9
 
 
-Call_007_6ADC:
+Call_007_6ADC::
     push de                                       ; $6ADC: $D5
     ld   a, [hl+]                                 ; $6ADD: $2A
     ld   e, a                                     ; $6ADE: $5F
@@ -7700,7 +7692,7 @@ Call_007_6ADC:
     inc  de                                       ; $6AE2: $13
     jr   jr_007_6AD6                              ; $6AE3: $18 $F1
 
-Call_007_6AE5:
+Call_007_6AE5::
     ld   a, [hl+]                                 ; $6AE5: $2A
     ld   c, a                                     ; $6AE6: $4F
     ld   a, [hl-]                                 ; $6AE7: $3A
@@ -7710,11 +7702,11 @@ Call_007_6AE5:
     ret                                           ; $6AEB: $C9
 
 
-jr_007_6AEC:
+jr_007_6AEC::
     pop  hl                                       ; $6AEC: $E1
-    jr   jr_007_6B20                              ; $6AED: $18 $31
+    jr   Jump_007_6B20                            ; $6AED: $18 $31
 
-Jump_007_6AEF:
+Jump_007_6AEF::
     ld   a, [$D350]                               ; $6AEF: $FA $50 $D3
     cp   $03                                      ; $6AF2: $FE $03
     jr   nz, jr_007_6B06                          ; $6AF4: $20 $10
@@ -7730,7 +7722,7 @@ Jump_007_6AEF:
     ld   a, $40                                   ; $6B02: $3E $40
     ldh  [rNR32], a                               ; $6B04: $E0 $1C
 
-jr_007_6B06:
+jr_007_6B06::
     push hl                                       ; $6B06: $E5
     ld   a, l                                     ; $6B07: $7D
     add  $09                                      ; $6B08: $C6 $09
@@ -7751,21 +7743,20 @@ jr_007_6B06:
     call Call_007_6E48                            ; $6B1C: $CD $48 $6E
     pop  hl                                       ; $6B1F: $E1
 
-Jump_007_6B20:
-jr_007_6B20:
+Jump_007_6B20::
     dec  l                                        ; $6B20: $2D
     dec  l                                        ; $6B21: $2D
     jp   Jump_007_6D18                            ; $6B22: $C3 $18 $6D
 
 
-Jump_007_6B25:
+Jump_007_6B25::
     dec  l                                        ; $6B25: $2D
     dec  l                                        ; $6B26: $2D
     dec  l                                        ; $6B27: $2D
     dec  l                                        ; $6B28: $2D
     call Call_007_6ADC                            ; $6B29: $CD $DC $6A
 
-jr_007_6B2C:
+jr_007_6B2C::
     ld   a, l                                     ; $6B2C: $7D
     add  $04                                      ; $6B2D: $C6 $04
     ld   e, a                                     ; $6B2F: $5F
@@ -7781,7 +7772,7 @@ jr_007_6B2C:
     jp   Jump_007_6BE0                            ; $6B3D: $C3 $E0 $6B
 
 
-jr_007_6B40:
+jr_007_6B40::
     dec  l                                        ; $6B40: $2D
     push hl                                       ; $6B41: $E5
     call Call_007_6ADC                            ; $6B42: $CD $DC $6A
@@ -7797,14 +7788,14 @@ jr_007_6B40:
     ld   [hl-], a                                 ; $6B54: $32
     jr   jr_007_6B2C                              ; $6B55: $18 $D5
 
-jr_007_6B57:
+jr_007_6B57::
     ld   hl, $D369                                ; $6B57: $21 $69 $D3
     ld   [hl], $00                                ; $6B5A: $36 $00
-    call Call_007_4000                            ; $6B5C: $CD $00 $40
+    call Jump_007_4000                            ; $6B5C: $CD $00 $40
     ret                                           ; $6B5F: $C9
 
 
-Jump_007_6B60:
+Jump_007_6B60::
     call Call_007_6AD0                            ; $6B60: $CD $D0 $6A
     call Call_007_6AE5                            ; $6B63: $CD $E5 $6A
     ld   [$D301], a                               ; $6B66: $EA $01 $D3
@@ -7813,16 +7804,16 @@ Jump_007_6B60:
     ld   [$D302], a                               ; $6B6F: $EA $02 $D3
     jr   jr_007_6B7D                              ; $6B72: $18 $09
 
-Jump_007_6B74:
+Jump_007_6B74::
     call Call_007_6AD0                            ; $6B74: $CD $D0 $6A
     call Call_007_6AE5                            ; $6B77: $CD $E5 $6A
     ld   [$D300], a                               ; $6B7A: $EA $00 $D3
 
-jr_007_6B7D:
+jr_007_6B7D::
     call Call_007_6AD0                            ; $6B7D: $CD $D0 $6A
     jr   jr_007_6BE2                              ; $6B80: $18 $60
 
-Jump_007_6B82:
+Jump_007_6B82::
     call Call_007_6AD0                            ; $6B82: $CD $D0 $6A
     call Call_007_6AE5                            ; $6B85: $CD $E5 $6A
     push hl                                       ; $6B88: $E5
@@ -7854,7 +7845,7 @@ Jump_007_6B82:
     ld   [bc], a                                  ; $6BA3: $02
     jr   jr_007_6BE2                              ; $6BA4: $18 $3C
 
-Jump_007_6BA6:
+Jump_007_6BA6::
     push hl                                       ; $6BA6: $E5
     ld   a, l                                     ; $6BA7: $7D
     add  $0B                                      ; $6BA8: $C6 $0B
@@ -7878,7 +7869,7 @@ Jump_007_6BA6:
     ld   [hl-], a                                 ; $6BBC: $32
     jr   jr_007_6BE2                              ; $6BBD: $18 $23
 
-jr_007_6BBF:
+jr_007_6BBF::
     pop  hl                                       ; $6BBF: $E1
     jr   jr_007_6B7D                              ; $6BC0: $18 $BB
 
@@ -7893,7 +7884,7 @@ jr_007_6BBF:
     ld   [$D350], a                               ; $6BD0: $EA $50 $D3
     ld   hl, $D310                                ; $6BD3: $21 $10 $D3
 
-Jump_007_6BD6:
+Jump_007_6BD6::
     inc  l                                        ; $6BD6: $2C
     ld   a, [hl+]                                 ; $6BD7: $2A
     and  a                                        ; $6BD8: $A7
@@ -7902,12 +7893,11 @@ Jump_007_6BD6:
     dec  [hl]                                     ; $6BDC: $35
     jp   nz, Jump_007_6AEF                        ; $6BDD: $C2 $EF $6A
 
-Jump_007_6BE0:
+Jump_007_6BE0::
     inc  l                                        ; $6BE0: $2C
     inc  l                                        ; $6BE1: $2C
 
-Jump_007_6BE2:
-jr_007_6BE2:
+jr_007_6BE2::
     call Call_007_6AE5                            ; $6BE2: $CD $E5 $6A
     cp   $00                                      ; $6BE5: $FE $00
     jp   z, Jump_007_6B25                         ; $6BE7: $CA $25 $6B
@@ -7957,7 +7947,7 @@ jr_007_6BE2:
     ld   a, d                                     ; $6C25: $7A
     jr   jr_007_6C4D                              ; $6C26: $18 $25
 
-jr_007_6C28:
+jr_007_6C28::
     ld   e, a                                     ; $6C28: $5F
     ld   a, d                                     ; $6C29: $7A
     push af                                       ; $6C2A: $F5
@@ -7972,14 +7962,14 @@ jr_007_6C28:
 
     add  d                                        ; $6C38: $82
 
-jr_007_6C39:
+jr_007_6C39::
     ld   c, a                                     ; $6C39: $4F
     and  a                                        ; $6C3A: $A7
     jr   nz, jr_007_6C3F                          ; $6C3B: $20 $02
 
     ld   c, $02                                   ; $6C3D: $0E $02
 
-jr_007_6C3F:
+jr_007_6C3F::
     ld   de, $D350                                ; $6C3F: $11 $50 $D3
     ld   a, [de]                                  ; $6C42: $1A
     dec  a                                        ; $6C43: $3D
@@ -7990,14 +7980,14 @@ jr_007_6C3F:
     ld   [hl], c                                  ; $6C4B: $71
     pop  af                                       ; $6C4C: $F1
 
-jr_007_6C4D:
+jr_007_6C4D::
     pop  hl                                       ; $6C4D: $E1
     dec  l                                        ; $6C4E: $2D
     ld   [hl+], a                                 ; $6C4F: $22
     call Call_007_6AD0                            ; $6C50: $CD $D0 $6A
     call Call_007_6AE5                            ; $6C53: $CD $E5 $6A
 
-jr_007_6C56:
+jr_007_6C56::
     ld   c, b                                     ; $6C56: $48
     ld   b, $00                                   ; $6C57: $06 $00
     call Call_007_6AD0                            ; $6C59: $CD $D0 $6A
@@ -8029,12 +8019,12 @@ jr_007_6C56:
 
     ld   h, $FF                                   ; $6C81: $26 $FF
 
-jr_007_6C83:
+jr_007_6C83::
     add  hl, bc                                   ; $6C83: $09
     ld   b, h                                     ; $6C84: $44
     ld   c, l                                     ; $6C85: $4D
 
-jr_007_6C86:
+jr_007_6C86::
     ld   hl, $6E99                                ; $6C86: $21 $99 $6E
     add  hl, bc                                   ; $6C89: $09
     ld   a, [hl+]                                 ; $6C8A: $2A
@@ -8043,21 +8033,21 @@ jr_007_6C86:
     ld   a, [hl]                                  ; $6C8D: $7E
     ld   [de], a                                  ; $6C8E: $12
     pop  hl                                       ; $6C8F: $E1
-    jp   Jump_007_6CB1                            ; $6C90: $C3 $B1 $6C
+    jp   jr_007_6CB1                              ; $6C90: $C3 $B1 $6C
 
 
-jr_007_6C93:
+jr_007_6C93::
     ld   [hl], $01                                ; $6C93: $36 $01
     pop  hl                                       ; $6C95: $E1
     jr   jr_007_6CB1                              ; $6C96: $18 $19
 
-Jump_007_6C98:
+Jump_007_6C98::
     push hl                                       ; $6C98: $E5
     ld   de, $D346                                ; $6C99: $11 $46 $D3
     ld   hl, $6F2B                                ; $6C9C: $21 $2B $6F
     add  hl, bc                                   ; $6C9F: $09
 
-jr_007_6CA0:
+jr_007_6CA0::
     ld   a, [hl+]                                 ; $6CA0: $2A
     ld   [de], a                                  ; $6CA1: $12
     inc  e                                        ; $6CA2: $1C
@@ -8070,8 +8060,7 @@ jr_007_6CA0:
     ld   b, $00                                   ; $6CAD: $06 $00
     jr   jr_007_6CEA                              ; $6CAF: $18 $39
 
-Jump_007_6CB1:
-jr_007_6CB1:
+jr_007_6CB1::
     push hl                                       ; $6CB1: $E5
     ld   b, $00                                   ; $6CB2: $06 $00
     ld   a, [$D350]                               ; $6CB4: $FA $50 $D3
@@ -8091,7 +8080,7 @@ jr_007_6CB1:
     ld   a, $80                                   ; $6CCA: $3E $80
     ldh  [c], a                                   ; $6CCC: $E2
 
-jr_007_6CCD:
+jr_007_6CCD::
     inc  c                                        ; $6CCD: $0C
     inc  l                                        ; $6CCE: $2C
     inc  l                                        ; $6CCF: $2C
@@ -8102,11 +8091,11 @@ jr_007_6CCD:
     ld   d, $00                                   ; $6CD4: $16 $00
     jr   jr_007_6CF1                              ; $6CD6: $18 $19
 
-jr_007_6CD8:
+jr_007_6CD8::
     ld   c, $16                                   ; $6CD8: $0E $16
     jr   jr_007_6CEA                              ; $6CDA: $18 $0E
 
-jr_007_6CDC:
+jr_007_6CDC::
     ld   c, $10                                   ; $6CDC: $0E $10
     jr   jr_007_6CE7                              ; $6CDE: $18 $07
 
@@ -8115,13 +8104,13 @@ jr_007_6CDC:
     ldh  [c], a                                   ; $6CE4: $E2
     jr   jr_007_6CE9                              ; $6CE5: $18 $02
 
-jr_007_6CE7:
+jr_007_6CE7::
     ld   a, $00                                   ; $6CE7: $3E $00
 
-jr_007_6CE9:
+jr_007_6CE9::
     inc  c                                        ; $6CE9: $0C
 
-jr_007_6CEA:
+jr_007_6CEA::
     inc  l                                        ; $6CEA: $2C
     inc  l                                        ; $6CEB: $2C
     ld   a, [hl+]                                 ; $6CEC: $2A
@@ -8130,7 +8119,7 @@ jr_007_6CEA:
     ld   a, [hl+]                                 ; $6CEF: $2A
     ld   d, a                                     ; $6CF0: $57
 
-jr_007_6CF1:
+jr_007_6CF1::
     push hl                                       ; $6CF1: $E5
     inc  l                                        ; $6CF2: $2C
     inc  l                                        ; $6CF3: $2C
@@ -8140,7 +8129,7 @@ jr_007_6CF1:
 
     ld   e, $08                                   ; $6CF8: $1E $08
 
-jr_007_6CFA:
+jr_007_6CFA::
     inc  l                                        ; $6CFA: $2C
     inc  l                                        ; $6CFB: $2C
     ld   [hl], $00                                ; $6CFC: $36 $00
@@ -8164,14 +8153,14 @@ jr_007_6CFA:
     or   $80                                      ; $6D10: $F6 $80
     ldh  [c], a                                   ; $6D12: $E2
 
-jr_007_6D13:
+jr_007_6D13::
     pop  hl                                       ; $6D13: $E1
     dec  l                                        ; $6D14: $2D
     ld   a, [hl-]                                 ; $6D15: $3A
     ld   [hl-], a                                 ; $6D16: $32
     dec  l                                        ; $6D17: $2D
 
-Jump_007_6D18:
+Jump_007_6D18::
     ld   de, $D350                                ; $6D18: $11 $50 $D3
     ld   a, [de]                                  ; $6D1B: $1A
     cp   $04                                      ; $6D1C: $FE $04
@@ -8185,7 +8174,7 @@ Jump_007_6D18:
     jp   Jump_007_6BD6                            ; $6D26: $C3 $D6 $6B
 
 
-jr_007_6D29:
+jr_007_6D29::
     ld   hl, $D31E                                ; $6D29: $21 $1E $D3
     inc  [hl]                                     ; $6D2C: $34
     ld   hl, $D32E                                ; $6D2D: $21 $2E $D3
@@ -8195,7 +8184,7 @@ jr_007_6D29:
     ret                                           ; $6D35: $C9
 
 
-Call_007_6D36:
+Call_007_6D36::
     ld   a, b                                     ; $6D36: $78
     srl  a                                        ; $6D37: $CB $3F
     ld   l, a                                     ; $6D39: $6F
@@ -8205,7 +8194,7 @@ Call_007_6D36:
     ret                                           ; $6D3E: $C9
 
 
-Call_007_6D3F:
+Call_007_6D3F::
     push hl                                       ; $6D3F: $E5
     ld   a, l                                     ; $6D40: $7D
     add  $06                                      ; $6D41: $C6 $06
@@ -8228,12 +8217,12 @@ Call_007_6D3F:
     cp   $03                                      ; $6D5D: $FE $03
     jr   z, jr_007_6D63                           ; $6D5F: $28 $02
 
-jr_007_6D61:
+jr_007_6D61::
     pop  hl                                       ; $6D61: $E1
     ret                                           ; $6D62: $C9
 
 
-jr_007_6D63:
+jr_007_6D63::
     inc  l                                        ; $6D63: $2C
     ld   a, [hl+]                                 ; $6D64: $2A
     ld   e, a                                     ; $6D65: $5F
@@ -8251,11 +8240,11 @@ jr_007_6D63:
     cp   $03                                      ; $6D75: $FE $03
     jr   z, jr_007_6D79                           ; $6D77: $28 $00
 
-jr_007_6D79:
+jr_007_6D79::
     ld   hl, $FFFF                                ; $6D79: $21 $FF $FF
     jr   jr_007_6D9A                              ; $6D7C: $18 $1C
 
-jr_007_6D7E:
+jr_007_6D7E::
     ld   de, $6DA3                                ; $6D7E: $11 $A3 $6D
     call Call_007_6D36                            ; $6D81: $CD $36 $6D
     bit  0, b                                     ; $6D84: $CB $40
@@ -8263,7 +8252,7 @@ jr_007_6D7E:
 
     swap e                                        ; $6D88: $CB $33
 
-jr_007_6D8A:
+jr_007_6D8A::
     ld   a, e                                     ; $6D8A: $7B
     and  $0F                                      ; $6D8B: $E6 $0F
     bit  3, a                                     ; $6D8D: $CB $5F
@@ -8273,13 +8262,13 @@ jr_007_6D8A:
     or   $F0                                      ; $6D93: $F6 $F0
     jr   jr_007_6D99                              ; $6D95: $18 $02
 
-jr_007_6D97:
+jr_007_6D97::
     ld   h, $00                                   ; $6D97: $26 $00
 
-jr_007_6D99:
+jr_007_6D99::
     ld   l, a                                     ; $6D99: $6F
 
-jr_007_6D9A:
+jr_007_6D9A::
     pop  de                                       ; $6D9A: $D1
     add  hl, de                                   ; $6D9B: $19
     ld   a, l                                     ; $6D9C: $7D
@@ -8405,7 +8394,7 @@ jr_007_6D9A:
     nop                                           ; $6E46: $00
     nop                                           ; $6E47: $00
 
-Call_007_6E48:
+Call_007_6E48::
     ld   a, [$D31B]                               ; $6E48: $FA $1B $D3
     and  a                                        ; $6E4B: $A7
     jr   nz, jr_007_6E68                          ; $6E4C: $20 $1A
@@ -8425,7 +8414,7 @@ Call_007_6E48:
     ld   de, $D31A                                ; $6E62: $11 $1A $D3
     call Call_007_6E86                            ; $6E65: $CD $86 $6E
 
-jr_007_6E68:
+jr_007_6E68::
     ld   a, [$D32B]                               ; $6E68: $FA $2B $D3
     and  a                                        ; $6E6B: $A7
     ret  nz                                       ; $6E6C: $C0
@@ -8447,7 +8436,7 @@ jr_007_6E68:
     ret                                           ; $6E85: $C9
 
 
-Call_007_6E86:
+Call_007_6E86::
     push bc                                       ; $6E86: $C5
     dec  b                                        ; $6E87: $05
     ld   c, b                                     ; $6E88: $48
@@ -8709,7 +8698,7 @@ Call_007_6E86:
     ld   h, [hl]                                  ; $6FAD: $66
     ld   h, [hl]                                  ; $6FAE: $66
     ld   h, [hl]                                  ; $6FAF: $66
-    ld   de, $3222                                ; $6FB0: $11 $22 $32
+    ld   de, Jump_000_3222                        ; $6FB0: $11 $22 $32
     add  a                                        ; $6FB3: $87
     ld   h, [hl]                                  ; $6FB4: $66
     ld   h, l                                     ; $6FB5: $65
@@ -8723,10 +8712,10 @@ Call_007_6E86:
     ld   h, c                                     ; $6FBF: $61
     ld   de, $6666                                ; $6FC0: $11 $66 $66
     nop                                           ; $6FC3: $00
-    ld   bc, $0402                                ; $6FC4: $01 $02 $04
+    ld   bc, Jump_000_0402                        ; $6FC4: $01 $02 $04
     ld   [$0310], sp                              ; $6FC7: $08 $10 $03
     ld   b, $0C                                   ; $6FCA: $06 $0C
-    ld   bc, $0402                                ; $6FCC: $01 $02 $04
+    ld   bc, Jump_000_0402                        ; $6FCC: $01 $02 $04
     ld   [$2010], sp                              ; $6FCF: $08 $10 $20
     ld   b, $0C                                   ; $6FD2: $06 $0C
     jr   @+$04                                    ; $6FD4: $18 $02
@@ -8739,7 +8728,7 @@ Call_007_6E86:
     ld   [de], a                                  ; $6FDC: $12
     inc  h                                        ; $6FDD: $24
     inc  b                                        ; $6FDE: $04
-    ld   [$0402], sp                              ; $6FDF: $08 $02 $04
+    ld   [Jump_000_0402], sp                      ; $6FDF: $08 $02 $04
     ld   [$2010], sp                              ; $6FE2: $08 $10 $20
     ld   b, b                                     ; $6FE5: $40
     inc  c                                        ; $6FE6: $0C
@@ -8775,7 +8764,7 @@ Call_007_6E86:
     ld   c, $1C                                   ; $7007: $0E $1C
     jr   c, @+$72                                 ; $7009: $38 $70
 
-jr_007_700B:
+jr_007_700B::
     dec  d                                        ; $700B: $15
     ld   a, [hl+]                                 ; $700C: $2A
     ld   d, h                                     ; $700D: $54
@@ -8787,7 +8776,7 @@ jr_007_700B:
     ld   [$2010], sp                              ; $7015: $08 $10 $20
     ld   b, b                                     ; $7018: $40
 
-jr_007_7019:
+jr_007_7019::
     add  b                                        ; $7019: $80
     jr   jr_007_704C                              ; $701A: $18 $30
 
@@ -8820,7 +8809,7 @@ jr_007_7019:
     ld   [hl], b                                  ; $7039: $70
     ld   c, [hl]                                  ; $703A: $4E
 
-jr_007_703B:
+jr_007_703B::
     ld   [hl], b                                  ; $703B: $70
     ld   d, h                                     ; $703C: $54
     ld   [hl], b                                  ; $703D: $70
@@ -8829,7 +8818,7 @@ jr_007_703B:
     inc  a                                        ; $7040: $3C
     ld   [hl], b                                  ; $7041: $70
 
-jr_007_7042:
+jr_007_7042::
     inc  de                                       ; $7042: $13
     ld   [hl], c                                  ; $7043: $71
     rst  $38                                      ; $7044: $FF
@@ -8841,7 +8830,7 @@ jr_007_7042:
     rst  $38                                      ; $704A: $FF
     rst  $38                                      ; $704B: $FF
 
-jr_007_704C:
+jr_007_704C::
     ld   c, b                                     ; $704C: $48
     ld   [hl], b                                  ; $704D: $70
     DB   $F4                                      ; $704E: $F4
@@ -8854,7 +8843,7 @@ jr_007_704C:
     sub  b                                        ; $7055: $90
     nop                                           ; $7056: $00
 
-jr_007_7057:
+jr_007_7057::
     add  c                                        ; $7057: $81
     and  l                                        ; $7058: $A5
     inc  a                                        ; $7059: $3C
@@ -8885,7 +8874,7 @@ jr_007_7057:
     ld   a, $A4                                   ; $707A: $3E $A4
     ld   b, d                                     ; $707C: $42
 
-jr_007_707D:
+jr_007_707D::
     and  a                                        ; $707D: $A7
     ld   b, [hl]                                  ; $707E: $46
     and  c                                        ; $707F: $A1
@@ -8898,7 +8887,7 @@ jr_007_707D:
     and  d                                        ; $7086: $A2
     ld   bc, $46A1                                ; $7087: $01 $A1 $46
 
-jr_007_708A:
+jr_007_708A::
     ld   b, h                                     ; $708A: $44
     and  l                                        ; $708B: $A5
     ld   b, [hl]                                  ; $708C: $46
@@ -8998,7 +8987,7 @@ jr_007_708A:
     and  l                                        ; $70F5: $A5
     ld   d, [hl]                                  ; $70F6: $56
 
-jr_007_70F7:
+jr_007_70F7::
     and  e                                        ; $70F7: $A3
     ld   bc, $5456                                ; $70F8: $01 $56 $54
     ld   d, d                                     ; $70FB: $52
@@ -9072,7 +9061,7 @@ jr_007_70F7:
 
     ld   a, [hl+]                                 ; $714F: $2A
 
-jr_007_7150:
+jr_007_7150::
     and  e                                        ; $7150: $A3
     ld   bc, $42A5                                ; $7151: $01 $A5 $42
     and  h                                        ; $7154: $A4
@@ -9083,20 +9072,20 @@ jr_007_7150:
     xor  b                                        ; $7159: $A8
     ld   [hl-], a                                 ; $715A: $32
 
-jr_007_715B:
+jr_007_715B::
     and  e                                        ; $715B: $A3
     ld   bc, $48A4                                ; $715C: $01 $A4 $48
     and  e                                        ; $715F: $A3
     jr   c, jr_007_71A0                           ; $7160: $38 $3E
 
-jr_007_7162:
+jr_007_7162::
     and  l                                        ; $7162: $A5
     ld   [hl], $A2                                ; $7163: $36 $A2
     ld   [hl], $40                                ; $7165: $36 $40
     ld   [hl], $2E                                ; $7167: $36 $2E
     inc  [hl]                                     ; $7169: $34
 
-jr_007_716A:
+jr_007_716A::
     ld   a, $34                                   ; $716A: $3E $34
     inc  l                                        ; $716C: $2C
     jr   c, @+$48                                 ; $716D: $38 $46
@@ -9121,7 +9110,7 @@ jr_007_716A:
     ld   bc, $42A5                                ; $7187: $01 $A5 $42
     and  h                                        ; $718A: $A4
 
-jr_007_718B:
+jr_007_718B::
     ld   b, d                                     ; $718B: $42
     ld   c, [hl]                                  ; $718C: $4E
     and  l                                        ; $718D: $A5
@@ -9143,10 +9132,10 @@ jr_007_718B:
     ld   b, d                                     ; $719E: $42
     ld   b, [hl]                                  ; $719F: $46
 
-jr_007_71A0:
+jr_007_71A0::
     and  h                                        ; $71A0: $A4
 
-jr_007_71A1:
+jr_007_71A1::
     ld   c, b                                     ; $71A1: $48
     and  e                                        ; $71A2: $A3
     jr   c, jr_007_71E3                           ; $71A3: $38 $3E
@@ -9154,7 +9143,7 @@ jr_007_71A1:
     and  l                                        ; $71A5: $A5
     ld   [hl], $00                                ; $71A6: $36 $00
     sbc  l                                        ; $71A8: $9D
-    ld   hl, $207F                                ; $71A9: $21 $7F $20
+    ld   hl, Jump_000_207F                        ; $71A9: $21 $7F $20
     and  d                                        ; $71AC: $A2
     jr   nz, jr_007_7150                          ; $71AD: $20 $A1
 
@@ -9180,7 +9169,7 @@ jr_007_71A1:
     inc  e                                        ; $71D0: $1C
     and  c                                        ; $71D1: $A1
     inc  [hl]                                     ; $71D2: $34
-    ld   bc, $0101                                ; $71D3: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $71D3: $01 $01 $01
     inc  [hl]                                     ; $71D6: $34
     ld   bc, $9B9C                                ; $71D7: $01 $9C $9B
     inc  b                                        ; $71DA: $04
@@ -9188,10 +9177,10 @@ jr_007_71A1:
     ld   a, [de]                                  ; $71DC: $1A
     and  c                                        ; $71DD: $A1
     ld   [hl-], a                                 ; $71DE: $32
-    ld   bc, $0101                                ; $71DF: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $71DF: $01 $01 $01
     ld   [hl-], a                                 ; $71E2: $32
 
-jr_007_71E3:
+jr_007_71E3::
     ld   bc, $9B9C                                ; $71E3: $01 $9C $9B
     inc  b                                        ; $71E6: $04
     and  d                                        ; $71E7: $A2
@@ -9212,7 +9201,7 @@ jr_007_71E3:
     inc  d                                        ; $7200: $14
     and  c                                        ; $7201: $A1
     inc  l                                        ; $7202: $2C
-    ld   bc, $0101                                ; $7203: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7203: $01 $01 $01
     inc  l                                        ; $7206: $2C
     ld   bc, $9B9C                                ; $7207: $01 $9C $9B
     ld   [bc], a                                  ; $720A: $02
@@ -9220,7 +9209,7 @@ jr_007_71E3:
     ld   [de], a                                  ; $720C: $12
     and  c                                        ; $720D: $A1
     ld   a, [hl+]                                 ; $720E: $2A
-    ld   bc, $0101                                ; $720F: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $720F: $01 $01 $01
     ld   a, [hl+]                                 ; $7212: $2A
     ld   bc, $A29C                                ; $7213: $01 $9C $A2
     jr   @-$5D                                    ; $7216: $18 $A1
@@ -9231,19 +9220,19 @@ jr_007_71E3:
     ld   bc, $22A2                                ; $721D: $01 $A2 $22
     and  c                                        ; $7220: $A1
 
-jr_007_7221:
+jr_007_7221::
     ld   a, [hl-]                                 ; $7221: $3A
-    ld   bc, $0101                                ; $7222: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7222: $01 $01 $01
     ld   a, [hl-]                                 ; $7225: $3A
     ld   bc, $42A2                                ; $7226: $01 $A2 $42
     and  c                                        ; $7229: $A1
     ld   b, d                                     ; $722A: $42
-    ld   bc, $0101                                ; $722B: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $722B: $01 $01 $01
     ld   b, d                                     ; $722E: $42
     ld   bc, $40A2                                ; $722F: $01 $A2 $40
     and  c                                        ; $7232: $A1
     ld   b, b                                     ; $7233: $40
-    ld   bc, $0101                                ; $7234: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7234: $01 $01 $01
     ld   b, b                                     ; $7237: $40
     ld   bc, $3EA2                                ; $7238: $01 $A2 $3E
     and  c                                        ; $723B: $A1
@@ -9252,7 +9241,7 @@ jr_007_7221:
     ld   bc, $42A2                                ; $7241: $01 $A2 $42
     and  c                                        ; $7244: $A1
     ld   b, d                                     ; $7245: $42
-    ld   bc, $0101                                ; $7246: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7246: $01 $01 $01
     ld   b, d                                     ; $7249: $42
     ld   bc, $049B                                ; $724A: $01 $9B $04
     and  d                                        ; $724D: $A2
@@ -9273,7 +9262,7 @@ jr_007_7221:
     inc  e                                        ; $7266: $1C
     and  c                                        ; $7267: $A1
     inc  [hl]                                     ; $7268: $34
-    ld   bc, $0101                                ; $7269: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7269: $01 $01 $01
     inc  [hl]                                     ; $726C: $34
     ld   bc, $9B9C                                ; $726D: $01 $9C $9B
     inc  b                                        ; $7270: $04
@@ -9281,7 +9270,7 @@ jr_007_7221:
     ld   a, [de]                                  ; $7272: $1A
     and  c                                        ; $7273: $A1
     ld   [hl-], a                                 ; $7274: $32
-    ld   bc, $0101                                ; $7275: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7275: $01 $01 $01
     ld   [hl-], a                                 ; $7278: $32
     ld   bc, $9B9C                                ; $7279: $01 $9C $9B
     inc  b                                        ; $727C: $04
@@ -9292,7 +9281,7 @@ jr_007_7221:
 
     ld   bc, $3001                                ; $7282: $01 $01 $30
 
-jr_007_7285:
+jr_007_7285::
     ld   bc, $9B9C                                ; $7285: $01 $9C $9B
     ld   [bc], a                                  ; $7288: $02
     and  d                                        ; $7289: $A2
@@ -9305,7 +9294,7 @@ jr_007_7285:
     inc  d                                        ; $7296: $14
     and  c                                        ; $7297: $A1
     inc  l                                        ; $7298: $2C
-    ld   bc, $0101                                ; $7299: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7299: $01 $01 $01
     inc  l                                        ; $729C: $2C
     ld   bc, $9B9C                                ; $729D: $01 $9C $9B
     ld   [bc], a                                  ; $72A0: $02
@@ -9313,7 +9302,7 @@ jr_007_7285:
     ld   [de], a                                  ; $72A2: $12
     and  c                                        ; $72A3: $A1
     ld   a, [hl+]                                 ; $72A4: $2A
-    ld   bc, $0101                                ; $72A5: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $72A5: $01 $01 $01
     ld   a, [hl+]                                 ; $72A8: $2A
     ld   bc, $A29C                                ; $72A9: $01 $9C $A2
     jr   @-$5D                                    ; $72AC: $18 $A1
@@ -9324,7 +9313,7 @@ jr_007_7285:
     ld   bc, $22A2                                ; $72B3: $01 $A2 $22
     and  c                                        ; $72B6: $A1
     ld   a, [hl-]                                 ; $72B7: $3A
-    ld   bc, $0101                                ; $72B8: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $72B8: $01 $01 $01
     ld   a, [hl-]                                 ; $72BB: $3A
     ld   bc, $029B                                ; $72BC: $01 $9B $02
     and  d                                        ; $72BF: $A2
@@ -9345,7 +9334,7 @@ jr_007_7285:
     ld   [de], a                                  ; $72D8: $12
     and  c                                        ; $72D9: $A1
     ld   a, [hl+]                                 ; $72DA: $2A
-    ld   bc, $0101                                ; $72DB: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $72DB: $01 $01 $01
     ld   a, [hl+]                                 ; $72DE: $2A
     ld   bc, $A29C                                ; $72DF: $01 $9C $A2
     jr   jr_007_7285                              ; $72E2: $18 $A1
@@ -9356,7 +9345,7 @@ jr_007_7285:
     ld   bc, $22A2                                ; $72E9: $01 $A2 $22
     and  c                                        ; $72EC: $A1
     ld   a, [hl-]                                 ; $72ED: $3A
-    ld   bc, $0101                                ; $72EE: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $72EE: $01 $01 $01
     ld   a, [hl-]                                 ; $72F1: $3A
     ld   bc, $A200                                ; $72F2: $01 $00 $A2
     ld   l, $01                                   ; $72F5: $2E $01
@@ -9408,15 +9397,15 @@ jr_007_7285:
 
     ld   [hl-], a                                 ; $732F: $32
 
-jr_007_7330:
-    ld   bc, $0101                                ; $7330: $01 $01 $01
+jr_007_7330::
+    ld   bc, Jump_000_0101                        ; $7330: $01 $01 $01
     ld   [hl-], a                                 ; $7333: $32
     ld   bc, $0128                                ; $7334: $01 $28 $01
     ld   b, b                                     ; $7337: $40
     ld   bc, $9D00                                ; $7338: $01 $00 $9D
     jr   nc, jr_007_733D                          ; $733B: $30 $00
 
-jr_007_733D:
+jr_007_733D::
     add  c                                        ; $733D: $81
     and  l                                        ; $733E: $A5
     jr   z, jr_007_736D                           ; $733F: $28 $2C
@@ -9427,7 +9416,7 @@ jr_007_733D:
     inc  a                                        ; $7344: $3C
     jr   nc, jr_007_7347                          ; $7345: $30 $00
 
-jr_007_7347:
+jr_007_7347::
     nop                                           ; $7347: $00
     push af                                       ; $7348: $F5
     ld   l, a                                     ; $7349: $6F
@@ -9451,7 +9440,7 @@ jr_007_7347:
     rst  $38                                      ; $735B: $FF
     ld   e, b                                     ; $735C: $58
 
-Jump_007_735D:
+Jump_007_735D::
     ld   [hl], e                                  ; $735D: $73
     sbc  l                                        ; $735E: $9D
     dec  e                                        ; $735F: $1D
@@ -9469,13 +9458,13 @@ Jump_007_735D:
     add  c                                        ; $736B: $81
     and  l                                        ; $736C: $A5
 
-jr_007_736D:
+jr_007_736D::
     ld   a, [hl-]                                 ; $736D: $3A
     ld   b, b                                     ; $736E: $40
     ld   a, [hl-]                                 ; $736F: $3A
     inc  [hl]                                     ; $7370: $34
 
-jr_007_7371:
+jr_007_7371::
     nop                                           ; $7371: $00
     nop                                           ; $7372: $00
     push af                                       ; $7373: $F5
@@ -9624,13 +9613,13 @@ jr_007_7371:
     ld   c, [hl]                                  ; $740B: $4E
     ld   h, b                                     ; $740C: $60
 
-jr_007_740D:
+jr_007_740D::
     ld   c, d                                     ; $740D: $4A
     ld   c, [hl]                                  ; $740E: $4E
     ld   e, b                                     ; $740F: $58
     sbc  h                                        ; $7410: $9C
 
-jr_007_7411:
+jr_007_7411::
     ld   h, d                                     ; $7411: $62
     ld   h, b                                     ; $7412: $60
     ld   e, b                                     ; $7413: $58
@@ -9644,7 +9633,7 @@ jr_007_7411:
     ld   c, [hl]                                  ; $741B: $4E
     ld   d, [hl]                                  ; $741C: $56
 
-jr_007_741D:
+jr_007_741D::
     sbc  h                                        ; $741D: $9C
     ld   e, b                                     ; $741E: $58
     ld   d, [hl]                                  ; $741F: $56
@@ -9878,11 +9867,11 @@ jr_007_741D:
     ld   c, [hl]                                  ; $7510: $4E
     ld   c, b                                     ; $7511: $48
 
-jr_007_7512:
+jr_007_7512::
     ld   b, b                                     ; $7512: $40
     ld   [hl], $9B                                ; $7513: $36 $9B
 
-jr_007_7515:
+jr_007_7515::
     ld   [bc], a                                  ; $7515: $02
     inc  l                                        ; $7516: $2C
     ld   [hl-], a                                 ; $7517: $32
@@ -9904,7 +9893,7 @@ jr_007_7515:
     and  e                                        ; $7529: $A3
     ld   e, b                                     ; $752A: $58
 
-jr_007_752B:
+jr_007_752B::
     xor  b                                        ; $752B: $A8
     ld   bc, $9D00                                ; $752C: $01 $00 $9D
     ld   [hl], b                                  ; $752F: $70
@@ -9931,7 +9920,7 @@ jr_007_752B:
     ld   bc, $A43A                                ; $7548: $01 $3A $A4
     ld   c, b                                     ; $754B: $48
 
-jr_007_754C:
+jr_007_754C::
     and  d                                        ; $754C: $A2
     ld   c, b                                     ; $754D: $48
     ld   b, h                                     ; $754E: $44
@@ -10077,7 +10066,7 @@ jr_007_754C:
     and  e                                        ; $75F6: $A3
     ld   bc, $58A2                                ; $75F7: $01 $A2 $58
 
-jr_007_75FA:
+jr_007_75FA::
     ld   d, d                                     ; $75FA: $52
     ld   d, [hl]                                  ; $75FB: $56
     ld   e, b                                     ; $75FC: $58
@@ -10097,9 +10086,9 @@ jr_007_75FA:
     ld   b, b                                     ; $760C: $40
     ld   c, b                                     ; $760D: $48
     ld   b, h                                     ; $760E: $44
-    ld   bc, $0101                                ; $760F: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $760F: $01 $01 $01
 
-jr_007_7612:
+jr_007_7612::
     nop                                           ; $7612: $00
     sbc  l                                        ; $7613: $9D
     and  b                                        ; $7614: $A0
@@ -10237,7 +10226,7 @@ jr_007_7612:
     ld   l, h                                     ; $76B4: $6C
     ld   [hl], b                                  ; $76B5: $70
 
-jr_007_76B6:
+jr_007_76B6::
     and  h                                        ; $76B6: $A4
     ld   l, h                                     ; $76B7: $6C
     ld   e, [hl]                                  ; $76B8: $5E
@@ -10357,7 +10346,7 @@ jr_007_76B6:
     ld   bc, $9B44                                ; $7752: $01 $44 $9B
     dec  b                                        ; $7755: $05
 
-jr_007_7756:
+jr_007_7756::
     ld   a, [hl-]                                 ; $7756: $3A
     ld   a, [hl-]                                 ; $7757: $3A
     ld   bc, $3A9C                                ; $7758: $01 $9C $3A
@@ -10578,7 +10567,7 @@ jr_007_7756:
     ld   a, [hl-]                                 ; $7864: $3A
     inc  d                                        ; $7865: $14
 
-jr_007_7866:
+jr_007_7866::
     ld   [hl-], a                                 ; $7866: $32
     ld   a, [hl-]                                 ; $7867: $3A
     ld   b, b                                     ; $7868: $40
@@ -10586,13 +10575,13 @@ jr_007_7866:
     ld   a, [hl-]                                 ; $786B: $3A
     ld   a, $10                                   ; $786C: $3E $10
 
-jr_007_786E:
+jr_007_786E::
     jr   nc, jr_007_78A6                          ; $786E: $30 $36
 
-jr_007_7870:
+jr_007_7870::
     ld   a, $0A                                   ; $7870: $3E $0A
 
-jr_007_7872:
+jr_007_7872::
     jr   nc, jr_007_78AE                          ; $7872: $30 $3A
 
     ld   b, b                                     ; $7874: $40
@@ -10603,12 +10592,12 @@ jr_007_7872:
     ld   a, [de]                                  ; $7879: $1A
     inc  l                                        ; $787A: $2C
 
-jr_007_787B:
+jr_007_787B::
     jr   c, @+$40                                 ; $787B: $38 $3E
 
     DB   $10                                      ; $787D: $10
 
-jr_007_787E:
+jr_007_787E::
     jr   nc, jr_007_78B6                          ; $787E: $30 $36
 
     ld   a, $0A                                   ; $7880: $3E $0A
@@ -10617,7 +10606,7 @@ jr_007_787E:
     ld   b, b                                     ; $7884: $40
     inc  d                                        ; $7885: $14
 
-jr_007_7886:
+jr_007_7886::
     ld   [hl-], a                                 ; $7886: $32
     ld   a, [hl-]                                 ; $7887: $3A
     ld   b, b                                     ; $7888: $40
@@ -10625,12 +10614,12 @@ jr_007_7886:
     ld   a, [hl-]                                 ; $788B: $3A
     ld   a, $10                                   ; $788C: $3E $10
 
-jr_007_788E:
+jr_007_788E::
     jr   nc, @+$38                                ; $788E: $30 $36
 
     ld   a, $28                                   ; $7890: $3E $28
 
-jr_007_7892:
+jr_007_7892::
     ld   a, $36                                   ; $7892: $3E $36
     jr   nc, jr_007_78B0                          ; $7894: $30 $1A
 
@@ -10638,7 +10627,7 @@ jr_007_7892:
 
     jr   c, jr_007_78DA                           ; $7898: $38 $40
 
-jr_007_789A:
+jr_007_789A::
     jr   c, @+$34                                 ; $789A: $38 $32
 
     jr   z, jr_007_78B2                           ; $789C: $28 $14
@@ -10650,7 +10639,7 @@ jr_007_789A:
     ld   [hl-], a                                 ; $78A3: $32
     ld   a, $00                                   ; $78A4: $3E $00
 
-jr_007_78A6:
+jr_007_78A6::
     sbc  l                                        ; $78A6: $9D
     and  e                                        ; $78A7: $A3
     nop                                           ; $78A8: $00
@@ -10659,23 +10648,23 @@ jr_007_78A6:
     DB   $10                                      ; $78AB: $10
     ld   e, $2C                                   ; $78AC: $1E $2C
 
-jr_007_78AE:
+jr_007_78AE::
     jr   nc, jr_007_78E6                          ; $78AE: $30 $36
 
-jr_007_78B0:
+jr_007_78B0::
     jr   nc, jr_007_78DA                          ; $78B0: $30 $28
 
-jr_007_78B2:
+jr_007_78B2::
     ld   e, $18                                   ; $78B2: $1E $18
     ld   h, $2C                                   ; $78B4: $26 $2C
 
-jr_007_78B6:
+jr_007_78B6::
     ld   [hl], $3E                                ; $78B6: $36 $3E
     ld   [hl], $2C                                ; $78B8: $36 $2C
     ld   h, $1A                                   ; $78BA: $26 $1A
     jr   z, jr_007_78F0                           ; $78BC: $28 $32
 
-jr_007_78BE:
+jr_007_78BE::
     ld   a, [hl-]                                 ; $78BE: $3A
     ld   b, b                                     ; $78BF: $40
     ld   a, [hl-]                                 ; $78C0: $3A
@@ -10701,10 +10690,10 @@ jr_007_78BE:
     ld   [hl], $3E                                ; $78D6: $36 $3E
     ld   [hl], $2C                                ; $78D8: $36 $2C
 
-jr_007_78DA:
+jr_007_78DA::
     jr   z, jr_007_78F8                           ; $78DA: $28 $1C
 
-jr_007_78DC:
+jr_007_78DC::
     jr   z, @+$32                                 ; $78DC: $28 $30
 
     ld   a, [hl-]                                 ; $78DE: $3A
@@ -10715,7 +10704,7 @@ jr_007_78DC:
     ld   e, $28                                   ; $78E3: $1E $28
     ld   [hl-], a                                 ; $78E5: $32
 
-jr_007_78E6:
+jr_007_78E6::
     ld   a, [hl-]                                 ; $78E6: $3A
     ld   a, $36                                   ; $78E7: $3E $36
     ld   [hl-], a                                 ; $78E9: $32
@@ -10724,14 +10713,14 @@ jr_007_78E6:
     ld   e, $2C                                   ; $78EC: $1E $2C
     jr   nc, jr_007_7926                          ; $78EE: $30 $36
 
-jr_007_78F0:
+jr_007_78F0::
     jr   nc, jr_007_791A                          ; $78F0: $30 $28
 
     ld   e, $18                                   ; $78F2: $1E $18
     ld   h, $2C                                   ; $78F4: $26 $2C
     ld   [hl], $3E                                ; $78F6: $36 $3E
 
-jr_007_78F8:
+jr_007_78F8::
     ld   [hl], $2C                                ; $78F8: $36 $2C
     ld   h, $1A                                   ; $78FA: $26 $1A
     jr   z, jr_007_7930                           ; $78FC: $28 $32
@@ -10739,10 +10728,10 @@ jr_007_78F8:
     ld   a, [hl-]                                 ; $78FE: $3A
     ld   b, b                                     ; $78FF: $40
 
-jr_007_7900:
+jr_007_7900::
     ld   a, [hl-]                                 ; $7900: $3A
 
-jr_007_7901:
+jr_007_7901::
     ld   [hl-], a                                 ; $7901: $32
     jr   z, jr_007_791C                           ; $7902: $28 $18
 
@@ -10765,11 +10754,11 @@ jr_007_7901:
     ld   a, $36                                   ; $7917: $3E $36
     ld   [hl-], a                                 ; $7919: $32
 
-jr_007_791A:
+jr_007_791A::
     inc  l                                        ; $791A: $2C
     inc  c                                        ; $791B: $0C
 
-jr_007_791C:
+jr_007_791C::
     ld   a, [de]                                  ; $791C: $1A
     jr   z, jr_007_794D                           ; $791D: $28 $2E
 
@@ -10780,7 +10769,7 @@ jr_007_791C:
     ld   b, $14                                   ; $7923: $06 $14
     ld   [hl+], a                                 ; $7925: $22
 
-jr_007_7926:
+jr_007_7926::
     jr   z, jr_007_795A                           ; $7926: $28 $32
 
     inc  l                                        ; $7928: $2C
@@ -10789,7 +10778,7 @@ jr_007_7926:
     ld   e, $2C                                   ; $792C: $1E $2C
     jr   nc, jr_007_7966                          ; $792E: $30 $36
 
-jr_007_7930:
+jr_007_7930::
     jr   nc, jr_007_795A                          ; $7930: $30 $28
 
     ld   e, $18                                   ; $7932: $1E $18
@@ -10802,10 +10791,10 @@ jr_007_7930:
     ld   a, [hl-]                                 ; $793E: $3A
     ld   b, b                                     ; $793F: $40
 
-jr_007_7940:
+jr_007_7940::
     ld   a, [hl-]                                 ; $7940: $3A
 
-jr_007_7941:
+jr_007_7941::
     ld   [hl-], a                                 ; $7941: $32
     jr   z, jr_007_795C                           ; $7942: $28 $18
 
@@ -10817,10 +10806,10 @@ jr_007_7941:
     ld   a, $14                                   ; $794A: $3E $14
     ld   [hl+], a                                 ; $794C: $22
 
-jr_007_794D:
+jr_007_794D::
     jr   z, jr_007_7981                           ; $794D: $28 $32
 
-jr_007_794F:
+jr_007_794F::
     ld   b, b                                     ; $794F: $40
     ld   [hl-], a                                 ; $7950: $32
     jr   z, jr_007_7975                           ; $7951: $28 $22
@@ -10831,10 +10820,10 @@ jr_007_794F:
     ld   [hl], $3E                                ; $7956: $36 $3E
     ld   [hl], $2C                                ; $7958: $36 $2C
 
-jr_007_795A:
+jr_007_795A::
     jr   z, jr_007_7978                           ; $795A: $28 $1C
 
-jr_007_795C:
+jr_007_795C::
     jr   z, jr_007_798E                           ; $795C: $28 $30
 
     ld   a, [hl-]                                 ; $795E: $3A
@@ -10845,7 +10834,7 @@ jr_007_795C:
     ld   a, [de]                                  ; $7963: $1A
     jr   z, jr_007_7992                           ; $7964: $28 $2C
 
-jr_007_7966:
+jr_007_7966::
     jr   c, @+$1A                                 ; $7966: $38 $18
 
     ld   h, $2C                                   ; $7968: $26 $2C
@@ -10856,31 +10845,31 @@ jr_007_7966:
     add  b                                        ; $796E: $80
     ld   [hl+], a                                 ; $796F: $22
 
-jr_007_7970:
+jr_007_7970::
     jr   z, jr_007_79A2                           ; $7970: $28 $30
 
     ld   a, [hl-]                                 ; $7972: $3A
     ld   b, b                                     ; $7973: $40
     ld   a, [hl-]                                 ; $7974: $3A
 
-jr_007_7975:
+jr_007_7975::
     jr   nc, jr_007_799F                          ; $7975: $30 $28
 
     ld   [hl+], a                                 ; $7977: $22
 
-jr_007_7978:
+jr_007_7978::
     inc  l                                        ; $7978: $2C
     ld   [hl-], a                                 ; $7979: $32
     ld   a, [hl-]                                 ; $797A: $3A
     ld   b, h                                     ; $797B: $44
     ld   a, [hl-]                                 ; $797C: $3A
 
-jr_007_797D:
+jr_007_797D::
     ld   [hl-], a                                 ; $797D: $32
     inc  l                                        ; $797E: $2C
     jr   nz, jr_007_79AD                          ; $797F: $20 $2C
 
-jr_007_7981:
+jr_007_7981::
     ld   [hl-], a                                 ; $7981: $32
     ld   a, $44                                   ; $7982: $3E $44
     ld   a, $38                                   ; $7984: $3E $38
@@ -10891,12 +10880,12 @@ jr_007_7981:
     ld   b, b                                     ; $798B: $40
     ld   [hl], $30                                ; $798C: $36 $30
 
-jr_007_798E:
+jr_007_798E::
     jr   z, jr_007_79AC                           ; $798E: $28 $1C
 
     jr   z, jr_007_79C2                           ; $7990: $28 $30
 
-jr_007_7992:
+jr_007_7992::
     ld   a, [hl-]                                 ; $7992: $3A
     ld   b, b                                     ; $7993: $40
     ld   a, [hl-]                                 ; $7994: $3A
@@ -10911,12 +10900,12 @@ jr_007_7992:
     inc  [hl]                                     ; $799D: $34
     inc  l                                        ; $799E: $2C
 
-jr_007_799F:
+jr_007_799F::
     jr   @+$28                                    ; $799F: $18 $26
 
     inc  l                                        ; $79A1: $2C
 
-jr_007_79A2:
+jr_007_79A2::
     inc  [hl]                                     ; $79A2: $34
     ld   a, [hl-]                                 ; $79A3: $3A
     inc  [hl]                                     ; $79A4: $34
@@ -10925,10 +10914,10 @@ jr_007_79A2:
     ld   h, $2C                                   ; $79A8: $26 $2C
     jr   nc, jr_007_79EA                          ; $79AA: $30 $3E
 
-jr_007_79AC:
+jr_007_79AC::
     ld   b, b                                     ; $79AC: $40
 
-jr_007_79AD:
+jr_007_79AD::
     ld   b, h                                     ; $79AD: $44
     ld   c, b                                     ; $79AE: $48
     sbc  l                                        ; $79AF: $9D
@@ -10944,7 +10933,7 @@ jr_007_79AD:
     ld   [hl], $3C                                ; $79BE: $36 $3C
     ld   [hl], $2C                                ; $79C0: $36 $2C
 
-jr_007_79C2:
+jr_007_79C2::
     ld   e, $08                                   ; $79C2: $1E $08
     ld   d, $28                                   ; $79C4: $16 $28
     ld   l, $38                                   ; $79C6: $2E $38
@@ -10973,7 +10962,7 @@ jr_007_79C2:
     ld   a, [hl-]                                 ; $79E8: $3A
     ld   [hl-], a                                 ; $79E9: $32
 
-jr_007_79EA:
+jr_007_79EA::
     jr   z, jr_007_79F2                           ; $79EA: $28 $06
 
     inc  l                                        ; $79EC: $2C
@@ -10982,7 +10971,7 @@ jr_007_79EA:
     ld   b, h                                     ; $79EF: $44
     ld   a, $32                                   ; $79F0: $3E $32
 
-jr_007_79F2:
+jr_007_79F2::
     ld   [hl], $9D                                ; $79F2: $36 $9D
     or   e                                        ; $79F4: $B3
     nop                                           ; $79F5: $00
@@ -11002,7 +10991,7 @@ jr_007_79F2:
 
     ld   a, [hl-]                                 ; $7A0A: $3A
 
-jr_007_7A0B:
+jr_007_7A0B::
     ld   b, b                                     ; $7A0B: $40
     ld   a, [hl-]                                 ; $7A0C: $3A
     ld   [hl-], a                                 ; $7A0D: $32
@@ -11015,7 +11004,7 @@ jr_007_7A0B:
 
     ld   a, $14                                   ; $7A16: $3E $14
 
-jr_007_7A18:
+jr_007_7A18::
     ld   [hl+], a                                 ; $7A18: $22
     jr   z, jr_007_7A4D                           ; $7A19: $28 $32
 
@@ -11029,34 +11018,34 @@ jr_007_7A18:
     ld   a, $36                                   ; $7A23: $3E $36
     ld   [hl-], a                                 ; $7A25: $32
 
-jr_007_7A26:
+jr_007_7A26::
     inc  l                                        ; $7A26: $2C
     nop                                           ; $7A27: $00
 
-jr_007_7A28:
+jr_007_7A28::
     sbc  l                                        ; $7A28: $9D
     ld   d, c                                     ; $7A29: $51
     ld   a, a                                     ; $7A2A: $7F
     ld   hl, $01A5                                ; $7A2B: $21 $A5 $01
-    ld   bc, $0101                                ; $7A2E: $01 $01 $01
-    ld   bc, $0101                                ; $7A31: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A2E: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A31: $01 $01 $01
     ld   bc, $01A5                                ; $7A34: $01 $A5 $01
-    ld   bc, $0101                                ; $7A37: $01 $01 $01
-    ld   bc, $0101                                ; $7A3A: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A37: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A3A: $01 $01 $01
     ld   bc, $9D00                                ; $7A3D: $01 $00 $9D
     ld   d, c                                     ; $7A40: $51
 
-jr_007_7A41:
+jr_007_7A41::
     ld   a, a                                     ; $7A41: $7F
     ld   h, c                                     ; $7A42: $61
     xor  b                                        ; $7A43: $A8
     ld   bc, $01A5                                ; $7A44: $01 $A5 $01
-    ld   bc, $0101                                ; $7A47: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A47: $01 $01 $01
     ld   bc, $A501                                ; $7A4A: $01 $01 $A5
 
-jr_007_7A4D:
-    ld   bc, $0101                                ; $7A4D: $01 $01 $01
-    ld   bc, $0101                                ; $7A50: $01 $01 $01
+jr_007_7A4D::
+    ld   bc, Jump_000_0101                        ; $7A4D: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7A50: $01 $01 $01
     ld   bc, $0001                                ; $7A53: $01 $01 $00
     sbc  l                                        ; $7A56: $9D
     ld   d, c                                     ; $7A57: $51
@@ -11389,25 +11378,25 @@ jr_007_7A4D:
     ld   [hl], b                                  ; $7BD0: $70
     and  e                                        ; $7BD1: $A3
     ld   bc, $A500                                ; $7BD2: $01 $00 $A5
-    ld   bc, $0101                                ; $7BD5: $01 $01 $01
-    ld   bc, $0101                                ; $7BD8: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BD5: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BD8: $01 $01 $01
     ld   bc, $A501                                ; $7BDB: $01 $01 $A5
-    ld   bc, $0101                                ; $7BDE: $01 $01 $01
-    ld   bc, $0101                                ; $7BE1: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BDE: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BE1: $01 $01 $01
     ld   bc, $0001                                ; $7BE4: $01 $01 $00
     and  l                                        ; $7BE7: $A5
-    ld   bc, $0101                                ; $7BE8: $01 $01 $01
-    ld   bc, $0101                                ; $7BEB: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BE8: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BEB: $01 $01 $01
     ld   bc, $A501                                ; $7BEE: $01 $01 $A5
-    ld   bc, $0101                                ; $7BF1: $01 $01 $01
-    ld   bc, $0101                                ; $7BF4: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BF1: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BF4: $01 $01 $01
     ld   bc, $0001                                ; $7BF7: $01 $01 $00
     and  l                                        ; $7BFA: $A5
-    ld   bc, $0101                                ; $7BFB: $01 $01 $01
-    ld   bc, $0101                                ; $7BFE: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BFB: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7BFE: $01 $01 $01
     ld   bc, $A501                                ; $7C01: $01 $01 $A5
-    ld   bc, $0101                                ; $7C04: $01 $01 $01
-    ld   bc, $0101                                ; $7C07: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7C04: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7C07: $01 $01 $01
     ld   bc, $0001                                ; $7C0A: $01 $01 $00
     sbc  e                                        ; $7C0D: $9B
     rla                                           ; $7C0E: $17
@@ -11442,7 +11431,7 @@ jr_007_7A4D:
     ld   a, h                                     ; $7C2E: $7C
     ld   h, d                                     ; $7C2F: $62
 
-jr_007_7C30:
+jr_007_7C30::
     ld   a, h                                     ; $7C30: $7C
     rst  $38                                      ; $7C31: $FF
     rst  $38                                      ; $7C32: $FF
@@ -11453,7 +11442,7 @@ jr_007_7C30:
     ld   c, $7D                                   ; $7C37: $0E $7D
     rst  $38                                      ; $7C39: $FF
 
-jr_007_7C3A:
+jr_007_7C3A::
     rst  $38                                      ; $7C3A: $FF
     scf                                           ; $7C3B: $37
     ld   a, h                                     ; $7C3C: $7C
@@ -11546,7 +11535,7 @@ jr_007_7C3A:
     sbc  e                                        ; $7CA3: $9B
     ld   [$3C34], sp                              ; $7CA4: $08 $34 $3C
 
-jr_007_7CA7:
+jr_007_7CA7::
     sbc  h                                        ; $7CA7: $9C
     sbc  e                                        ; $7CA8: $9B
     ld   [$3E36], sp                              ; $7CA9: $08 $36 $3E
@@ -11611,7 +11600,7 @@ jr_007_7CA7:
     ld   b, $20                                   ; $7CFB: $06 $20
     ld   bc, $2001                                ; $7CFD: $01 $01 $20
     ld   bc, $2001                                ; $7D00: $01 $01 $20
-    ld   bc, $0101                                ; $7D03: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7D03: $01 $01 $01
     jr   nz, @+$03                                ; $7D06: $20 $01
 
     jr   nz, @+$03                                ; $7D08: $20 $01
@@ -11629,7 +11618,7 @@ jr_007_7CA7:
     ld   bc, $2001                                ; $7D1A: $01 $01 $20
     ld   bc, $0120                                ; $7D1D: $01 $20 $01
 
-jr_007_7D20:
+jr_007_7D20::
     ld   bc, $9B01                                ; $7D20: $01 $01 $9B
     inc  bc                                       ; $7D23: $03
     jr   nz, @+$03                                ; $7D24: $20 $01
@@ -11644,7 +11633,7 @@ jr_007_7D20:
     ld   e, $01                                   ; $7D37: $1E $01
     ld   bc, $011E                                ; $7D39: $01 $1E $01
     ld   bc, $011E                                ; $7D3C: $01 $1E $01
-    ld   bc, $1E01                                ; $7D3F: $01 $01 $1E
+    ld   bc, Jump_000_1E01                        ; $7D3F: $01 $01 $1E
     ld   bc, $011E                                ; $7D42: $01 $1E $01
     ld   bc, $9C01                                ; $7D45: $01 $01 $9C
     sbc  e                                        ; $7D48: $9B
@@ -11652,7 +11641,7 @@ jr_007_7D20:
     inc  e                                        ; $7D4A: $1C
     ld   bc, $1C01                                ; $7D4B: $01 $01 $1C
     ld   bc, $1C01                                ; $7D4E: $01 $01 $1C
-    ld   bc, $0101                                ; $7D51: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7D51: $01 $01 $01
     inc  e                                        ; $7D54: $1C
     ld   bc, $011C                                ; $7D55: $01 $1C $01
     ld   bc, $9C01                                ; $7D58: $01 $01 $9C
@@ -11674,19 +11663,19 @@ jr_007_7D20:
     inc  h                                        ; $7D81: $24
     ld   bc, $2401                                ; $7D82: $01 $01 $24
     ld   bc, $2401                                ; $7D85: $01 $01 $24
-    ld   bc, $0101                                ; $7D88: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7D88: $01 $01 $01
     inc  h                                        ; $7D8B: $24
     ld   bc, $0120                                ; $7D8C: $01 $20 $01
-    ld   bc, $1E01                                ; $7D8F: $01 $01 $1E
-    ld   bc, $1E01                                ; $7D92: $01 $01 $1E
-    ld   bc, $1E01                                ; $7D95: $01 $01 $1E
-    ld   bc, $0101                                ; $7D98: $01 $01 $01
+    ld   bc, Jump_000_1E01                        ; $7D8F: $01 $01 $1E
+    ld   bc, Jump_000_1E01                        ; $7D92: $01 $01 $1E
+    ld   bc, Jump_000_1E01                        ; $7D95: $01 $01 $1E
+    ld   bc, Jump_000_0101                        ; $7D98: $01 $01 $01
     ld   e, $01                                   ; $7D9B: $1E $01
     ld   e, $01                                   ; $7D9D: $1E $01
-    ld   bc, $1E01                                ; $7D9F: $01 $01 $1E
-    ld   bc, $1E01                                ; $7DA2: $01 $01 $1E
-    ld   bc, $1E01                                ; $7DA5: $01 $01 $1E
-    ld   bc, $0101                                ; $7DA8: $01 $01 $01
+    ld   bc, Jump_000_1E01                        ; $7D9F: $01 $01 $1E
+    ld   bc, Jump_000_1E01                        ; $7DA2: $01 $01 $1E
+    ld   bc, Jump_000_1E01                        ; $7DA5: $01 $01 $1E
+    ld   bc, Jump_000_0101                        ; $7DA8: $01 $01 $01
     ld   e, $01                                   ; $7DAB: $1E $01
     ld   e, $01                                   ; $7DAD: $1E $01
     ld   bc, $0001                                ; $7DAF: $01 $01 $00
@@ -11744,7 +11733,7 @@ jr_007_7D20:
     xor  b                                        ; $7DED: $A8
     ld   h, h                                     ; $7DEE: $64
     and  d                                        ; $7DEF: $A2
-    ld   bc, $68A1                                ; $7DF0: $01 $A1 $68
+    ld   bc, jr_007_68A1                          ; $7DF0: $01 $A1 $68
     ld   h, h                                     ; $7DF3: $64
     and  h                                        ; $7DF4: $A4
     ld   h, d                                     ; $7DF5: $62
@@ -11830,7 +11819,7 @@ jr_007_7D20:
     ld   d, h                                     ; $7E4B: $54
     nop                                           ; $7E4C: $00
     and  l                                        ; $7E4D: $A5
-    ld   bc, $0101                                ; $7E4E: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7E4E: $01 $01 $01
     ld   bc, $A101                                ; $7E51: $01 $01 $A1
     inc  sp                                       ; $7E54: $33
     add  hl, hl                                   ; $7E55: $29
@@ -11927,7 +11916,7 @@ jr_007_7D20:
     ld   e, h                                     ; $7EBA: $5C
     ld   bc, $01A3                                ; $7EBB: $01 $A3 $01
     and  h                                        ; $7EBE: $A4
-    ld   bc, $409D                                ; $7EBF: $01 $9D $40
+    ld   bc, Call_007_409D                        ; $7EBF: $01 $9D $40
     nop                                           ; $7EC2: $00
     ld   b, b                                     ; $7EC3: $40
     sbc  h                                        ; $7EC4: $9C
@@ -11980,19 +11969,19 @@ jr_007_7D20:
     sbc  l                                        ; $7EFD: $9D
     ld   [$0000], sp                              ; $7EFE: $08 $00 $00
     and  l                                        ; $7F01: $A5
-    ld   bc, $0101                                ; $7F02: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7F02: $01 $01 $01
     ld   bc, $9D00                                ; $7F05: $01 $00 $9D
     ld   [$0000], sp                              ; $7F08: $08 $00 $00
     and  l                                        ; $7F0B: $A5
-    ld   bc, $0101                                ; $7F0C: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7F0C: $01 $01 $01
     ld   bc, $9D00                                ; $7F0F: $01 $00 $9D
     ld   h, c                                     ; $7F12: $61
     ld   a, a                                     ; $7F13: $7F
     nop                                           ; $7F14: $00
     and  l                                        ; $7F15: $A5
-    ld   bc, $0101                                ; $7F16: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7F16: $01 $01 $01
     ld   bc, $A500                                ; $7F19: $01 $00 $A5
-    ld   bc, $0101                                ; $7F1C: $01 $01 $01
+    ld   bc, Jump_000_0101                        ; $7F1C: $01 $01 $01
     ld   bc, $0000                                ; $7F1F: $01 $00 $00
     ld   de, $3322                                ; $7F22: $11 $22 $33
     ld   b, h                                     ; $7F25: $44

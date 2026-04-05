@@ -225,7 +225,7 @@ jr_00B_40CB::
     ld   a, [hl]                                  ; $40F6: $7E
     ld   h, [hl]                                  ; $40F7: $66
     cp   d                                        ; $40F8: $BA
-    call nz, Call_000_0438                        ; $40F9: $C4 $38 $04
+    call nz, $0438                                ; $40F9: $C4 $38 $04
     nop                                           ; $40FC: $00
     add  l                                        ; $40FD: $85
     jr   nz, jr_00B_4100                          ; $40FE: $20 $00
@@ -11014,7 +11014,7 @@ jr_00B_6F96::
     add  e                                        ; $6FD4: $83
     ld   c, d                                     ; $6FD5: $4A
     xor  a                                        ; $6FD6: $AF
-    call nc, Jump_000_0004                        ; $6FD7: $D4 $04 $00
+    call nc, Call_000_0004                        ; $6FD7: $D4 $04 $00
     add  a                                        ; $6FDA: $87
     inc  c                                        ; $6FDB: $0C
     sbc  [hl]                                     ; $6FDC: $9E

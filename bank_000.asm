@@ -9,19 +9,21 @@ RST_00::
     jp   Init                                     ; $0000: $C3 $50 $01
 
 
-Jump_000_0003::
+Jump_000_0003:
     rst  $38                                      ; $0003: $FF
 
-Jump_000_0004::
+Call_000_0004:
+Jump_000_0004:
     rst  $38                                      ; $0004: $FF
 
-Jump_000_0005::
+Jump_000_0005:
     rst  $38                                      ; $0005: $FF
 
-Call_000_0006::
+Call_000_0006:
     nop                                           ; $0006: $00
 
-Call_000_0007::
+Call_000_0007:
+Jump_000_0007:
     nop                                           ; $0007: $00
 
 RST_08::
@@ -58,7 +60,7 @@ RST_20::
     rst  $38                                      ; $0020: $FF
     rst  $38                                      ; $0021: $FF
 
-Jump_000_0022::
+Jump_000_0022:
     rst  $38                                      ; $0022: $FF
     rst  $38                                      ; $0023: $FF
     rst  $38                                      ; $0024: $FF
@@ -95,14 +97,14 @@ RST_38::
     rst  $38                                      ; $003A: $FF
     rst  $38                                      ; $003B: $FF
 
-Jump_000_003C::
+Jump_000_003C:
     rst  $38                                      ; $003C: $FF
     rst  $38                                      ; $003D: $FF
     rst  $38                                      ; $003E: $FF
     rst  $38                                      ; $003F: $FF
 
 VBlankInterrupt::
-    jp   Jump_000_0297                            ; $0040: $C3 $97 $02
+    jp   VBlankInterruptHandler                   ; $0040: $C3 $97 $02
 
 
     rst  $38                                      ; $0043: $FF
@@ -112,7 +114,7 @@ VBlankInterrupt::
     rst  $38                                      ; $0047: $FF
 
 LCDCInterrupt::
-    jp   Jump_000_1C90                            ; $0048: $C3 $90 $1C
+    jp   LCDCInterruptHandler                     ; $0048: $C3 $90 $1C
 
 
     rst  $38                                      ; $004B: $FF
@@ -122,7 +124,7 @@ LCDCInterrupt::
     rst  $38                                      ; $004F: $FF
 
 TimerOverflowInterrupt::
-    jp   Jump_000_0D7E                            ; $0050: $C3 $7E $0D
+    jp   TimerOverflowInterruptHandler            ; $0050: $C3 $7E $0D
 
 
     rst  $38                                      ; $0053: $FF
@@ -132,7 +134,7 @@ TimerOverflowInterrupt::
     rst  $38                                      ; $0057: $FF
 
 SerialTransferCompleteInterrupt::
-    jp   Jump_000_0CE2                            ; $0058: $C3 $E2 $0C
+    jp   SerialTransferCompleteInterruptHandler   ; $0058: $C3 $E2 $0C
 
 
     rst  $38                                      ; $005B: $FF
@@ -145,7 +147,7 @@ JoypadTransitionInterrupt::
     rst  $38                                      ; $0060: $FF
     rst  $38                                      ; $0061: $FF
 
-Call_000_0062::
+Call_000_0062:
     rst  $38                                      ; $0062: $FF
     rst  $38                                      ; $0063: $FF
     rst  $38                                      ; $0064: $FF
@@ -168,7 +170,7 @@ Call_000_0062::
     rst  $38                                      ; $0074: $FF
     rst  $38                                      ; $0075: $FF
 
-Call_000_0076::
+Call_000_0076:
     rst  $38                                      ; $0076: $FF
     rst  $38                                      ; $0077: $FF
     rst  $38                                      ; $0078: $FF
@@ -179,15 +181,13 @@ Call_000_0076::
     rst  $38                                      ; $007D: $FF
     rst  $38                                      ; $007E: $FF
 
-Jump_000_007F::
+Jump_000_007F:
     rst  $38                                      ; $007F: $FF
     rst  $38                                      ; $0080: $FF
-
-Jump_000_0081::
     rst  $38                                      ; $0081: $FF
     rst  $38                                      ; $0082: $FF
 
-Jump_000_0083::
+Jump_000_0083:
     rst  $38                                      ; $0083: $FF
     rst  $38                                      ; $0084: $FF
     rst  $38                                      ; $0085: $FF
@@ -248,31 +248,29 @@ Jump_000_0083::
     rst  $38                                      ; $00BC: $FF
     rst  $38                                      ; $00BD: $FF
 
-Call_000_00BE::
+Call_000_00BE:
     rst  $38                                      ; $00BE: $FF
     rst  $38                                      ; $00BF: $FF
 
-Call_000_00C0::
+Call_000_00C0:
     rst  $38                                      ; $00C0: $FF
 
-Jump_000_00C1::
+Jump_000_00C1:
     rst  $38                                      ; $00C1: $FF
     rst  $38                                      ; $00C2: $FF
-
-Jump_000_00C3::
     rst  $38                                      ; $00C3: $FF
     rst  $38                                      ; $00C4: $FF
     rst  $38                                      ; $00C5: $FF
     rst  $38                                      ; $00C6: $FF
 
-Call_000_00C7::
+Call_000_00C7:
     rst  $38                                      ; $00C7: $FF
     rst  $38                                      ; $00C8: $FF
     rst  $38                                      ; $00C9: $FF
     rst  $38                                      ; $00CA: $FF
     rst  $38                                      ; $00CB: $FF
 
-Call_000_00CC::
+Call_000_00CC:
     rst  $38                                      ; $00CC: $FF
     rst  $38                                      ; $00CD: $FF
     rst  $38                                      ; $00CE: $FF
@@ -295,29 +293,28 @@ Call_000_00CC::
     rst  $38                                      ; $00DF: $FF
     rst  $38                                      ; $00E0: $FF
 
-Jump_000_00E1::
+Jump_000_00E1:
     rst  $38                                      ; $00E1: $FF
 
-Call_000_00E2::
+Call_000_00E2:
     rst  $38                                      ; $00E2: $FF
     rst  $38                                      ; $00E3: $FF
     rst  $38                                      ; $00E4: $FF
     rst  $38                                      ; $00E5: $FF
-
-Call_000_00E6::
     rst  $38                                      ; $00E6: $FF
     rst  $38                                      ; $00E7: $FF
     rst  $38                                      ; $00E8: $FF
     rst  $38                                      ; $00E9: $FF
 
-Call_000_00EA::
+Call_000_00EA:
     rst  $38                                      ; $00EA: $FF
     rst  $38                                      ; $00EB: $FF
     rst  $38                                      ; $00EC: $FF
     rst  $38                                      ; $00ED: $FF
     rst  $38                                      ; $00EE: $FF
 
-Jump_000_00EF::
+Call_000_00EF:
+Jump_000_00EF:
     rst  $38                                      ; $00EF: $FF
     rst  $38                                      ; $00F0: $FF
     rst  $38                                      ; $00F1: $FF
@@ -327,19 +324,16 @@ Jump_000_00EF::
     rst  $38                                      ; $00F5: $FF
     rst  $38                                      ; $00F6: $FF
     rst  $38                                      ; $00F7: $FF
-
-Call_000_00F8::
     rst  $38                                      ; $00F8: $FF
     rst  $38                                      ; $00F9: $FF
     rst  $38                                      ; $00FA: $FF
     rst  $38                                      ; $00FB: $FF
-
-Call_000_00FC::
     rst  $38                                      ; $00FC: $FF
     rst  $38                                      ; $00FD: $FF
     rst  $38                                      ; $00FE: $FF
 
-Jump_000_00FF::
+Call_000_00FF:
+Jump_000_00FF:
     rst  $38                                      ; $00FF: $FF
 
 Boot::
@@ -422,48 +416,15 @@ jr_000_0163::
 Jump_000_0183::
     jr   Jump_000_01B5                            ; $0183: $18 $30
 
-    nop                                           ; $0185: $00
+    DB   $00
 
 Call_000_0186::
-    ld   [bc], a                                  ; $0186: $02
+    DB   $02
 
 Call_000_0187::
-    nop                                           ; $0187: $00
-    nop                                           ; $0188: $00
-    nop                                           ; $0189: $00
-    inc  [hl]                                     ; $018A: $34
-    ld   a, [hl+]                                 ; $018B: $2A
-    dec  a                                        ; $018C: $3D
-    nop                                           ; $018D: $00
-    ld   bc, $0005                                ; $018E: $01 $05 $00
-    nop                                           ; $0191: $00
-    ld   b, d                                     ; $0192: $42
-    ld   a, [hl+]                                 ; $0193: $2A
-    ld   [hl], $00                                ; $0194: $36 $00
-    ld   bc, $0003                                ; $0196: $01 $03 $00
-    nop                                           ; $0199: $00
-    scf                                           ; $019A: $37
-    ld   a, [hl+]                                 ; $019B: $2A
-    inc  [hl]                                     ; $019C: $34
-    nop                                           ; $019D: $00
-    ld   bc, $0000                                ; $019E: $01 $00 $00
-    nop                                           ; $01A1: $00
-    dec  a                                        ; $01A2: $3D
-    ld   a, [hl+]                                 ; $01A3: $2A
-    inc  sp                                       ; $01A4: $33
-    nop                                           ; $01A5: $00
-    nop                                           ; $01A6: $00
-    ld   [$0000], sp                              ; $01A7: $08 $00 $00
-    ld   [hl], $2A                                ; $01AA: $36 $2A
-    dec  a                                        ; $01AC: $3D
-    nop                                           ; $01AD: $00
-    dec  b                                        ; $01AE: $05
-    nop                                           ; $01AF: $00
-    nop                                           ; $01B0: $00
-    nop                                           ; $01B1: $00
-    nop                                           ; $01B2: $00
-    nop                                           ; $01B3: $00
-    nop                                           ; $01B4: $00
+    DB   $00, $00, $00, $34, $2A, $3D, $00, $01, $05, $00, $00, $42, $2A, $36, $00, $01
+    DB   $03, $00, $00, $37, $2A, $34, $00, $01, $00, $00, $00, $3D, $2A, $33, $00, $00
+    DB   $08, $00, $00, $36, $2A, $3D, $00, $05, $00, $00, $00, $00, $00, $00
 
 Jump_000_01B5::
     di                                            ; $01B5: $F3
@@ -640,7 +601,7 @@ Jump_000_028C::
     jp   Jump_000_01B5                            ; $0294: $C3 $B5 $01
 
 
-Jump_000_0297::
+VBlankInterruptHandler::
     push af                                       ; $0297: $F5
     push bc                                       ; $0298: $C5
     push de                                       ; $0299: $D5
@@ -669,25 +630,32 @@ Call_000_02B3::
     inc  [hl]                                     ; $02B6: $34
     ld   a, [$C0A0]                               ; $02B7: $FA $A0 $C0
     rst  $28                                      ; $02BA: $EF
-    ld   bc, $D920                                ; $02BB: $01 $20 $D9
-    ld   [bc], a                                  ; $02BE: $02
-    ld   [$0102], a                               ; $02BF: $EA $02 $01
+
+    DB   $01, $20, $D9, $02
+
+    DB   $EA                                      ; $02BF: $EA
+    ld   [bc], a                                  ; $02C0: $02
+
+    DB   $01
 
 Jump_000_02C2::
-    inc  bc                                       ; $02C2: $03
+    DB   $03
+
     inc  d                                        ; $02C3: $14
     inc  bc                                       ; $02C4: $03
-    daa                                           ; $02C5: $27
-    inc  bc                                       ; $02C6: $03
+
+    DB   $27, $03
+
     inc  a                                        ; $02C7: $3C
     inc  bc                                       ; $02C8: $03
-    nop                                           ; $02C9: $00
-    jr   jr_000_025F                              ; $02CA: $18 $93
 
-    ld   b, $12                                   ; $02CC: $06 $12
-    dec  b                                        ; $02CE: $05
-    ld   e, e                                     ; $02CF: $5B
-    ld   [de], a                                  ; $02D0: $12
+    DB   $00, $18
+
+    sub  e                                        ; $02CB: $93
+    DB   $06                                      ; $02CC: $06
+
+    DB   $12, $05, $5B, $12
+
     ld   a, [hl-]                                 ; $02D1: $3A
     inc  de                                       ; $02D2: $13
     ld   a, [hl-]                                 ; $02D3: $3A
@@ -697,15 +665,14 @@ Call_000_02D5::
     adc  d                                        ; $02D5: $8A
     inc  de                                       ; $02D6: $13
     ld   h, $13                                   ; $02D7: $26 $13
+
     xor  a                                        ; $02D9: $AF
     ldh  [$FFA5], a                               ; $02DA: $E0 $A5
     ld   a, [$C0A1]                               ; $02DC: $FA $A1 $C0
     rst  $28                                      ; $02DF: $EF
-    sub  h                                        ; $02E0: $94
-    ld   b, $A8                                   ; $02E1: $06 $A8
-    ld   b, $C5                                   ; $02E3: $06 $C5
-    ld   b, $22                                   ; $02E5: $06 $22
-    rlca                                          ; $02E7: $07
+
+    DB   $94, $06, $A8, $06, $C5, $06, $22, $07
+
     ld   [hl], $07                                ; $02E8: $36 $07
     xor  a                                        ; $02EA: $AF
     ldh  [$FFA5], a                               ; $02EB: $E0 $A5
@@ -733,14 +700,12 @@ Call_000_0302::
 
 Call_000_0307::
     rst  $28                                      ; $0307: $EF
-    ld   a, e                                     ; $0308: $7B
-    ld   [Jump_000_06A8], sp                      ; $0309: $08 $A8 $06
+
+    DB   $7B, $08, $A8, $06
 
 Call_000_030C::
-    adc  a                                        ; $030C: $8F
-    ld   [$08E0], sp                              ; $030D: $08 $E0 $08
-    DB   $F4                                      ; $0310: $F4
-    ld   [$0908], sp                              ; $0311: $08 $08 $09
+    DB   $8F, $08, $E0, $08, $F4, $08, $08, $09
+
     xor  a                                        ; $0314: $AF
     ldh  [$FFA5], a                               ; $0315: $E0 $A5
     ld   a, [$C0A1]                               ; $0317: $FA $A1 $C0
@@ -758,23 +723,14 @@ Call_000_0322::
     ld   [hl], $07                                ; $0323: $36 $07
     rst  $38                                      ; $0325: $FF
     add  hl, bc                                   ; $0326: $09
+
     xor  a                                        ; $0327: $AF
     ldh  [$FFA5], a                               ; $0328: $E0 $A5
     ld   a, [$C0A1]                               ; $032A: $FA $A1 $C0
     rst  $28                                      ; $032D: $EF
-    daa                                           ; $032E: $27
-    ld   a, [bc]                                  ; $032F: $0A
-    xor  b                                        ; $0330: $A8
-    ld   b, $3B                                   ; $0331: $06 $3B
-    ld   a, [bc]                                  ; $0333: $0A
-    cp   h                                        ; $0334: $BC
-    ld   a, [bc]                                  ; $0335: $0A
-    ld   [hl], $07                                ; $0336: $36 $07
-    cp   h                                        ; $0338: $BC
-    ld   a, [bc]                                  ; $0339: $0A
-    ret  nc                                       ; $033A: $D0
 
-    ld   a, [bc]                                  ; $033B: $0A
+    DB   $27, $0A, $A8, $06, $3B, $0A, $BC, $0A, $36, $07, $BC, $0A, $D0, $0A
+
     xor  a                                        ; $033C: $AF
     ldh  [$FFA5], a                               ; $033D: $E0 $A5
 
@@ -797,25 +753,24 @@ Call_000_033F::
 Call_000_0351::
     ld   a, [$C0A0]                               ; $0351: $FA $A0 $C0
     rst  $28                                      ; $0354: $EF
-    ld   h, b                                     ; $0355: $60
-    ld   [hl+], a                                 ; $0356: $22
-    ld   [hl], e                                  ; $0357: $73
-    inc  bc                                       ; $0358: $03
+
+    DB   $60, $22, $73, $03
+
     add  h                                        ; $0359: $84
     inc  bc                                       ; $035A: $03
-    sbc  b                                        ; $035B: $98
-    inc  bc                                       ; $035C: $03
+
+    DB   $98, $03
+
     xor  b                                        ; $035D: $A8
     inc  bc                                       ; $035E: $03
-    cp   b                                        ; $035F: $B8
-    inc  bc                                       ; $0360: $03
-    jp   z, Jump_000_2D03                         ; $0361: $CA $03 $2D
 
-    jr   @-$75                                    ; $0364: $18 $89
+    DB   $B8, $03
 
-    ld   b, $4C                                   ; $0366: $06 $4C
-    ld   b, $75                                   ; $0368: $06 $75
-    ld   [de], a                                  ; $036A: $12
+    DB   $CA                                      ; $0361: $CA
+    inc  bc                                       ; $0362: $03
+
+    DB   $2D, $18, $89, $06, $4C, $06, $75, $12
+
     ld   b, h                                     ; $036B: $44
     inc  de                                       ; $036C: $13
     ld   b, h                                     ; $036D: $44
@@ -824,18 +779,13 @@ Call_000_0351::
     inc  de                                       ; $0370: $13
     add  e                                        ; $0371: $83
     inc  bc                                       ; $0372: $03
+
     ld   a, [$C0A1]                               ; $0373: $FA $A1 $C0
 
 Call_000_0376::
     rst  $28                                      ; $0376: $EF
-    add  e                                        ; $0377: $83
-    inc  bc                                       ; $0378: $03
-    rst  $20                                      ; $0379: $E7
-    ld   e, c                                     ; $037A: $59
-    ld   c, d                                     ; $037B: $4A
-    ld   e, d                                     ; $037C: $5A
-    dec  sp                                       ; $037D: $3B
-    ld   e, h                                     ; $037E: $5C
+
+    DB   $83, $03, $E7, $59, $4A, $5A, $3B, $5C
 
 Call_000_037F::
     ld   l, $5C                                   ; $037F: $2E $5C
@@ -862,19 +812,12 @@ Call_000_0387::
     ld   e, h                                     ; $0393: $5C
     ld   b, d                                     ; $0394: $42
     ld   [$592D], sp                              ; $0395: $08 $2D $59
+
     ld   a, [$C0A1]                               ; $0398: $FA $A1 $C0
     rst  $28                                      ; $039B: $EF
-    add  e                                        ; $039C: $83
-    inc  bc                                       ; $039D: $03
-    ld   c, d                                     ; $039E: $4A
-    ld   e, c                                     ; $039F: $59
-    sub  e                                        ; $03A0: $93
-    ld   e, c                                     ; $03A1: $59
-    dec  sp                                       ; $03A2: $3B
-    ld   e, h                                     ; $03A3: $5C
-    dec  sp                                       ; $03A4: $3B
-    ld   e, h                                     ; $03A5: $5C
-    ld   l, $5C                                   ; $03A6: $2E $5C
+
+    DB   $83, $03, $4A, $59, $93, $59, $3B, $5C, $3B, $5C, $2E, $5C
+
     ld   a, [$C0A1]                               ; $03A8: $FA $A1 $C0
     rst  $28                                      ; $03AB: $EF
 
@@ -892,27 +835,21 @@ Call_000_03AC::
 
 Call_000_03B7::
     ld   e, h                                     ; $03B7: $5C
+
     ld   a, [$C0A1]                               ; $03B8: $FA $A1 $C0
     rst  $28                                      ; $03BB: $EF
-    add  e                                        ; $03BC: $83
-    inc  bc                                       ; $03BD: $03
-    rra                                           ; $03BE: $1F
-    ld   e, b                                     ; $03BF: $58
-    halt                                          ; $03C0: $76
+
+    DB   $83, $03, $1F, $58, $76
 
 Jump_000_03C1::
-    ld   e, b                                     ; $03C1: $58
-    dec  sp                                       ; $03C2: $3B
+    DB   $58, $3B
 
 Jump_000_03C3::
-    ld   e, h                                     ; $03C3: $5C
-    ld   l, $5C                                   ; $03C4: $2E $5C
-    dec  sp                                       ; $03C6: $3B
+    DB   $5C, $2E, $5C, $3B
 
 Call_000_03C7::
-    ld   e, h                                     ; $03C7: $5C
-    add  e                                        ; $03C8: $83
-    inc  bc                                       ; $03C9: $03
+    DB   $5C, $83, $03
+
     ld   a, [$C0A1]                               ; $03CA: $FA $A1 $C0
     rst  $28                                      ; $03CD: $EF
     add  e                                        ; $03CE: $83
@@ -1005,18 +942,13 @@ Call_000_0408::
     ret                                           ; $0430: $C9
 
 
-    ld   a, $C0                                   ; $0431: $3E $C0
-    ldh  [rDMA], a                                ; $0433: $E0 $46
-    ld   a, $28                                   ; $0435: $3E $28
+    DB   $3E, $C0, $E0, $46, $3E, $28
 
 jr_000_0437::
-    dec  a                                        ; $0437: $3D
+    DB   $3D
 
 Call_000_0438::
-    jr   nz, jr_000_0437                          ; $0438: $20 $FD
-
-    ret                                           ; $043A: $C9
-
+    DB   $20, $FD, $C9
 
 jr_000_043B::
     ld   a, [hl+]                                 ; $043B: $2A
@@ -2446,7 +2378,7 @@ Call_000_0CCC::
     ret                                           ; $0CE1: $C9
 
 
-Jump_000_0CE2::
+SerialTransferCompleteInterruptHandler::
     push af                                       ; $0CE2: $F5
     push bc                                       ; $0CE3: $C5
     push de                                       ; $0CE4: $D5
@@ -2550,7 +2482,7 @@ jr_000_0D79::
     reti                                          ; $0D7D: $D9
 
 
-Jump_000_0D7E::
+TimerOverflowInterruptHandler::
     push af                                       ; $0D7E: $F5
     ld   a, $02                                   ; $0D7F: $3E $02
     ldh  [rTAC], a                                ; $0D81: $E0 $07
@@ -3557,18 +3489,19 @@ jr_000_1234::
     ld   e, [hl]                                  ; $1258: $5E
     ld   e, a                                     ; $1259: $5F
     ld   h, b                                     ; $125A: $60
+
     ld   a, [$CF50]                               ; $125B: $FA $50 $CF
     and  a                                        ; $125E: $A7
     jr   nz, jr_000_126B                          ; $125F: $20 $0A
 
     ld   a, [$CFD2]                               ; $1261: $FA $D2 $CF
     rst  $28                                      ; $1264: $EF
-    adc  a                                        ; $1265: $8F
-    ld   [de], a                                  ; $1266: $12
-    and  e                                        ; $1267: $A3
+
+    DB   $8F, $12, $A3
 
 Call_000_1268::
-    ld   [de], a                                  ; $1268: $12
+    DB   $12
+
     dec  de                                       ; $1269: $1B
     inc  de                                       ; $126A: $13
 
@@ -3580,16 +3513,16 @@ jr_000_126B::
     rl   d                                        ; $1271: $CB $12
     dec  de                                       ; $1273: $1B
     inc  de                                       ; $1274: $13
+
     ld   a, [$CF50]                               ; $1275: $FA $50 $CF
     and  a                                        ; $1278: $A7
     jr   nz, jr_000_1285                          ; $1279: $20 $0A
 
     ld   a, [$CFD2]                               ; $127B: $FA $D2 $CF
     rst  $28                                      ; $127E: $EF
-    add  e                                        ; $127F: $83
-    inc  bc                                       ; $1280: $03
-    di                                            ; $1281: $F3
-    ld   [de], a                                  ; $1282: $12
+
+    DB   $83, $03, $F3, $12
+
     add  e                                        ; $1283: $83
     inc  bc                                       ; $1284: $03
 
@@ -3602,6 +3535,7 @@ jr_000_1285::
     inc  de                                       ; $128C: $13
     add  e                                        ; $128D: $83
     inc  bc                                       ; $128E: $03
+
     ldh  a, [$FFFD]                               ; $128F: $F0 $FD
     push af                                       ; $1291: $F5
     ld   a, $1F                                   ; $1292: $3E $1F
@@ -3970,12 +3904,9 @@ Call_000_1495::
     ld   [$C0AC], a                               ; $149A: $EA $AC $C0
     ld   a, [$C0A5]                               ; $149D: $FA $A5 $C0
     rst  $28                                      ; $14A0: $EF
-    add  hl, hl                                   ; $14A1: $29
-    ld   a, l                                     ; $14A2: $7D
-    inc  a                                        ; $14A3: $3C
-    ld   a, l                                     ; $14A4: $7D
-    ld   e, b                                     ; $14A5: $58
-    ld   a, l                                     ; $14A6: $7D
+
+    DB   $29, $7D, $3C, $7D, $58, $7D
+
     ld   [hl], c                                  ; $14A7: $71
     ld   a, l                                     ; $14A8: $7D
     adc  l                                        ; $14A9: $8D
@@ -4002,26 +3933,13 @@ Jump_000_14B9::
     ld   [$C0AB], a                               ; $14BE: $EA $AB $C0
     ld   a, [$C0A6]                               ; $14C1: $FA $A6 $C0
     rst  $28                                      ; $14C4: $EF
+
     halt                                          ; $14C5: $76
     ld   a, [hl]                                  ; $14C6: $7E
-    ld   a, h                                     ; $14C7: $7C
-    ld   a, [hl]                                  ; $14C8: $7E
-    add  d                                        ; $14C9: $82
-    ld   a, [hl]                                  ; $14CA: $7E
-    adc  b                                        ; $14CB: $88
-    ld   a, [hl]                                  ; $14CC: $7E
-    adc  [hl]                                     ; $14CD: $8E
-    ld   a, [hl]                                  ; $14CE: $7E
-    sub  h                                        ; $14CF: $94
-    ld   a, [hl]                                  ; $14D0: $7E
-    sbc  d                                        ; $14D1: $9A
-    ld   a, [hl]                                  ; $14D2: $7E
-    and  b                                        ; $14D3: $A0
-    ld   a, [hl]                                  ; $14D4: $7E
-    and  [hl]                                     ; $14D5: $A6
-    ld   a, [hl]                                  ; $14D6: $7E
-    xor  h                                        ; $14D7: $AC
-    ld   a, [hl]                                  ; $14D8: $7E
+
+    DB   $7C, $7E, $82, $7E, $88, $7E, $8E, $7E, $94, $7E, $9A, $7E, $A0, $7E, $A6, $7E
+    DB   $AC, $7E
+
     or   d                                        ; $14D9: $B2
     ld   a, [hl]                                  ; $14DA: $7E
     cp   b                                        ; $14DB: $B8
@@ -4032,28 +3950,16 @@ Jump_000_14B9::
 Jump_000_14DF::
     ld   a, [$C0A6]                               ; $14DF: $FA $A6 $C0
     rst  $28                                      ; $14E2: $EF
+
     cp   [hl]                                     ; $14E3: $BE
     ld   a, [hl]                                  ; $14E4: $7E
 
 Call_000_14E5::
-    pop  de                                       ; $14E5: $D1
-    ld   a, [hl]                                  ; $14E6: $7E
-    ld   [$037E], a                               ; $14E7: $EA $7E $03
-    ld   a, a                                     ; $14EA: $7F
-    inc  e                                        ; $14EB: $1C
-    ld   a, a                                     ; $14EC: $7F
-    dec  [hl]                                     ; $14ED: $35
-    ld   a, a                                     ; $14EE: $7F
-    ld   c, [hl]                                  ; $14EF: $4E
-    ld   a, a                                     ; $14F0: $7F
-    ld   h, a                                     ; $14F1: $67
-    ld   a, a                                     ; $14F2: $7F
-    add  b                                        ; $14F3: $80
+    DB   $D1, $7E, $EA, $7E, $03, $7F, $1C, $7F, $35, $7F, $4E, $7F, $67, $7F, $80
 
 Call_000_14F4::
-    ld   a, a                                     ; $14F4: $7F
-    sbc  c                                        ; $14F5: $99
-    ld   a, a                                     ; $14F6: $7F
+    DB   $7F, $99, $7F
+
     or   d                                        ; $14F7: $B2
     ld   a, a                                     ; $14F8: $7F
     bit  7, a                                     ; $14F9: $CB $7F
@@ -5455,7 +5361,7 @@ Jump_000_1C8C::
     ret                                           ; $1C8F: $C9
 
 
-Jump_000_1C90::
+LCDCInterruptHandler::
     push af                                       ; $1C90: $F5
     ld   a, [$D2D4]                               ; $1C91: $FA $D4 $D2
     and  a                                        ; $1C94: $A7
@@ -6331,23 +6237,28 @@ Jump_000_1FF8::
     rst  $38                                      ; $1FFD: $FF
     rst  $38                                      ; $1FFE: $FF
     rst  $38                                      ; $1FFF: $FF
+
     ret                                           ; $2000: $C9
 
 
     ld   a, [$D500]                               ; $2001: $FA $00 $D5
     rst  $28                                      ; $2004: $EF
-    ld   de, $2520                                ; $2005: $11 $20 $25
+
+    DB   $11, $20
+
+    dec  h                                        ; $2007: $25
     jr   nz, jr_000_2043                          ; $2008: $20 $39
 
-    jr   nz, @+$4F                                ; $200A: $20 $4D
+    DB   $20                                      ; $200A: $20
 
-    jr   nz, jr_000_206F                          ; $200C: $20 $61
+    DB   $4D, $20
 
+    ld   h, c                                     ; $200D: $61
     jr   nz, jr_000_2085                          ; $200E: $20 $75
 
-    jr   nz, @-$0E                                ; $2010: $20 $F0
+    DB   $20                                      ; $2010: $20
 
-    DB   $FD                                      ; $2012: $FD
+    ldh  a, [$FFFD]                               ; $2011: $F0 $FD
     push af                                       ; $2013: $F5
     ld   a, $09                                   ; $2014: $3E $09
     ldh  [$FFFD], a                               ; $2016: $E0 $FD
@@ -6434,6 +6345,7 @@ jr_000_2085::
 Call_000_2089::
     ld   a, [$D551]                               ; $2089: $FA $51 $D5
     rst  $28                                      ; $208C: $EF
+
     nop                                           ; $208D: $00
     jr   nz, jr_000_2090                          ; $208E: $20 $00
 
@@ -6444,10 +6356,11 @@ jr_000_2092::
     jr   nz, jr_000_2094                          ; $2092: $20 $00
 
 jr_000_2094::
-    jr   nz, jr_000_2050                          ; $2094: $20 $BA
+    DB   $20                                      ; $2094: $20
 
-    jr   nz, @-$2D                                ; $2096: $20 $D1
+    DB   $BA, $20
 
+    pop  de                                       ; $2097: $D1
     jr   nz, jr_000_2082                          ; $2098: $20 $E8
 
     jr   nz, jr_000_209C                          ; $209A: $20 $00
@@ -6477,10 +6390,10 @@ jr_000_20AA::
     jr   nz, jr_000_20AC                          ; $20AA: $20 $00
 
 jr_000_20AC::
-    jr   nz, jr_000_20A8                          ; $20AC: $20 $FA
+    DB   $20                                      ; $20AC: $20
 
-    ld   e, [hl]                                  ; $20AE: $5E
-    push de                                       ; $20AF: $D5
+Call_000_20AD:
+    ld   a, [$D55E]                               ; $20AD: $FA $5E $D5
     ld   h, a                                     ; $20B0: $67
     ld   a, [$D55F]                               ; $20B1: $FA $5F $D5
     ld   l, a                                     ; $20B4: $6F
@@ -6498,7 +6411,7 @@ jr_000_20AC::
 
 Jump_000_20C1::
     ld   [$2100], a                               ; $20C1: $EA $00 $21
-    call $20AD                                    ; $20C4: $CD $AD $20
+    call Call_000_20AD                            ; $20C4: $CD $AD $20
     call Call_000_04A4                            ; $20C7: $CD $A4 $04
     pop  af                                       ; $20CA: $F1
     ldh  [$FFFD], a                               ; $20CB: $E0 $FD
@@ -6511,7 +6424,7 @@ Jump_000_20C1::
     ld   a, $05                                   ; $20D4: $3E $05
     ldh  [$FFFD], a                               ; $20D6: $E0 $FD
     ld   [$2100], a                               ; $20D8: $EA $00 $21
-    call $20AD                                    ; $20DB: $CD $AD $20
+    call Call_000_20AD                            ; $20DB: $CD $AD $20
     call Call_000_04A4                            ; $20DE: $CD $A4 $04
     pop  af                                       ; $20E1: $F1
     ldh  [$FFFD], a                               ; $20E2: $E0 $FD
@@ -6524,7 +6437,7 @@ Jump_000_20C1::
     ld   a, $06                                   ; $20EB: $3E $06
     ldh  [$FFFD], a                               ; $20ED: $E0 $FD
     ld   [$2100], a                               ; $20EF: $EA $00 $21
-    call $20AD                                    ; $20F2: $CD $AD $20
+    call Call_000_20AD                            ; $20F2: $CD $AD $20
     call Call_000_04A4                            ; $20F5: $CD $A4 $04
     pop  af                                       ; $20F8: $F1
     ldh  [$FFFD], a                               ; $20F9: $E0 $FD
@@ -6535,6 +6448,7 @@ Jump_000_20C1::
 Call_000_20FF::
     ld   a, [$D532]                               ; $20FF: $FA $32 $D5
     rst  $28                                      ; $2102: $EF
+
     nop                                           ; $2103: $00
     jr   nz, jr_000_2106                          ; $2104: $20 $00
 
@@ -6545,12 +6459,16 @@ jr_000_2108::
     jr   nz, jr_000_210A                          ; $2108: $20 $00
 
 jr_000_210A::
-    jr   nz, @+$39                                ; $210A: $20 $37
+    DB   $20                                      ; $210A: $20
 
-    ld   hl, $214B                                ; $210C: $21 $4B $21
-    ld   e, a                                     ; $210F: $5F
-    ld   hl, $2000                                ; $2110: $21 $00 $20
-    nop                                           ; $2113: $00
+    DB   $37, $21
+
+    ld   c, e                                     ; $210D: $4B
+    ld   hl, $215F                                ; $210E: $21 $5F $21
+    nop                                           ; $2111: $00
+    jr   nz, jr_000_2114                          ; $2112: $20 $00
+
+jr_000_2114:
     jr   nz, jr_000_2116                          ; $2114: $20 $00
 
 jr_000_2116::
@@ -6567,9 +6485,10 @@ jr_000_211E::
 
 Call_000_2121::
     nop                                           ; $2121: $00
-    jr   nz, jr_000_211E                          ; $2122: $20 $FA
+    DB   $20                                      ; $2122: $20
 
-    ld   l, $D5                                   ; $2124: $2E $D5
+Call_000_2123:
+    ld   a, [$D52E]                               ; $2123: $FA $2E $D5
     ld   h, a                                     ; $2126: $67
     ld   a, [$D52F]                               ; $2127: $FA $2F $D5
     ld   l, a                                     ; $212A: $6F
@@ -6586,7 +6505,7 @@ Call_000_2121::
     ld   a, $04                                   ; $213A: $3E $04
     ldh  [$FFFD], a                               ; $213C: $E0 $FD
     ld   [$2100], a                               ; $213E: $EA $00 $21
-    call $2123                                    ; $2141: $CD $23 $21
+    call Call_000_2123                            ; $2141: $CD $23 $21
     pop  af                                       ; $2144: $F1
     ldh  [$FFFD], a                               ; $2145: $E0 $FD
     ld   [$2100], a                               ; $2147: $EA $00 $21
@@ -6598,7 +6517,7 @@ Call_000_2121::
     ld   a, $05                                   ; $214E: $3E $05
     ldh  [$FFFD], a                               ; $2150: $E0 $FD
     ld   [$2100], a                               ; $2152: $EA $00 $21
-    call $2123                                    ; $2155: $CD $23 $21
+    call Call_000_2123                            ; $2155: $CD $23 $21
     pop  af                                       ; $2158: $F1
     ldh  [$FFFD], a                               ; $2159: $E0 $FD
     ld   [$2100], a                               ; $215B: $EA $00 $21
@@ -6610,7 +6529,7 @@ Call_000_2121::
     ld   a, $06                                   ; $2162: $3E $06
     ldh  [$FFFD], a                               ; $2164: $E0 $FD
     ld   [$2100], a                               ; $2166: $EA $00 $21
-    call $2123                                    ; $2169: $CD $23 $21
+    call Call_000_2123                            ; $2169: $CD $23 $21
     pop  af                                       ; $216C: $F1
     ldh  [$FFFD], a                               ; $216D: $E0 $FD
 
@@ -6624,7 +6543,7 @@ Call_000_216F::
     ld   a, $0B                                   ; $2176: $3E $0B
     ldh  [$FFFD], a                               ; $2178: $E0 $FD
     ld   [$2100], a                               ; $217A: $EA $00 $21
-    call $2123                                    ; $217D: $CD $23 $21
+    call Call_000_2123                            ; $217D: $CD $23 $21
     pop  af                                       ; $2180: $F1
     ldh  [$FFFD], a                               ; $2181: $E0 $FD
     ld   [$2100], a                               ; $2183: $EA $00 $21
@@ -6636,7 +6555,7 @@ Call_000_216F::
     ld   a, $0C                                   ; $218A: $3E $0C
     ldh  [$FFFD], a                               ; $218C: $E0 $FD
     ld   [$2100], a                               ; $218E: $EA $00 $21
-    call $2123                                    ; $2191: $CD $23 $21
+    call Call_000_2123                            ; $2191: $CD $23 $21
     pop  af                                       ; $2194: $F1
     ldh  [$FFFD], a                               ; $2195: $E0 $FD
     ld   [$2100], a                               ; $2197: $EA $00 $21
@@ -6648,7 +6567,7 @@ Call_000_216F::
     ld   a, $0D                                   ; $219E: $3E $0D
     ldh  [$FFFD], a                               ; $21A0: $E0 $FD
     ld   [$2100], a                               ; $21A2: $EA $00 $21
-    call $2123                                    ; $21A5: $CD $23 $21
+    call Call_000_2123                            ; $21A5: $CD $23 $21
     pop  af                                       ; $21A8: $F1
     ldh  [$FFFD], a                               ; $21A9: $E0 $FD
     ld   [$2100], a                               ; $21AB: $EA $00 $21
@@ -6658,6 +6577,7 @@ Call_000_216F::
 Call_000_21AF::
     ld   a, [$D532]                               ; $21AF: $FA $32 $D5
     rst  $28                                      ; $21B2: $EF
+
     nop                                           ; $21B3: $00
     jr   nz, jr_000_21B6                          ; $21B4: $20 $00
 
@@ -6668,11 +6588,12 @@ jr_000_21B8::
     jr   nz, jr_000_21BA                          ; $21B8: $20 $00
 
 jr_000_21BA::
-    jr   nz, @-$17                                ; $21BA: $20 $E7
+    DB   $20                                      ; $21BA: $20
 
-    ld   hl, $21FB                                ; $21BC: $21 $FB $21
-    rrca                                          ; $21BF: $0F
-    ld   [hl+], a                                 ; $21C0: $22
+    DB   $E7, $21
+
+    ei                                            ; $21BD: $FB
+    ld   hl, $220F                                ; $21BE: $21 $0F $22
     nop                                           ; $21C1: $00
     jr   nz, jr_000_21C4                          ; $21C2: $20 $00
 
@@ -6696,9 +6617,10 @@ jr_000_21CE::
     jr   nz, jr_000_21D2                          ; $21D0: $20 $00
 
 jr_000_21D2::
-    jr   nz, jr_000_21CE                          ; $21D2: $20 $FA
+    DB   $20                                      ; $21D2: $20
 
-    ld   l, $D5                                   ; $21D4: $2E $D5
+Call_000_21D3:
+    ld   a, [$D52E]                               ; $21D3: $FA $2E $D5
     ld   h, a                                     ; $21D6: $67
     ld   a, [$D52F]                               ; $21D7: $FA $2F $D5
     ld   l, a                                     ; $21DA: $6F
@@ -6715,7 +6637,7 @@ jr_000_21D2::
     ld   a, $04                                   ; $21EA: $3E $04
     ldh  [$FFFD], a                               ; $21EC: $E0 $FD
     ld   [$2100], a                               ; $21EE: $EA $00 $21
-    call $21D3                                    ; $21F1: $CD $D3 $21
+    call Call_000_21D3                            ; $21F1: $CD $D3 $21
     pop  af                                       ; $21F4: $F1
     ldh  [$FFFD], a                               ; $21F5: $E0 $FD
     ld   [$2100], a                               ; $21F7: $EA $00 $21
@@ -6727,7 +6649,7 @@ jr_000_21D2::
     ld   a, $05                                   ; $21FE: $3E $05
     ldh  [$FFFD], a                               ; $2200: $E0 $FD
     ld   [$2100], a                               ; $2202: $EA $00 $21
-    call $21D3                                    ; $2205: $CD $D3 $21
+    call Call_000_21D3                            ; $2205: $CD $D3 $21
     pop  af                                       ; $2208: $F1
     ldh  [$FFFD], a                               ; $2209: $E0 $FD
     ld   [$2100], a                               ; $220B: $EA $00 $21
@@ -6739,7 +6661,7 @@ jr_000_21D2::
     ld   a, $06                                   ; $2212: $3E $06
     ldh  [$FFFD], a                               ; $2214: $E0 $FD
     ld   [$2100], a                               ; $2216: $EA $00 $21
-    call $21D3                                    ; $2219: $CD $D3 $21
+    call Call_000_21D3                            ; $2219: $CD $D3 $21
     pop  af                                       ; $221C: $F1
     ldh  [$FFFD], a                               ; $221D: $E0 $FD
     ld   [$2100], a                               ; $221F: $EA $00 $21
@@ -6753,7 +6675,7 @@ Jump_000_2222::
     ld   a, $0B                                   ; $2226: $3E $0B
     ldh  [$FFFD], a                               ; $2228: $E0 $FD
     ld   [$2100], a                               ; $222A: $EA $00 $21
-    call $21D3                                    ; $222D: $CD $D3 $21
+    call Call_000_21D3                            ; $222D: $CD $D3 $21
     pop  af                                       ; $2230: $F1
     ldh  [$FFFD], a                               ; $2231: $E0 $FD
     ld   [$2100], a                               ; $2233: $EA $00 $21
@@ -6765,7 +6687,7 @@ Jump_000_2222::
     ld   a, $0C                                   ; $223A: $3E $0C
     ldh  [$FFFD], a                               ; $223C: $E0 $FD
     ld   [$2100], a                               ; $223E: $EA $00 $21
-    call $21D3                                    ; $2241: $CD $D3 $21
+    call Call_000_21D3                            ; $2241: $CD $D3 $21
     pop  af                                       ; $2244: $F1
     ldh  [$FFFD], a                               ; $2245: $E0 $FD
     ld   [$2100], a                               ; $2247: $EA $00 $21
@@ -6777,7 +6699,7 @@ Jump_000_2222::
     ld   a, $0D                                   ; $224E: $3E $0D
     ldh  [$FFFD], a                               ; $2250: $E0 $FD
     ld   [$2100], a                               ; $2252: $EA $00 $21
-    call $21D3                                    ; $2255: $CD $D3 $21
+    call Call_000_21D3                            ; $2255: $CD $D3 $21
     pop  af                                       ; $2258: $F1
     ldh  [$FFFD], a                               ; $2259: $E0 $FD
     ld   [$2100], a                               ; $225B: $EA $00 $21
@@ -6806,6 +6728,7 @@ jr_000_2273::
 Call_000_2274::
     ld   a, [$D532]                               ; $2274: $FA $32 $D5
     rst  $28                                      ; $2277: $EF
+
     nop                                           ; $2278: $00
     jr   nz, jr_000_227B                          ; $2279: $20 $00
 
@@ -6819,8 +6742,9 @@ jr_000_227F::
     jr   nz, @-$54                                ; $227F: $20 $AA
 
     ld   [hl+], a                                 ; $2281: $22
-    cp   [hl]                                     ; $2282: $BE
-    ld   [hl+], a                                 ; $2283: $22
+
+    DB   $BE, $22
+
     jp   nc, Jump_000_0022                        ; $2284: $D2 $22 $00
 
     jr   nz, jr_000_2289                          ; $2287: $20 $00
@@ -6829,9 +6753,9 @@ jr_000_2289::
     jr   nz, jr_000_228B                          ; $2289: $20 $00
 
 jr_000_228B::
-    jr   nz, jr_000_2273                          ; $228B: $20 $E6
+    DB   $20                                      ; $228B: $20
 
-    ld   [hl+], a                                 ; $228D: $22
+    DB   $E6, $22
 
 Call_000_228E::
     ld   a, [$D52E]                               ; $228E: $FA $2E $D5
@@ -7006,6 +6930,7 @@ Call_000_235E::
 Call_000_2372::
     ld   a, [$D774]                               ; $2372: $FA $74 $D7
     rst  $28                                      ; $2375: $EF
+
     nop                                           ; $2376: $00
     jr   nz, jr_000_2379                          ; $2377: $20 $00
 
@@ -7019,9 +6944,10 @@ jr_000_237D::
     jr   nz, Call_000_237F                        ; $237D: $20 $00
 
 Call_000_237F::
-    jr   nz, jr_000_2316                          ; $237F: $20 $95
+    DB   $20                                      ; $237F: $20
 
-    inc  hl                                       ; $2381: $23
+    DB   $95, $23
+
     xor  c                                        ; $2382: $A9
     inc  hl                                       ; $2383: $23
     nop                                           ; $2384: $00
@@ -10689,36 +10615,8 @@ jr_000_3394::
     ret                                           ; $339E: $C9
 
 
-    adc  c                                        ; $339F: $89
-    nop                                           ; $33A0: $00
-    nop                                           ; $33A1: $00
-    nop                                           ; $33A2: $00
-    nop                                           ; $33A3: $00
-    nop                                           ; $33A4: $00
-    nop                                           ; $33A5: $00
-    nop                                           ; $33A6: $00
-    nop                                           ; $33A7: $00
-    nop                                           ; $33A8: $00
-    nop                                           ; $33A9: $00
-    nop                                           ; $33AA: $00
-    nop                                           ; $33AB: $00
-    nop                                           ; $33AC: $00
-    nop                                           ; $33AD: $00
-    nop                                           ; $33AE: $00
-    adc  c                                        ; $33AF: $89
-    ld   bc, $0000                                ; $33B0: $01 $00 $00
-    nop                                           ; $33B3: $00
-    nop                                           ; $33B4: $00
-    nop                                           ; $33B5: $00
-    nop                                           ; $33B6: $00
-    nop                                           ; $33B7: $00
-    nop                                           ; $33B8: $00
-    nop                                           ; $33B9: $00
-    nop                                           ; $33BA: $00
-    nop                                           ; $33BB: $00
-    nop                                           ; $33BC: $00
-    nop                                           ; $33BD: $00
-    nop                                           ; $33BE: $00
+    DB   $89, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
+    DB   $89, $01, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00, $00
 
 Call_000_33BF::
     di                                            ; $33BF: $F3

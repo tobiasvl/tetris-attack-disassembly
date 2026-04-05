@@ -95,7 +95,7 @@ jr_017_4022::
     inc  [hl]                                     ; $405A: $34
     call nz, $C838                                ; $405B: $C4 $38 $C8
     inc  a                                        ; $405E: $3C
-    call nz, Jump_000_00FF                        ; $405F: $C4 $FF $00
+    call nz, Call_000_00FF                        ; $405F: $C4 $FF $00
     rst  $38                                      ; $4062: $FF
     nop                                           ; $4063: $00
     rst  $38                                      ; $4064: $FF

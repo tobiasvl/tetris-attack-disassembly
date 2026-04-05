@@ -10481,7 +10481,7 @@ jr_006_6CD4::
     ld   [bc], a                                  ; $6CE8: $02
     add  d                                        ; $6CE9: $82
     add  d                                        ; $6CEA: $82
-    jp   Jump_000_02C2                            ; $6CEB: $C3 $C2 $02
+    jp   $02C2                                    ; $6CEB: $C3 $C2 $02
 
 
     add  e                                        ; $6CEE: $83
@@ -10677,7 +10677,7 @@ jr_006_6D45::
     rrca                                          ; $6DAF: $0F
     inc  bc                                       ; $6DB0: $03
     rlca                                          ; $6DB1: $07
-    jp   Jump_000_03C1                            ; $6DB2: $C3 $C1 $03
+    jp   $03C1                                    ; $6DB2: $C3 $C1 $03
 
 
     ld   bc, $0601                                ; $6DB5: $01 $01 $06

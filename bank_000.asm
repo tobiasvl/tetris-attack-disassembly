@@ -9,15 +9,7 @@ RST_00::
     jp   Init                                     ; $0000: $C3 $50 $01
 
 
-Jump_000_0003:
-    rst  $38                                      ; $0003: $FF
-
-Call_000_0004:
-Jump_000_0004:
-    rst  $38                                      ; $0004: $FF
-
-Jump_000_0005:
-    rst  $38                                      ; $0005: $FF
+    DB   $FF, $FF, $FF
 
 Call_000_0006:
     nop                                           ; $0006: $00
@@ -30,43 +22,18 @@ RST_08::
     jp   Init                                     ; $0008: $C3 $50 $01
 
 
-    rst  $38                                      ; $000B: $FF
-    rst  $38                                      ; $000C: $FF
-    rst  $38                                      ; $000D: $FF
-    rst  $38                                      ; $000E: $FF
-    rst  $38                                      ; $000F: $FF
+    DB   $FF, $FF, $FF, $FF, $FF
 
 RST_10::
-    rst  $38                                      ; $0010: $FF
-    rst  $38                                      ; $0011: $FF
-    rst  $38                                      ; $0012: $FF
-    rst  $38                                      ; $0013: $FF
-    rst  $38                                      ; $0014: $FF
-    rst  $38                                      ; $0015: $FF
-    rst  $38                                      ; $0016: $FF
-    rst  $38                                      ; $0017: $FF
+    DB   $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF
 
 RST_18::
-    rst  $38                                      ; $0018: $FF
-    rst  $38                                      ; $0019: $FF
-    rst  $38                                      ; $001A: $FF
-    rst  $38                                      ; $001B: $FF
-    rst  $38                                      ; $001C: $FF
-    rst  $38                                      ; $001D: $FF
-    rst  $38                                      ; $001E: $FF
-    rst  $38                                      ; $001F: $FF
+    DB   $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF
 
 RST_20::
-    rst  $38                                      ; $0020: $FF
-    rst  $38                                      ; $0021: $FF
+    DB   $FF, $FF
 
-Jump_000_0022:
-    rst  $38                                      ; $0022: $FF
-    rst  $38                                      ; $0023: $FF
-    rst  $38                                      ; $0024: $FF
-    rst  $38                                      ; $0025: $FF
-    rst  $38                                      ; $0026: $FF
-    rst  $38                                      ; $0027: $FF
+    DB   $FF, $FF, $FF, $FF, $FF, $FF
 
 RST_28::
     add  a                                        ; $0028: $87
@@ -86,105 +53,43 @@ Jump_000_0032::
     jp   hl                                       ; $0033: $E9
 
 
-    rst  $38                                      ; $0034: $FF
-    rst  $38                                      ; $0035: $FF
-    rst  $38                                      ; $0036: $FF
-    rst  $38                                      ; $0037: $FF
+    DB   $FF, $FF, $FF, $FF
 
 RST_38::
-    rst  $38                                      ; $0038: $FF
-    rst  $38                                      ; $0039: $FF
-    rst  $38                                      ; $003A: $FF
-    rst  $38                                      ; $003B: $FF
+    DB   $FF, $FF, $FF, $FF
 
-Jump_000_003C:
-    rst  $38                                      ; $003C: $FF
-    rst  $38                                      ; $003D: $FF
-    rst  $38                                      ; $003E: $FF
-    rst  $38                                      ; $003F: $FF
+    DB   $FF, $FF, $FF, $FF
 
 VBlankInterrupt::
     jp   VBlankInterruptHandler                   ; $0040: $C3 $97 $02
 
 
-    rst  $38                                      ; $0043: $FF
-    rst  $38                                      ; $0044: $FF
-    rst  $38                                      ; $0045: $FF
-    rst  $38                                      ; $0046: $FF
-    rst  $38                                      ; $0047: $FF
+    DB   $FF, $FF, $FF, $FF, $FF
 
 LCDCInterrupt::
     jp   LCDCInterruptHandler                     ; $0048: $C3 $90 $1C
 
 
-    rst  $38                                      ; $004B: $FF
-    rst  $38                                      ; $004C: $FF
-    rst  $38                                      ; $004D: $FF
-    rst  $38                                      ; $004E: $FF
-    rst  $38                                      ; $004F: $FF
+    DB   $FF, $FF, $FF, $FF, $FF
 
 TimerOverflowInterrupt::
     jp   TimerOverflowInterruptHandler            ; $0050: $C3 $7E $0D
 
 
-    rst  $38                                      ; $0053: $FF
-    rst  $38                                      ; $0054: $FF
-    rst  $38                                      ; $0055: $FF
-    rst  $38                                      ; $0056: $FF
-    rst  $38                                      ; $0057: $FF
+    DB   $FF, $FF, $FF, $FF, $FF
 
 SerialTransferCompleteInterrupt::
     jp   SerialTransferCompleteInterruptHandler   ; $0058: $C3 $E2 $0C
 
 
-    rst  $38                                      ; $005B: $FF
-    rst  $38                                      ; $005C: $FF
-    rst  $38                                      ; $005D: $FF
-    rst  $38                                      ; $005E: $FF
-    rst  $38                                      ; $005F: $FF
+    DB   $FF, $FF, $FF, $FF, $FF
 
 JoypadTransitionInterrupt::
-    rst  $38                                      ; $0060: $FF
-    rst  $38                                      ; $0061: $FF
+    DB   $FF, $FF
 
-Call_000_0062:
-    rst  $38                                      ; $0062: $FF
-    rst  $38                                      ; $0063: $FF
-    rst  $38                                      ; $0064: $FF
-    rst  $38                                      ; $0065: $FF
-    rst  $38                                      ; $0066: $FF
-    rst  $38                                      ; $0067: $FF
+    DB   $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF
+    DB   $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF, $FF
 
-    rst  $38                                      ; $0068: $FF
-    rst  $38                                      ; $0069: $FF
-    rst  $38                                      ; $006A: $FF
-    rst  $38                                      ; $006B: $FF
-    rst  $38                                      ; $006C: $FF
-    rst  $38                                      ; $006D: $FF
-    rst  $38                                      ; $006E: $FF
-    rst  $38                                      ; $006F: $FF
-    rst  $38                                      ; $0070: $FF
-    rst  $38                                      ; $0071: $FF
-    rst  $38                                      ; $0072: $FF
-    rst  $38                                      ; $0073: $FF
-    rst  $38                                      ; $0074: $FF
-    rst  $38                                      ; $0075: $FF
-
-Call_000_0076:
-    rst  $38                                      ; $0076: $FF
-    rst  $38                                      ; $0077: $FF
-    rst  $38                                      ; $0078: $FF
-    rst  $38                                      ; $0079: $FF
-    rst  $38                                      ; $007A: $FF
-    rst  $38                                      ; $007B: $FF
-    rst  $38                                      ; $007C: $FF
-    rst  $38                                      ; $007D: $FF
-    rst  $38                                      ; $007E: $FF
-
-Jump_000_007F:
-    rst  $38                                      ; $007F: $FF
-    rst  $38                                      ; $0080: $FF
-    rst  $38                                      ; $0081: $FF
     rst  $38                                      ; $0082: $FF
 
 Jump_000_0083:
@@ -6745,7 +6650,7 @@ jr_000_227F::
 
     DB   $BE, $22
 
-    jp   nc, Jump_000_0022                        ; $2284: $D2 $22 $00
+    jp   nc, $0022                                ; $2284: $D2 $22 $00
 
     jr   nz, jr_000_2289                          ; $2287: $20 $00
 

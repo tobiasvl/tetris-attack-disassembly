@@ -11014,7 +11014,7 @@ jr_00B_6F96::
     add  e                                        ; $6FD4: $83
     ld   c, d                                     ; $6FD5: $4A
     xor  a                                        ; $6FD6: $AF
-    call nc, Call_000_0004                        ; $6FD7: $D4 $04 $00
+    call nc, $0004                                ; $6FD7: $D4 $04 $00
     add  a                                        ; $6FDA: $87
     inc  c                                        ; $6FDB: $0C
     sbc  [hl]                                     ; $6FDC: $9E

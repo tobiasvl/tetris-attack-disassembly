@@ -10756,7 +10756,7 @@ jr_01E_6E61::
     DB   $FD                                      ; $6E98: $FD
     ld   [hl], d                                  ; $6E99: $72
     daa                                           ; $6E9A: $27
-    call c, Call_000_0004                         ; $6E9B: $DC $04 $00
+    call c, $0004                                 ; $6E9B: $DC $04 $00
     add  e                                        ; $6E9E: $83
     ld   [bc], a                                  ; $6E9F: $02
     ld   [bc], a                                  ; $6EA0: $02

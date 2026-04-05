@@ -6130,7 +6130,7 @@ Jump_00A_629C::
     ret  nc                                       ; $632C: $D0
 
     pop  de                                       ; $632D: $D1
-    jp   nc, Jump_000_007F                        ; $632E: $D2 $7F $00
+    jp   nc, $007F                                ; $632E: $D2 $7F $00
 
     ld   bc, $8202                                ; $6331: $01 $02 $82
     sub  [hl]                                     ; $6334: $96
@@ -6348,7 +6348,7 @@ Jump_00A_639C::
     ret  nc                                       ; $640C: $D0
 
     pop  de                                       ; $640D: $D1
-    jp   nc, Jump_000_007F                        ; $640E: $D2 $7F $00
+    jp   nc, $007F                                ; $640E: $D2 $7F $00
 
     ld   bc, $8202                                ; $6411: $01 $02 $82
     sub  [hl]                                     ; $6414: $96
@@ -6563,7 +6563,7 @@ Call_00A_649C::
     ret  nc                                       ; $64EC: $D0
 
     pop  de                                       ; $64ED: $D1
-    jp   nc, Jump_000_007F                        ; $64EE: $D2 $7F $00
+    jp   nc, $007F                                ; $64EE: $D2 $7F $00
 
     ld   bc, $8202                                ; $64F1: $01 $02 $82
     sub  [hl]                                     ; $64F4: $96

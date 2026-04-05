@@ -13,50 +13,9 @@ SECTION "ROM Bank $01f", ROMX[$4000], BANK[$1f]
     DB   $F5, $45, $B6, $46, $E9, $46, $5B, $47, $9A, $47, $F7, $47, $39, $48, $80, $48
     DB   $DB, $48, $46, $49, $81, $49
 
-    xor  [hl]                                     ; $403A: $AE
-    ld   c, c                                     ; $403B: $49
-    inc  bc                                       ; $403C: $03
-    ld   c, d                                     ; $403D: $4A
-    inc  sp                                       ; $403E: $33
-    ld   c, d                                     ; $403F: $4A
-    ld   e, a                                     ; $4040: $5F
-    ld   c, d                                     ; $4041: $4A
-    sub  l                                        ; $4042: $95
-    ld   c, d                                     ; $4043: $4A
-    ret  z                                        ; $4044: $C8
-
-    ld   c, d                                     ; $4045: $4A
-    scf                                           ; $4046: $37
-    ld   c, e                                     ; $4047: $4B
-    ld   l, d                                     ; $4048: $6A
-    ld   c, e                                     ; $4049: $4B
-    adc  l                                        ; $404A: $8D
-    ld   c, e                                     ; $404B: $4B
-    cp   [hl]                                     ; $404C: $BE
-    ld   c, e                                     ; $404D: $4B
-    cpl                                           ; $404E: $2F
-    ld   c, h                                     ; $404F: $4C
-    dec  a                                        ; $4050: $3D
-    ld   c, h                                     ; $4051: $4C
-    ld   a, $4C                                   ; $4052: $3E $4C
-    ld   d, c                                     ; $4054: $51
-    ld   c, h                                     ; $4055: $4C
-    xor  b                                        ; $4056: $A8
-    ld   c, h                                     ; $4057: $4C
-    rlca                                          ; $4058: $07
-    ld   c, l                                     ; $4059: $4D
-    ld   e, b                                     ; $405A: $58
-    ld   c, l                                     ; $405B: $4D
-    adc  c                                        ; $405C: $89
-    ld   c, l                                     ; $405D: $4D
-    DB   $DD                                      ; $405E: $DD
-    ld   c, l                                     ; $405F: $4D
-    DB   $EB                                      ; $4060: $EB
-    ld   c, l                                     ; $4061: $4D
-    ei                                            ; $4062: $FB
-    ld   c, l                                     ; $4063: $4D
-    ld   [hl+], a                                 ; $4064: $22
-    ld   c, [hl]                                  ; $4065: $4E
+    DB   $AE, $49, $03, $4A, $33, $4A, $5F, $4A, $95, $4A, $C8, $4A, $37, $4B, $6A, $4B
+    DB   $8D, $4B, $BE, $4B, $2F, $4C, $3D, $4C, $3E, $4C, $51, $4C, $A8, $4C, $07, $4D
+    DB   $58, $4D, $89, $4D, $DD, $4D, $EB, $4D, $FB, $4D, $22, $4E
 
     call Call_000_03E7                            ; $4066: $CD $E7 $03
     call Call_000_04EA                            ; $4069: $CD $EA $04
@@ -7599,7 +7558,7 @@ jr_01F_73BC::
     call nz, $08CC                                ; $742F: $C4 $CC $08
     jr   z, jr_01F_7465                           ; $7432: $28 $31
 
-    jp   nz, Jump_000_0004                        ; $7434: $C2 $04 $00
+    jp   nz, $0004                                ; $7434: $C2 $04 $00
 
     nop                                           ; $7437: $00
     jr   @+$54                                    ; $7438: $18 $52
@@ -9761,10 +9720,7 @@ jr_01F_7CC0::
 
     INCBIN "gfx/image_01f_7cfb.2bpp"
 
-    jr   nz, jr_01F_7D25                          ; $7D0B: $20 $18
-
-    inc  c                                        ; $7D0D: $0C
-    inc  bc                                       ; $7D0E: $03
+    DB   $20, $18, $0C, $03
 
     DB   $08
 
